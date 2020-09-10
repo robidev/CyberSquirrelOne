@@ -1,0 +1,71 @@
+TODO:
+ninja-transformer-takeout->level complete
+drone-pilot: shoot camera
+
+message/objective/story system
+
+bird -> add ai (cirle, then it just attacks the player head-on, and grabs it, maybe overshoot if tries to avoid)
+ bird fly
+hedgehog
+
+drone-short near powerlines? bird-attack?
+
+nightfall-atmospheric?
+add more scenery
+
+objectives:
+ lockpick-minigame
+ HMI minigame->disable powerline, so ninja can enter
+ tranformer-destruction animation+triggers
+ engineer-animation+triggers
+ hedgehog-behavior+animation+triggers
+ triggers near bay/station/telecom-controllers(message: nah, too easy ;) )
+
+is there a way, all squirrels can be positioned exact right, so that puzzle is solved? that you need to figure out the correct sequience, and when triggered, it just resolves
+
+escape-route? via drone?
+
+
+ninja       - cannot enter powerline with power
+            + when power is down, he can reach switchyard, but no lockpick skills
+	    + can lure/sneak past hedgehog?? catch22?
+            + trafo is sabotaged by ninja
+
+hacker      - cannot climb substation without help from drone
+	    (+ can disable alarm/camera??????)
+	    + can do lockpick, 
+	    + can modify HMI to disable power, (and re-enable after ninja sabotage )
+              (alternative: wait for mechanic to re-enable)
+
+drone pilot - drone shorts when near switchyard
+            + areal reconneisance? sniper-rifle?
+	    + can pick-up and drop load to knock out guard/camera? provide lockpick/sabotage supplies?
+	    + will provide drone support for hacker transport,  allows hacker to traverse fence and stay undetected
+
+
+
+env:
+Bird        - attack on ninja while on powerline
+Hedgehog    - mans the HMI, has to lured out(how? coffee??)
+Trafo       - needs to be destroyed by ninja
+Nightfall   - happens during intrusion
+
+v Powerline   - used by ninja to get into substation
+v Door        - needs to be lockpicked by hacker
+v Camera      - when a squirrel is in a hotspot, the squirrel is taken away by van, possible to disable?
+v HMI         - correct switch to enable ninja to traverse powerline, done by hacker, extra: env will change based on switching in HMI
+
+
+Tile:
+32x32 px
+
+----------------------------------
+
+forest backdrop     - day/night TODO
+substation-backdrop - day/night  TODO
+city-backdrop       - day/night  TODO
+day-night transition animation
+
+
+backlog:
+ blow-up (small/big) - https://www.youtube.com/watch?v=oCDsDb7V59o

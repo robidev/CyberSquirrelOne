@@ -1,0 +1,170 @@
+https://www.codeproject.com/Articles/858764/Unity-D-Easily-Handling-Players-Objectives
+
+Objective.cs
+Hide   Shrink   Copy Code
+
+using UnityEngine;
+using System.Collections;
+using System.Linq;
+using System.Linq.Expressions;
+
+public class Objective : MonoBehaviour
+{
+
+    public enum ObjectiveType
+    {
+        Reach = 0,
+        Talk = 1,
+        Defeat = 2,
+    }
+
+    public enum ObjectiveStatus
+    {
+        Pending = 0,
+        Achieved = 1,
+    }
+
+    public enum ActionOnReach
+    {
+        MarkAsAchieved = 0,
+        PlayCinematic = 1,
+        PlayAnimation = 2,
+        SetTrigger = 3,
+    }
+
+    public string Name;
+    [Multiline(10)]
+    public string Description;
+    public ObjectiveType Kind;
+    public ObjectiveStatus Status;
+    public GameObject Target;
+    public Objective NextObjective;
+    public ActionOnReach[] ActionsOnReach;
+    public Animator animator;
+    public MovieTexture ClipToPlay;
+    public string TriggerName;
+
+    private void OnReach()
+    {
+        if (this.ActionsOnReach.Contains(ActionOnReach.MarkAsAchieved))
+            this.Status = ObjectiveStatus.Achieved;
+        if (this.ActionsOnReach.Contains(ActionOnReach.PlayCinematic))
+            this.PlayCinematic();
+        if (this.ActionsOnReach.Contains(ActionOnReach.PlayAnimation))
+            this.PlayAnimation();
+        if (this.ActionsOnReach.Contains(ActionOnReach.SetTrigger))
+            this.NextObjective.Target.GetComponentInParent<animator>().SetTrigger(this.TriggerName);
+
+        ParentScript.CurrentObjective = this.NextObjective;
+
+    }
+
+    private void PlayAnimation()
+    {
+        Debug.Log("On PlayAnimation: Not implemented yet");
+    }
+
+    private void PlayCinematic()
+    {
+        Debug.Log("On PlayCinematic: Not implemented yet ");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player" && this.ParentScript.CurrentObjective.name == this.name)
+        {
+            OnReach();
+        }
+    }
+
+    public Objectives ParentScript { get; set; }
+}
+
+Objectives.cs
+Hide   Shrink   Copy Code
+
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class Objectives : MonoBehaviour {
+
+    public Objective CurrentObjective;
+    private Objective[] PlayerObjectives;
+    public Image CurrentObjectiveArrow;
+
+    public Text CurrentObjectiveDescription; 
+
+    void Start()
+    {
+        var objectiveParentGameObject = this.CurrentObjective.transform.parent.gameObject;
+        if (objectiveParentGameObject != null)
+        {
+            this.PlayerObjectives = objectiveParentGameObject.GetComponentsInChildren<Objective>();
+            if (this.PlayerObjectives != null)
+            {
+                Debug.Log("Successfully found all player objectives");
+                foreach (Objective singleObjective in PlayerObjectives)
+                {
+                    if (singleObjective != null)
+                    {
+                        singleObjective.ParentScript = this;
+                    }
+                }
+            }
+            else
+                Debug.LogError("Unable to find objectives");
+        }
+    }
+
+    void OnGUI()
+    {
+        this.CurrentObjectiveDescription.text = this.CurrentObjective.Description;
+    }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ 
+class Goal : Monobehaviour
+{
+ public event System.Action completed;
+ protected void GoalCompleted()
+ {
+    if(completed!=null)
+       completed();
+ }
+}
+ 
+class CollectCoins : Goal
+{
+   ...
+}
+...
+
+// Add this script to the GoalManager GameObject. It keeps track of all goals.
+public class GoalManager : MonoBehaviour {
+ 
+    public Goal[] goals;
+ 
+    void Awake() {
+        goals = GetComponents<Goal>();
+    }
+ 
+    void OnGUI() {
+        foreach (var goal in goals) {
+            goals.DrawHUD();
+        }
+    }
+ 
+    void Update() {
+        foreach (var goal in goals) {
+            if (goal.IsAchieved()) {
+                goal.Complete();
+                Destroy(goal);
+            }
+        }
+    }
+    }
+}
