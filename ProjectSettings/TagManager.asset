@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - HMI
+  - HV
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - Player_outside
+  - Player_inside
+  - 
+  - ladder
+  - cables
+  - outside
+  - inside
+  - door
+  - camera
+  - object_outside
+  - object_inside
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1611635347
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
