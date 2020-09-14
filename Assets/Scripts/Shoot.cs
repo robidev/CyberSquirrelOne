@@ -18,16 +18,17 @@ public class Shoot : MonoBehaviour
 		if (Input.GetButtonDown("Fire1"))
 		{
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            StartCoroutine(ShootRay());
+            //StartCoroutine(ShootRay());
 		}
     }
 
 	public int damage = 40;
-	public GameObject impactEffect;
+	//public GameObject impactEffect;
 	public LineRenderer lineRenderer;
+	public LayerMask hitMask;
     IEnumerator ShootRay ()
 	{
-		RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
+		RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right, 100f, hitMask);
 
 		if (hitInfo)
 		{
@@ -37,7 +38,8 @@ public class Shoot : MonoBehaviour
 				enemy.TakeDamage(damage);
 			}
 
-			Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
+			//Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
+			//Debug.Log("hit " + hitInfo.transform.name);
 
 			lineRenderer.SetPosition(0, firePoint.position);
 			lineRenderer.SetPosition(1, hitInfo.point);

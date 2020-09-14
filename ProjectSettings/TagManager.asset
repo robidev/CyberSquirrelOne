@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HMI
   - HV
+  - Breakable
   layers:
   - Default
   - TransparentFX

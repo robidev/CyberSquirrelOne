@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
+    public float speed = 50f;
 	public int damage = 40;
 	public Rigidbody2D rb;
 	public GameObject impactEffect;
@@ -12,6 +12,14 @@ public class Bullet : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		rb.velocity = transform.right * speed;
+	}
+
+	void Update()
+	{
+		if(rb.IsSleeping()==true)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D hitInfo)
@@ -22,8 +30,17 @@ public class Bullet : MonoBehaviour
 			enemy.TakeDamage(damage);
 		}
 
-		Instantiate(impactEffect, transform.position, transform.rotation);
+		//Instantiate(impactEffect, transform.position, transform.rotation);
+		//Debug.Log(hitInfo.transform.name);
+		//Destroy(gameObject);
+	}
 
-		Destroy(gameObject);
+	void OnCollisionEnter2D(Collision2D hitInfo)
+	{
+		if(hitInfo.gameObject.tag == "Breakable")
+		{
+			Debug.Log(hitInfo.transform.name + " is broken");
+			hitInfo.gameObject.GetComponent<BreakableEffect>().Break();
+		}
 	}
 }
