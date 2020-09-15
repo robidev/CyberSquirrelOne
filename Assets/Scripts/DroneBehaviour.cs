@@ -81,4 +81,10 @@ public class DroneBehaviour : MonoBehaviour
             //m_ObjectTrigger.isTrigger = false;
         }
     }
+
+    public void Die(PlayerMovement.DieReason reason)
+    {
+        Debug.Log("I died because of reason: " + reason.ToString());
+        GlobalControl.instance.Invoke("GameOver", 0);
+    }
 }

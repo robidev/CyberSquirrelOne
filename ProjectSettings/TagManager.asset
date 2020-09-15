@@ -7,6 +7,7 @@ TagManager:
   - HMI
   - HV
   - Breakable
+  - drone
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - camera
   - object_outside
   - object_inside
-  - 
-  - 
+  - enemy_outside
+  - enemy_inside
   - 
   - 
   - 

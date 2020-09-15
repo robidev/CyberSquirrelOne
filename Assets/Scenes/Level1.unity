@@ -121,6 +121,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31783882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31783883}
+  m_Layer: 0
+  m_Name: Waypoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &31783883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31783882}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 822935410}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &54683902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3947,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333ed256c9a80652aa916064cc4bf15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &822935409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822935410}
+  m_Layer: 0
+  m_Name: PatrolPath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &822935410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822935409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -64.79397, y: 23.23371, z: -39.578873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 31783883}
+  - {fileID: 995058147}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841323159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4464,6 +4526,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &995058146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995058147}
+  m_Layer: 0
+  m_Name: Waypoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995058147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995058146}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 822935410}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000398609
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,7 +4635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -94.00081, y: -0.6794405, z: -10}
+  m_LocalPosition: {x: 50.99919, y: 1.7000005, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -7449,9 +7541,9 @@ GameObject:
   - component: {fileID: 1218363213}
   - component: {fileID: 1218363214}
   - component: {fileID: 1218363215}
-  m_Layer: 19
+  m_Layer: 10
   m_Name: drone
-  m_TagString: Untagged
+  m_TagString: drone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9365,7 +9457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezdO8rpawIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE2TojAQ/StWzqsFCDrsbVcdZw+O1rhbc+ESSSMpQ0IlYfwq//smAYRlT3S9/nr9usMdUa5KSLWQa0nJRhBA30fI2ujbqHO+wQUfBd/TG7Qxn5To3AZhF/OBNRUG922aEgVoSdMf/MhssGfAitNMyGJFjrAQSisDZ5gpMC4ptM3mBrqP0MV8xrFNuRormFvrZqzYGz2MmQLXIHuh83gyi7xp3CRMvYkXzsIgjJu8cTSZT6MgCFdjL3YlKp4yXJRA7DxdpcBrm77UrbgZtQkJbGfBGFUNT6SvpdNhX+YgwQpBKDZjO25WhRzoMdfD3G2WKdCNJhJfl1Qa9eqi6KeoJS2wOtW8vjCrbBvfD2cvNfu67ua/kLHv3JkUxVvb2ncj6Zympw98TbGyoJYVDNBlj3q9rDNmJ3xg8JkDfxdrKSpOeiurFATLrtZzvEUO6anDa64t+EwuO9Fbydst2ykeToLLgtHiYF2TsAb2TDjN3XGANNv5ZTi701FNCYNaGn8U/MbH/o01jlcqlTauZkfc8juIStpQtHKq2XEqvRCSg4ObUUrgmOnrzpTRwz0OfL22A88rtq+pad742kcySHFwF+95A9dOnJ+npnJx3oDKt5VmlENH2jrejU4LwXl9Zn1N2rR9JTOc9tKOFSX/HhcKp14UET8++Nk8iuNo7EVh5uNpEJGZl+J5jNz1UW7mxGxXE23kMVvjXXFuTq39yYzWEpfu5InE5zW9FaInOeWZ2KcSgG/rCk/iIE0T8zLJilAj0B60ptztG90TxER6ApI8CyVu0tVFS5x0VRJU0i+hLZKghfurJOiBHn8BUEsDBBQAAAgIAAAIIexz3ypibQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSibGBqWmKoWWSYZq5qaWlqa6BqUmaYaKxkWmKmUFyormlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIezdO8rpawIAABQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIexz3ypibQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
+    dataString: UEsDBBQAAAgIAAAIIexAD9AJbAIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE2T2jAM/SuMz4UJIVk2vbXAsj3sxyzt7CUXEyvEg2NnbGeB3eG/V3YSkqYnxJP0JD3J+SJcmgoyq/RWc/akGJDvE+Js8m3SOx/hTA9K7vgndDHvnNnCBVEf80YtV4jPXZpRJVjNsx/yIFxwgGAtea50uWEHWCljDcI5FQbQpZV12RKhrwk54880cSkXtMKlsz7RSoLJFc0MpAU9CF3ez8LFXRS2CYtgFkT4N0ravGk8Wy7iMIw20yDxFLXMBC0rYG6enikMuqL3TSmJo7Yhjj1TQnDT9knspfI67KoCNDghGKc4tu/NqVAAPxR2nPuS5wZsq4mmlzXXqF5DSn6qRtKSmmPT1wcVtSsTLxdRNPddNbxP/4VMG3euVfnYlZ77kWzBs+MbvWTUONDqGkboetB6s6wTFUe6F/BegHxWW61qyQYrqw2E657rNt6qgOzY402vHXhLrnrRO8m7Lbsprl6C80rwcu9cs6gBdkJ5zf1xgMbt/MKe/emYlgJR18YfA7/pYXhjreOBa2PR1e5Iuv72qtYulGy8am6c2q6UluDhdpQKJBX28oo0drzHkW9QduR5oO41tcVbX/dIRike7uODYOR6VafbqZlCnZ7AFC+1FVxC37RzPKNOKyVlc2ZDTbq0Xa1zmg3SDjVn/x4XiRZBHLN5sp/nyzhJ4mkQR/mcLsKY3QUZXSbEXx+XOCcVr02jrTy4NdmTSzy17iMz2Wpa+ZNnmp62/LNUA8m5zNUu0wDypWG4NQ4ai+DLZBvGUaAdWMul3zf5SolQ2RFYeiNK/aSbs9U07VlSUvEPZR2SkpX/qqTkSq5/AVBLAwQUAAAICAAACCHsc98qYm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0komxgalpiqFlkmGauamlpamugalJmmGisZFpiplBcqK5pVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsQA/QCWwCAAAUBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsc98qYm0AAAB4AAAACQAkAAAAAAAAAAAAAAC5AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHEDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -9437,7 +9529,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 0
+  showGraphs: 1
 --- !u!4 &1557225718
 Transform:
   m_ObjectHideFlags: 0
@@ -13516,7 +13608,7 @@ GameObject:
   - component: {fileID: 1725868184}
   - component: {fileID: 1725868186}
   - component: {fileID: 1725868187}
-  m_Layer: 10
+  m_Layer: 21
   m_Name: Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13594,7 +13686,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 63301056ddf5f4841800915f26c302d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13682,9 +13774,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.2220726, y: -0.37401772}
   serializedVersion: 2
-  m_Radius: 1.28125
+  m_Radius: 0.6851597
 --- !u!114 &1725868187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13697,9 +13789,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0ced54ad30c2e60ba18cac8ec77f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1380065293}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  PatrolWaypoints:
+  - {fileID: 31783883}
+  - {fileID: 995058147}
   speed: 800
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1.2
   enemySprite: {fileID: 1725868180}
 --- !u!1 &1749326313
 GameObject:

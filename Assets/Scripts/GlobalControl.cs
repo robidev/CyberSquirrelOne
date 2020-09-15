@@ -70,6 +70,8 @@ public class GlobalControl : MonoBehaviour
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("camera");//1 << 18;
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("object_outside");//1 << 19;
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("object_inside"));//~(1 << 20);
+              camera_object.cullingMask |= 1 << LayerMask.NameToLayer("enemy_outside");//1 << 21;
+              camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("enemy_inside"));//~(1 << 22);
             }else {                                      // player_inside
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("Player_outside"));//~(1 << 10);
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("Player_inside");//1 << 11;
@@ -79,6 +81,8 @@ public class GlobalControl : MonoBehaviour
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("camera"));//~(1 << 18);
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("object_outside"));//~(1 << 19);
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("object_inside");//1 << 20;
+              camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("enemy_outside"));//~(1 << 21);
+              camera_object.cullingMask |= 1 << LayerMask.NameToLayer("enemy_inside");//1 << 22;
             }
           }
         }

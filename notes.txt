@@ -1,12 +1,7 @@
 TODO:
 ninja-transformer-takeout->level complete
-drone-pilot: shoot camera
-
 message/objective/story system
-
-bird -> add ai (cirle, then it just attacks the player head-on, and grabs it, maybe overshoot if tries to avoid)
- bird fly
-hedgehog
+hedgehog???
 
 drone-short near powerlines? bird-attack?
 
@@ -14,6 +9,7 @@ nightfall-atmospheric?
 add more scenery
 
 objectives:
+ avoid bird
  lockpick-minigame
  HMI minigame->disable powerline, so ninja can enter
  tranformer-destruction animation+triggers
@@ -38,18 +34,18 @@ hacker      - cannot climb substation without help from drone
               (alternative: wait for mechanic to re-enable)
 
 drone pilot - drone shorts when near switchyard
-            + areal reconneisance? sniper-rifle?
+            + areal reconneisance? sniper-rifle? catapult?
 	    + can pick-up and drop load to knock out guard/camera? provide lockpick/sabotage supplies?
 	    + will provide drone support for hacker transport,  allows hacker to traverse fence and stay undetected
 
 
 
 env:
-Bird        - attack on ninja while on powerline
 Hedgehog    - mans the HMI, has to lured out(how? coffee??)
 Trafo       - needs to be destroyed by ninja
 Nightfall   - happens during intrusion
 
+v Bird        - attack on ninja while on powerline
 v Powerline   - used by ninja to get into substation
 v Door        - needs to be lockpicked by hacker
 v Camera      - when a squirrel is in a hotspot, the squirrel is taken away by van, possible to disable?
