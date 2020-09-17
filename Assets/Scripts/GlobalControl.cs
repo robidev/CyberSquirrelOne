@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GlobalControl : MonoBehaviour
 {
-    public static GlobalControl instance = null;
     public List<PlayerMovement> characterList;
     public List<Cinemachine.CinemachineVirtualCamera> d_camera;
 
@@ -22,12 +21,7 @@ public class GlobalControl : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        if(GlobalControl.instance == null)
-          GlobalControl.instance = this;
-        else
-          Debug.LogError("GlobalControl is allready initialised, we cannot have 2!");
-          
+    {       
         characters = characterList.Count;
         camera_object = gameObject.GetComponent<Camera>();
         //select initial character

@@ -43,10 +43,10 @@ public class PlayerMovement : MonoBehaviour {
 		if(reason == DieReason.Electrocuted)
 		{
 			animator.SetBool("IsElectrocuted", true);
-			GlobalControl.instance.Invoke("GameOver", 2);//allow for the death-animation
+			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
 		}
 		else
-			GlobalControl.instance.Invoke("GameOver", 0);
+			FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
 	}
 
 
