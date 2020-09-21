@@ -107,10 +107,11 @@ public class EnemyAI : MonoBehaviour
                 target = PatrolWaypoints[currentPatrolWaypoint];
             }
             //to ensure we are not immediately retargetting
-            if(currentWaypoint > 1)
+            //if(currentWaypoint > 1)
             {
                 //scan for squirrels vertical, and attack if seen
-                RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, 1000f, targetMask);
+                
+                RaycastHit2D hitInfo = Physics2D.CircleCast(transform.position, 2f ,Vector2.down, 1000f, targetMask);
                 if (hitInfo && hitInfo.transform.tag != "drone")
                 {
                     //Debug.Log(hitInfo.transform.name);
@@ -119,14 +120,15 @@ public class EnemyAI : MonoBehaviour
                     reachedEndofPath = false;
                     currentWaypoint = 0;
                 }
-                else
+                else // prioritize down over front
                 {
                     //scan for drones horizontal, and attack if seen
-                    Collider2D coll = Physics2D.OverlapBox(transform.position,new Vector2(100,10),0,targetMask);
-                    if(coll && coll.gameObject.tag == "drone")
+                    hitInfo = Physics2D.CircleCast(transform.position, 4f ,Vector2.left * enemySprite.localScale.x, 100f, targetMask);
+                    //Collider2D coll = Physics2D.OverlapBox(transform.position,new Vector2(100,10),0,targetMask);
+                    if(hitInfo && hitInfo.transform.tag == "drone")
                     {
                         //Debug.Log(coll.transform.name);
-                        target = coll.transform;
+                        target = hitInfo.transform;
                         patroling = false;
                         reachedEndofPath = false;
                         currentWaypoint = 0;

@@ -120,7 +120,7 @@ public class GlobalControl : MonoBehaviour
     public void Restart()
     {
       Time.timeScale = 1;
-      SceneManager.LoadScene( SceneManager.GetActiveScene().name );
+      SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     public void Continue()

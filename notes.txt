@@ -1,9 +1,16 @@
 TODO:
 ninja-transformer-takeout->level complete
-message/objective/story system
-hedgehog???
+ * how does the ninja sabotage the transformer? 
+   will he need help?(do we need all three of the squirrels?)
+   perhaps:
+     each at a different componetn?
+     grapling-hook to connect a wire?
+     2 to modify a part such as tapchanger?
+     to take out the bird? (to ensure the drone can work!)
+drone can be attacked by bird
 
-drone-short near powerlines? bird-attack?
+objective system
+hedgehog???
 
 nightfall-atmospheric?
 add more scenery
