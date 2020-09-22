@@ -8842,7 +8842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245168691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -233.9, y: 0.78000057, z: -10}
+  m_LocalPosition: {x: -119.8, y: 0.78000057, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1615077065}
@@ -9509,7 +9509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380065285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -233.9, y: -3.18, z: 0}
+  m_LocalPosition: {x: -119.8, y: -3.18, z: 0}
   m_LocalScale: {x: 3.290709, y: 3.290939, z: 1}
   m_Children:
   - {fileID: 352835271}
@@ -9536,7 +9536,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -226.6783, y: 1.2469511}
   m_AutoConfigureDistance: 1
-  m_Distance: 9.6308
+  m_Distance: 106.64007
   m_MaxDistanceOnly: 0
 --- !u!114 &1380065295
 MonoBehaviour:
@@ -9663,6 +9663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419567635}
   - component: {fileID: 1419567636}
+  - component: {fileID: 1419567637}
   m_Layer: 21
   m_Name: SquirrelDetector
   m_TagString: Untagged
@@ -9697,7 +9698,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -72.062454, y: 13.375999}
+  m_Offset: {x: -75.09323, y: 13.375999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9708,8 +9709,25 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 62.19336, y: 36.446365}
+  m_Size: {x: 68.254906, y: 36.446365}
   m_EdgeRadius: 0
+--- !u!114 &1419567637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419567634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fc0edafca6ed7f495e03c4da9e293b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiver: {fileID: 1725868179}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
+  _tag: 
 --- !u!1 &1452028164
 GameObject:
   m_ObjectHideFlags: 0
@@ -10203,7 +10221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIezQCO1OawIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsPtqGE3lrsOD049sTp5MJFRgtoLCRGEvFHxv+9kgBD6Ymdt19v3674QpSrClIt5EZSshUE0I8Jsjb6NumdL3DBueAHeoMu5oMSXdgg7GLesKbC4HObpkQJWtL0J8+ZDfYMWHOaCVmuSQ6xUFoZOMNMgXFJoW02N9DXBF3MZxrZlKuxFqG1bsaKvMndmClwDXIQGvozfxmGYZfgz8LF0yLy/TZvGs0CLwqCp2W4nnqhK1LzlOGyAmIn6mstl13bthk3w7YhC9tbMEZVyxTpa+WUOFQFSLBSEIrN4I6d1aEAmhd6nLvLMgW6VUXi64pKo19TFP0SjaglVqeG1ydmtW0TBKEXNOybutv/QqZz586kKF+61nPPttEFTU9v+JpiZUEtaxihqwH1Zl1nzE74yOCjAP4qNlLUnAyWVitYrPpaj/HiAtJTjzdcO/CRXPWid5J3e7ZT3J0El5jR8mhdM78BDkw4zd15gDTb+W04u+NRbQmDWhp/FLzjfHhlreOZSqWNq90Rt/yOopY2FK2danacWsdCcnBwO0oFHDN93ZsyerzHkW/QduR5xvY9tc1bX/dMRikO7uM9b+Tai/Pj1FQhzltQxa7WjHLoSVvHq9EpFpw3ZzbUpEs71DLD6SAtryn597iQv/SCgMyj4zwLgygKpl7gZ3O8XATku5fiMELu+ig3c2K2b4i28pit8b44N6fW/WYmG4krd/JE4vOG3koxkJzyTBxSCcB3TYUHcZCmiXmZZE2oEegAWlPu9o2+EsREegKSPAolbtL1RUuc9FUSVNFPoS2SoNj9VxJ0R/e/UEsDBBQAAAgIAAAIIexz3ypibQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSibGBqWmKoWWSYZq5qaWlqa6BqUmaYaKxkWmKmUFyormlUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIezQCO1OawIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIexz3ypibQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
+    dataString: UEsDBBQAAAgIAAAIIezmcgNRagIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenWsPGCiht9Z2nB4ce+J2cuEio8VoLCRGEvFHxv+9kgBD6Imd9/bz7YpPRLmqINNCriUlG0EA/Zgga6Nvk558gQs+Cr6nN+h83inRhXXCzucNayoM7tswJUrQkmY/+ZFZZ8+ANae5kOWKHGEhlFYGzjFTYCgptI3mBvqcoIv5TBMbcjXWPLbWzViJN7kbMwOuQQ5c43AWBnEcdwHRLPSC5ClO2rjp0yzw/GAerqZe7FLUPGO4rIDYefpMQdAVbUtxM2rrMreVBWNUtX0ifa2cDvuqAAlWCEKxGdv1ZlUogB4LPY7d5rkC3Woi8XVJpVGvSYp+iUbSEqtT09cHZrUtE0WxFzXdN3k3/7lMfUfnUpQvXWnfs2V0QbPTG75mWFlQyxpG6HLQerOsM2YnfGDwXgB/FWspak4GK6sVzJd9rsd4iwKyU483vXbgI7jqRe8k77Zsp7g7CS4LRsuDpWZhA+yZcJq74wBptvPb9OxOR7UpDGrb+KvgDz4Ob6wlnqlU2lDtjrjt7yBqaV3Ryqlmx6n1QkgODm5HqYBjpq87k0aP9zjiBmVHzDO2r6kt3nLdIxmFOLj397wRtRPnx6mpQpw3oIptrRnl0DdtiVej00Jw3pyZ+kraqH0tc5wNoo41JV9vC4WBF0XETw5+HkdJEk29KMx9HMwj8t3LcJwgd3yUmzEx2zV9tuqYpfE+OTeX1v1jJmuJK3fxROLzmt5KMdwZ5bnYZxKAb5sUHaFAmirmZZIVoUagPWhNuds3+kwRE9kJSPqombpRVxctcdpnSVFFP4S2SIoW7q+Soju6/wNQSwMEFAAACAgAAAgh7HPfKmJtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKJsYGpaYqhZZJhmrmppaWproGpSZphorGRaYqZQXKiuaVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7OZyA1FqAgAAFAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7HPfKmJtAAAAeAAAAAkAJAAAAAAAAAAAAAAAtwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABvAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -10284,7 +10302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557225716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.47188, y: 18, z: -2.9514713}
+  m_LocalPosition: {x: -80.47188, y: 18.19, z: -2.9514713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 822935410}
@@ -13835,6 +13853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587606378}
   - component: {fileID: 1587606379}
+  - component: {fileID: 1587606380}
   m_Layer: 21
   m_Name: DroneDetector
   m_TagString: Untagged
@@ -13882,6 +13901,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 197.44025, y: 77.507126}
   m_EdgeRadius: 0
+--- !u!114 &1587606380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587606377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fc0edafca6ed7f495e03c4da9e293b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiver: {fileID: 1725868179}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
+  _tag: drone
 --- !u!1 &1590813326
 GameObject:
   m_ObjectHideFlags: 0
