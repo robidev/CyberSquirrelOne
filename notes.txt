@@ -1,19 +1,19 @@
 TODO:
 ninja-transformer-takeout->level complete
- * how does the ninja sabotage the transformer? 
-   will he need help?(do we need all three of the squirrels?)
-   perhaps:
-     each at a different componetn?
-     grapling-hook to connect a wire?
-     2 to modify a part such as tapchanger?
-     to take out the bird? (to ensure the drone can work!)
-drone can be attacked by bird
 
-objective system
-hedgehog???
+
+Ninja to take out the bird? (to ensure the drone can work!)->implement tranqualizer dart
+implement camera view/acorn throw interface
+Go into substation, to take out hedgehog(with help of hacker?)
+discovery of level with drone?
+Primary sabotage: drain oil, and put in acorns
+enable HMI by hacker
+flee the scene
+water+vantage points
+
 
 nightfall-atmospheric?
-add more scenery
+add more scenery, trees for vantage point
 
 objectives:
  avoid bird

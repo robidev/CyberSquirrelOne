@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Powerline : MonoBehaviour
 {
-    public bool isPowered = true;
-    // Start is called before the first frame update
-    void Start()
+    private bool _isPowered = true;
+    public UnityEvent m_PowerLossEvent;
+    public bool isPowered 
     {
-        
-    }
+        get{ return _isPowered; }
+        set
+        {
+            if(_isPowered == true && value == false)
+            {
+                m_PowerLossEvent.Invoke();
+            }
+            _isPowered = value;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

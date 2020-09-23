@@ -6,14 +6,15 @@ public class DialogueTrigger : MonoBehaviour {
 
 	public Dialogue dialogue;
 
-	void Start()
-	{
-		Invoke("TriggerDialogue",1f);
-	}
-
+	public bool ShowDialogMoreThanOnce = false;
+    private bool DialogHasBeenShown = false;
 	public void TriggerDialogue ()
 	{
-		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+		if(ShowDialogMoreThanOnce == true || DialogHasBeenShown == false)
+        {
+			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+			DialogHasBeenShown = true;
+		}
 	}
 
 }
