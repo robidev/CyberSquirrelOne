@@ -16,7 +16,7 @@ public class TargetTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         //Debug.Log(name + ":" + col.name);
-        if( ((1<<col.gameObject.layer) & layer.value) > 0)
+        if( ((1<<col.gameObject.layer) & layer.value) > 0 && receiver != null)
         {
             //Debug.Log(name + ":" + col.name + " + layer");
             if(_tag.Equals("") || _tag.Equals(col.transform.tag))
@@ -35,7 +35,7 @@ public class TargetTrigger : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         //Debug.Log(name + ":" + col.name);
-        if( ((1<<col.gameObject.layer) & layer.value) > 0)
+        if( ((1<<col.gameObject.layer) & layer.value) > 0 && receiver != null)
         {
             //Debug.Log(name + ":" + col.name + " + layer");
             if(_tag.Equals("") || _tag.Equals(col.transform.tag))

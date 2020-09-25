@@ -5,15 +5,34 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour {
 
 	public Dialogue dialogue;
-
 	public bool ShowDialogMoreThanOnce = false;
-    private bool DialogHasBeenShown = false;
+    private bool _DialogHasBeenShown = false;
+
+	private bool DialogueEnabled = true;
+	public bool DialogHasBeenShown {
+		get {return _DialogHasBeenShown;}
+		set {_DialogHasBeenShown = value;}
+	}
+
+	public void EnableDialogue()
+	{
+		DialogueEnabled = true;
+	}
+
+	public void DisableDialogue()
+	{
+		DialogueEnabled = false;
+	}
+
 	public void TriggerDialogue ()
 	{
-		if(ShowDialogMoreThanOnce == true || DialogHasBeenShown == false)
-        {
-			FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-			DialogHasBeenShown = true;
+		if(DialogueEnabled == true)
+		{
+			if(ShowDialogMoreThanOnce == true || _DialogHasBeenShown == false)
+			{
+				FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+				_DialogHasBeenShown = true;
+			}
 		}
 	}
 

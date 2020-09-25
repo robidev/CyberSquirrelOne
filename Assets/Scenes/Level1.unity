@@ -2275,6 +2275,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectorEnabled: 1
+--- !u!1 &476411439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476411440}
+  - component: {fileID: 476411441}
+  m_Layer: 1
+  m_Name: TakeOutCamera2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476411440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476411439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &476411441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476411439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381e0349445504a2095dfa63d9485e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: drone pilot'
+    sentences:
+    - Use your skills to take out the pole camera
+  ShowDialogMoreThanOnce: 0
+  EventName:
+  - pole_cam
+  NeedAllTriggers: 0
+  delay: 1
 --- !u!1 &500950798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,7 +2467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &606373533
 MonoBehaviour:
@@ -2523,7 +2575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 614397260}
   m_Layer: 1
-  m_Name: EnemyZones
+  m_Name: BirdEnemyZones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2873,6 +2925,7 @@ GameObject:
   - component: {fileID: 687494902}
   - component: {fileID: 687494904}
   - component: {fileID: 687494905}
+  - component: {fileID: 687494906}
   m_Layer: 19
   m_Name: camera
   m_TagString: Breakable
@@ -2983,6 +3036,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77dd65a4a2a852f8cf881859d48ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BreakEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1071285135}
+        m_MethodName: DisableDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &687494906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687494901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d66af05d2ca29759b838696da0e028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsVisibleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1071285135}
+        m_MethodName: EventTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: camera
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &690764012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,6 +4373,7 @@ GameObject:
   - component: {fileID: 801607356}
   - component: {fileID: 801607357}
   - component: {fileID: 801607358}
+  - component: {fileID: 801607359}
   m_Layer: 14
   m_Name: pole_cam
   m_TagString: Breakable
@@ -4411,6 +4505,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c77dd65a4a2a852f8cf881859d48ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BreakEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 476411441}
+        m_MethodName: DisableDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &801607359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801607353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d66af05d2ca29759b838696da0e028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsVisibleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1071285135}
+        m_MethodName: EventTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pole_cam
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &820667350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,9 +5873,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071285133}
-  - component: {fileID: 1071285134}
+  - component: {fileID: 1071285135}
   m_Layer: 1
-  m_Name: TakeOutCameras
+  m_Name: TakeOutCamera1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5759,9 +5893,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1071285134
+--- !u!114 &1071285135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5770,14 +5904,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071285132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
+  m_Script: {fileID: 11500000, guid: 381e0349445504a2095dfa63d9485e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
     name: 'Commander: drone pilot'
     sentences:
-    - Use your skills to take out those cameras
+    - Use your skills to take out the camera
   ShowDialogMoreThanOnce: 0
+  EventName:
+  - camera
+  NeedAllTriggers: 0
+  delay: 1
 --- !u!1 &1072169423
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,7 +6138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1095058216
 MonoBehaviour:
@@ -10429,7 +10567,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1479993646}
   - component: {fileID: 1479993647}
-  m_Layer: 11
+  - component: {fileID: 1479993649}
+  - component: {fileID: 1479993648}
+  m_Layer: 22
   m_Name: Hedgehog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10500,6 +10640,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1479993648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479993645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.047451973, y: -0.047452927}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.75932693, y: 0.75932693}
+  m_EdgeRadius: 0
+--- !u!50 &1479993649
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479993645}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1496946259
 GameObject:
   m_ObjectHideFlags: 0
@@ -10607,7 +10794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1519371893
 MonoBehaviour:
@@ -10624,7 +10811,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: ninja, hacker, drone pilot'
     sentences:
-    - Now all get out asap and undetected
+    - Now all get out asap and undetected via the roof
   ShowDialogMoreThanOnce: 0
 --- !u!1 &1519468166
 GameObject:
@@ -10736,7 +10923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1546691709
 MonoBehaviour:
@@ -15166,6 +15353,7 @@ GameObject:
   - component: {fileID: 1725868184}
   - component: {fileID: 1725868186}
   - component: {fileID: 1725868187}
+  - component: {fileID: 1725868183}
   m_Layer: 21
   m_Name: Bird
   m_TagString: Untagged
@@ -15256,6 +15444,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1725868183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725868179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9a83a16dd58ef19bcb98cddf529e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 9006459981359282341, guid: 37f5aebd99116ad60b09f49b036c5e61,
+    type: 3}
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1836218838}
+        m_MethodName: DisableDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
 --- !u!50 &1725868184
 Rigidbody2D:
   serializedVersion: 4
@@ -15562,7 +15779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1836218838
 MonoBehaviour:
@@ -15579,7 +15796,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: ninja'
     sentences:
-    - Take out that bird
+    - Allright, now take out that bird
   ShowDialogMoreThanOnce: 0
   filter: ninja
   delay: 0
@@ -16112,11 +16329,6 @@ MonoBehaviour:
   firePoint: {fileID: 2118668070}
   bulletPrefab: {fileID: 4203036568170702211, guid: 780bd4f7e396c16e8b3d66491a9cbe90,
     type: 3}
-  damage: 40
-  lineRenderer: {fileID: 1693112933}
-  hitMask:
-    serializedVersion: 2
-    m_Bits: 574464
 --- !u!1 &1920739620
 GameObject:
   m_ObjectHideFlags: 0
@@ -16721,6 +16933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2039108766}
+  - component: {fileID: 2039108767}
   m_Layer: 1
   m_Name: Triggerzones
   m_TagString: Untagged
@@ -16740,8 +16953,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 607273153}
-  - {fileID: 1836218837}
   - {fileID: 1071285133}
+  - {fileID: 1836218837}
+  - {fileID: 476411440}
   - {fileID: 1546691708}
   - {fileID: 606373532}
   - {fileID: 1095058215}
@@ -16749,6 +16963,18 @@ Transform:
   m_Father: {fileID: 65380880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039108767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039108765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 297cc93cd228e631398da40b682b1f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2092562887
 GameObject:
   m_ObjectHideFlags: 0
