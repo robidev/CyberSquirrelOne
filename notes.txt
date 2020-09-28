@@ -1,62 +1,45 @@
 TODO:
-ninja-transformer-takeout->level complete
 
-
-Ninja to take out the bird? (to ensure the drone can work!)->implement tranqualizer dart
-implement camera view/acorn throw interface
+implement camera view/acorn throw interface, better vantage point?
 Go into substation, to take out hedgehog(with help of hacker?)
-discovery of level with drone?
-Primary sabotage: drain oil, and put in acorns
+discovery of level with drone???
+
+Primary sabotage: drain oil, and put in acorns?
 enable HMI by hacker
-flee the scene
-water+vantage points
 
-
-nightfall-atmospheric?
+flee the scene via roof; escape-route? via drone?
+water
+nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
 add more scenery, trees for vantage point
+
+option: have engineer respond to camera???? not in MVP...
 
 objectives:
  avoid bird
  lockpick-minigame
  HMI minigame->disable powerline, so ninja can enter
  tranformer-destruction animation+triggers
- engineer-animation+triggers
  hedgehog-behavior+animation+triggers
+
  triggers near bay/station/telecom-controllers(message: nah, too easy ;) )
-
-is there a way, all squirrels can be positioned exact right, so that puzzle is solved? that you need to figure out the correct sequience, and when triggered, it just resolves
-
-escape-route? via drone?
 
 
 ninja       - cannot enter powerline with power
             + when power is down, he can reach switchyard, but no lockpick skills
-	    + can lure/sneak past hedgehog?? catch22?
-            + trafo is sabotaged by ninja
+	    + can blowdart hedgehog?? catch22?
+            + trafo is sabotaged by ninja+drone pilot
 
 hacker      - cannot climb substation without help from drone
 	    (+ can disable alarm/camera??????)
 	    + can do lockpick, 
 	    + can modify HMI to disable power, (and re-enable after ninja sabotage )
-              (alternative: wait for mechanic to re-enable)
+              (alternative: wait for hedgehog/mechanic to re-enable?)
 
-drone pilot - drone shorts when near switchyard
-            + areal reconneisance? sniper-rifle? catapult?
-	    + can pick-up and drop load to knock out guard/camera? provide lockpick/sabotage supplies?
+drone pilot - drone gets attacked by bird
+            + areal reconneisance?
+	    + can throw acorn to knock out guard/camera
 	    + will provide drone support for hacker transport,  allows hacker to traverse fence and stay undetected
 
-
-
-env:
-Hedgehog    - mans the HMI, has to lured out(how? coffee??)
-Trafo       - needs to be destroyed by ninja
-Nightfall   - happens during intrusion
-
-v Bird        - attack on ninja while on powerline
-v Powerline   - used by ninja to get into substation
-v Door        - needs to be lockpicked by hacker
-v Camera      - when a squirrel is in a hotspot, the squirrel is taken away by van, possible to disable?
-v HMI         - correct switch to enable ninja to traverse powerline, done by hacker, extra: env will change based on switching in HMI
 
 
 Tile:
@@ -72,3 +55,22 @@ day-night transition animation
 
 backlog:
  blow-up (small/big) - https://www.youtube.com/watch?v=oCDsDb7V59o
+
+
+
+
+
+Puzzle1:
+
+keypad, with 4 digit code.
+random each game
+you have 10 tries...
+dots show the amount of correct characters -> add a hint for this, by description, dialog or reading code
+you can modify the circuit (by wire? by input? how to do this robust, without removing the 'fun' or overcomplicating?) -> provide datasheets of IC's as hint
+if you force WP high, you prevent the tries from incrementing
+with infinite tries, you should be able to do it in 25 attempts or so.
+
+
+Puzzle2:
+
+
