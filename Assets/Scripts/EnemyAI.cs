@@ -149,20 +149,24 @@ public class EnemyAI : MonoBehaviour
 
             rb.AddForce(force);
 
+            float facing = ((Vector2)target.position - rb.position).x;
+
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
             if(distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
 
-            if(force.x >= 0.01f)
+            Vector3 e = enemySprite.localScale;
+            if(facing < 0f)
             {
-                enemySprite.localScale = new Vector3(-1f,1f,1f);
+                e.x = Mathf.Abs(e.x) * -1;   
             }
-            else if (force.x <= -0.01f)
+            else if (facing > 0f)
             {
-                enemySprite.localScale = new Vector3(1f,1f,1f);
+                e.x = Mathf.Abs(e.x);
             }
+            enemySprite.localScale = e;
         }
 
         //check if we are attacking a player

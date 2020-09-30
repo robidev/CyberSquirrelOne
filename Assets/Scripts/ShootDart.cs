@@ -25,12 +25,17 @@ public class ShootDart : MonoBehaviour
     }
 
 	public LineRenderer lineRenderer;
-	public LayerMask hitMask;
+	public LayerMask hitMaskOutside;
+	public LayerMask hitMaskInside;
     IEnumerator ShootRay ()
 	{
 		//RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right, 100f, hitMask.value);
-		RaycastHit2D hitInfo = Physics2D.CircleCast(firePoint.position, 10f, Vector2.zero, 0f,hitMask.value);
-		
+		RaycastHit2D hitInfo;
+		if(gameObject.layer == LayerMask.NameToLayer("Player_outside"))
+			hitInfo = Physics2D.CircleCast(firePoint.position, 10f, Vector2.zero, 0f,hitMaskOutside.value);
+		else
+			hitInfo = Physics2D.CircleCast(firePoint.position, 10f, Vector2.zero, 0f,hitMaskInside.value);
+
 		if (hitInfo && (hitInfo.transform.position.x > firePoint.position.x) == character.FacingRight) //in range and facing the player
 		{
 			Debug.Log(hitInfo.transform.name);

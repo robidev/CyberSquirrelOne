@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Puzzle1 : MonoBehaviour
@@ -23,6 +24,7 @@ public class Puzzle1 : MonoBehaviour
     public Sprite granted;
     public Sprite denied;
     public Sprite normal;
+    public UnityEvent UnlockEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,24 @@ public class Puzzle1 : MonoBehaviour
         EEPROM_write(PASSWORD_LENGTH_ADDRESS, 4);
         EEPROM_write(TRIES_ADDRESS, 0);
         SetPassword();
+    }
+
+    private void Awake()
+    {
+        _input = "";
+        KeypadEnabled = true; //enable keypad
+        keypad.sprite = normal;
+        LCD.text = welcomeText;
+        buffer = new int[256];
+        EEPROM_write(PASSWORD_LENGTH_ADDRESS, 4);
+        EEPROM_write(TRIES_ADDRESS, 0);
+        Time.timeScale = 0;
+        SetPassword();
+    }
+    
+    private void Update()
+    {
+        Time.timeScale = 0;
     }
 
     public void SetPassword()
@@ -49,6 +69,16 @@ public class Puzzle1 : MonoBehaviour
 
     public void ButtonInput(string input)
     {
+        if(input == "q")
+        {
+            _input = "";
+            KeypadEnabled = true; //enable keypad
+            keypad.sprite = normal;
+            LCD.text = welcomeText;
+            gameObject.SetActive(false);
+            Time.timeScale = 1;
+            return;
+        }
         if(PuzzleSolved == false && KeypadEnabled == true)//only respond to keypad if puzzle is not solved, and keypad is enabled
         {
             //Debug.Log(input);
@@ -118,9 +148,18 @@ public class Puzzle1 : MonoBehaviour
                     //lock out the puzzle
                     LCD.text = "Too many failed attemts";
                     keypad.sprite = denied; //enable red led
-                    KeypadEnabled = false; //keep keypad disabled
+                    //KeypadEnabled = false; //keep keypad disabled
                     SetPassword(); //reset password
+                    yield return new WaitForSecondsRealtime(1f); 
+
+                    _input = "";
+                    KeypadEnabled = true; //enable keypad
+                    keypad.sprite = normal;
+                    LCD.text = welcomeText;
+                    EEPROM_write(TRIES_ADDRESS, 0);
                     //kick out of lock-puzzle
+                    gameObject.SetActive(false);
+                    Time.timeScale = 1;
                 }
                 yield break;
             }
@@ -131,12 +170,16 @@ public class Puzzle1 : MonoBehaviour
         Debug.Log("code OK");
         LCD.text = "Access granted";
         keypad.sprite = granted; //enable green led
+        PuzzleSolved = true;
+        UnlockEvent.Invoke();
         yield return new WaitForSecondsRealtime(1f);
 
         keypad.sprite = normal; //disable leds
         EEPROM_write(TRIES_ADDRESS, 0); //reset tries
         KeypadEnabled = false; //keep keypad disabled
-        PuzzleSolved = true;
+        yield return new WaitForSecondsRealtime(1f);
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private int EEPROM_read(int address)
@@ -150,5 +193,10 @@ public class Puzzle1 : MonoBehaviour
         {
             buffer[address % 256] = value;
         }
+    }
+
+    public bool IsPuzzleSolved()
+    {
+        return PuzzleSolved;
     }
 }

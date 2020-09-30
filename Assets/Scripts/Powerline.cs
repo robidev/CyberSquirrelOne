@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Powerline : MonoBehaviour
 {
-    private bool _isPowered = true;
+    public bool _isPowered = true;
     public UnityEvent m_PowerLossEvent;
     public bool isPowered 
     {
