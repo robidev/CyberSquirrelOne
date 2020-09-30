@@ -1,16 +1,17 @@
 TODO:
 
-implement camera view/acorn throw interface, better vantage point?
-Go into substation, to take out hedgehog(with help of hacker?)
-discovery of level with drone???
-
 Primary sabotage: drain oil, and put in acorns?
 enable HMI by hacker
 
 flee the scene via roof; escape-route? via drone?
+
+adding:
+HMI puzzle
+implement camera view/acorn throw interface, better vantage point by trees?
+discovery of level with drone???
 water
 nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
-add more scenery, trees for vantage point
+add more scenery
 
 option: have engineer respond to camera???? not in MVP...
 
@@ -61,16 +62,17 @@ backlog:
 
 
 Puzzle1:
-
-keypad, with 4 digit code.
-random each game
-you have 10 tries...
-dots show the amount of correct characters -> add a hint for this, by description, dialog or reading code
 you can modify the circuit (by wire? by input? how to do this robust, without removing the 'fun' or overcomplicating?) -> provide datasheets of IC's as hint
 if you force WP high, you prevent the tries from incrementing
 with infinite tries, you should be able to do it in 25 attempts or so.
 
 
 Puzzle2:
+????
 
+trafo sabotage
+???
+
+flee scenario
+???
 
