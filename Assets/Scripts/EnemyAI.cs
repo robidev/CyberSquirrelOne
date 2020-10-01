@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float speed = 800f;
     public float nextWaypointDistance = 1.2f;
     public Transform enemySprite;
+    public Animator animator;
 
     Transform target;
 
@@ -125,11 +126,27 @@ public class EnemyAI : MonoBehaviour
 
     void OnPathComplete(Path p)
     {
-        if(!p.error)
+        if(!p.error && p.vectorPath.Count > 1)
         {
+            reachedEndofPath = false;
             path = p;
             currentWaypoint = 0;
+            //Debug.Log(name + " recalc");
         }
+    }
+    //overridable, as different enemies animate movement differently
+    public virtual void _direction(Vector2 force, float facing)
+    {
+        Vector3 e = enemySprite.localScale;
+        if(force.x >= 0.01f)
+        {
+            e.x = Mathf.Abs(e.x) * -1;
+        }
+        else if (force.x <= -0.01f)
+        {
+            e.x = Mathf.Abs(e.x);
+        }
+        enemySprite.localScale = e;
     }
     // Update is called once per frame
     void Update()
@@ -137,11 +154,7 @@ public class EnemyAI : MonoBehaviour
         if(path == null)
             return;
 
-        if(currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndofPath = true;
-        } 
-        else
+        if(currentWaypoint < path.vectorPath.Count)
         {
             reachedEndofPath = false;
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -150,33 +163,29 @@ public class EnemyAI : MonoBehaviour
             rb.AddForce(force);
 
             float facing = ((Vector2)target.position - rb.position).x;
+            _direction(force, facing);
 
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
             if(distance < nextWaypointDistance)
             {
                 currentWaypoint++;
             }
-
-            Vector3 e = enemySprite.localScale;
-            if(facing < 0f)
-            {
-                e.x = Mathf.Abs(e.x) * -1;   
-            }
-            else if (facing > 0f)
-            {
-                e.x = Mathf.Abs(e.x);
-            }
-            enemySprite.localScale = e;
         }
-
+        else
+        {
+            //Debug.Log(name + " reached");
+            reachedEndofPath = true;
+            path = null;
+        }
         //check if we are attacking a player
         if(patroling == false)
         {
-            if(PathUtilities.IsPathPossible(path.path) == false || reachedEndofPath == true)
+            if(reachedEndofPath == true || PathUtilities.IsPathPossible(path.path) == false)
             {
                 //Debug.Log("reached or gave up");
                 target = PatrolWaypoints[currentPatrolWaypoint];
                 patroling = true;
+                seeker.StartPath(rb.position,target.position, OnPathComplete);
             }
         }
         else //if we are patroling
@@ -184,13 +193,17 @@ public class EnemyAI : MonoBehaviour
             //if we reached the waypoint, move to the next
             if(reachedEndofPath == true)
             {
+                
                 //patrol waypoints
                 currentPatrolWaypoint++;
                 if(currentPatrolWaypoint >= PatrolWaypoints.Length)
                 {
                     currentPatrolWaypoint = 0;
                 }
+                //Debug.Log(name + " patrolwaypoint: " + currentPatrolWaypoint.ToString());
+
                 target = PatrolWaypoints[currentPatrolWaypoint];
+                seeker.StartPath(rb.position,target.position, OnPathComplete);
             }
         }
     }
