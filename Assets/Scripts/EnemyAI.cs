@@ -175,7 +175,7 @@ public class EnemyAI : MonoBehaviour
         {
             //Debug.Log(name + " reached");
             reachedEndofPath = true;
-            path = null;
+            path = null;//this is necesary to prevent reachedEndofPath from retriggering
         }
         //check if we are attacking a player
         if(patroling == false)

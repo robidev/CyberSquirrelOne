@@ -1,17 +1,20 @@
 TODO:
-
-Primary sabotage: drain oil, and put in acorns?
-enable HMI by hacker
-
-flee the scene via roof; escape-route? via drone?
+finish puzzle1
+make puzzle2 (level1_end)
+add sound
+improve sprites of squirrels
+limit switching or switch for the player based on triggers
+implement ninja japanese dialog(explain why he is on the other side of the level)
+tweak the storytelling
+tweak camera behaviour/timing
 
 adding:
-HMI puzzle
+implement zoom in respect to needed view-distance(further for drone or acorn, maybe also ninja) (script camera-scale)
 implement camera view/acorn throw interface, better vantage point by trees?
-discovery of level with drone???
 water
 nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
 add more scenery
+
 
 option: have engineer respond to camera???? not in MVP...
 
@@ -58,9 +61,6 @@ backlog:
  blow-up (small/big) - https://www.youtube.com/watch?v=oCDsDb7V59o
 
 
-
-
-
 Puzzle1:
 you can modify the circuit (by wire? by input? how to do this robust, without removing the 'fun' or overcomplicating?) -> provide datasheets of IC's as hint
 if you force WP high, you prevent the tries from incrementing
@@ -70,9 +70,4 @@ with infinite tries, you should be able to do it in 25 attempts or so.
 Puzzle2:
 ????
 
-trafo sabotage
-???
-
-flee scenario
-???
 

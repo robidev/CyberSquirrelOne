@@ -251,6 +251,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18514771}
   m_CullTransparentMesh: 0
+--- !u!1 &25497759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25497761}
+  - component: {fileID: 25497760}
+  m_Layer: 1
+  m_Name: NinjaOverFence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &25497760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25497759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: ninja'
+    sentences:
+    - Ninja, the power is down, use your grapling hook to get over the fence, and
+      take out that bird!
+  ShowDialogMoreThanOnce: 0
+--- !u!4 &25497761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25497759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &29361629
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,9 +609,8 @@ MonoBehaviour:
     name: 'Commander: drone pilot'
     sentences:
     - Hello operative, your task is to take out this substation. It will require
-      the skills of all three of you to complete this task.
-    - First task is to get the hacker over the fence, but do not let the camera spot
-      you!
+      the skills of all of you to complete this task.
+    - First task is to use the drone to recon the area
   ShowDialogMoreThanOnce: 0
 --- !u!1 &69042768
 GameObject:
@@ -645,7 +693,7 @@ Transform:
   - {fileID: 1306634982}
   - {fileID: 690764014}
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83826198
 GameObject:
@@ -748,6 +796,85 @@ Transform:
   m_Father: {fileID: 1825977508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &98621536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98621537}
+  - component: {fileID: 98621538}
+  - component: {fileID: 98621539}
+  m_Layer: 1
+  m_Name: NextLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98621537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98621536}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &98621538
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98621536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.906148, y: 8.21679}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6325853, y: 4.190981}
+  m_EdgeRadius: 0
+--- !u!114 &98621539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98621536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfb9d7212b4520f88de40ac2c6cf177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter: hacker
+  layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  requiredConditions:
+  - BirdSleeping
+  - HedgehogSleeping
+  - CamOff
+  - PoleCamOff
 --- !u!1 &101934305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,8 +1496,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142962749}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 10}
+  m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
+  m_LocalPosition: {x: 0.08462344, y: -1, z: 9.999644}
   m_LocalScale: {x: 12, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -1667,7 +1794,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.35, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &191466940
 SpriteRenderer:
@@ -1898,7 +2025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232771793
 GameObject:
@@ -2113,7 +2240,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.25, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &242529921
 PolygonCollider2D:
@@ -2233,7 +2360,7 @@ Transform:
   m_Children:
   - {fileID: 343941908}
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276409756
 GameObject:
@@ -2245,6 +2372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 276409758}
   - component: {fileID: 276409757}
+  - component: {fileID: 276409759}
   m_Layer: 15
   m_Name: building outside
   m_TagString: Untagged
@@ -2259,7 +2387,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276409756}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2316,8 +2444,34 @@ Transform:
   - {fileID: 2141347791}
   - {fileID: 1452028166}
   m_Father: {fileID: 703315112}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &276409759
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276409756}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.83342266}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 4.16}
+    newSize: {x: 8, y: 4.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 1.8007116}
+  m_EdgeRadius: 0
 --- !u!1 &285816467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2707,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &339833570
 GameObject:
@@ -3040,7 +3194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &476411441
 MonoBehaviour:
@@ -3142,7 +3296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557829565
 GameObject:
@@ -3174,54 +3328,6 @@ Transform:
   m_Father: {fileID: 1380065293}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &606373531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 606373532}
-  - component: {fileID: 606373533}
-  m_Layer: 1
-  m_Name: SabotageSubstation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &606373532
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606373531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2039108766}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &606373533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606373531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 'Commander: ninja, hacker, drone pilot'
-    sentences:
-    - work together to sabotage that transformer (take out power, do equipment)
-  ShowDialogMoreThanOnce: 0
 --- !u!1 &607273152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,7 +3340,7 @@ GameObject:
   - component: {fileID: 607273155}
   - component: {fileID: 607273154}
   m_Layer: 1
-  m_Name: HackerOverFence
+  m_Name: Hackdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3252,7 +3358,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &607273154
 MonoBehaviour:
@@ -3269,11 +3375,13 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: hacker'
     sentences:
-    - Now Operative, lockpick that door, and hack the HMI to disable the powerline
-      so that Ninja can enter
-    - Watch out for the dome-camera and the bird patroling the area
+    - Now Operative, hack that door, and hack the HMI to disable the powerline so
+      that Ninja can enter
   ShowDialogMoreThanOnce: 0
   filter: hacker
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
   delay: 0
 --- !u!61 &607273155
 BoxCollider2D:
@@ -3732,7 +3840,7 @@ Transform:
   m_Children:
   - {fileID: 624771050}
   m_Father: {fileID: 703315112}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &687494904
 BoxCollider2D:
@@ -3784,6 +3892,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98621539}
+        m_MethodName: SetCondition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CamOff
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &687494906
@@ -3934,7 +4053,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1567682089}
-  - {fileID: 1148500120}
   - {fileID: 242529920}
   - {fileID: 1519468168}
   - {fileID: 1181284093}
@@ -3963,7 +4081,6 @@ GameObject:
   - component: {fileID: 711342843}
   - component: {fileID: 711342845}
   - component: {fileID: 711342846}
-  - component: {fileID: 711342847}
   m_Layer: 14
   m_Name: cables
   m_TagString: Untagged
@@ -4585,11 +4702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bd82a90983daae6ba9a1c7666b0490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPowered: 0
+  _isPowered: 1
   m_PowerLossEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 711342847}
+      - m_Target: {fileID: 25497760}
         m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
@@ -4600,24 +4717,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &711342847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711342840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 'Commander: ninja'
-    sentences:
-    - Ninja, the power is down, use your grapling hook to get over the fence, and
-      take out that bird!
-  ShowDialogMoreThanOnce: 0
 --- !u!1 &712690405
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,7 +5358,7 @@ Transform:
   m_Children:
   - {fileID: 2132905696}
   m_Father: {fileID: 703315112}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &801607356
 BoxCollider2D:
@@ -5332,6 +5431,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98621539}
+        m_MethodName: SetCondition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PoleCamOff
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &801607359
@@ -5934,6 +6044,86 @@ Transform:
   m_Father: {fileID: 1380065293}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &864055125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864055126}
+  - component: {fileID: 864055127}
+  - component: {fileID: 864055128}
+  m_Layer: 1
+  m_Name: BirdWarning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &864055126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864055125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &864055127
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864055125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 29.76929, y: 32.761223}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.388031, y: 78.59877}
+  m_EdgeRadius: 0
+--- !u!114 &864055128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864055125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859bd1688c0ae6150b180b38790d2c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: drone'
+    sentences:
+    - Watch out for birds, they will take out that drone in no-time!
+  ShowDialogMoreThanOnce: 0
+  filter: drone
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  delay: 1
 --- !u!1 &874113679
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,6 +6202,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874113679}
   m_CullTransparentMesh: 0
+--- !u!1 &897568360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897568361}
+  - component: {fileID: 897568364}
+  - component: {fileID: 897568363}
+  - component: {fileID: 897568362}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &897568361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897568360}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1000398612}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &897568362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897568360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1034a58f50f818a029bc52f73595ca4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lUnityPlaneSize: 30
+--- !u!23 &897568363
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897568360}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &897568364
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897568360}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &906777599
 GameObject:
   m_ObjectHideFlags: 0
@@ -6195,7 +6478,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.25, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &945418196
 BoxCollider2D:
@@ -6492,8 +6775,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.19, y: -0.82, z: 10}
+  m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
+  m_LocalPosition: {x: -50.103573, y: -0.8199997, z: 10.424375}
   m_LocalScale: {x: 10, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -6677,6 +6960,7 @@ Transform:
   - {fileID: 142962750}
   - {fileID: 981602204}
   - {fileID: 1228313659}
+  - {fileID: 897568361}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7132,7 +7416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1071285135
 MonoBehaviour:
@@ -7377,7 +7661,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1095058216
 MonoBehaviour:
@@ -7394,7 +7678,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: hacker'
     sentences:
-    - sabotage the HMI, and let the substation self-destruct
+    - The hedgehog is out. Sabotage the HMI, and let the substation self-destruct
   ShowDialogMoreThanOnce: 0
 --- !u!1 &1119753234
 GameObject:
@@ -7476,7 +7760,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.25, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1119753237
 BoxCollider2D:
@@ -7534,11 +7818,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148500119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.72, y: -1.12, z: -3}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 1}
   m_Children: []
-  m_Father: {fileID: 703315112}
-  m_RootOrder: 1
+  m_Father: {fileID: 1452028166}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &1148500121
 CompositeCollider2D:
@@ -9426,7 +9710,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1149212262
 BoxCollider2D:
@@ -9664,7 +9948,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.25, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1181284094
 BoxCollider2D:
@@ -9917,8 +10201,7 @@ GameObject:
   - component: {fileID: 1218363213}
   - component: {fileID: 1218363214}
   - component: {fileID: 1218363215}
-  - component: {fileID: 1218363216}
-  m_Layer: 10
+  m_Layer: 15
   m_Name: drone
   m_TagString: drone
   m_Icon: {fileID: 0}
@@ -10089,25 +10372,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   m_MovementSmoothing: 0.05
---- !u!114 &1218363216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1218363209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859bd1688c0ae6150b180b38790d2c21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 'Commander: drone'
-    sentences:
-    - Watch out for birds, they will take out that drone in no-time!
-  ShowDialogMoreThanOnce: 0
-  filter: hacker
-  delay: 1
 --- !u!1 &1220281033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10187,7 +10451,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225327439
 GameObject:
@@ -10345,8 +10609,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -77.4, y: -2.5, z: 10}
+  m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
+  m_LocalPosition: {x: -77.31261, y: -2.4999998, z: 10.654639}
   m_LocalScale: {x: 5, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -10445,7 +10709,7 @@ Transform:
   m_Children:
   - {fileID: 798599736}
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243422338
 GameObject:
@@ -10638,7 +10902,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245168691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -119.8, y: 0.78000057, z: -10}
+  m_LocalPosition: {x: -228.1, y: 0.78000057, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1615077065}
@@ -11117,7 +11381,7 @@ Transform:
   m_LocalScale: {x: 6.35, y: 6.5, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1331037902
 SpriteRenderer:
@@ -11556,7 +11820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380065285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -119.8, y: -3.18, z: 0}
+  m_LocalPosition: {x: -228.1, y: -3.18, z: 0}
   m_LocalScale: {x: 3.290709, y: 3.290939, z: 1}
   m_Children:
   - {fileID: 352835271}
@@ -11585,7 +11849,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -226.6783, y: 1.2469511}
   m_AutoConfigureDistance: 1
-  m_Distance: 106.64007
+  m_Distance: 6.1620784
   m_MaxDistanceOnly: 0
 --- !u!114 &1380065295
 MonoBehaviour:
@@ -11930,7 +12194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -74.81199, y: 13.375999}
+  m_Offset: {x: -71.534996, y: 13.375999}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11941,7 +12205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 67.692444, y: 36.446365}
+  m_Size: {x: 61.13846, y: 36.446365}
   m_EdgeRadius: 0
 --- !u!114 &1419567637
 MonoBehaviour:
@@ -12040,6 +12304,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1148500120}
   - {fileID: 1149212261}
   - {fileID: 69042770}
   - {fileID: 1228827294}
@@ -12327,7 +12592,7 @@ MonoBehaviour:
   deathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1546691709}
+      - m_Target: {fileID: 1546691710}
         m_MethodName: DisableDialogue
         m_Mode: 1
         m_Arguments:
@@ -12338,7 +12603,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 606373533}
+      - m_Target: {fileID: 1095058216}
         m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
@@ -12347,6 +12612,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98621539}
+        m_MethodName: SetCondition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: HedgehogSleeping
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1479993652
@@ -12495,54 +12771,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496946259}
   m_CullTransparentMesh: 0
---- !u!1 &1519371891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1519371892}
-  - component: {fileID: 1519371893}
-  m_Layer: 1
-  m_Name: GetOut
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1519371892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519371891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2039108766}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1519371893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519371891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 'Commander: ninja, hacker, drone pilot'
-    sentences:
-    - Now all get out asap and undetected via the roof
-  ShowDialogMoreThanOnce: 0
 --- !u!1 &1519468166
 GameObject:
   m_ObjectHideFlags: 0
@@ -12622,7 +12850,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.355892, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546691707
 GameObject:
@@ -12634,6 +12862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546691708}
   - component: {fileID: 1546691709}
+  - component: {fileID: 1546691710}
   m_Layer: 1
   m_Name: TakeOutHedgehog
   m_TagString: Untagged
@@ -12653,9 +12882,35 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1546691709
+--- !u!61 &1546691709
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546691707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -33.180626, y: -2.33428}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.999359, y: 7.5062065}
+  m_EdgeRadius: 0
+--- !u!114 &1546691710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12664,14 +12919,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1546691707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
+  m_Script: {fileID: 11500000, guid: 859bd1688c0ae6150b180b38790d2c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 'Commander: ninja, hacker'
+    name: 'Commander: ninja'
     sentences:
     - Use your skills to tranqulize that hedgehog
   ShowDialogMoreThanOnce: 0
+  filter: ninja
+  layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  delay: 0
 --- !u!1 &1557225716
 GameObject:
   m_ObjectHideFlags: 0
@@ -16195,7 +16455,7 @@ Transform:
   m_Children:
   - {fileID: 962708411}
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1582572192
 SpriteRenderer:
@@ -16398,7 +16658,7 @@ MonoBehaviour:
   receiver: {fileID: 1725868179}
   layer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 32768
   _tag: drone
 --- !u!1 &1590813326
 GameObject:
@@ -16430,7 +16690,7 @@ Transform:
   m_Children:
   - {fileID: 2102806927}
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1590813328
 SpriteRenderer:
@@ -17233,8 +17493,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 0
-      - m_Target: {fileID: 1546691709}
-        m_MethodName: TriggerDialogue
+      - m_Target: {fileID: 864055128}
+        m_MethodName: DisableDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17242,6 +17502,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98621539}
+        m_MethodName: SetCondition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BirdSleeping
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!50 &1725868184
@@ -17543,7 +17814,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784716527
 GameObject:
@@ -17761,7 +18032,7 @@ GameObject:
   - component: {fileID: 1836218839}
   - component: {fileID: 1836218838}
   m_Layer: 1
-  m_Name: NinjaOverFence
+  m_Name: TakeOutBird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17779,7 +18050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1836218838
 MonoBehaviour:
@@ -17796,9 +18067,12 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: ninja'
     sentences:
-    - Allright, now take out that bird
+    - Take out that bird patroling the area
   ShowDialogMoreThanOnce: 0
   filter: ninja
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
   delay: 0
 --- !u!61 &1836218839
 BoxCollider2D:
@@ -18542,7 +18816,7 @@ Transform:
   m_LocalScale: {x: 6.25, y: 6.25, z: 1}
   m_Children: []
   m_Father: {fileID: 703315112}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1920739623
 PolygonCollider2D:
@@ -18661,7 +18935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946501488
 GameObject:
@@ -19248,14 +19522,16 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 864055126}
+  - {fileID: 2074047588}
   - {fileID: 607273153}
   - {fileID: 1071285133}
+  - {fileID: 25497761}
   - {fileID: 1836218837}
   - {fileID: 476411440}
   - {fileID: 1546691708}
-  - {fileID: 606373532}
   - {fileID: 1095058215}
-  - {fileID: 1519371892}
+  - {fileID: 98621537}
   m_Father: {fileID: 65380880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19372,6 +19648,87 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2074047587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074047588}
+  - component: {fileID: 2074047590}
+  - component: {fileID: 2074047589}
+  m_Layer: 1
+  m_Name: HackerOverFence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074047588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074047587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074047589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074047587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859bd1688c0ae6150b180b38790d2c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: drone'
+    sentences:
+    - Now you know the area, get the hacker over the fence, but do not let the camera
+      spot you!
+  ShowDialogMoreThanOnce: 0
+  filter: drone
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+  delay: 0
+--- !u!61 &2074047590
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074047587}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -62.762093, y: 1.6211014}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 41.39714, y: 15.671341}
+  m_EdgeRadius: 0
 --- !u!1 &2092562887
 GameObject:
   m_ObjectHideFlags: 0
@@ -19697,7 +20054,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2121720770
 MonoBehaviour:

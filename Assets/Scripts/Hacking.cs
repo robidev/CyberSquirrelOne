@@ -20,7 +20,8 @@ public class Hacking : MonoBehaviour
             hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
             if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == false) //we are in front of an open door
             { 
-                Debug.Log("Door hacked!");
+                //Debug.Log("Door hacked!");
+                //we try to open the door, and start the hacking game
                 hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen = true;
             }	
             RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.up, 1);
@@ -29,7 +30,7 @@ public class Hacking : MonoBehaviour
                 RaycastHit2D hit = hits[i];
                 if(hit.collider != null && hit.collider.gameObject.tag == "HMI") //we are at an HMI
                 { 
-                    Debug.Log("HMI hacked!");
+                    //Debug.Log("HMI hacked!");
                     hit.collider.gameObject.GetComponent<HMI>().ToggleHacked();
                 }	
             }	

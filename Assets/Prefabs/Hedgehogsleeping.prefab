@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 336185332916930884}
   - component: {fileID: 4268223713543092223}
   - component: {fileID: -5931684953980862940}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Hedgehogsleeping
   m_TagString: Untagged
   m_Icon: {fileID: 0}
