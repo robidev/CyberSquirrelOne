@@ -6,7 +6,9 @@ improve sprites of squirrels
 limit switching or switch for the player based on triggers
 implement ninja japanese dialog(explain why he is on the other side of the level)
 tweak the storytelling
-tweak camera behaviour/timing
+tweak surveillance-camera behaviour/timing
+provide control-hints with 'h'
+make control preference editable
 
 adding:
 implement zoom in respect to needed view-distance(further for drone or acorn, maybe also ninja) (script camera-scale)
