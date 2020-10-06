@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour {
 				crouchKey = false;
 			}
 			//enter key
-			if (Input.GetButtonDown("Submit")) {
+			if (Input.GetButtonDown("Open")) {
 				hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
 				if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == true) //we are in front of an open door
 				{ 

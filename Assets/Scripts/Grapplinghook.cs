@@ -26,7 +26,7 @@ public class Grapplinghook : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 			
-		if (Input.GetKeyDown (KeyCode.E) && player.selected == true && gameObject.layer == LayerMask.NameToLayer("Player_outside")) {
+		if (Input.GetButtonDown ("Action1") && player.selected == true && gameObject.layer == LayerMask.NameToLayer("Player_outside")) {
 			//test for object to grapple
 			Collider2D coll = null;
 			Vector2 ppoint;
@@ -93,12 +93,12 @@ public class Grapplinghook : MonoBehaviour {
 		}
 		
 		//continuous update during e pressed
-		if (Input.GetKey (KeyCode.E) && player.selected == true) {
+		if (Input.GetButton ("Action1") && player.selected == true) {
 			line.SetPosition(0,transform.position);
 		}
 			
 		//remove line on release
-		if ((Input.GetKeyUp (KeyCode.E) || player.selected != true) && isElectrocuted == false) {
+		if ((Input.GetButtonUp ("Action1") || player.selected != true) && isElectrocuted == false) {
 			joint.enabled=false;
 			line.enabled=false;
 			isElectrocuted = false;

@@ -18,8 +18,9 @@ public class ShootDart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetKeyDown (KeyCode.T) && player.selected == true)
+		if (Input.GetButtonDown ("Action2") && player.selected == true)
 		{
+			//Debug.Log("piew");
             StartCoroutine(ShootRay());
 		}
     }

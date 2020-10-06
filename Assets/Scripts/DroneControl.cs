@@ -21,7 +21,7 @@ public class DroneControl : MonoBehaviour
     {
         if(player.selected == true)
         {
-            if (Input.GetKeyDown (KeyCode.E))
+            if (Input.GetButtonDown ("Action1"))
             {
                 drone_control = !drone_control;
                 justSelected = true;//force update

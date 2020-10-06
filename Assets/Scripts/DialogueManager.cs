@@ -26,6 +26,14 @@ public class DialogueManager : MonoBehaviour {
 			m_StartDialogsEvent.Invoke();
 	}
 
+	void Update()
+	{
+		if(Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.T) )//Input.anyKey)//
+		{
+			DisplayNextSentence ();
+		}
+	}
+
 	public void StartDialogue (Dialogue dialogue)
 	{
 		//animator.SetBool("IsOpen", true);

@@ -31,7 +31,7 @@ public class GlobalControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab) && tabPress == false) {
+        if(Input.GetButtonDown ("Tab") && tabPress == false) {
           if(characters > selected + 1) { selected ++; }
           else { selected = 0; }
 
@@ -39,11 +39,11 @@ public class GlobalControl : MonoBehaviour
           tabPress = true;
         }
         
-        if(Input.GetKeyUp(KeyCode.Tab) && tabPress == true) {
+        if(Input.GetButtonDown ("Tab") && tabPress == true) {
           tabPress = false;
         }
 
-        if(Input.GetKeyUp(KeyCode.Escape) ) {
+        if(Input.GetButtonDown ("Cancel") ) {
           GamePause();
         }
 
