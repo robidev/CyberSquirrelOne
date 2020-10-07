@@ -1,17 +1,16 @@
 TODO:
-finish puzzle1
-make puzzle2 (level1_end)
+finish puzzle1(write firmware, add schema, pdf's, zoom to hw-view, maybe implement proper fault behavior)
 add sound
-improve sprites of squirrels
+provide control-hints with 'h'
+
+make puzzle2 (level1_end)
 limit switching or switch for the player based on triggers
 implement ninja japanese dialog(explain why he is on the other side of the level)
 tweak the storytelling
 tweak surveillance-camera behaviour/timing
-provide control-hints with 'h'
-make control preference editable
+
 
 adding:
-implement zoom in respect to needed view-distance(further for drone or acorn, maybe also ninja) (script camera-scale)
 implement camera view/acorn throw interface, better vantage point by trees?
 water
 nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
@@ -71,5 +70,8 @@ with infinite tries, you should be able to do it in 25 attempts or so.
 
 Puzzle2:
 ????
+top view
+switch components, and ensure protection does not work correctly, so that 5 trafo's destruct
+part switchyard, part protection-bays
 
 
