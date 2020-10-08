@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Puzzle1 : MonoBehaviour
 {
-    //TODO: buzzer?
     public Text LCD;
     private string _input = "";
     private string welcomeText = "Enter code:";
@@ -80,7 +79,10 @@ public class Puzzle1 : MonoBehaviour
         }
         string overrride = Keypad_override_continuous();
         if(overrride.Length > 0)
+        {
+            //Debug.Log(overrride);
             ButtonInput(overrride);
+        }
     }
 
     public void SetPassword()
@@ -232,10 +234,13 @@ public class Puzzle1 : MonoBehaviour
 
     private int EEPROM_read(int address)
     {
-        //TODO: add address pins
+        int AD0 = modifyChip.getState(41);
+        int AD1 = modifyChip.getState(42);
+        int AD2 = modifyChip.getState(43);
+
         int SDA = modifyChip.getState(45);
         int SCL = modifyChip.getState(46);
-        if(SCL != 0 || SDA == 2)
+        if(SCL != 0 || SDA == 2 || AD0 == 1 || AD1 == 1 || AD2 == 1)
             return 0;
         if(SDA == 1)
             return 0xff;
@@ -244,10 +249,13 @@ public class Puzzle1 : MonoBehaviour
     }
     private void EEPROM_write(int address, int value)
     {
-        //TODO: add address pins
+        int AD0 = modifyChip.getState(41);
+        int AD1 = modifyChip.getState(42);
+        int AD2 = modifyChip.getState(43);
+
         int SDA = modifyChip.getState(45);
         int SCL = modifyChip.getState(46);
-        if(SCL != 0 || SDA != 0)
+        if(SCL != 0 || SDA != 0 || AD0 == 1 || AD1 == 1 || AD2 == 1)
             return;
 
         int EEPROM_WP_enable = modifyChip.getState(47);
@@ -357,7 +365,23 @@ public class Puzzle1 : MonoBehaviour
             green = false;
             red = false;
         }
+    }
+    void Buzzer(bool on)
+    {
+        int state = modifyChip.getState(17); // buzzer
+        if(state > 0){
+            if(state == 1) on = true;
+            else on = false;
+        }
 
+        if(on == true)
+        {
+            //play looping sound
+        }
+        else
+        {
+            //stop looping sound
+        }
     }
     public bool IsPuzzleSolved()
     {
@@ -368,8 +392,21 @@ public class Puzzle1 : MonoBehaviour
     {
         switch(pin)
         {
+            case 12:
+            case 13:
+                if(modifyChip.getState(12) == 0 && modifyChip.getState(13) == 0)
+                {
+                    LCD_write("Enter code:",true);
+                    KeypadEnabled = true;
+                }
+                else
+                {
+                    LCD_write("Bus error!", true);
+                    _input = "";
+                    KeypadEnabled = false;
+                }              
+            break;
             case 21:
-                Debug.Log(pin);
                 if(modifyChip.getState(21) == 2)
                     over1 = true;
                 else
@@ -387,6 +424,9 @@ public class Puzzle1 : MonoBehaviour
                 else
                     over3 = false;
             break;
+            case 17:
+                Buzzer(false);
+            break;
             case 38:
             case 39:
                 bool red;
@@ -394,6 +434,7 @@ public class Puzzle1 : MonoBehaviour
                 LED_get(out green, out red);
                 LED_set(green,red);
             break;
+            
             default:
             break;
         }
@@ -500,7 +541,7 @@ public class Puzzle1 : MonoBehaviour
 
     public void OpenFile(string name)
     {
-        Debug.Log("file://" + Application.dataPath + "/" + name);
+        //Debug.Log("file://" + Application.dataPath + "/" + name);
         Application.OpenURL("file://" + Application.dataPath + "/" + name);
     }
 }
