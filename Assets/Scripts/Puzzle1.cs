@@ -26,6 +26,9 @@ public class Puzzle1 : MonoBehaviour
     public Sprite normal;
     public UnityEvent UnlockEvent;
     public ModifyChip modifyChip;
+    bool over1 = false;
+    bool over2 = false;
+    bool over3 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +78,9 @@ public class Puzzle1 : MonoBehaviour
                 }
             }
         }
+        string overrride = Keypad_override_continuous();
+        if(overrride.Length > 0)
+            ButtonInput(overrride);
     }
 
     public void SetPassword()
@@ -89,48 +95,51 @@ public class Puzzle1 : MonoBehaviour
         Debug.Log(password);
     }
 
-    public void ButtonInput(string input)
+    public void ButtonInput(string input_string)
     {
-        //
-        //scancode override logic
-        //
-        if(input == "q")
+        input_string = Keypad_override(input_string);
+
+        foreach(char input_char in input_string)
         {
-            _input = "";
-            KeypadEnabled = true; //enable keypad
-            LED_set(false,false);
-            LCD_write(welcomeText,true);
-            gameObject.SetActive(false);
-            Time.timeScale = 1;
-            return;
-        }
-        if(PuzzleSolved == false && KeypadEnabled == true)//only respond to keypad if puzzle is not solved, and keypad is enabled
-        {
-            //Debug.Log(input);
-            if(input == "x") //backspace
+            string input = input_char.ToString();
+            if(input == "q")
             {
-                //Debug.Log("rem: " + welcomeText.Length);
-                if(LCD_length() > welcomeText.Length)
-                {
-                    LCD_backspace();
-                    _input = _input.Remove(_input.Length-1);
-                }
+                _input = "";
+                KeypadEnabled = true; //enable keypad
+                LED_set(false,false);
+                LCD_write(welcomeText,true);
+                gameObject.SetActive(false);
+                Time.timeScale = 1;
+                return;
             }
-            else //if input is ok or a number
+            if(PuzzleSolved == false && KeypadEnabled == true)//only respond to keypad if puzzle is not solved, and keypad is enabled
             {
-                int passwordLength = EEPROM_read(PASSWORD_LENGTH_ADDRESS);
-                if(input != "v" && LCD_length() < welcomeText.Length + passwordLength) // add number if its below password length
+                //Debug.Log(input);
+                if(input == "x") //backspace
                 {
-                    LCD_write("*",false);
-                    _input += input;
-                }
-                if(input == "v" ) //pressed ok, so check password
-                {
-                    if(LCD_length() < welcomeText.Length + passwordLength) //pad the password if it is not matching length
+                    //Debug.Log("rem: " + welcomeText.Length);
+                    if(LCD_length() > welcomeText.Length)
                     {
-                        _input = _input.PadRight(passwordLength,'A');//pad it with character A, as it will never match a code
+                        LCD_backspace();
+                        _input = _input.Remove(_input.Length-1);
                     }
-                    StartCoroutine("CheckPassword");//call checking coroutine
+                }
+                else //if input is ok or a number
+                {
+                    int passwordLength = EEPROM_read(PASSWORD_LENGTH_ADDRESS);
+                    if(input != "v" && LCD_length() < welcomeText.Length + passwordLength) // add number if its below password length
+                    {
+                        LCD_write("*",false);
+                        _input += input;
+                    }
+                    if(input == "v" ) //pressed ok, so check password
+                    {
+                        if(LCD_length() < welcomeText.Length + passwordLength) //pad the password if it is not matching length
+                        {
+                            _input = _input.PadRight(passwordLength,'A');//pad it with character A, as it will never match a code
+                        }
+                        StartCoroutine("CheckPassword");//call checking coroutine
+                    }
                 }
             }
         }
@@ -359,6 +368,25 @@ public class Puzzle1 : MonoBehaviour
     {
         switch(pin)
         {
+            case 21:
+                Debug.Log(pin);
+                if(modifyChip.getState(21) == 2)
+                    over1 = true;
+                else
+                    over1 = false;
+            break;
+            case 22:
+                if(modifyChip.getState(22) == 2)
+                    over2 = true;
+                else
+                    over2 = false;
+            break;
+            case 23:
+                if(modifyChip.getState(23) == 2)
+                    over3 = true;
+                else
+                    over3 = false;
+            break;
             case 38:
             case 39:
                 bool red;
@@ -369,5 +397,110 @@ public class Puzzle1 : MonoBehaviour
             default:
             break;
         }
+    }
+
+    string Keypad_override(string value)
+    {
+        int c1 = modifyChip.getState(21);
+        int c2 = modifyChip.getState(22);
+        int c3 = modifyChip.getState(23);
+
+        int r1 = modifyChip.getState(25);
+        int r2 = modifyChip.getState(26);
+        int r3 = modifyChip.getState(27);
+        int r4 = modifyChip.getState(28);
+
+        //row: output, if high, it is not enabled, low is on
+        //column: input, is read. if high, button is not pressed
+        if(c1 == 1)//forced high
+        {   //1,4,7,bsp ignored
+            value = value.Replace("1","");
+            value = value.Replace("4","");
+            value = value.Replace("7","");
+            value = value.Replace("x","");
+        }
+        if(c2 == 1)//forced high
+        {   //1,4,7,bsp ignored
+            value = value.Replace("2","");
+            value = value.Replace("5","");
+            value = value.Replace("8","");
+            value = value.Replace("0","");
+        }
+        if(c3 == 1)//forced high
+        {   //1,4,7,bsp ignored
+            value = value.Replace("3","");
+            value = value.Replace("6","");
+            value = value.Replace("9","");
+            value = value.Replace("v","");
+        }
+        if(r1 == 1)
+        {   //1,2,3 ignored
+            value = value.Replace("1","");
+            value = value.Replace("2","");
+            value = value.Replace("3","");
+        }
+        if(r2 == 1)
+        {  
+            value = value.Replace("4","");
+            value = value.Replace("5","");
+            value = value.Replace("6","");
+        }
+        if(r3 == 1)
+        {   
+            value = value.Replace("7","");
+            value = value.Replace("8","");
+            value = value.Replace("9","");
+        }
+        if(r4 == 1)
+        {   
+            value = value.Replace("x","");
+            value = value.Replace("0","");
+            value = value.Replace("v","");
+        }
+
+        //keys are replaced with whole row
+        if(r1 == 2)
+        {
+            value = value.Replace("1","147x");
+            value = value.Replace("2","2580");
+            value = value.Replace("3","369v");
+        }
+        if(r2 == 2)
+        {
+            value = value.Replace("4","147x");
+            value = value.Replace("5","2580");
+            value = value.Replace("6","369v");
+        }
+        if(r3 == 2)
+        {
+            value = value.Replace("7","147x");
+            value = value.Replace("8","2580");
+            value = value.Replace("9","369v");
+        }
+        if(r4 == 2)
+        {
+            value = value.Replace("x","147x");
+            value = value.Replace("0","2580");
+            value = value.Replace("v","369v");
+        }
+        return value;
+    }
+
+    string Keypad_override_continuous()
+    {
+        string value = "";
+        if(over1)
+            value += ("147x");
+        if(over2)
+            value += ("2580");
+        if(over3)
+            value += ("369v");
+        return value;
+    }
+
+    public void OpenFile(string name)
+    {
+        Debug.Log("file://" + Application.dataPath + "/" + name);
+        Application.OpenURL("file://" + Application.dataPath + "/" + name);
     }
 }
