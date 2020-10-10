@@ -539,6 +539,13 @@ public class Puzzle1 : MonoBehaviour
         return value;
     }
 
+    public void cheatPuzzle()
+    {
+        gameObject.SetActive(false);
+        Time.timeScale = 1;
+        PuzzleSolved = true;
+        UnlockEvent.Invoke();
+    }
     public void OpenFile(string name)
     {
         //Debug.Log("file://" + Application.dataPath + "/" + name);

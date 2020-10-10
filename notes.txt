@@ -1,7 +1,16 @@
+BUGS:
+does AI/collision detection work offscreen
+tweak camera triggers
+tweak enemy colliders
+tweak enemy detector triggers(not onenter, but always)
+resizing behavior of puzzle1
+idle-animation during drone-transport
+
 TODO:
-finish puzzle1(write firmware, add schema, pdf's, zoom to hw-view, maybe implement proper fault behavior)
-add sound
+implement camera view/acorn throw interface(press for throw strength, release is throw)
 provide control-hints with 'h'
+add sound
+
 
 make puzzle2 (level1_end)
 limit switching or switch for the player based on triggers
@@ -11,7 +20,7 @@ tweak surveillance-camera behaviour/timing
 
 
 adding:
-implement camera view/acorn throw interface, better vantage point by trees?
+better vantage point by trees?
 water
 nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
 add more scenery
@@ -73,5 +82,7 @@ Puzzle2:
 top view
 switch components, and ensure protection does not work correctly, so that 5 trafo's destruct
 part switchyard, part protection-bays
+
+
 
 

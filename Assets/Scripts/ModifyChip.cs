@@ -115,4 +115,20 @@ public class ModifyChip : MonoBehaviour
             }
         }
     }
+
+    public void setSolution()
+    {
+        foreach(Toggle toggle in GetComponentsInChildren<Toggle>())
+        {
+            if(toggle.interactable == true)
+            {
+                //Debug.Log(toggle.name);
+                Transform obj = toggle.transform.Find("Background/Checkmark");
+                obj.GetComponent<Image>().color = Color.red;
+                toggle.isOn = false;
+            }
+            
+        }
+        setState(47, 1);//set WP high
+    }
 }

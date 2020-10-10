@@ -28,7 +28,7 @@ public class DroneBehaviour : MonoBehaviour
     {
         if(drone_control == true && selected == true)
         {
-            if (Input.GetButtonDown ("Release") && object1 != null)
+            if (Input.GetButtonDown ("Action2") && object1 != null)
             {
                 //object1.transform.localPosition = new Vector2(0,-1f);
                 var mov = object1.GetComponent<PlayerMovement>();

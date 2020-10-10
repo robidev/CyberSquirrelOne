@@ -11,9 +11,12 @@ public class DroneControl : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera player_camera;
     // Start is called before the first frame update
     public DroneBehaviour m_Drone;
+
+    private Shoot shoot;
     void Start()
     {
         player = gameObject.GetComponent<PlayerMovement>();
+        shoot = gameObject.GetComponent<Shoot>();
     }
 
     // Update is called once per frame
@@ -45,8 +48,9 @@ public class DroneControl : MonoBehaviour
         {
             justSelected = true;//force update next time we select this player
         }
-        //ensure drone also receives the status
+        //ensure drone and shoot also receives the status
         m_Drone.drone_control = drone_control;
         m_Drone.selected = player.selected;
+        shoot.canShoot = !drone_control;
     }
 }
