@@ -14,7 +14,7 @@ public class Pulse : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         newColor = m_SpriteRenderer.color;
         vv =  Mathf.PingPong(Time.time*2, 1);

@@ -18,6 +18,7 @@ public class GlobalControl : MonoBehaviour
 
     public GameObject m_GameOverUI;
     public GameObject m_GamePauseUI;
+    private float oldTimeScale;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,14 @@ public class GlobalControl : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetButtonDown ("Tab") && tabPress == false) {
+    { 
+      if(Input.GetButtonDown ("Cancel") ) {
+        GamePause();
+      }
+
+      if( Time.timeScale > 0.1f)
+      {
+        if(Input.GetButtonDown ("Tab") && tabPress == false ) {
           if(characters > selected + 1) { selected ++; }
           else { selected = 0; }
 
@@ -41,10 +48,6 @@ public class GlobalControl : MonoBehaviour
         
         if(Input.GetButtonDown ("Tab") && tabPress == true) {
           tabPress = false;
-        }
-
-        if(Input.GetButtonDown ("Cancel") ) {
-          GamePause();
         }
 
         //handle inside/outside masks
@@ -80,6 +83,7 @@ public class GlobalControl : MonoBehaviour
             }
           }
         }
+      }
     }
 
     void SelectCharacter()
@@ -108,6 +112,7 @@ public class GlobalControl : MonoBehaviour
     public void GamePause()
     {
       //showpausescreen
+      oldTimeScale = Time.timeScale;
       Time.timeScale = 0;
       m_GamePauseUI.SetActive(true);
     }
@@ -125,7 +130,8 @@ public class GlobalControl : MonoBehaviour
 
     public void Continue()
     {
-      Time.timeScale = 1;
+
+      Time.timeScale = oldTimeScale;
       m_GamePauseUI.SetActive(false);
     }
 }

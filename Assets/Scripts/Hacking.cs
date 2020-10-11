@@ -16,7 +16,7 @@ public class Hacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown ("Action1") && player.selected == true) {
+        if (Input.GetButtonDown ("Action1") && player.selected == true && Time.timeScale > 0.1f) {
             hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
             if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == false) //we are in front of an open door
             { 

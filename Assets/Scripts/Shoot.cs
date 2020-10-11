@@ -28,35 +28,37 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetButtonDown ("Action2") && player.selected == true && canShoot == true)
-		{
-            throwspeed = 0;
-            if(player.controller.FacingRight == true)
-            {
-                m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = screenX;
-            }
-            else
-            {
-                m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 1 - screenX;
-            }
-            
-            m_CameraZoomOut.MoveToTopOfPrioritySubqueue();
-		}
-        if (Input.GetButton ("Action2") && player.selected == true && canShoot == true)
-		{
-            if(throwspeed < MaxThrowSpeed)
-            {
-                throwspeed += Time.deltaTime * (MaxThrowSpeed / 1f);
-            }
-		}
-        if (Input.GetButtonUp ("Action2") && player.selected == true && canShoot == true)
+        if(Time.timeScale > 0.1f)
         {
-            
-            Debug.Log(throwspeed);
-            GameObject obj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Bullet bullet = obj.GetComponent<Bullet>();
-            bullet.speed = throwspeed;
-            Invoke("ResetCam",0.5f);
+            if (Input.GetButtonDown ("Action2") && player.selected == true && canShoot == true)
+            {
+                throwspeed = 0;
+                if(player.controller.FacingRight == true)
+                {
+                    m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = screenX;
+                }
+                else
+                {
+                    m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 1 - screenX;
+                }
+                
+                m_CameraZoomOut.MoveToTopOfPrioritySubqueue();
+            }
+            if (Input.GetButton ("Action2") && player.selected == true && canShoot == true)
+            {
+                if(throwspeed < MaxThrowSpeed)
+                {
+                    throwspeed += Time.deltaTime * (MaxThrowSpeed / 1f);
+                }
+            }
+            if (Input.GetButtonUp ("Action2") && player.selected == true && canShoot == true)
+            {
+                Debug.Log(throwspeed);
+                GameObject obj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                Bullet bullet = obj.GetComponent<Bullet>();
+                bullet.speed = throwspeed;
+                Invoke("ResetCam",0.5f);
+            }
         }
     }
 

@@ -4,10 +4,9 @@ tweak camera triggers
 tweak enemy colliders
 tweak enemy detector triggers(not onenter, but always)
 resizing behavior of puzzle1
-idle-animation during drone-transport
+idle-animation during drone-transport, should be hanging
 
 TODO:
-implement camera view/acorn throw interface(press for throw strength, release is throw)
 provide control-hints with 'h'
 add sound
 

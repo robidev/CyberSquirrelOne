@@ -28,6 +28,7 @@ public class Puzzle1 : MonoBehaviour
     bool over1 = false;
     bool over2 = false;
     bool over3 = false;
+    float oldTimeScale;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class Puzzle1 : MonoBehaviour
         buffer = new int[256];
         EEPROM_write(PASSWORD_LENGTH_ADDRESS, 4);
         EEPROM_write(TRIES_ADDRESS, 0);
+        oldTimeScale = Time.timeScale;
         Time.timeScale = 0;
         SetPassword();
     }
@@ -111,7 +113,7 @@ public class Puzzle1 : MonoBehaviour
                 LED_set(false,false);
                 LCD_write(welcomeText,true);
                 gameObject.SetActive(false);
-                Time.timeScale = 1;
+                Time.timeScale = oldTimeScale;
                 return;
             }
             if(PuzzleSolved == false && KeypadEnabled == true)//only respond to keypad if puzzle is not solved, and keypad is enabled
@@ -209,7 +211,7 @@ public class Puzzle1 : MonoBehaviour
                     EEPROM_write(TRIES_ADDRESS, 0);
                     //kick out of lock-puzzle
                     gameObject.SetActive(false);
-                    Time.timeScale = 1;
+                    Time.timeScale = oldTimeScale;
                 }
                 yield break;
             }
@@ -229,7 +231,7 @@ public class Puzzle1 : MonoBehaviour
         KeypadEnabled = false; //keep keypad disabled
         yield return new WaitForSecondsRealtime(1f);
         gameObject.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = oldTimeScale;
     }
 
     private int EEPROM_read(int address)
@@ -542,7 +544,7 @@ public class Puzzle1 : MonoBehaviour
     public void cheatPuzzle()
     {
         gameObject.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = oldTimeScale;
         PuzzleSolved = true;
         UnlockEvent.Invoke();
     }

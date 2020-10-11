@@ -18,7 +18,7 @@ public class ShootDart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetButtonDown ("Action2") && player.selected == true)
+		if (Input.GetButtonDown ("Action2") && player.selected == true && Time.timeScale > 0.1f)
 		{
 			//Debug.Log("piew");
             StartCoroutine(ShootRay());

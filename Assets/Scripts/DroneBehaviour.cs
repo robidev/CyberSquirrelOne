@@ -26,7 +26,7 @@ public class DroneBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(drone_control == true && selected == true)
+        if(drone_control == true && selected == true && Time.timeScale > 0.1f)
         {
             if (Input.GetButtonDown ("Action2") && object1 != null)
             {
@@ -50,7 +50,7 @@ public class DroneBehaviour : MonoBehaviour
     void FixedUpdate ()
 	{
 		// Move our character
-		if(drone_control && selected == true) {
+		if(drone_control == true && selected == true) {
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(horizontalMove * 10f * Time.fixedDeltaTime, verticalMove * 10f * Time.fixedDeltaTime);
             // And then smoothing it out and applying it to the character
@@ -59,7 +59,6 @@ public class DroneBehaviour : MonoBehaviour
             {
                 object1.transform.localPosition = new Vector2(0,-0.5f);
             }
-                
 		}
 	}
     private void OnTriggerEnter2D(Collider2D other)

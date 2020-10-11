@@ -22,7 +22,7 @@ public class DroneControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.selected == true)
+        if(player.selected == true && Time.timeScale > 0.1f)
         {
             if (Input.GetButtonDown ("Action1"))
             {

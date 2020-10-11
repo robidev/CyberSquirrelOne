@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour {
 	//public Animator animator;
 
 	private Queue<string> sentences;
+	private float oldTimeScale;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.T) )//Input.anyKey)//
+		if( dialog.activeSelf == true && (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Submit") || Input.GetButtonUp("Action1") || Input.GetButtonUp("Action2")) )
 		{
 			DisplayNextSentence ();
 		}
@@ -36,8 +37,8 @@ public class DialogueManager : MonoBehaviour {
 
 	public void StartDialogue (Dialogue dialogue)
 	{
-		//animator.SetBool("IsOpen", true);
 		dialog.SetActive(true);
+		oldTimeScale = Time.timeScale;
 		Time.timeScale = 0;
 		nameText.text = dialogue.name;
 
@@ -77,8 +78,7 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		dialog.SetActive(false);
-		Time.timeScale = 1;
-		//animator.SetBool("IsOpen", false);
+		Time.timeScale = oldTimeScale;
 	}
 
 }

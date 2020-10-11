@@ -15,7 +15,7 @@ public class SurveillanceCameraControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(scanning_enabled)
         {

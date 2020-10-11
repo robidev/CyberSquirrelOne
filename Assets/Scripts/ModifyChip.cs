@@ -22,12 +22,6 @@ public class ModifyChip : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ToggleValueChanged(Toggle toggle)
     {
         Transform obj = toggle.transform.Find("Background/Checkmark");

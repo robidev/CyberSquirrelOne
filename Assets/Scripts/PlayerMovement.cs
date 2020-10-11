@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(selected && controllable) {
+		if(selected && controllable && Time.timeScale > 0.1f) {
 			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 			animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
