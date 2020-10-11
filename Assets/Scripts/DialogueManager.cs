@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+using System.Text.RegularExpressions;
+
+
 public class DialogueManager : MonoBehaviour {
 
 	public GameObject dialog;
@@ -19,6 +22,7 @@ public class DialogueManager : MonoBehaviour {
 	void Start () {
 		sentences = new Queue<string>();
 		Invoke("StartEvent", 1f);
+
 	}
 
 	void StartEvent()
@@ -29,7 +33,12 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update()
 	{
-		if( dialog.activeSelf == true && (Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Submit") || Input.GetButtonUp("Action1") || Input.GetButtonUp("Action2")) )
+		if( dialog.activeSelf == true && (Input.GetKeyUp(KeyCode.Return) 
+										|| Input.GetKeyUp(KeyCode.Space) 
+										|| Input.GetKeyUp(KeyCode.H)
+										|| Input.GetButtonUp("Submit") 
+										|| Input.GetButtonUp("Action1") 
+										|| Input.GetButtonUp("Action2")) )
 		{
 			DisplayNextSentence ();
 		}
@@ -52,6 +61,14 @@ public class DialogueManager : MonoBehaviour {
 		DisplayNextSentence();
 	}
 
+	private IEnumerable<string> GetSubStrings(string input, string start, string end)
+	{
+		Regex r = new Regex(Regex.Escape(start) + "(.*?)"  + Regex.Escape(end));
+		MatchCollection matches = r.Matches(input);
+		foreach (Match match in matches)
+			yield return match.Groups[1].Value;
+	}
+
 	public void DisplayNextSentence ()
 	{
 		if (sentences.Count == 0)
@@ -62,6 +79,13 @@ public class DialogueManager : MonoBehaviour {
 
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
+
+		var keys = GetSubStrings(sentence,"{","}");
+		foreach(string key in keys)
+		{
+			sentence = sentence.Replace("{" + key + "}", key); // for future reference
+		}
+
 		StartCoroutine(TypeSentence(sentence));
 	}
 

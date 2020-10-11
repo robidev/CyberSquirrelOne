@@ -357,8 +357,8 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: ninja'
     sentences:
-    - Ninja, the power is down, use your grapling hook to get over the fence, and
-      take out that bird!
+    - Ninja, the power is down, use your grapling hook(Action1) to get over the fence,
+      and take out that bird!
   ShowDialogMoreThanOnce: 0
 --- !u!4 &25497761
 Transform:
@@ -849,11 +849,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: 'Commander: drone pilot'
+    name: 'Commander: Operative,'
     sentences:
-    - Hello operative, your task is to take out this substation. It will require
-      the skills of all of you to complete this task.
-    - First task is to use the drone to recon the area
+    - your task is to take out this substation. It will require all your skills to
+      complete this task. (press space to continue...)
+    - first task is to use the drone to recon the area. Switch to the drone using
+      Action1(q). Press Help(h) for more control info
   ShowDialogMoreThanOnce: 0
 --- !u!114 &65380882
 MonoBehaviour:
@@ -1299,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101934305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.3, y: 0.38000047, z: -10}
+  m_LocalPosition: {x: 85.95, y: 0.20000064, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1609443489}
@@ -7155,8 +7156,8 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: hacker'
     sentences:
-    - Now Operative, hack that door, and hack the HMI to disable the powerline so
-      that Ninja can enter
+    - Now Operative, hack(Action1) that door, and the HMI to disable the powerline
+      so that Ninja can enter
   ShowDialogMoreThanOnce: 0
   filter: hacker
   layer:
@@ -11889,7 +11890,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820667350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.3, y: -3.58, z: 0}
+  m_LocalPosition: {x: 85.95, y: -3.76, z: 0}
   m_LocalScale: {x: 3.290709, y: 3.290939, z: 1}
   m_Children:
   - {fileID: 1574803884}
@@ -12660,7 +12661,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 29.76929, y: 32.761223}
+  m_Offset: {x: 52.216278, y: 32.761223}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12671,7 +12672,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.388031, y: 78.59877}
+  m_Size: {x: 4.0867424, y: 78.59877}
   m_EdgeRadius: 0
 --- !u!114 &864055128
 MonoBehaviour:
@@ -14095,7 +14096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -5.9428964, y: -0.7654947, z: 9.88}
+  m_LocalPosition: {x: -7.273577, y: -0.7654947, z: 9.88}
   m_LocalScale: {x: 19.81, y: 19.81, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -14435,7 +14436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.999165, y: 6.5691185, z: -10}
+  m_LocalPosition: {x: 62.41844, y: 6.5691185, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -15665,7 +15666,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: drone pilot'
     sentences:
-    - Use your skills to take out the camera
+    - Use the pilot's Action2(e) skill to take out that camera before anyone is detected
   ShowDialogMoreThanOnce: 0
   EventName:
   - camera
@@ -15910,7 +15911,8 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: hacker'
     sentences:
-    - The hedgehog is out. Sabotage the HMI, and let the substation self-destruct
+    - That hedgehog is out like a light. Ensure all camera's are off, sabotage the
+      HMI, and complete the mission
   ShowDialogMoreThanOnce: 0
 --- !u!1 &1105593670
 GameObject:
@@ -19512,7 +19514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218363209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.4, y: -0.8005589, z: 0}
+  m_LocalPosition: {x: 82.99, y: -3.58, z: 0}
   m_LocalScale: {x: 1.149085, y: 1.149085, z: 1.149085}
   m_Children: []
   m_Father: {fileID: 679491817}
@@ -19856,7 +19858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -28.574535, y: -3.680639, z: 14.14}
+  m_LocalPosition: {x: -34.97269, y: -3.680639, z: 14.14}
   m_LocalScale: {x: 19.05, y: 19.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -22825,7 +22827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406773846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.4, y: 0.41000068, z: -20}
+  m_LocalPosition: {x: 80.28, y: 0.23000038, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1091137845}
@@ -32023,7 +32025,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: ninja'
     sentences:
-    - Take out that bird patroling the area
+    - Take out that bird patroling the area with your tranquilizer darts(Action2)
   ShowDialogMoreThanOnce: 0
   filter: ninja
   layer:
@@ -33280,7 +33282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890067745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.4, y: -3.55, z: 0}
+  m_LocalPosition: {x: 80.28, y: -3.73, z: 0}
   m_LocalScale: {x: 3.290709, y: 3.2909393, z: 1}
   m_Children:
   - {fileID: 961712820}
@@ -34139,7 +34141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.42934, y: 3.4900012, z: -20}
+  m_LocalPosition: {x: 99.30933, y: 3.310001, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -35356,7 +35358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032624697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.4, y: 7.999442, z: -10}
+  m_LocalPosition: {x: 82.99, y: 5.220001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1876419294}
@@ -36098,14 +36100,14 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: drone'
     sentences:
-    - Now you know the area, get the hacker over the fence, but do not let the camera
-      spot you!
+    - Now you know the area, get the hacker over the fence, but be careful of those
+      camera's!
   ShowDialogMoreThanOnce: 0
   filter: drone
   layer:
     serializedVersion: 2
     m_Bits: 0
-  delay: 0
+  delay: 4
 --- !u!61 &2074047590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36119,7 +36121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -62.762093, y: 1.6211014}
+  m_Offset: {x: -62.762093, y: 1.3206635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -36130,7 +36132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 41.39714, y: 15.671341}
+  m_Size: {x: 41.39714, y: 15.070465}
   m_EdgeRadius: 0
 --- !u!1 &2078214290
 GameObject:
