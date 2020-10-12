@@ -3,15 +3,16 @@ does AI/collision detection work offscreen
 tweak camera triggers
 tweak enemy colliders
 tweak enemy detector triggers(not onenter, but always)
-check resizing behavior of puzzle1
 idle-animation during drone-transport, should be hanging
 cannot throw acorn when in front of building
 improve ninja blowdart visual/explanation
 show zzzz for bird and hedgehog
 show clear visual power on/off for hacker/HMI
+hacker/pilot facing wrong direction
 
 TODO:
 add sound
+explain tabbing to players
 
 
 
@@ -32,11 +33,6 @@ add more scenery
 option: have engineer respond to camera???? not in MVP...
 
 objectives:
- avoid bird
- lockpick-minigame
- HMI minigame->disable powerline, so ninja can enter
- tranformer-destruction animation+triggers
- hedgehog-behavior+animation+triggers
 
  triggers near bay/station/telecom-controllers(message: nah, too easy ;) )
 
