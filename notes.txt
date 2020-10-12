@@ -2,13 +2,14 @@ BUGS:
 does AI/collision detection work offscreen
 tweak camera triggers
 tweak enemy colliders
-tweak enemy detector triggers(not onenter, but always)
+tweak enemy/camera detector triggers(not onenter, but always)
 idle-animation during drone-transport, should be hanging
 cannot throw acorn when in front of building
 improve ninja blowdart visual/explanation
 show zzzz for bird and hedgehog
 show clear visual power on/off for hacker/HMI
 hacker/pilot facing wrong direction
+improve font for readablility
 
 TODO:
 add sound

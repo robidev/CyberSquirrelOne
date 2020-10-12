@@ -33,7 +33,10 @@ public class GlobalControl : MonoBehaviour
     void Update()
     { 
       if(Input.GetButtonDown ("Cancel") ) {
-        GamePause();
+        if(m_GamePauseUI.activeSelf == false)
+          GamePause();
+        else
+          Continue();
       }
 
       if( Time.timeScale > 0.1f)
@@ -130,7 +133,7 @@ public class GlobalControl : MonoBehaviour
 
     public void Continue()
     {
-
+      Debug.Log(oldTimeScale);
       Time.timeScale = oldTimeScale;
       m_GamePauseUI.SetActive(false);
     }
