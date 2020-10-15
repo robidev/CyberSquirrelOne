@@ -1,7 +1,13 @@
+cybersquirrel - SR
+
+code:
+astar pathfinding - arongranberg
+general game logic, character controls and animation - brakeys
+grapling-hook - wabble; https://www.youtube.com/watch?v=DTFgQIs5iMY
+
 level:
 
 most assets were derived from sketchup models, that were rendered, downscaled and altered to accomodate the sprites needed
-
 https://3dwarehouse.sketchup.com/tos/
 https://help.sketchup.com/en/3d-warehouse/3d-warehouse-terms-use-faq
 
@@ -29,7 +35,7 @@ https://assetstore.unity.com/packages/2d/characters/sunny-land-103349
 https://assetstore.unity.com/publishers/18720
 
 ------
-sunnyland-woods sprites+background - squirrel, background
+sunnyland-woods sprites+background - squirrel, background, acorn
 
 https://assetstore.unity.com/packages/2d/environments/sunnyland-woods-129708
 
@@ -43,7 +49,35 @@ lightning effect
 https://www.deviantart.com/jasonkeyser/art/Battle-Boss-Blitzcrank-R-Lightning-617739064
 https://www.youtube.com/user/jasonkeyser
 
-
-LCD font
+LCD font:
 https://blogfonts.com/lcd-solid.font
 
+schema:
+https://www.engineersgarage.com/8051-microcontroller/keypad-and-lcd-with-8051-microcontroller/
+
+keypad device:
+ADE-Karizma-Plus-Intruder-Alarm-keypad
+
+sounds:
+  HV-zoom        - near powerline - https://opengameart.org/content/force-field-electric-hum
+  birds-tjirp    - ambient day - https://opengameart.org/content/bird-song-1-second
+  crickets tjirp - ambient night - https://opengameart.org/content/cricket-sounds
+  nut-throw      - https://opengameart.org/content/sfxthrow
+  nut-fall       - https://opengameart.org/content/collision-nutfall-yo-frankie
+  glass-break    - cameras https://opengameart.org/content/breaking-bottle
+  gui clicks     - all gui buttons/keys - https://opengameart.org/content/click-sounds6
+  shuffle        - walk - https://opengameart.org/content/grass-foot-step-sounds-yo-frankie
+  jump           - jump - https://opengameart.org/content/8-bit-jump-1- 
+  run            - run - https://opengameart.org/content/fantozzis-footsteps-grasssand-stone
+  drop           - falling - https://opengameart.org/content/jump-landing
+  eagle-khaa     - when bird spots - https://opengameart.org/content/bald-eagle-screams
+  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
+  rope-throw     - ninja - https://opengameart.org/content/sfxthrow
+  door open/close- ... https://opengameart.org/content/door-open-door-close-set
+  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
+  static - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
+  hacking        - typing sound - https://opengameart.org/content/typing-on-computer-keyboard-sfx-sound-effect
+  metal-gear-alert - when camspots - http://www.mediafire.com/file/b2khl31xebznpdr/Metal_Gear_Solid_SFX.zip/file
+  TL-flicker/bzz - near TL - http://soundbible.com/1635-Fluorescent-Light-Humming.html
+  drone-buzz     - when using drone
+  blowdart-sound - ninja

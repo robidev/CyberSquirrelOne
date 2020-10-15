@@ -9,10 +9,13 @@ public class Detector : MonoBehaviour
     SpriteRenderer sprite;
     int detected = 0;
     IEnumerator coroutine;
+    public AudioSource audioSource;
+    public AudioClip alertAudio;
     // Start is called before the first frame update
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,8 @@ public class Detector : MonoBehaviour
                     coroutine = AlarmTimer(5f, player);
                     StartCoroutine(coroutine);
                     //Debug.Log("start");
+                    if (audioSource && alertAudio)
+                		audioSource.PlayOneShot(alertAudio);
                 }
             }
             detected++;

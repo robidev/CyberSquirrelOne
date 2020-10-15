@@ -28,8 +28,9 @@ public class EnemyAI : MonoBehaviour
     bool patroling = false;
     // Start is called before the first frame update
 
-
-
+    public AudioSource audioSource;
+    public AudioClip attackAudio;
+    // Start is called before the first frame update
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -40,6 +41,7 @@ public class EnemyAI : MonoBehaviour
             target = PatrolWaypoints[currentPatrolWaypoint];
         
         _AlternateEnemytarget = new List<Transform>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public Transform Enemytarget
@@ -77,6 +79,9 @@ public class EnemyAI : MonoBehaviour
             _Enemytarget = value;
             target = value;
             seeker.StartPath(rb.position,target.position, OnPathComplete);//force path refresh
+
+            if (audioSource && attackAudio)
+            	audioSource.PlayOneShot(attackAudio);
         }
     }
 

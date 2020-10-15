@@ -20,6 +20,12 @@ public class PlayerMovement : MonoBehaviour {
 	private CharacterController2D characterControl;
 	private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
 
+	public AudioSource audioSource;
+	public AudioClip jumpAudio;
+	public AudioClip openAudio;
+	public AudioClip runAudio;
+	public AudioClip dropAudio;
+
 	public enum DieReason {
 		Fallen,
 		Electrocuted,
@@ -30,6 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 		characterControl = gameObject.GetComponent<CharacterController2D>();
 		m_WhatIsGround = characterControl.m_WhatIsGround;
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	public void Die(DieReason reason) {
@@ -87,8 +94,12 @@ public class PlayerMovement : MonoBehaviour {
 						characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
 						characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
 					}
+					if (audioSource && openAudio)
+                		audioSource.PlayOneShot(openAudio);
 				}
-			}				
+			}	
+			if (audioSource && runAudio && audioSource.isPlaying == false && characterControl.m_Grounded == true && Mathf.Abs(horizontalMove) > 0.01f)
+           		audioSource.PlayOneShot(runAudio);			
 		}
 	}
 
@@ -126,6 +137,8 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsCrouching", false);
 		animator.SetBool("IsClimbing", false);
 		animator.SetBool("IsJumping", true);
+		if (audioSource && jumpAudio)
+           	audioSource.PlayOneShot(jumpAudio);
 	}
 
 	public void OnLanding ()
@@ -134,6 +147,8 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsHanging", false);
 		animator.SetBool("IsCrouching", false);
 		animator.SetBool("IsClimbing", false);
+		if (audioSource && dropAudio)
+           	audioSource.PlayOneShot(dropAudio);
 	}
 
 	public void OnCrouching(bool isCrouching) 

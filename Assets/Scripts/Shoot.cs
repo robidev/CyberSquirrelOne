@@ -19,10 +19,13 @@ public class Shoot : MonoBehaviour
     public CinemachineVirtualCamera m_CameraZoomOut;
     float screenX;
     // Start is called before the first frame update
+    public AudioSource audioSource;
+    public AudioClip throwAudio;
     void Start()
     {
         player = gameObject.GetComponent<PlayerMovement>();
         screenX = m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,6 +61,8 @@ public class Shoot : MonoBehaviour
                 Bullet bullet = obj.GetComponent<Bullet>();
                 bullet.speed = throwspeed;
                 Invoke("ResetCam",0.5f);
+                if (audioSource && throwAudio)
+                	audioSource.PlayOneShot(throwAudio);
             }
         }
     }
