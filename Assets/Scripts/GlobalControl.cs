@@ -19,12 +19,22 @@ public class GlobalControl : MonoBehaviour
     public GameObject m_GameOverUI;
     public GameObject m_GamePauseUI;
     private float oldTimeScale;
+    public AudioSource audioSource;
+    public AudioClip DayAudio;
+    public AudioClip NightAudio;
+    public AudioClip InsideAudio;
+    private AudioClip OutsideAudio;
+
+    public Transform listener;
 
     // Start is called before the first frame update
     void Start()
     {       
         characters = characterList.Count;
         camera_object = gameObject.GetComponent<Camera>();
+        audioSource = GetComponent<AudioSource>();
+        OutsideAudio = DayAudio;
+        audioSource.Play();
         //select initial character
         SelectCharacter();
     }
@@ -34,9 +44,15 @@ public class GlobalControl : MonoBehaviour
     { 
       if(Input.GetButtonDown ("Cancel") ) {
         if(m_GamePauseUI.activeSelf == false)
+        {
           GamePause();
+          audioSource.Pause();
+        }
         else
+        {
           Continue();
+          audioSource.UnPause();
+        }
       }
 
       if( Time.timeScale > 0.1f)
@@ -72,6 +88,8 @@ public class GlobalControl : MonoBehaviour
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("object_inside"));//~(1 << 20);
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("enemy_outside");//1 << 21;
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("enemy_inside"));//~(1 << 22);
+              audioSource.clip = OutsideAudio;
+              audioSource.Play();
             }else {                                      // player_inside
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("Player_outside"));//~(1 << 10);
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("Player_inside");//1 << 11;
@@ -83,6 +101,8 @@ public class GlobalControl : MonoBehaviour
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("object_inside");//1 << 20;
               camera_object.cullingMask &= ~(1 << LayerMask.NameToLayer("enemy_outside"));//~(1 << 21);
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("enemy_inside");//1 << 22;
+              audioSource.clip = InsideAudio;
+              audioSource.Play();
             }
           }
         }
@@ -98,8 +118,12 @@ public class GlobalControl : MonoBehaviour
             character.selected = true; 
             active_character = character;
             d_camera[index].MoveToTopOfPrioritySubqueue();
+            listener.parent = d_camera[index].Follow;
+            listener.localPosition = Vector3.zero;
           } 
-          else { character.selected = false; }
+          else { 
+            character.selected = false; 
+          }
         }
         index++;
       }
@@ -110,6 +134,7 @@ public class GlobalControl : MonoBehaviour
       //showdeathscreen
       Time.timeScale = 0;
       m_GameOverUI.SetActive(true);
+      audioSource.Stop();
     }
 
     public void GamePause()
@@ -133,7 +158,7 @@ public class GlobalControl : MonoBehaviour
 
     public void Continue()
     {
-      Debug.Log(oldTimeScale);
+      //Debug.Log(oldTimeScale);
       Time.timeScale = oldTimeScale;
       m_GamePauseUI.SetActive(false);
     }

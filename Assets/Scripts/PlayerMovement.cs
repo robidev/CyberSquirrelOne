@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public CharacterController2D controller;
+	//public CharacterController2D controller;
 	public Animator animator;
 	public float runSpeed = 40f;
-	public bool selected = true;
+	public bool selected {
+		get{ 
+			return m_Selected; 
+		}
+		set{ 
+			m_Selected = value; 
+		}
+	}
+	private bool m_Selected = true;
 
 	public bool controllable = true;
 	public LayerMask _Door;
@@ -17,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool crouchKey = false;
 
 	RaycastHit2D hitInfo;
-	private CharacterController2D characterControl;
+	public CharacterController2D characterControl;
 	private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
 
 	public AudioSource audioSource;
@@ -26,7 +34,7 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip runAudio;
 	public AudioClip dropAudio;
 	public AudioClip electrocutedAudio;
-
+	private AudioListener listener = null;
 	public enum DieReason {
 		Fallen,
 		Electrocuted,
@@ -38,11 +46,12 @@ public class PlayerMovement : MonoBehaviour {
 		characterControl = gameObject.GetComponent<CharacterController2D>();
 		m_WhatIsGround = characterControl.m_WhatIsGround;
 		audioSource = GetComponent<AudioSource>();
+		listener = transform.GetComponent<AudioListener>();
 	}
 	
 	public void Die(DieReason reason) {
 		Debug.Log("I died because of reason: " + reason.ToString());
-		controller.GetComponent<Rigidbody2D>().simulated = false;
+		characterControl.GetComponent<Rigidbody2D>().simulated = false;
 
 		animator.SetBool("IsHanging", false);
 		animator.SetBool("IsJumping", false);
@@ -163,7 +172,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		// Move our character
 		if(selected) {
-			controller.Move(horizontalMove * Time.fixedDeltaTime, crouchKey, jumpKey);
+			characterControl.Move(horizontalMove * Time.fixedDeltaTime, crouchKey, jumpKey);
 		}
 	}
 }

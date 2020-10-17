@@ -1,6 +1,4 @@
 BUGS:
-does AI/collision detection work offscreen
-tweak camera triggers
 tweak enemy colliders
 tweak enemy/camera detector triggers(not onenter, but always)
 idle-animation during drone-transport, should be hanging
@@ -8,14 +6,22 @@ cannot throw acorn when in front of building
 improve ninja blowdart visual/explanation
 show zzzz for bird and hedgehog
 show clear visual power on/off for hacker/HMI
-hacker/pilot facing wrong direction
+hacker/pilot facing wrong direction on level start
 improve font for readablility
-explain/guide to HMI
+
+explain/guide to HMI(what is a HMI??)
 explain 'enter' to open a door
+explain tabbing to players
+
+make puzzle2 (level1_end)
+limit switching or switch for the player based on triggers
+implement ninja japanese dialog(explain why he is on the other side of the level)
+tweak the storytelling
+tweak surveillance-camera behaviour/timing
 
 TODO:
 add sound:
--  birds-tjirp    - ambient day - https://opengameart.org/content/bird-song-1-second
+~  birds-tjirp    - ambient day - https://opengameart.org/content/bird-song-1-second
 v  crickets tjirp - ambient night - https://opengameart.org/content/cricket-sounds
 v  nut-throw      - https://opengameart.org/content/sfxthrow
 v  nut-fall       - https://opengameart.org/content/collision-nutfall-yo-frankie
@@ -30,34 +36,25 @@ v  door open/close- ... https://opengameart.org/content/door-open-door-close-set
 v  hacking        - typing sound - https://opengameart.org/content/typing-on-computer-keyboard-sfx-sound-effect
 v  metal-gear-alert - when camspots - http://www.mediafire.com/file/b2khl31xebznpdr/Metal_Gear_Solid_SFX.zip/file
 v  explosion      - https://opengameart.org/content/explosion-0
-~  gui clicks     - all gui buttons/keys - https://opengameart.org/content/click-sounds6
--  HV-zoom        - near powerline - https://opengameart.org/content/force-field-electric-hum
--  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
--  TL-flicker/bzz - near TL - http://soundbible.com/1635-Fluorescent-Light-Humming.html
+v  gui clicks     - all gui buttons/keys - https://opengameart.org/content/click-sounds6
+v  TL-flicker/bzz - near TL - http://soundbible.com/1635-Fluorescent-Light-Humming.html
+v  HV-zoom        - near powerline - https://opengameart.org/content/force-field-electric-hum - difficult
+v  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
+
 x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
 x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
 x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
 
+  text bleeps?
   drone-buzz     - when using drone
   blowdart-sound - ninja
   
-
-explain tabbing to players
-
-
-
-make puzzle2 (level1_end)
-limit switching or switch for the player based on triggers
-implement ninja japanese dialog(explain why he is on the other side of the level)
-tweak the storytelling
-tweak surveillance-camera behaviour/timing
-
 
 adding:
 better vantage point by trees?
 water
 nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
-add more scenery
+add more scenery schrubs, cars, signs etc.
 
 
 option: have engineer respond to camera???? not in MVP...

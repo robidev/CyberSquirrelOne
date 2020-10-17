@@ -36,7 +36,7 @@ public class Shoot : MonoBehaviour
             if (Input.GetButtonDown ("Action2") && player.selected == true && canShoot == true)
             {
                 throwspeed = 0;
-                if(player.controller.FacingRight == true)
+                if(player.characterControl.FacingRight == true)
                 {
                     m_CameraZoomOut.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = screenX;
                 }

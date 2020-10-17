@@ -13,20 +13,15 @@ public class MenuSfx : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnMouseEnter()
     {
-        
-    }
-    void OnMouseEnter()
-    {
-        Debug.Log ("hover Play_Audio");
+        //Debug.Log ("hover Play_Audio");
         audioSource.PlayOneShot(hoverAudio);
     }
 
-    void OnMouseClick()
+    public void OnMouseDown()
     {
-        Debug.Log ("click Play_Audio");
+        //Debug.Log ("click Play_Audio");
         audioSource.PlayOneShot(clickAudio);        
     }
 }

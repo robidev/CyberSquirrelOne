@@ -5,14 +5,14 @@ using UnityEngine;
 public class DroneControl : MonoBehaviour
 {
     private PlayerMovement player;
-    private bool drone_control = false;
+    public bool drone_control = false;
     private bool justSelected = true;
     public Cinemachine.CinemachineVirtualCamera drone_camera;
     public Cinemachine.CinemachineVirtualCamera player_camera;
     // Start is called before the first frame update
     public DroneBehaviour m_Drone;
-
     private Shoot shoot;
+    public Transform listener;
     void Start()
     {
         player = gameObject.GetComponent<PlayerMovement>();
@@ -36,11 +36,15 @@ public class DroneControl : MonoBehaviour
                 {   
                     player.controllable = false;//disable squirrel movement
                     drone_camera.MoveToTopOfPrioritySubqueue();
+                    listener.parent = drone_camera.Follow;
+                    listener.localPosition = Vector3.zero;
                 }
                 else
                 {
                     player.controllable = true;//enable squirrel movement
                     player_camera.MoveToTopOfPrioritySubqueue();
+                    listener.parent = player_camera.Follow;
+                    listener.localPosition = Vector3.zero;
                 }
             } 
         }
@@ -53,4 +57,5 @@ public class DroneControl : MonoBehaviour
         m_Drone.selected = player.selected;
         shoot.canShoot = !drone_control;
     }
+	
 }
