@@ -14,6 +14,8 @@ public class Grapplinghook : MonoBehaviour {
 
 	bool isElectrocuted = false;
 
+    public AudioSource audioSource;
+    public AudioClip throwAudio;
 	// Use this for initialization
 	void Start () {
 		joint = GetComponent<DistanceJoint2D> ();
@@ -21,6 +23,7 @@ public class Grapplinghook : MonoBehaviour {
 		line.enabled = false;
 		isElectrocuted = false;
 		player = gameObject.GetComponent<PlayerMovement>();
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -55,6 +58,9 @@ public class Grapplinghook : MonoBehaviour {
 					if(coll.gameObject.GetComponent<Rigidbody2D>()!=null)
 					{
 						//if it is a powerline
+						if (audioSource && throwAudio && audioSource)
+            				audioSource.PlayOneShot(throwAudio);
+							
 						if(coll.gameObject.GetComponent<Powerline>() != null)
 						{
 							//if line was powered, we lose control and get electrocuted
@@ -84,7 +90,6 @@ public class Grapplinghook : MonoBehaviour {
 						line.enabled=true;
 						line.SetPosition(0,transform.position);
 						line.SetPosition(1,ppoint);
-
 					}
 				}
 			}

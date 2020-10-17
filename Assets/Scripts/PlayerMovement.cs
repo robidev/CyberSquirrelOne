@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip openAudio;
 	public AudioClip runAudio;
 	public AudioClip dropAudio;
+	public AudioClip electrocutedAudio;
 
 	public enum DieReason {
 		Fallen,
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour {
 		if(reason == DieReason.Electrocuted)
 		{
 			animator.SetBool("IsElectrocuted", true);
+			if (audioSource && electrocutedAudio)
+            	audioSource.PlayOneShot(electrocutedAudio);
 			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
 		}
 		else

@@ -7,10 +7,13 @@ public class Hacking : MonoBehaviour
     private PlayerMovement player;
     public LayerMask _Door;
     RaycastHit2D hitInfo;
+    public AudioSource audioSource;
+    public AudioClip hackingAudio;
     // Start is called before the first frame update
     void Start()
     {
         player = gameObject.GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +35,8 @@ public class Hacking : MonoBehaviour
                 { 
                     //Debug.Log("HMI hacked!");
                     hit.collider.gameObject.GetComponent<HMI>().ToggleHacked();
+                    if (audioSource && hackingAudio && audioSource.isPlaying == false)
+                		audioSource.PlayOneShot(hackingAudio);
                 }	
             }	
         }

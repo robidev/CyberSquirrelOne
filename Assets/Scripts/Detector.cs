@@ -41,7 +41,7 @@ public class Detector : MonoBehaviour
                     coroutine = AlarmTimer(5f, player);
                     StartCoroutine(coroutine);
                     //Debug.Log("start");
-                    if (audioSource && alertAudio)
+                    if (audioSource && alertAudio && audioSource.isPlaying == false)
                 		audioSource.PlayOneShot(alertAudio);
                 }
             }

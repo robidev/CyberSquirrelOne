@@ -80,7 +80,7 @@ public class EnemyAI : MonoBehaviour
             target = value;
             seeker.StartPath(rb.position,target.position, OnPathComplete);//force path refresh
 
-            if (audioSource && attackAudio)
+            if (audioSource && attackAudio && audioSource.isPlaying == false)
             	audioSource.PlayOneShot(attackAudio);
         }
     }
