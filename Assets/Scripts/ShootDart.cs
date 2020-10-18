@@ -7,12 +7,15 @@ public class ShootDart : MonoBehaviour
     public Transform firePoint;
 	private PlayerMovement player;
 	private CharacterController2D character;
-	
+	public AudioSource audioSource;
+    public AudioClip blowAudio;
+	public AudioClip hitAudio;
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<PlayerMovement>();
 		character = GetComponent<CharacterController2D>();
+		audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,7 +23,8 @@ public class ShootDart : MonoBehaviour
     {
 		if (Input.GetButtonDown ("Action2") && player.selected == true && Time.timeScale > 0.1f)
 		{
-			//Debug.Log("piew");
+			if (audioSource && blowAudio)
+               	audioSource.PlayOneShot(blowAudio);
             StartCoroutine(ShootRay());
 		}
     }
@@ -51,6 +55,9 @@ public class ShootDart : MonoBehaviour
 
 			lineRenderer.SetPosition(0, firePoint.position);
 			lineRenderer.SetPosition(1, hitInfo.point);
+
+			if (audioSource && hitAudio)
+               	audioSource.PlayOneShot(hitAudio);
 		} else
 		{
 			lineRenderer.SetPosition(0, firePoint.position);

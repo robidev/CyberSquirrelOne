@@ -18,9 +18,15 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<string> sentences;
 	private float oldTimeScale;
 
+    public AudioSource audioSource;
+    public AudioClip letterAudio;
+    // Start is called before the first frame update
+
+        
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
+		audioSource = GetComponent<AudioSource>();
 		Invoke("StartEvent", 1f);
 
 	}
@@ -95,6 +101,9 @@ public class DialogueManager : MonoBehaviour {
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
+			if (audioSource && letterAudio )
+            	audioSource.PlayOneShot(letterAudio);
+
 			yield return null;
 		}
 	}

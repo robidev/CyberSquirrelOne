@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	//public CharacterController2D controller;
 	public Animator animator;
 	public float runSpeed = 40f;
 	public bool selected {
@@ -16,7 +15,6 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 	private bool m_Selected = true;
-
 	public bool controllable = true;
 	public LayerMask _Door;
 
@@ -27,7 +25,6 @@ public class PlayerMovement : MonoBehaviour {
 	RaycastHit2D hitInfo;
 	public CharacterController2D characterControl;
 	private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
-
 	public AudioSource audioSource;
 	public AudioClip jumpAudio;
 	public AudioClip openAudio;

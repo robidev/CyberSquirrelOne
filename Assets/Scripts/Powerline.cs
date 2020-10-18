@@ -11,6 +11,7 @@ public class Powerline : MonoBehaviour
     public Transform listener;
     public Bounds humbound;
     public Transform humSound;
+    public AudioSource powerline;
 
     public bool isPowered 
     {
@@ -20,6 +21,11 @@ public class Powerline : MonoBehaviour
             if(_isPowered == true && value == false)
             {
                 m_PowerLossEvent.Invoke();
+                powerline.Pause();
+            }
+            if(_isPowered == false && value == true)
+            {
+                powerline.UnPause();
             }
             _isPowered = value;
 

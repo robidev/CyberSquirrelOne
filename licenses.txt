@@ -59,25 +59,25 @@ keypad device:
 ADE-Karizma-Plus-Intruder-Alarm-keypad
 
 sounds:
-  HV-zoom        - near powerline - https://opengameart.org/content/force-field-electric-hum
-  birds-tjirp    - ambient day - https://opengameart.org/content/bird-song-1-second
-  crickets tjirp - ambient night - https://opengameart.org/content/cricket-sounds
-  nut-throw      - https://opengameart.org/content/sfxthrow
-  nut-fall       - https://opengameart.org/content/collision-nutfall-yo-frankie
-  glass-break    - cameras https://opengameart.org/content/breaking-bottle
-  gui clicks     - all gui buttons/keys - https://opengameart.org/content/click-sounds6
-  shuffle        - walk - https://opengameart.org/content/grass-foot-step-sounds-yo-frankie
-  jump           - jump - https://opengameart.org/content/8-bit-jump-1- 
-  run            - run - https://opengameart.org/content/fantozzis-footsteps-grasssand-stone
-  drop           - falling - https://opengameart.org/content/jump-landing
-  eagle-khaa     - when bird spots - https://opengameart.org/content/bald-eagle-screams
-  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
-  rope-throw     - ninja - https://opengameart.org/content/sfxthrow
-  door open/close- ... https://opengameart.org/content/door-open-door-close-set
-  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
-  static - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
-  hacking        - typing sound - https://opengameart.org/content/typing-on-computer-keyboard-sfx-sound-effect
-  metal-gear-alert - when camspots - http://www.mediafire.com/file/b2khl31xebznpdr/Metal_Gear_Solid_SFX.zip/file
-  TL-flicker/bzz - near TL - http://soundbible.com/1635-Fluorescent-Light-Humming.html
-  drone-buzz     - when using drone
-  blowdart-sound - ninja
+v  birds-tjirp    - ambient day - https://opengameart.org/content/ambient-bird-sounds , https://opengameart.org/content/birdsong-background-loop
+v  crickets tjirp - ambient night - https://opengameart.org/content/cricket-sounds
+v  nut-throw      - https://opengameart.org/content/sfxthrow
+v  nut-fall       - https://opengameart.org/content/collision-nutfall-yo-frankie
+v  glass-break    - cameras https://opengameart.org/content/breaking-bottle
+v  shuffle        - walk - https://opengameart.org/content/grass-foot-step-sounds-yo-frankie
+v  jump           - jump - https://opengameart.org/content/8-bit-jump-1- 
+v  run            - run - https://opengameart.org/content/fantozzis-footsteps-grasssand-stone
+v  drop           - falling - https://opengameart.org/content/jump-landing
+v  eagle-khaa     - when bird spots - https://opengameart.org/content/bald-eagle-screams
+v  rope-throw     - ninja - https://opengameart.org/content/sfxthrow
+v  door open/close- ... https://opengameart.org/content/door-open-door-close-set
+v  hacking        - typing sound - https://opengameart.org/content/typing-on-computer-keyboard-sfx-sound-effect
+v  metal-gear-alert - when camspots - http://www.mediafire.com/file/b2khl31xebznpdr/Metal_Gear_Solid_SFX.zip/file
+v  explosion      - https://opengameart.org/content/explosion-0
+v  gui clicks     - all gui buttons/keys - https://opengameart.org/content/click-sounds6
+v  TL-flicker/bzz - near TL - http://soundbible.com/1635-Fluorescent-Light-Humming.html
+v  HV-zoom        - near powerline - https://opengameart.org/content/force-field-electric-hum - difficult
+v  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
+v  drone-buzz     - https://www.youtube.com/watch?v=lrYq5SoW6g8
+v  blowdart-sound - ninja- https://freesound.org/people/pfranzen/sounds/187707/
+v  text bleeps     - https://opengameart.org/content/menu-select-tick
