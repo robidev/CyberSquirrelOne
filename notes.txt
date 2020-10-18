@@ -1,37 +1,25 @@
 BUGS:
-tweak enemy colliders
-tweak enemy/camera detector triggers(not onenter, but always)
+tweak surveillance-camera behaviour/timing
+tweak enemy colliders, they miss at times
+tweak enemy/camera detector triggers(not onenter, but always, camera misses sometimes)
 idle-animation during drone-transport, should be hanging
-cannot throw acorn when in front of building
-improve ninja blowdart visual/explanation
 show zzzz for bird and hedgehog
 show clear visual power on/off for hacker/HMI
-hacker/pilot facing wrong direction on level start
-improve font for readablility
-
 explain/guide to HMI(what is a HMI??)
 explain 'enter' to open a door
-explain tabbing to players
 
-make puzzle2 (level1_end)
-limit switching or switch for the player based on triggers
-implement ninja japanese dialog(explain why he is on the other side of the level)
-tweak the storytelling
-tweak surveillance-camera behaviour/timing
+improve font for readablility
+fix sound fx volume balance
 
-x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
-x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
-x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
-
-
-
-  
 
 adding:
-better vantage point by trees?
-water
-nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
-add more scenery schrubs, cars, signs etc.
+ make puzzle2 (level1_end)
+ better vantage point by trees?
+ water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
+ nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
+ add more scenery schrubs, cars, signs etc.
+x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
+x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
 
 
 option: have engineer respond to camera???? not in MVP...

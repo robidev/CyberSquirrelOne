@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class GlobalControl : MonoBehaviour
 {
     public List<PlayerMovement> characterList;
+    public List<bool> characterEnabledList;
     public List<Cinemachine.CinemachineVirtualCamera> d_camera;
 
     bool tabPress = false;
     int characters = 0;
+    int oldSelected = -1;
     int selected = 0;
 
     private Camera camera_object;
@@ -111,15 +113,30 @@ public class GlobalControl : MonoBehaviour
 
     void SelectCharacter()
     {
+      if(selected == oldSelected) // if we are selecting the same character
+      {
+        //Debug.Log("1 " + selected);
+        characterList[selected].selected = true; 
+        return;
+      }
+
       int index = 0;
       foreach(PlayerMovement character in characterList) {
         if(character != null) {
           if(selected == index) { 
+            if(characterEnabledList[index] != true) {
+              if(characters > selected + 1) { selected ++; }
+              else { selected = 0; }
+              SelectCharacter();//retry select
+              return;
+            }
+            //Debug.Log("2 " + selected);
             character.selected = true; 
             active_character = character;
             d_camera[index].MoveToTopOfPrioritySubqueue();
             listener.parent = d_camera[index].Follow;
             listener.localPosition = Vector3.zero;
+            oldSelected = selected;
           } 
           else { 
             character.selected = false; 
@@ -127,6 +144,18 @@ public class GlobalControl : MonoBehaviour
         }
         index++;
       }
+    }
+
+    public void EnableCharacter(int index)
+    {
+      if(index < characterEnabledList.Count)
+        characterEnabledList[index] = true;
+    }
+
+    public void DisableCharacter(int index)
+    {
+      if(index < characterEnabledList.Count)
+        characterEnabledList[index] = false;
     }
 
     public void GameOver()
