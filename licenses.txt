@@ -58,6 +58,9 @@ https://www.engineersgarage.com/8051-microcontroller/keypad-and-lcd-with-8051-mi
 keypad device:
 ADE-Karizma-Plus-Intruder-Alarm-keypad
 
+dialog font
+x  https://www.dafont.com/retro-gaming.font
+
 sounds:
 v  birds-tjirp    - ambient day - https://opengameart.org/content/ambient-bird-sounds , https://opengameart.org/content/birdsong-background-loop
 v  crickets tjirp - ambient night - https://opengameart.org/content/cricket-sounds

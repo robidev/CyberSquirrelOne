@@ -5,6 +5,7 @@ key-stuck during drone switch
 make hacker passive at start(so drone cannot move him yet)
 make drone fall visualisation
 switch possibility to enable ninja sooner
+audio stays after dialog close
 
 alpha: 
  show clear visual power on/off for hacker/HMI
@@ -21,7 +22,7 @@ adding:
  add more scenery schrubs, cars, signs etc.
 x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
 x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
-x  https://www.dafont.com/retro-gaming.font
+
 
 option: have engineer respond to camera???? not in MVP...
 
