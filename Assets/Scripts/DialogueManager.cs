@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 using System.Text.RegularExpressions;
 
@@ -10,8 +11,10 @@ using System.Text.RegularExpressions;
 public class DialogueManager : MonoBehaviour {
 
 	public GameObject dialog;
-	public Text nameText;
-	public Text dialogueText;
+	//public Text nameText;
+	public TextMeshProUGUI nameText;
+	//public Text dialogueText;
+	public TextMeshProUGUI dialogueText;
 	public UnityEvent m_StartDialogsEvent;
 	//public Animator animator;
 

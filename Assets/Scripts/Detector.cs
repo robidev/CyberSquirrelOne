@@ -8,6 +8,7 @@ public class Detector : MonoBehaviour
 
     SpriteRenderer sprite;
     int detected = 0;
+    List<Collider2D> detectedStay;
     IEnumerator coroutine;
     public AudioSource audioSource;
     public AudioClip alertAudio;
@@ -16,6 +17,7 @@ public class Detector : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        detectedStay = new List<Collider2D>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,19 @@ public class Detector : MonoBehaviour
                 }
             }
             detected++;
+            detectedStay.Add(other);
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(DetectorEnabled)
+        {
+            if(detectedStay.Contains(other) == false)//if a detected object is not in the list for any reason
+            {
+                OnTriggerEnter2D(other);//manually call the enter function
+            }
+        } 
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -59,6 +73,7 @@ public class Detector : MonoBehaviour
             if(coroutine != null)
                 StopCoroutine(coroutine);
         }
+        detectedStay.Remove(other);
         //Debug.Log("stop");
     }
 

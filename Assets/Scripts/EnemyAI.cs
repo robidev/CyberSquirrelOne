@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     int currentPatrolWaypoint = 0;
     Seeker seeker;
     Rigidbody2D rb;
-    bool patroling = false;
+    bool patroling = true;
     // Start is called before the first frame update
 
     public AudioSource audioSource;
@@ -188,9 +188,11 @@ public class EnemyAI : MonoBehaviour
             if(reachedEndofPath == true || PathUtilities.IsPathPossible(path.path) == false)
             {
                 //Debug.Log("reached or gave up");
-                target = PatrolWaypoints[currentPatrolWaypoint];
-                patroling = true;
-                seeker.StartPath(rb.position,target.position, OnPathComplete);
+                //target = PatrolWaypoints[currentPatrolWaypoint];
+                //patroling = true;
+                //seeker.StartPath(rb.position,target.position, OnPathComplete);
+                if(_Enemytarget != null)
+                    UnsetEnemyTarget(_Enemytarget);
             }
         }
         else //if we are patroling
@@ -218,7 +220,7 @@ public class EnemyAI : MonoBehaviour
         //Debug.Log((1 << hitInfo.gameObject.layer) +" : "+ targetMask.value);
 		if(((1 << hitInfo.gameObject.layer) & targetMask.value) > 0)
 		{
-			//Debug.Log(hitInfo.transform.name + " is caught by bird");
+			Debug.Log(hitInfo.transform.name + " is caught by bird");
 
             PlayerMovement player = hitInfo.transform.gameObject.GetComponent<PlayerMovement>();
             if(player)
