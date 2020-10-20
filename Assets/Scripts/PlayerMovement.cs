@@ -69,46 +69,59 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(selected && controllable && Time.timeScale > 0.1f) {
-			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-			animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+		if(Time.timeScale > 0.1f)
+		{
+			if(selected && controllable ) {
+				horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+				animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-			//up key
-			if (Input.GetButtonDown("Jump"))
+				//up key
+				jumpKey = Input.GetButton("Jump");
+				crouchKey = Input.GetButton("Crouch");
+				/*if (Input.GetButtonDown("Jump"))
+				{
+					jumpKey = true;
+				} else if (Input.GetButtonUp("Jump"))
+				{
+					jumpKey = false;
+				}
+				//down key
+				if (Input.GetButtonDown("Crouch"))
+				{
+					crouchKey = true;
+				} else if (Input.GetButtonUp("Crouch"))
+				{
+					crouchKey = false;
+				}*/
+				//enter key
+				if (Input.GetButtonDown("Open")) {
+					hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
+					if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == true) //we are in front of an open door
+					{ 
+						if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // player_outside
+							gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
+							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
+							characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
+						} else {  // player_inside
+							gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
+							characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
+							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
+						}
+						if (audioSource && openAudio)
+							audioSource.PlayOneShot(openAudio);
+					}
+				}	
+				if (audioSource && runAudio && audioSource.isPlaying == false 
+					&& (characterControl.m_Grounded == true || characterControl.isOnLadder)
+					&& Mathf.Abs(horizontalMove) > 0.01f)
+					audioSource.PlayOneShot(runAudio);			
+			}
+			else
 			{
-				jumpKey = true;
-			} else if (Input.GetButtonUp("Jump"))
-			{
+				animator.SetFloat("Speed", 0f);
+				crouchKey = false;
 				jumpKey = false;
 			}
-			//down key
-			if (Input.GetButtonDown("Crouch"))
-			{
-				crouchKey = true;
-			} else if (Input.GetButtonUp("Crouch"))
-			{
-				crouchKey = false;
-			}
-			//enter key
-			if (Input.GetButtonDown("Open")) {
-				hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
-				if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == true) //we are in front of an open door
-				{ 
-					if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // player_outside
-						gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
-						characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
-						characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
-					} else {  // player_inside
-						gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
-						characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
-						characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
-					}
-					if (audioSource && openAudio)
-                		audioSource.PlayOneShot(openAudio);
-				}
-			}	
-			if (audioSource && runAudio && audioSource.isPlaying == false && characterControl.m_Grounded == true && Mathf.Abs(horizontalMove) > 0.01f)
-           		audioSource.PlayOneShot(runAudio);			
 		}
 	}
 
@@ -134,6 +147,8 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetBool("IsJumping", false);
 			animator.SetBool("IsCrouching", false);
 			animator.SetBool("IsClimbing", true);
+			if (audioSource && runAudio && audioSource.isPlaying == false)
+				audioSource.PlayOneShot(runAudio);	
 		}
 		else {
 			animator.SetBool("IsClimbing", false);
@@ -168,7 +183,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		if(selected) {
+		if(selected && controllable) {
 			characterControl.Move(horizontalMove * Time.fixedDeltaTime, crouchKey, jumpKey);
 		}
 	}

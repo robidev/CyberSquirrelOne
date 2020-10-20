@@ -36,7 +36,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_wasCrouching = false;
 	private float normalGravity;
 	public bool isHanging = false;
-	bool isOnLadder = false;
+	public bool isOnLadder = false;
 	public LayerMask _Ladder;
 	RaycastHit2D hitInfo;
 	bool climbOnWire = false;

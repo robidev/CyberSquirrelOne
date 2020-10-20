@@ -1,18 +1,12 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
-idle-animation during drone-transport, should be hanging
-key-stuck during drone switch
-make hacker passive at start(so drone cannot move him yet)
-make drone fall visualisation
-switch possibility to enable ninja sooner
-audio stays after dialog close
 
 alpha: 
- show clear visual power on/off for hacker/HMI
+ show clear visual power on/off for hacker/HMI (clear light)
  explain/guide to HMI(what is a HMI??)
- explain 'enter' to open a door
- fix sound fx volume balance
+ explain 'enter' to open a door, after solving the first puzzle
  show zzzz for bird and hedgehog
+ explain camera-detection death(show large letters, DETECTED!)
  make puzzle2 (level1_end)
 
 adding:

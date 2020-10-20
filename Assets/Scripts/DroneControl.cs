@@ -57,5 +57,4 @@ public class DroneControl : MonoBehaviour
         m_Drone.selected = player.selected;
         shoot.canShoot = !drone_control;
     }
-	
 }

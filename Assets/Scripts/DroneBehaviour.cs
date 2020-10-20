@@ -13,11 +13,13 @@ public class DroneBehaviour : MonoBehaviour
     float verticalMove = 0f;
     private GameObject oldParent = null;
     private GameObject object1 = null;
+    private PlayerMovement playerMovement = null;
     private CircleCollider2D m_ObjectTrigger;
     private Vector3 m_Velocity = Vector3.zero;
     public AudioSource audioSource;
     public AudioClip startDrone;
     public AudioClip flyDrone;
+    private bool Died = false;
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
     // Start is called before the first frame update
     void Start()
@@ -40,10 +42,10 @@ public class DroneBehaviour : MonoBehaviour
             if (Input.GetButtonDown ("Action2") && object1 != null)
             {
                 //object1.transform.localPosition = new Vector2(0,-1f);
-                var mov = object1.GetComponent<PlayerMovement>();
-                if(mov != null)//set the correct animation if it is a player
+                //playerMovement = object1.GetComponent<PlayerMovement>();
+                if(playerMovement != null)//set the correct animation if it is a player
                 {
-                    mov.OnHanging(false);
+                    playerMovement.OnHanging(false);
                 }
                 object1.transform.parent = oldParent.transform;
                 object1.GetComponent<Rigidbody2D>().isKinematic = false;
@@ -81,6 +83,8 @@ public class DroneBehaviour : MonoBehaviour
             if(object1 != null)
             {
                 object1.transform.localPosition = new Vector2(0,-0.5f);
+                if(playerMovement != null)
+                    playerMovement.OnHanging(true);
             }
 		}
 	}
@@ -94,11 +98,12 @@ public class DroneBehaviour : MonoBehaviour
             object1.GetComponent<Rigidbody2D>().isKinematic = true;
             object1.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             object1.GetComponent<Rigidbody2D>().inertia = 0f;
+            object1.transform.localPosition = new Vector2(0,-0.5f);
 
-            var mov = object1.GetComponent<PlayerMovement>();
-            if(mov != null)//set the correct animation if it is a player
+            playerMovement = object1.GetComponent<PlayerMovement>();
+            if(playerMovement != null)//set the correct animation if it is a player
             {
-                mov.OnHanging(true);
+                playerMovement.OnHanging(true);
             }
             //m_ObjectTrigger.isTrigger = false;
         }
@@ -106,7 +111,26 @@ public class DroneBehaviour : MonoBehaviour
 
     public void Die(PlayerMovement.DieReason reason)
     {
+        if(Died == true)
+            return;
+
         Debug.Log("I died because of reason: " + reason.ToString());
-        FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
+        audioSource.Stop();
+
+        drone_Rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        drone_Rigidbody2D.mass = 0.1f;
+        drone_Rigidbody2D.angularDrag = 0f;
+        drone_Rigidbody2D.drag = 0f;
+        drone_Rigidbody2D.gravityScale = 10.0f;
+        drone_Rigidbody2D.freezeRotation = false;
+        drone_Rigidbody2D.AddTorque(20f);
+        flySpeed = 0f;
+
+        if(object1 != null && oldParent != null)
+            object1.transform.parent = oldParent.transform;
+        object1 = null;
+        Died = true;
+
+        FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);
     }
 }

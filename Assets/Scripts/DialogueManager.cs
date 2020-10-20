@@ -55,6 +55,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void StartDialogue (Dialogue dialogue)
 	{
+		audioSource.mute = false;
 		dialog.SetActive(true);
 		oldTimeScale = Time.timeScale;
 		Time.timeScale = 0;
@@ -113,6 +114,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
+		audioSource.mute = true;
 		dialog.SetActive(false);
 		Time.timeScale = oldTimeScale;
 	}
