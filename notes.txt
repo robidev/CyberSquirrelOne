@@ -2,11 +2,9 @@ BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 
 alpha: 
- show clear visual power on/off for hacker/HMI (clear light)
- explain/guide to HMI(what is a HMI??)
- explain 'enter' to open a door, after solving the first puzzle
- show zzzz for bird and hedgehog
- explain camera-detection death(show large letters, DETECTED!)
+ button enable/disable in lock-puzzle
+ files included in puzzle1 location?
+ improve inside/stairs walking sound
  make puzzle2 (level1_end)
 
 adding:
@@ -71,5 +69,38 @@ switch components, and ensure protection does not work correctly, so that 5 traf
 part switchyard, part protection-bays
 
 
+https://search.abb.com/library/Download.aspx?DocumentID=1VCP000071&LanguageCode=en&DocumentPartId=&Action=Launch
+motorised disconnecotr (double busbar)  - https://library.e.abb.com/public/e71c316701554119a246abec86d20780/DS%202553%20ZX2.2%20en.pdf
+https://electrical-engineering-portal.com/current-transformers-power-circuits
+file:///tmp/mozilla_user0/Power%20Xpert%20FMX%20-%20Application%20Guide_6054036_02_ENG.pdf
+
+https://electrical-engineering-portal.com/why-electrical-equipment-fails
+loose joints leading to overheating or arcing
+existence of voids and contamination in insulation causing arcing and breakdown products.
+closed on fault
+open CT
+too much amp trough CT
+ 
+
+---------------
+https://electrical-engineering-portal.com/download-center/books-and-guides/power-substations/operation-33-11-kv-substation
+
+hacker:
+ - SWITCHGEAR CABINET DESTRUCTION 
+  modify protection settings
+  send timed-oper, with interlock override for disconnector/earh-switch, per outgoing bay
+ - DUAL TRANSFORMER DESTRUCTION
+  override protection settings of both transformers
+  open earth-switch after trafo
+  close other earth switch before trafo
+  leave open disconn. before trafo
+  send timed oper for switch, then timed oper for disconnector
+ - SMASH PC (Action 2)
+
+drone: getaway
+
+ninja: rope to get away
+
+drone-pilot: put acorn in earth-switch to prevent immediate failure
 
 

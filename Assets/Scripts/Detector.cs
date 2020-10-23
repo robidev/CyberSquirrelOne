@@ -9,7 +9,7 @@ public class Detector : MonoBehaviour
     SpriteRenderer sprite;
     int detected = 0;
     List<Collider2D> detectedStay;
-    IEnumerator coroutine;
+    IEnumerator alarmTimerCoroutine;
     public AudioSource audioSource;
     public AudioClip alertAudio;
     // Start is called before the first frame update
@@ -40,8 +40,8 @@ public class Detector : MonoBehaviour
                 if(player != null)
                 {
                     sprite.color = Color.red;
-                    coroutine = AlarmTimer(5f, player);
-                    StartCoroutine(coroutine);
+                    alarmTimerCoroutine = AlarmTimer(5f, player);
+                    StartCoroutine(alarmTimerCoroutine);
                     //Debug.Log("start");
                     if (audioSource && alertAudio && audioSource.isPlaying == false)
                 		audioSource.PlayOneShot(alertAudio);
@@ -70,8 +70,8 @@ public class Detector : MonoBehaviour
         if(detected == 0)
         {
             sprite.color = Color.white;
-            if(coroutine != null)
-                StopCoroutine(coroutine);
+            if(alarmTimerCoroutine != null)
+                StopCoroutine(alarmTimerCoroutine);
         }
         detectedStay.Remove(other);
         //Debug.Log("stop");
@@ -81,6 +81,6 @@ public class Detector : MonoBehaviour
     {
         //Debug.Log("started");
         yield return new WaitForSeconds(duration);
-        player.Die(PlayerMovement.DieReason.Caught);
+        player.Die(PlayerMovement.DieReason.Detected);
     }
 }

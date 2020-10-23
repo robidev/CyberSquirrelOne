@@ -223,15 +223,16 @@ public class Puzzle1 : MonoBehaviour
         LCD_write("Access granted",true);
         LED_set(true,false);//enable green led
         PuzzleSolved = true;
-        UnlockEvent.Invoke();
         yield return new WaitForSecondsRealtime(1f);
 
         LED_set(false,false); //disable leds
         EEPROM_write(TRIES_ADDRESS, 0); //reset tries
         KeypadEnabled = false; //keep keypad disabled
-        yield return new WaitForSecondsRealtime(1f);
-        gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(0.5f);
+
         Time.timeScale = oldTimeScale;
+        UnlockEvent.Invoke();
+        gameObject.SetActive(false);
     }
 
     private int EEPROM_read(int address)

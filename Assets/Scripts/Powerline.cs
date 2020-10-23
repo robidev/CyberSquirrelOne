@@ -7,6 +7,7 @@ public class Powerline : MonoBehaviour
 {
     public bool _isPowered = true;
     public UnityEvent m_PowerLossEvent;
+    public UnityEvent m_PowerEnableEvent;
 
     public Transform listener;
     public Bounds humbound;
@@ -25,6 +26,7 @@ public class Powerline : MonoBehaviour
             }
             if(_isPowered == false && value == true)
             {
+                m_PowerEnableEvent.Invoke();
                 powerline.UnPause();
             }
             _isPowered = value;

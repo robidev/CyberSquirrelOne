@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 	float horizontalMove = 0f;
 	bool jumpKey = false;
 	bool crouchKey = false;
-
+	public GameObject detected;
 	RaycastHit2D hitInfo;
 	public CharacterController2D characterControl;
 	private LayerMask m_WhatIsGround;	// A mask determining what is ground to the character
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip electrocutedAudio;
 	private AudioListener listener = null;
 	public enum DieReason {
-		Fallen,
+		Detected,
 		Electrocuted,
 		Caught,
 		Hit,
@@ -61,6 +61,12 @@ public class PlayerMovement : MonoBehaviour {
             	audioSource.PlayOneShot(electrocutedAudio);
 			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
 		}
+		if(reason == DieReason.Detected)
+		{
+			if(detected != null)
+				detected.SetActive(true);
+			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
+		}
 		else
 			FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
 	}
@@ -78,21 +84,6 @@ public class PlayerMovement : MonoBehaviour {
 				//up key
 				jumpKey = Input.GetButton("Jump");
 				crouchKey = Input.GetButton("Crouch");
-				/*if (Input.GetButtonDown("Jump"))
-				{
-					jumpKey = true;
-				} else if (Input.GetButtonUp("Jump"))
-				{
-					jumpKey = false;
-				}
-				//down key
-				if (Input.GetButtonDown("Crouch"))
-				{
-					crouchKey = true;
-				} else if (Input.GetButtonUp("Crouch"))
-				{
-					crouchKey = false;
-				}*/
 				//enter key
 				if (Input.GetButtonDown("Open")) {
 					hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
