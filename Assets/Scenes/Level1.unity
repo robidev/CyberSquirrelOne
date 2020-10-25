@@ -2505,7 +2505,7 @@ Transform:
   m_GameObject: {fileID: 142962749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9.999644}
-  m_LocalScale: {x: 9, y: 9, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 0
@@ -13430,7 +13430,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
   outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
-  insideWalkingAudio: {fileID: 0}
+  insideWalkingAudio: {fileID: 8300000, guid: 5f8bc64db885044929039023a6aa317e, type: 3}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!95 &820667358
@@ -15483,8 +15483,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -4.0446963, y: 0.074478805, z: 9.88}
-  m_LocalScale: {x: 8.92, y: 8.92, z: 1}
+  m_LocalPosition: {x: -7.273577, y: -0.7654947, z: 9.88}
+  m_LocalScale: {x: 19.81, y: 19.81, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 1
@@ -15791,7 +15791,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -15815,7 +15815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.08511, y: -1.4194407, z: -20}
+  m_LocalPosition: {x: 62.41844, y: 6.5691185, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -21499,8 +21499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -19.498003, y: 0.35903507, z: 14.14}
-  m_LocalScale: {x: 8.6, y: 8.6, z: 1}
+  m_LocalPosition: {x: -34.97269, y: -3.680639, z: 14.14}
+  m_LocalScale: {x: 19.05, y: 19.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 2
@@ -24139,7 +24139,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
   outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
-  insideWalkingAudio: {fileID: 0}
+  insideWalkingAudio: {fileID: 8300000, guid: 5f8bc64db885044929039023a6aa317e, type: 3}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!58 &1380065288
@@ -36088,7 +36088,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
   outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
-  insideWalkingAudio: {fileID: 0}
+  insideWalkingAudio: {fileID: 8300000, guid: 5f8bc64db885044929039023a6aa317e, type: 3}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!58 &1890067748
