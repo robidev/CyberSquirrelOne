@@ -2,9 +2,6 @@ BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 
 alpha: 
- button enable/disable in lock-puzzle
- files included in puzzle1 location?
- improve inside/stairs walking sound
  make puzzle2 (level1_end)
 
 adding:

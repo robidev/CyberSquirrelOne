@@ -2505,7 +2505,7 @@ Transform:
   m_GameObject: {fileID: 142962749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9.999644}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 0
@@ -6387,6 +6387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddfce3ae91043b76a421fa2ae913532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 630760966}
 --- !u!1 &459418354
 GameObject:
   m_ObjectHideFlags: 0
@@ -7877,7 +7878,7 @@ MonoBehaviour:
     name: 'Commander: hacker'
     sentences:
     - Now Operative, Ninja found a way around. Hack(Q) that door, and the HMI-computer
-      inside to disable the powerline so that Ninja can enter
+      inside to disable the powerline so that Ninja (TAB) can enter
   ShowDialogMoreThanOnce: 0
   filter: hacker
   layer:
@@ -8341,9 +8342,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.54509807}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5254902}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -12689,6 +12690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddfce3ae91043b76a421fa2ae913532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 240104312}
 --- !u!114 &801566802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13427,7 +13429,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
-  runAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  insideWalkingAudio: {fileID: 0}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!95 &820667358
@@ -14138,8 +14141,8 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: drone, Ninja'
     sentences:
-    - Drone; watch out for birds, they will take out that drone in no-time! Ninja;
-      find another way in
+    - Drone; watch out for birds, they will take out that drone in no-time! Ninja
+      will go around to find another way in
   ShowDialogMoreThanOnce: 0
   filter: drone
   layer:
@@ -15480,8 +15483,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -7.273577, y: -0.7654947, z: 9.88}
-  m_LocalScale: {x: 19.81, y: 19.81, z: 1}
+  m_LocalPosition: {x: -4.0446963, y: 0.074478805, z: 9.88}
+  m_LocalScale: {x: 8.92, y: 8.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 1
@@ -15788,7 +15791,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -15812,7 +15815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.41844, y: 6.5691185, z: -10}
+  m_LocalPosition: {x: 77.08511, y: -1.4194407, z: -20}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -17145,7 +17148,7 @@ MonoBehaviour:
   dialogue:
     name: 'Commander: drone pilot'
     sentences:
-    - Use the pilot to take(Q) out that camera before anyone is detected
+    - Use the drone-pilot to take out(E) that camera before anyone is detected
   ShowDialogMoreThanOnce: 0
   EventName:
   - camera
@@ -21496,8 +21499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -34.97269, y: -3.680639, z: 14.14}
-  m_LocalScale: {x: 19.05, y: 19.05, z: 1}
+  m_LocalPosition: {x: -19.498003, y: 0.35903507, z: 14.14}
+  m_LocalScale: {x: 8.6, y: 8.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 2
@@ -24135,7 +24138,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
-  runAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  insideWalkingAudio: {fileID: 0}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!58 &1380065288
@@ -36083,7 +36087,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   jumpAudio: {fileID: 8300000, guid: 294e0d918bed244dd8fb6f69669d32ec, type: 3}
   openAudio: {fileID: 8300000, guid: b56c3bff6124b5d3bac00ca3d30838cd, type: 3}
-  runAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  outsideWalkingAudio: {fileID: 8300000, guid: 44049405be3ec3296ba2311bb9d3b216, type: 3}
+  insideWalkingAudio: {fileID: 0}
   dropAudio: {fileID: 8300000, guid: 1095bae21e01fdea7bf66651bed7396e, type: 3}
   electrocutedAudio: {fileID: 8300000, guid: 40180410929409493891c17212a8a95a, type: 3}
 --- !u!58 &1890067748
@@ -39330,7 +39335,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -62.762093, y: 1.3206635}
+  m_Offset: {x: -62.762093, y: 8.053504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -39341,7 +39346,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 41.39714, y: 15.070465}
+  m_Size: {x: 41.39714, y: 28.53615}
   m_EdgeRadius: 0
 --- !u!114 &2074047591
 MonoBehaviour:

@@ -28,7 +28,23 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioSource audioSource;
 	public AudioClip jumpAudio;
 	public AudioClip openAudio;
-	public AudioClip runAudio;
+	private AudioClip walkingAudio;
+	public AudioClip outsideWalkingAudio;
+	public AudioClip insideWalkingAudio;
+	private bool _playerInside = false;
+	public bool playerInside {
+		set {
+			if(value == true)
+			{
+				walkingAudio = insideWalkingAudio;
+			}
+			else
+			{
+				walkingAudio = outsideWalkingAudio;
+			}
+			_playerInside = value;
+		}
+	}
 	public AudioClip dropAudio;
 	public AudioClip electrocutedAudio;
 	private AudioListener listener = null;
@@ -44,6 +60,7 @@ public class PlayerMovement : MonoBehaviour {
 		m_WhatIsGround = characterControl.m_WhatIsGround;
 		audioSource = GetComponent<AudioSource>();
 		listener = transform.GetComponent<AudioListener>();
+		playerInside = false;
 	}
 	
 	public void Die(DieReason reason) {
@@ -60,15 +77,16 @@ public class PlayerMovement : MonoBehaviour {
 			if (audioSource && electrocutedAudio)
             	audioSource.PlayOneShot(electrocutedAudio);
 			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
+			return;
 		}
 		if(reason == DieReason.Detected)
 		{
 			if(detected != null)
 				detected.SetActive(true);
 			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
+			return;
 		}
-		else
-			FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
+		FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
 	}
 
 
@@ -93,19 +111,21 @@ public class PlayerMovement : MonoBehaviour {
 							gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
 							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
 							characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
+							playerInside = true;
 						} else {  // player_inside
 							gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
 							characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
 							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
+							playerInside = false;
 						}
 						if (audioSource && openAudio)
 							audioSource.PlayOneShot(openAudio);
 					}
 				}	
-				if (audioSource && runAudio && audioSource.isPlaying == false 
+				if (audioSource && walkingAudio && audioSource.isPlaying == false 
 					&& (characterControl.m_Grounded == true || characterControl.isOnLadder)
 					&& Mathf.Abs(horizontalMove) > 0.01f)
-					audioSource.PlayOneShot(runAudio);			
+					audioSource.PlayOneShot(walkingAudio);			
 			}
 			else
 			{
@@ -132,14 +152,14 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void OnClimbing(bool isClimbing)
 	{
-		//hanging
+		//on stairs
 		if(isClimbing) {
 			animator.SetBool("IsHanging", false);
 			animator.SetBool("IsJumping", false);
 			animator.SetBool("IsCrouching", false);
 			animator.SetBool("IsClimbing", true);
-			if (audioSource && runAudio && audioSource.isPlaying == false)
-				audioSource.PlayOneShot(runAudio);	
+			if (audioSource && walkingAudio && audioSource.isPlaying == false)
+				audioSource.PlayOneShot(walkingAudio);	
 		}
 		else {
 			animator.SetBool("IsClimbing", false);

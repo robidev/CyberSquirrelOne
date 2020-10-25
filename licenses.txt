@@ -70,6 +70,7 @@ v  glass-break    - cameras https://opengameart.org/content/breaking-bottle
 v  shuffle        - walk - https://opengameart.org/content/grass-foot-step-sounds-yo-frankie
 v  jump           - jump - https://opengameart.org/content/8-bit-jump-1- 
 v  run            - run - https://opengameart.org/content/fantozzis-footsteps-grasssand-stone
+v  walk-inside    - https://opengameart.org/content/step-sound-walking
 v  drop           - falling - https://opengameart.org/content/jump-landing
 v  eagle-khaa     - when bird spots - https://opengameart.org/content/bald-eagle-screams
 v  rope-throw     - ninja - https://opengameart.org/content/sfxthrow
