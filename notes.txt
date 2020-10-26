@@ -1,6 +1,16 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 
+explain picking up/dropping the hacker
+provide alternatives for q and e that work with arrow keys
+explain e and q for each squirrel (explain also keep pressing for grapling and acorn, and swinging for grapling)
+add dialog readback option
+ensure tab should be done, when it is available, and not before
+same goes for other info; ensure it is given when it can be used
+explain usage/goal of code-lock better, as well as therms like PCB, and make the buttons more clear
+make powerline on/off more clear
+
+
 alpha: 
  make puzzle2 (level1_end)
 
@@ -99,5 +109,45 @@ drone: getaway
 ninja: rope to get away
 
 drone-pilot: put acorn in earth-switch to prevent immediate failure
+
+
+
+
+
+puzzle2:
+trafo1 enabled, trafo2 disabled
+
+
+SC1:
+distribution cabinets all off(?)
+turn all distribution-breakers on
+turn each disconnector on, one by one
+
+SC2:
+distribution cabinets all on(?)
+turn each disconnector off, one by one, by overwriting interlocked disconnector-open command.
+
+goal1:
+ see cabinets explode
+
+incoming earth-sw is on
+turn outgoing earth-sw off
+engage trafo2 outgoing disconector, to connect to other busbar.
+enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch
+goal2
+ see trafo's explode
+
+
+help:
+ explain function of CB
+ explain function of DIS
+ explain function of trafo
+ explain current-flow
+ explain that cabinet-interlock is logical trough protection relay, (and can be overwritten)
+ explain consequence of overwritten interlock
+ explain earth-switch
+
+
+
 
 
