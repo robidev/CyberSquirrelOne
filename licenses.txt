@@ -85,3 +85,5 @@ v  coffee         - cofee-making sound - https://opengameart.org/content/coffee-
 v  drone-buzz     - https://www.youtube.com/watch?v=lrYq5SoW6g8
 v  blowdart-sound - ninja- https://freesound.org/people/pfranzen/sounds/187707/
 v  text bleeps     - https://opengameart.org/content/menu-select-tick
+
+https://symbols.radicasoftware.com/229/single-line-symbols
