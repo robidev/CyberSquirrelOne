@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class CircuitBreaker : Switch
+public class Disconnector : Switch
 {
     private bool oldSwitchConducting;
+    private float oldCurrent;
+    private float OpenArcDamage = 510;
+    private float CloseArcDamage = 500;
     private ConductingEquipment input;
-
     public override void Initialize(ConductingEquipment reference)
     {
         input = reference;
@@ -37,14 +38,17 @@ public class CircuitBreaker : Switch
         }
 
         current = tmpCurrent;
-        if(oldSwitchConducting == false && SwitchConducting == true) //if switch is closed this frame
+        if(oldSwitchConducting == false && SwitchConducting == true && current > 0.1) //if switch is closed this frame, and current is flowing
         {
-            Debug.Log(name + ": Bang close");
+            Debug.Log(name + ": close-arc");
+            damage += CloseArcDamage;
         }
-        if(oldSwitchConducting == true && SwitchConducting == false) //if switch is opened this frame
+        if(oldSwitchConducting == true && SwitchConducting == false && oldCurrent > 0.1) //if switch is opened this frame, and current was flowing
         {
-            Debug.Log(name + ": Bang open");
+            Debug.Log(name + ": open-arc");
+            damage += OpenArcDamage;
         }
+        oldCurrent = current;
         oldSwitchConducting = SwitchConducting;
         
         base.Step();

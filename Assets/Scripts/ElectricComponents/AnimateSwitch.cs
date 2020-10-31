@@ -6,19 +6,18 @@ using Unity.VectorGraphics;
 
 public class AnimateSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Switch Switch;
     public bool SwitchConducting
     {
         get { return _SwitchConducting; }
         set {
-             _SwitchConducting = value;
-             if(oldSwitchConducting == false && _SwitchConducting == true)
+             if(oldSwitchConducting == false && value == true)
              {
-                CloseSwitch();
+                closeEvent.Invoke();
              }
-             if(oldSwitchConducting == true && _SwitchConducting == false)
+             if(oldSwitchConducting == true && value == false)
              {
-                OpenSwitch();
+                openEvent.Invoke();
              }
              oldSwitchConducting = SwitchConducting;
         }
@@ -36,16 +35,15 @@ public class AnimateSwitch : MonoBehaviour
     public Sprite intermediate;
     public Sprite close;
     public Sprite bad;
-    //private SpriteRenderer spriteRenderer;
     private SVGImage spriteRenderer;
     public float transitionTime = 1f;
     private bool inTransition = false;
     public UnityEvent openEvent;
     public UnityEvent closeEvent;
-    //public UnityEvent badEvent;
     void Start()
     {
         _SwitchConducting = true;
+        Switch.SwitchConducting = _SwitchConducting;
         spriteRenderer = GetComponent<SVGImage>();
         spriteRenderer.sprite = close;
         oldSwitchConducting = _SwitchConducting;
@@ -63,9 +61,10 @@ public class AnimateSwitch : MonoBehaviour
         inTransition = true;
         spriteRenderer.sprite = intermediate;
         position = DbPos.intermediate;
-        SwitchConducting = false;
-        openEvent.Invoke();
+        _SwitchConducting = false;
+        Switch.SwitchConducting = _SwitchConducting;
         yield return new WaitForSecondsRealtime(transitionTime);
+        
         spriteRenderer.sprite = open;
         position = DbPos.open;
         inTransition = false;
@@ -82,11 +81,13 @@ public class AnimateSwitch : MonoBehaviour
         inTransition = true;
         spriteRenderer.sprite = intermediate;
         position = DbPos.intermediate;
+
         yield return new WaitForSecondsRealtime(transitionTime);
+
         spriteRenderer.sprite = close;
         position = DbPos.close;
-        SwitchConducting = true;
-        closeEvent.Invoke();
+        _SwitchConducting = true;
+        Switch.SwitchConducting = _SwitchConducting;
         inTransition = false;
     }
 
@@ -98,11 +99,11 @@ public class AnimateSwitch : MonoBehaviour
 
     public void SetBadState(bool value)
     {
-        if(inTransition == false && value == true)
+        if(/*inTransition == false &&*/ value == true)
         {
+            StopAllCoroutines();
             spriteRenderer.sprite = bad;
             position = DbPos.bad;
-            //badEvent.Invoke();
             inTransition = true; // switch is blocked in bad state
         }
         if(value == false)
