@@ -13,6 +13,7 @@ make powerline on/off more clear
 
 alpha: 
  make puzzle2 (level1_end)
+ make epilogue
 
 adding:
  better vantage point by trees?
@@ -117,25 +118,55 @@ drone-pilot: put acorn in earth-switch to prevent immediate failure
 puzzle2:
 trafo1 enabled, trafo2 disabled
 
+desktop with:
+ - HMI
+ - engineering-tool: shows tree-view with similar names, and associated settings(settings-write, timed oper and interlock change can be from here)
+ - top-view of station?
+ - documentation (what are the componenst and their properties, 
+ - how to open/close in HMI and read values
+ - how to change protection settings,  what is interlocking?
+ - footnotes about interlock-override and timed operate (explain there is a max future time)
+ - desktop and immages folder with funny stuff
+dialog:
+ - explain to first destroy cabinets, then trafos for max damage
+ - explain too much load will trip the line
+ - 
 
-SC1:
-distribution cabinets all off(?)
-turn all distribution-breakers on
-turn each disconnector on, one by one
 
-SC2:
-distribution cabinets all on(?)
-turn each disconnector off, one by one, by overwriting interlocked disconnector-open command.
+Scenario:
+ distribution cabinets all on
+ disable protection setting, or set it high, and disable interlocking logic
+ turn each disconnector off, one by one,  disconnector-open command. see result by panning cam
+ - timed operate is possible/encouraged
 
 goal1:
- see cabinets explode
+ see cabinets explode (move to cinemachine cam-view of cabinet?)
+
 
 incoming earth-sw is on
 turn outgoing earth-sw off
 engage trafo2 outgoing disconector, to connect to other busbar.
-enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch
+enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch(pilot sets resistance?)
+do-remote interlock override, do remote prot-settings, do it via timed operate
 goal2
  see trafo's explode
+ - if you do this before all distribution-stuff is broken, and you're still there(not timed), you get 'bad' ending
+ - if a timed operate is set, and the result would be destruction, puzzle ends, and epilogue starts with timer that has been set..
+
+
+
+epilogue: - timer is set from puzzle - 
+ building is burning, bottom floor is not reachable
+ pilot breaks leftmost window from outside - doable / pilot sets earth switch to resistance?
+ ninja uses rope to get to roof via window (and/or drone?)???
+ helps to open hatch for hacker??
+ pulls up pilot with rope - needs scripting/triggers/dialog
+ - meanwhile bird sweeps in to save hedgehog, and both fly off - 
+ pilot slots in drone (scripted?)
+ ninja throws rope to drone (scripted?)
+ hacker jumps on rope(scripted)
+ the 3 fly away, and the building explodes
+ #cyberwar4ever
 
 
 help:

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DoorLock : MonoBehaviour
 {
-    private bool _isOpen = false;
+    public bool _isOpen = false;
     public bool isOpen {
         set 
         {
-            if(puzzle.GetComponent<Puzzle1>().IsPuzzleSolved())
+            if(puzzle == null || puzzle.GetComponent<Puzzle1>().IsPuzzleSolved())
             {
                 _isOpen = value;
             }
@@ -19,7 +19,7 @@ public class DoorLock : MonoBehaviour
         }
         get 
         {
-            if(puzzle.GetComponent<Puzzle1>().IsPuzzleSolved())
+            if(puzzle == null || puzzle.GetComponent<Puzzle1>().IsPuzzleSolved())
             {
                 return _isOpen;
             }
