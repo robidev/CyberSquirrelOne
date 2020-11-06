@@ -7,33 +7,23 @@ using UnityEditor;
 public class ProtectionFunctions : MonoBehaviour
 {
     //protections
-    [HideInInspector]
-    public bool OverVoltage = false;
-    [HideInInspector]
-    public float OverVoltageTreshold = 1000;
-    [HideInInspector]
-    public ConductingEquipment OverVoltageVT;
-    [HideInInspector]
-    public bool OverCurrent = false;
-    [HideInInspector]
-    public float OverCurrentImmediate = 100;
-    [HideInInspector]
-    public ConductingEquipment OverCurrentCT;
-    [HideInInspector]
-    public bool TimeOverCurrent = false;
-    [HideInInspector]
-    public float OverCurrentTreshold = 50;
-    [HideInInspector]
-    public float OverCurrentTime = 2;//2 sec
-
-    public bool DifferentialProtection = false;
-    private float differentialTreshold = 0;
-    private List<ConductingEquipment> OverCurrentCTsIn;
-    private List<ConductingEquipment> OverCurrentCTsOut;
-    public bool DistanceProtection = false;
-    private float ImpedanceTreshold = 0;
-    private ConductingEquipment DistanceVT;
-    private ConductingEquipment DistanceCT;
+    [HideInInspector]    public bool OverVoltage = false;
+    [HideInInspector]    public float OverVoltageTreshold = 1000;
+    [HideInInspector]    public ConductingEquipment OverVoltageVT;
+    [HideInInspector]    public bool OverCurrent = false;
+    [HideInInspector]    public float OverCurrentImmediate = 100;
+    [HideInInspector]    public ConductingEquipment OverCurrentCT;
+    [HideInInspector]    public bool TimeOverCurrent = false;
+    [HideInInspector]    public float OverCurrentTreshold = 50;
+    [HideInInspector]    public float OverCurrentTime = 2;//2 sec
+    [HideInInspector]    public bool DifferentialProtection = false;
+    [HideInInspector]    public float differentialTreshold = 0;
+    [SerializeField] public List<ConductingEquipment> OverCurrentCTsIn;
+    [SerializeField] public List<ConductingEquipment> OverCurrentCTsOut;
+    [HideInInspector]    public bool DistanceProtection = false;
+    [HideInInspector]    public float ImpedanceTreshold = 0;
+    [HideInInspector]    public ConductingEquipment DistanceVT;
+    [HideInInspector]    public ConductingEquipment DistanceCT;
     
     public UnityEvent OnTrip;
     private float OC = 0;
@@ -156,5 +146,27 @@ public class ProtectionFunctions : MonoBehaviour
 
         }       
         
+        protectionFunctions.DistanceProtection = GUILayout.Toggle(protectionFunctions.DistanceProtection, "DistanceProtection");
+        if(protectionFunctions.DistanceProtection)
+        {
+            protectionFunctions.ImpedanceTreshold = EditorGUILayout.FloatField("    Impedance Treshold", protectionFunctions.ImpedanceTreshold);
+            protectionFunctions.DistanceVT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance VT", protectionFunctions.DistanceVT, typeof(ConductingEquipment),true);
+            protectionFunctions.DistanceCT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance CT", protectionFunctions.DistanceCT, typeof(ConductingEquipment),true);
+        }  
+
+        protectionFunctions.DifferentialProtection = GUILayout.Toggle(protectionFunctions.DifferentialProtection, "DifferentialProtection");
+        if(protectionFunctions.DifferentialProtection)
+        {
+            protectionFunctions.differentialTreshold = EditorGUILayout.FloatField("    Differential Treshold", protectionFunctions.differentialTreshold);
+            //protectionFunctions.OverCurrentCTsIn = (ConductingEquipment)EditorGUILayout.("    OverCurrent CT incoming", protectionFunctions.OverCurrentCTsIn, typeof(ConductingEquipment),true);
+            //protectionFunctions.OverCurrentCTsOut = (ConductingEquipment)EditorGUILayout.ObjectField("    OverCurrent CT outgoing", protectionFunctions.OverCurrentCTsOut, typeof(ConductingEquipment),true);
+            var listint = serializedObject.FindProperty("OverCurrentCTsIn");
+            EditorGUILayout.PropertyField(listint, new GUIContent("    OverCurrent CT incoming"), true);
+            var listout = serializedObject.FindProperty("OverCurrentCTsOut");
+            EditorGUILayout.PropertyField(listout, new GUIContent("    OverCurrent CT outgoing"), true);
+            serializedObject.ApplyModifiedProperties();
+        }          
+
+
     }
  }

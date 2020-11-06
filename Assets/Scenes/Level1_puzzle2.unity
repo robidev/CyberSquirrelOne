@@ -3459,9 +3459,19 @@ MonoBehaviour:
   OverCurrent: 1
   OverCurrentImmediate: 100
   OverCurrentCT: {fileID: 532037368}
-  TimeOverCurrent: 1
+  TimeOverCurrent: 0
   OverCurrentTreshold: 50
   OverCurrentTime: 2
+  DifferentialProtection: 0
+  differentialTreshold: 1
+  OverCurrentCTsIn:
+  - {fileID: 0}
+  OverCurrentCTsOut:
+  - {fileID: 0}
+  DistanceProtection: 0
+  ImpedanceTreshold: 0
+  DistanceVT: {fileID: 0}
+  DistanceCT: {fileID: 0}
   OnTrip:
     m_PersistentCalls:
       m_Calls:
