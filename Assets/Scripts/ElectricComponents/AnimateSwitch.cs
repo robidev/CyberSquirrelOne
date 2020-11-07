@@ -42,12 +42,29 @@ public class AnimateSwitch : MonoBehaviour
     public UnityEvent closeEvent;
     void Start()
     {
-        _SwitchConducting = true;
-        Switch.SwitchConducting = _SwitchConducting;
         spriteRenderer = GetComponent<SVGImage>();
-        spriteRenderer.sprite = close;
+        if(Switch != null)
+        {
+            _SwitchConducting = Switch.SwitchConducting;//true;
+            if(_SwitchConducting == true)
+            {
+                spriteRenderer.sprite = close;
+                position = DbPos.close;
+            }
+            else
+            {
+                spriteRenderer.sprite = open;
+                position = DbPos.open;
+            }
+        }
+        else
+        {
+            _SwitchConducting = false;
+            spriteRenderer.sprite = bad;
+            position = DbPos.bad;
+        }
         oldSwitchConducting = _SwitchConducting;
-        position = DbPos.close;
+
     }
 
     public void OpenSwitch()

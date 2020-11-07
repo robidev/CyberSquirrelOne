@@ -16,7 +16,7 @@ public class ConductingEquipment : MonoBehaviour
                 if(_voltage > VoltRating)
                 {
                     damage += _voltage - VoltRating;
-                    Debug.Log(name + ": Overvoltage");
+                    Debug.Log(name + ": Overvoltage damage:" + _voltage);
                 }
             }
         }
@@ -32,7 +32,7 @@ public class ConductingEquipment : MonoBehaviour
                 if(_current > AmpRating)
                 {
                     damage += _current - AmpRating;
-                    Debug.Log(name + ": Overcurrent");
+                    Debug.Log(name + ": Overcurrent damage:" + _current);
                 }
             }
         }
@@ -67,13 +67,18 @@ public class ConductingEquipment : MonoBehaviour
     public virtual void Step()
     {
     }
-
+    public bool displayAmp = false;
+    public bool displayVolt = false;
     void OnGUI()
     {
-        var pos = transform.position + new Vector3(40,0,0);
-
-        GUI.Label(new Rect(pos.x,768-pos.y+20,100,40),"Amp: " + current + " A");
-        GUI.Label(new Rect(pos.x,768-pos.y,100,40),"Volt:" + voltage + " V");
+        if(displayAmp || displayVolt)
+        {
+            var pos = transform.position + new Vector3(20,0,-10);
+            if(displayAmp)
+                GUI.Label(new Rect(pos.x,768-pos.y,100,40),"Amp: " + current + " A");
+            if(displayVolt)
+                GUI.Label(new Rect(pos.x,768-pos.y-20,100,40),"Volt:" + voltage + " V");
+        }
     }
 
     /*

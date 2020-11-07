@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Transformer : ConductingEquipment
 {
-    public int ratio = 2/1;
+    public float ratio = 2/1;
     private ConductingEquipment input;
     public float outputCurrentMax = 1000;
     public float PowerMax = 1000000;

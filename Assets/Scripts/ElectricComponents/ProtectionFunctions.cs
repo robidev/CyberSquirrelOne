@@ -45,14 +45,14 @@ public class ProtectionFunctions : MonoBehaviour
         if(OverVoltage && OverVoltageVT.voltage > OverVoltageTreshold)
         {
             OnTrip.Invoke();
-            Debug.Log(name + ": overvoltage trip");
+            Debug.Log(name + ": overvoltage trip:" + OverVoltageVT.voltage);
             return;
         }
         //overcurrent
         if(OverCurrent && OverCurrentCT.current > OverCurrentImmediate)
         {
             OnTrip.Invoke();
-            Debug.Log(name + ": overcurrent immediate trip");  
+            Debug.Log(name + ": overcurrent immediate trip:" + OverCurrentCT.current);  
             return;          
         }
         
@@ -66,7 +66,7 @@ public class ProtectionFunctions : MonoBehaviour
                 if(OC > delta)
                 {
                     OnTrip.Invoke();
-                    Debug.Log(name + ": time overcurrent trip"); 
+                    Debug.Log(name + ": time overcurrent trip:" + OverCurrentCT.current); 
                 }
             }
             else
@@ -88,7 +88,7 @@ public class ProtectionFunctions : MonoBehaviour
             if(impedance < ImpedanceTreshold)
             {
                 OnTrip.Invoke();
-                Debug.Log(name + ": distance protection trip");                 
+                Debug.Log(name + ": distance protection trip:" + impedance);                 
             }
         }
         //differential protection - measure ingressing and egressing current CT-CT > x
@@ -107,7 +107,7 @@ public class ProtectionFunctions : MonoBehaviour
             if(Mathf.Abs(totalcurrent) > differentialTreshold)
             {
                 OnTrip.Invoke();
-                Debug.Log(name + ": differential protection trip"); 
+                Debug.Log(name + ": differential protection trip:" + totalcurrent); 
             }
         }
     }

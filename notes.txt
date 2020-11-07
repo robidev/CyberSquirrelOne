@@ -127,6 +127,7 @@ desktop with:
  - how to change protection settings,  what is interlocking?
  - footnotes about interlock-override and timed operate (explain there is a max future time)
  - desktop and immages folder with funny stuff
+ - security cam feeds
 dialog:
  - explain to first destroy cabinets, then trafos for max damage
  - explain too much load will trip the line
@@ -135,19 +136,19 @@ dialog:
 
 Scenario:
  distribution cabinets all on
- disable protection setting, or set it high, and disable interlocking logic
- turn each disconnector off, one by one,  disconnector-open command. see result by panning cam
+ disable interlocking logic
+ turn each disconnector off, one by one,  disconnector-open command. see result by security-cam
  - timed operate is possible/encouraged
 
 goal1:
- see cabinets explode (move to cinemachine cam-view of cabinet?)
+ see cabinets explode by security-cam
 
 
 incoming earth-sw is on
-turn outgoing earth-sw off
-engage trafo2 outgoing disconector, to connect to other busbar.
-enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch(pilot sets resistance?)
-do-remote interlock override, do remote prot-settings, do it via timed operate
+ turn outgoing earth-sw off
+ engage trafo2 outgoing disconector, to connect to other busbar.
+ enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch(pilot sets resistance?)
+ do-remote interlock override, do remote prot-settings, do it via timed operate
 goal2
  see trafo's explode
  - if you do this before all distribution-stuff is broken, and you're still there(not timed), you get 'bad' ending
@@ -156,16 +157,19 @@ goal2
 
 
 epilogue: - timer is set from puzzle - 
- building is burning, bottom floor is not reachable
- pilot breaks leftmost window from outside - doable / pilot sets earth switch to resistance?
- ninja uses rope to get to roof via window (and/or drone?)???
- helps to open hatch for hacker??
- pulls up pilot with rope - needs scripting/triggers/dialog
+ building is burning, door does not open
+  hacker smash computer
+  ninja help hacker to climb up
+  ninja/hacker get out by airvent
+  rotating-airvent blocks exit
+  drone-pilot use drone to get up on roof, and throw acorn to rotating air-vent
+  ninja+hacker get out
+  all on roof, to get away
  - meanwhile bird sweeps in to save hedgehog, and both fly off - 
- pilot slots in drone (scripted?)
- ninja throws rope to drone (scripted?)
- hacker jumps on rope(scripted)
- the 3 fly away, and the building explodes
+  pilot slots in drone (scripted?)
+  ninja throws rope to drone (scripted?)
+  hacker jumps on rope(scripted)
+  the 3 fly away, and the building explodes
  #cyberwar4ever
 
 
@@ -177,7 +181,6 @@ help:
  explain that cabinet-interlock is logical trough protection relay, (and can be overwritten)
  explain consequence of overwritten interlock
  explain earth-switch
-
 
 
 
