@@ -87,3 +87,6 @@ v  blowdart-sound - ninja- https://freesound.org/people/pfranzen/sounds/187707/
 v  text bleeps     - https://opengameart.org/content/menu-select-tick
 
 https://symbols.radicasoftware.com/229/single-line-symbols
+
+https://www.alanzucconi.com/2015/07/08/screen-shaders-and-postprocessing-effects-in-unity3d/ - crt-effect
+https://luka712.github.io/2018/07/21/CRT-effect-Shadertoy-Unity/ - CRT noise
