@@ -3,57 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using TigerForge;
 
 public class StateSerializer : MonoBehaviour
 {
-    void Save(Player player)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.fun";
-        using(FileStream stream = new FileStream(path, FileMode.Create))
-        {
-            PlayerData data = new PlayerData(player);
-            formatter.Serialize(stream, data); 
-            //stream.Close();      
-        }
-    }
+    EasyFileSave myFile;
 
-    PlayerData Load()
+    void Start()
     {
-        string path = Application.persistentDataPath + "/player.fun";
-        if(File.Exists(path))
+        myFile = new EasyFileSave();
+        Debug.Log("Filename:" + myFile.GetFileName());
+        Save();
+        Load();
+    }
+    void Load()
+    {
+        if(!myFile.Load())
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            PlayerData data = null;
-            using(FileStream stream = new FileStream(path, FileMode.Open))
+            Debug.Log("load issue");
+            return;
+        }
+
+        object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
+        //object[] obj = GameObject.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
+        foreach (object o in obj)
+        {
+            SerializedObject g = (SerializedObject) o;
+            if(g.UUID == "")
+                continue;
+
+            var objData = myFile.GetBinary(g.UUID);
+            if(objData != null)
             {
-                data = (PlayerData)formatter.Deserialize(stream);
-                stream.Close();
+                g.setLoadData(objData);
+                Debug.Log(g.UUID + " is loaded");
             }
-            return data;
-        } else{
-            Debug.Log("File not Found");
-            return null;
         }
+        Debug.Log("load done");
     }
-}
 
-[System.Serializable]
-public class PlayerData
-{
-  public List<int> livingTargetPositions = new List<int>();
-  public List<int> livingTargetsTypes = new List<int>();
-
-  public int hits = 0;
-  public int shots = 0;
-
-  public PlayerData(Player player)
-  {
-
-  }
-}
-
-public class Player
-{
-
+    void Save()
+    {
+        object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
+        //object[] obj = Resources.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
+        foreach (object o in obj)
+        {
+            SerializedObject g = (SerializedObject) o;
+            if(g.UUID == "")
+                continue;
+                
+            myFile.AddBinary(g.UUID, g.getSaveData());
+            Debug.Log(g.UUID + " is saved");
+        }
+        myFile.Save();
+        Debug.Log("saving done");
+    }
 }
