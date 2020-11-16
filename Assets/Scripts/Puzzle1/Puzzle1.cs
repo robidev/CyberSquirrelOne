@@ -9,7 +9,7 @@ public class Puzzle1 : MonoBehaviour
     public Text LCD;
     private string _input = "";
     private string welcomeText = "Enter code:";
-    private bool PuzzleSolved = false;
+    public bool PuzzleSolved = false;
     private bool KeypadEnabled = true;
     private int[] buffer;
     private int PASSWORD_ADDRESS = 1;

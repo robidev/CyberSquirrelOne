@@ -28,6 +28,7 @@ public class GlobalControl : MonoBehaviour
     private AudioClip OutsideAudio;
 
     public Transform listener;
+    public StateSerializer serializer;
 
     // Start is called before the first frame update
     void Start()
@@ -183,6 +184,13 @@ public class GlobalControl : MonoBehaviour
     {
       Time.timeScale = 1;
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    public void LastCheckPoint()
+    {
+      Time.timeScale = 1;
+      SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+      serializer.Load();
     }
 
     public void Continue()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorLock : MonoBehaviour
 {
-    public bool _isOpen = false;
+    public bool _isOpen = true;
     public bool isOpen {
         set 
         {

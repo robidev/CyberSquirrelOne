@@ -8,7 +8,7 @@ public class NextLevelTrigger : MonoBehaviour
     public string filter = "";
     public LayerMask layer;
     public List<string> requiredConditions;
-    private bool[] requiredConditionsState;
+    public bool[] requiredConditionsState;
     private bool AllConditionsMet = false;
 
     void Start()

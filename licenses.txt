@@ -88,5 +88,8 @@ v  text bleeps     - https://opengameart.org/content/menu-select-tick
 
 https://symbols.radicasoftware.com/229/single-line-symbols
 
-https://www.alanzucconi.com/2015/07/08/screen-shaders-and-postprocessing-effects-in-unity3d/ - crt-effect
-https://luka712.github.io/2018/07/21/CRT-effect-Shadertoy-Unity/ - CRT noise
+unity easysave asset from TigerForge
+https://www.youtube.com/watch?v=jJBHP8qOfgc - explosion high voltage
+
+
+

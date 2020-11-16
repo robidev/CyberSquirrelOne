@@ -13,10 +13,10 @@ public class StateSerializer : MonoBehaviour
     {
         myFile = new EasyFileSave();
         Debug.Log("Filename:" + myFile.GetFileName());
-        Save();
-        Load();
+        //Save();
+        //Load();
     }
-    void Load()
+    public void Load()
     {
         if(!myFile.Load())
         {
@@ -36,13 +36,13 @@ public class StateSerializer : MonoBehaviour
             if(objData != null)
             {
                 g.setLoadData(objData);
-                Debug.Log(g.UUID + " is loaded");
+                //Debug.Log(g.UUID + " is loaded");
             }
         }
         Debug.Log("load done");
     }
 
-    void Save()
+    public void Save()
     {
         object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
         //object[] obj = Resources.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
@@ -53,7 +53,7 @@ public class StateSerializer : MonoBehaviour
                 continue;
                 
             myFile.AddBinary(g.UUID, g.getSaveData());
-            Debug.Log(g.UUID + " is saved");
+            //Debug.Log(g.UUID + " is saved");
         }
         myFile.Save();
         Debug.Log("saving done");
