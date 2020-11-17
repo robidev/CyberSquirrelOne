@@ -41,10 +41,10 @@ InputManager:
     m_Name: Action1
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: 1
     positiveButton: q
-    altNegativeButton: t
-    altPositiveButton: 
+    altNegativeButton: right ctrl
+    altPositiveButton: left ctrl
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -73,10 +73,10 @@ InputManager:
     m_Name: Action2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: 2
     positiveButton: e
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton: right alt
+    altPositiveButton: left alt
     gravity: 0
     dead: 0
     sensitivity: 1

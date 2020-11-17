@@ -16,4 +16,9 @@ public class TriggerEvent : MonoBehaviour
             Event.Invoke();
         }
     }
+
+    public void TriggerEventNow()
+    {
+        Event.Invoke();
+    }
 }

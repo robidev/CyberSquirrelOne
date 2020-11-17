@@ -1,19 +1,9 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
-
-explain picking up/dropping the hacker
-provide alternatives for q and e that work with arrow keys
-explain e and q for each squirrel (explain also keep pressing for grapling and acorn, and swinging for grapling)
 add dialog readback option
-ensure tab should be done, when it is available, and not before
-same goes for other info; ensure it is given when it can be used
+you can pick up an invisible hacker
 explain usage/goal of code-lock better, as well as therms like PCB, and make the buttons more clear
 make powerline on/off more clear
-
-
-alpha: 
- make puzzle2 (level1_end)
- make epilogue
 
 adding:
  better vantage point by trees?
@@ -22,31 +12,6 @@ adding:
  add more scenery schrubs, cars, signs etc.
 x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
 x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
-
-
-option: have engineer respond to camera???? not in MVP...
-
-objectives:
-
- triggers near bay/station/telecom-controllers(message: nah, too easy ;) )
-
-
-ninja       - cannot enter powerline with power
-            + when power is down, he can reach switchyard, but no lockpick skills
-	    + can blowdart hedgehog?? catch22?
-            + trafo is sabotaged by ninja+drone pilot
-
-hacker      - cannot climb substation without help from drone
-	    (+ can disable alarm/camera??????)
-	    + can do lockpick, 
-	    + can modify HMI to disable power, (and re-enable after ninja sabotage )
-              (alternative: wait for hedgehog/mechanic to re-enable?)
-
-drone pilot - drone gets attacked by bird
-            + areal reconneisance?
-	    + can throw acorn to knock out guard/camera
-	    + will provide drone support for hacker transport,  allows hacker to traverse fence and stay undetected
-
 
 
 Tile:
@@ -58,36 +23,6 @@ forest backdrop     - day/night TODO
 substation-backdrop - day/night  TODO
 city-backdrop       - day/night  TODO
 day-night transition animation
-
-
-backlog:
- blow-up (small/big) - https://www.youtube.com/watch?v=oCDsDb7V59o
-
-
-Puzzle1:
-you can modify the circuit (by wire? by input? how to do this robust, without removing the 'fun' or overcomplicating?) -> provide datasheets of IC's as hint
-if you force WP high, you prevent the tries from incrementing
-with infinite tries, you should be able to do it in 25 attempts or so.
-
-
-Puzzle2:
-????
-top view
-switch components, and ensure protection does not work correctly, so that 5 trafo's destruct
-part switchyard, part protection-bays
-
-
-https://search.abb.com/library/Download.aspx?DocumentID=1VCP000071&LanguageCode=en&DocumentPartId=&Action=Launch
-motorised disconnecotr (double busbar)  - https://library.e.abb.com/public/e71c316701554119a246abec86d20780/DS%202553%20ZX2.2%20en.pdf
-https://electrical-engineering-portal.com/current-transformers-power-circuits
-file:///tmp/mozilla_user0/Power%20Xpert%20FMX%20-%20Application%20Guide_6054036_02_ENG.pdf
-
-https://electrical-engineering-portal.com/why-electrical-equipment-fails
-loose joints leading to overheating or arcing
-existence of voids and contamination in insulation causing arcing and breakdown products.
-closed on fault
-open CT
-too much amp trough CT
  
 
 ---------------

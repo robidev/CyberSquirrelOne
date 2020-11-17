@@ -8,7 +8,6 @@ using TigerForge;
 public class StateSerializer : MonoBehaviour
 {
     EasyFileSave myFile;
-
     void Start()
     {
         myFile = new EasyFileSave();
