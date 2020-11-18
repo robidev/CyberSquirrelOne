@@ -11,14 +11,15 @@ public class SerializedPlayerObject : SerializedObject
             x = gameObject.transform.position.x,
             y = gameObject.transform.position.y,
             z = gameObject.transform.position.z };
-        safeLocation.spriteRenderer = GetComponent<SpriteRenderer>().enabled;
+        safeLocation.enabled = gameObject.activeSelf;
+        //GetComponent<SpriteRenderer>().enabled;
     }
     public override object getSaveData()
     {
         if(safeLocation == null)
             Start();
             
-        safeLocation.spriteRenderer = GetComponent<SpriteRenderer>().enabled;
+        safeLocation.enabled = gameObject.activeSelf; //GetComponent<SpriteRenderer>().enabled;
         return safeLocation;
     }
 
@@ -26,7 +27,9 @@ public class SerializedPlayerObject : SerializedObject
     {
         PlayerObjectData data = (PlayerObjectData) obj;
         gameObject.transform.position = new Vector3(data.x,data.y,data.z);
-        GetComponent<SpriteRenderer>().enabled = data.spriteRenderer;
+        gameObject.SetActive(data.enabled);
+        //GetComponent<SpriteRenderer>().enabled = data.spriteRenderer;
+        //Debug.Log("data.spriteRenderer:" + data.spriteRenderer);
         //Debug.Log(data.x);
     }
 
@@ -44,6 +47,6 @@ public class SerializedPlayerObject : SerializedObject
         public float x;
         public float y;
         public float z;
-        public bool spriteRenderer;
+        public bool enabled;
     }
 }

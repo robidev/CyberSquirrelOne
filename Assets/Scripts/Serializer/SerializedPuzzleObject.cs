@@ -29,6 +29,7 @@ public class SerializedPuzzleObject : SerializedObject
             
         data = (PuzzleObjectData) obj;
         puzzle.PuzzleSolved = data.isSolved;
+        Debug.Log("data.isSolved:" + data.isSolved);
     }
 
     [System.Serializable]

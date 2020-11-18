@@ -25,9 +25,10 @@ public class SerializedCableObject : SerializedObject
     {
         if(powerline == null)
             powerline = GetComponent<Powerline>();
-            
+        
         data = (PowerlineObjectData) obj;
         powerline.isPowered = data.isPowered;
+        Debug.Log("data.ispowered:" + data.isPowered);
     }
 
     [System.Serializable]

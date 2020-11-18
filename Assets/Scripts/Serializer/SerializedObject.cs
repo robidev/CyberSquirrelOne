@@ -16,6 +16,7 @@ public class SerializedObject : MonoBehaviour
     {
         ObjectData data = (ObjectData) obj;
         gameObject.SetActive(data.isActive);
+        Debug.Log("data.isActive:" + data.isActive);
     }
 
     [System.Serializable]

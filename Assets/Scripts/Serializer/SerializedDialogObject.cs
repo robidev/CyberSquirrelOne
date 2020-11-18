@@ -28,6 +28,7 @@ public class SerializedDialogObject : SerializedObject
             
         data = (DialogObjectData) obj;
         dialog.DialogHasBeenShown = data.hasBeenShown;
+        Debug.Log("data.hasBeenShown:" + data.hasBeenShown);
     }
 
     [System.Serializable]

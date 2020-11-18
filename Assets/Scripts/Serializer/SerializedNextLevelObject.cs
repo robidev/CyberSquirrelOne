@@ -29,6 +29,7 @@ public class SerializedNextLevelObject : SerializedObject
             
         data = (NextLevelTriggerObjectData) obj;
         nextLevel.requiredConditionsState = data.triggers;
+        Debug.Log("data.triggers:" + data.triggers);
     }
 
     [System.Serializable]

@@ -7733,17 +7733,6 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65380884}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 487218985}
         m_MethodName: SetActive
         m_Mode: 6
@@ -7764,6 +7753,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: trig
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 65380884}
+        m_MethodName: SaveToFile
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CheckPoint1
           m_BoolArgument: 1
         m_CallState: 2
   filter: drone
@@ -14093,7 +14093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dd1a5d429354cfabd93ac698b1498b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UUID: Checkpoint3
+  UUID: Checkpoint4
 --- !u!114 &804733440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14109,17 +14109,6 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65380884}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 804733437}
         m_MethodName: SetActive
         m_Mode: 6
@@ -14140,6 +14129,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: trig
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 65380884}
+        m_MethodName: SaveToFile
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CheckPoint4
           m_BoolArgument: 1
         m_CallState: 2
   filter: ninja
@@ -14341,7 +14341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &820667351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14349,7 +14349,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820667350}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -17064,6 +17064,7 @@ MonoBehaviour:
   - {fileID: 1406773847}
   - {fileID: 101934306}
   - {fileID: 1245168692}
+  selected: 0
   m_GameOverUI: {fileID: 1720045906}
   m_GamePauseUI: {fileID: 2094070396}
   audioSource: {fileID: 0}
@@ -17071,7 +17072,7 @@ MonoBehaviour:
   NightAudio: {fileID: 8300000, guid: a09a33e875dec5e6e922bf7d9e4eccb8, type: 3}
   InsideAudio: {fileID: 8300000, guid: 0f7bda30c076a1ec2a4557d0e8dd3357, type: 3}
   listener: {fileID: 1675792102}
-  serializer: {fileID: 0}
+  serializer: {fileID: 65380884}
 --- !u!114 &1000398614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21498,17 +21499,6 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65380884}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1161764597}
         m_MethodName: SetActive
         m_Mode: 6
@@ -21529,6 +21519,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: trig
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 65380884}
+        m_MethodName: SaveToFile
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CheckPoint3
           m_BoolArgument: 1
         m_CallState: 2
   filter: 
@@ -38962,17 +38963,6 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65380884}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1948074544}
         m_MethodName: SetActive
         m_Mode: 6
@@ -38995,6 +38985,17 @@ MonoBehaviour:
           m_StringArgument: trig
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 65380884}
+        m_MethodName: SaveToFile
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CheckPoint2
+          m_BoolArgument: 1
+        m_CallState: 2
   filter: hacker
   layer:
     serializedVersion: 2
@@ -39012,7 +39013,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.850765, y: -5.2896996}
+  m_Offset: {x: -13.283459, y: -5.2896996}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -39023,7 +39024,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 49.183456, y: 2.2444687}
+  m_Size: {x: 42.31807, y: 2.2444687}
   m_EdgeRadius: 0
 --- !u!1 &1948920102
 GameObject:
@@ -41417,8 +41418,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 820667351}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 820667350}
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

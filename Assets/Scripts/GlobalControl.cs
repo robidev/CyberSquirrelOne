@@ -12,7 +12,7 @@ public class GlobalControl : MonoBehaviour
     bool tabPress = false;
     int characters = 0;
     int oldSelected = -1;
-    int selected = 0;
+    public int selected = 0;
 
     private Camera camera_object;
     private int current_layer = 0;
@@ -38,6 +38,10 @@ public class GlobalControl : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         OutsideAudio = DayAudio;
         audioSource.Play();
+
+        string filename = PlayerPrefs.GetString("LastCheckPoint");
+        serializer.LoadFromFile(filename);
+
         //select initial character
         SelectCharacter();
     }
@@ -183,6 +187,7 @@ public class GlobalControl : MonoBehaviour
     public void Restart()
     {
       Time.timeScale = 1;
+      PlayerPrefs.SetString("LastCheckPoint","");
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
@@ -190,7 +195,6 @@ public class GlobalControl : MonoBehaviour
     {
       Time.timeScale = 1;
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-      serializer.Load();
     }
 
     public void Continue()

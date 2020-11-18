@@ -4,57 +4,88 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using TigerForge;
+using System;
 
 public class StateSerializer : MonoBehaviour
 {
-    EasyFileSave myFile;
     void Start()
     {
-        myFile = new EasyFileSave();
-        Debug.Log("Filename:" + myFile.GetFileName());
         //Save();
         //Load();
     }
-    public void Load()
+
+    public void LoadFromFile(string fileName)
     {
-        if(!myFile.Load())
+        if(fileName == "" || fileName == null)
         {
-            Debug.Log("load issue");
+            Debug.Log("No file specified to load");
             return;
         }
-
-        object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
-        //object[] obj = GameObject.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
-        foreach (object o in obj)
+        EasyFileSave saveFile = new EasyFileSave(fileName);
+        Debug.Log("Filename:" + saveFile.GetFileName());
+        try
         {
-            SerializedObject g = (SerializedObject) o;
-            if(g.UUID == "")
-                continue;
-
-            var objData = myFile.GetBinary(g.UUID);
-            if(objData != null)
+            if(!saveFile.Load())
             {
-                g.setLoadData(objData);
-                //Debug.Log(g.UUID + " is loaded");
+                Debug.Log("load issue");
+                return;
             }
+
+            object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
+            //object[] obj = GameObject.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
+            foreach (object o in obj)
+            {
+                SerializedObject g = (SerializedObject) o;
+                if(g.UUID == "")
+                    continue;
+
+                var objData = saveFile.GetBinary(g.UUID);
+                if(objData != null)
+                {
+                    Debug.Log(g.UUID + " is loaded");
+                    g.setLoadData(objData);
+                }
+            }
+            Debug.Log("load done");  
+   
+        } catch(Exception e) {
+            Debug.Log("Exception while saving file:" + e);
+        } finally {
+            saveFile.Dispose(); 
         }
-        Debug.Log("load done");
     }
 
-    public void Save()
+    public void SaveToFile(string fileName)
     {
-        object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
-        //object[] obj = Resources.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
-        foreach (object o in obj)
+        if(fileName == "" || fileName == null)
         {
-            SerializedObject g = (SerializedObject) o;
-            if(g.UUID == "")
-                continue;
-                
-            myFile.AddBinary(g.UUID, g.getSaveData());
-            //Debug.Log(g.UUID + " is saved");
+            Debug.Log("No file specified to save");
+            return;
         }
-        myFile.Save();
-        Debug.Log("saving done");
+        EasyFileSave saveFile = new EasyFileSave(fileName);
+        Debug.Log("Filename:" + saveFile.GetFileName());
+        try
+        {
+            object[] obj = Resources.FindObjectsOfTypeAll<SerializedObject>(); //this ensures disabled object are also considered
+            //object[] obj = Resources.FindObjectsOfType(typeof (SerializedObject)); //this ignores disabled objects
+            foreach (object o in obj)
+            {
+                SerializedObject g = (SerializedObject) o;
+                if(g.UUID == "")
+                    continue;
+                    
+                saveFile.AddBinary(g.UUID, g.getSaveData());
+                //Debug.Log(g.UUID + " is saved");
+            }
+            saveFile.Save();
+            PlayerPrefs.SetString("LastCheckPoint",fileName);
+            PlayerPrefs.Save();
+            Debug.Log("saving done");
+
+        } catch(Exception e) {
+            Debug.Log("Exception while saving file:" + e);
+        } finally {
+            saveFile.Dispose(); 
+        }
     }
 }
