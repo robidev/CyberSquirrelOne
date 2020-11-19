@@ -10,7 +10,10 @@ public class SerializedDialogObject : SerializedObject
     void Start()
     {
         dialog = GetComponent<DialogueTrigger>();
-        data = new DialogObjectData{ hasBeenShown = dialog.DialogHasBeenShown }; //get/set
+        data = new DialogObjectData{ 
+            hasBeenShown = dialog.DialogHasBeenShown,
+            isActive = gameObject.activeSelf 
+        }; //get/set
     }
 
     public override object getSaveData()
@@ -18,6 +21,7 @@ public class SerializedDialogObject : SerializedObject
         if(dialog == null || data == null)
             Start();
         data.hasBeenShown = dialog.DialogHasBeenShown;
+        data.isActive = gameObject.activeSelf;
         return data;
     }
 
@@ -28,12 +32,15 @@ public class SerializedDialogObject : SerializedObject
             
         data = (DialogObjectData) obj;
         dialog.DialogHasBeenShown = data.hasBeenShown;
+        gameObject.SetActive(data.isActive);
         Debug.Log("data.hasBeenShown:" + data.hasBeenShown);
+        Debug.Log("data.isActive:" + data.isActive);
     }
 
     [System.Serializable]
     private class DialogObjectData
     {
         public bool hasBeenShown;
+        public bool isActive;
     }
 }

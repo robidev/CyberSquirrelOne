@@ -23,15 +23,12 @@ public class DialogueManager : MonoBehaviour {
 
     public AudioSource audioSource;
     public AudioClip letterAudio;
-    // Start is called before the first frame update
-
-        
-	// Use this for initialization
+	public ObjectiveTracker objectiveTracker;
 	void Start () {
 		sentences = new Queue<string>();
 		audioSource = GetComponent<AudioSource>();
 		Invoke("StartEvent", 1f);
-
+		objectiveTracker.GetShownDialogue();
 	}
 
 	void StartEvent()
@@ -117,6 +114,7 @@ public class DialogueManager : MonoBehaviour {
 		audioSource.mute = true;
 		dialog.SetActive(false);
 		Time.timeScale = oldTimeScale;
+		objectiveTracker.GetShownDialogue();
 	}
 
 }

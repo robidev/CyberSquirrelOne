@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GlobalControl : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GlobalControl : MonoBehaviour
 
     public Transform listener;
     public StateSerializer serializer;
+    public TextMeshProUGUI selectedText;
 
     // Start is called before the first frame update
     void Start()
@@ -129,19 +131,19 @@ public class GlobalControl : MonoBehaviour
       foreach(PlayerMovement character in characterList) {
         if(character != null) {
           if(selected == index) { 
-            if(characterEnabledList[index] != true) {
+            if(characterEnabledList[index] != true) { //this clause is for when a character is disabled, to try the next available one
               if(characters > selected + 1) { selected ++; }
               else { selected = 0; }
               SelectCharacter();//retry select
               return;
             }
-            //Debug.Log("2 " + selected);
             character.selected = true; 
             active_character = character;
             d_camera[index].MoveToTopOfPrioritySubqueue();
             listener.parent = d_camera[index].Follow;
             listener.localPosition = Vector3.zero;
             oldSelected = selected;
+            DisplaySelected(active_character.name);
           } 
           else { 
             character.selected = false; 
@@ -161,6 +163,11 @@ public class GlobalControl : MonoBehaviour
     {
       if(index < characterEnabledList.Count)
         characterEnabledList[index] = false;
+    }
+
+    void DisplaySelected(string name)
+    {
+      selectedText.text = "" + name.Replace("_"," ");
     }
 
     public void GameOver()

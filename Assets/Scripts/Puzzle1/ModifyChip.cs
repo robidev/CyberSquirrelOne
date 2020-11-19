@@ -44,7 +44,7 @@ public class ModifyChip : MonoBehaviour
             setState(10,getState(45));
             setState(11,getState(46));
         }
-        if(pin == 16 || pin == 17)
+        if(pin == 10 || pin == 11)
         {
             setState(45,getState(10));
             setState(46,getState(11));

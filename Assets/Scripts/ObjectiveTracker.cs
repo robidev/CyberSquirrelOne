@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ObjectiveTracker : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [TextArea(3, 10)]
+	public string startScentence;
+    public TextMeshProUGUI dialogueText;
     int size = 0;
     void Start()
     {
@@ -24,6 +27,22 @@ public class ObjectiveTracker : MonoBehaviour
             {
                 trigger.TriggerDialogue();
                 break;
+            }
+        }        
+    }
+
+    public void GetShownDialogue()
+    {
+        dialogueText.text = startScentence;
+        for (int i = 0; i < size; i++)
+        {
+            var trigger = gameObject.transform.GetChild(i).GetComponent<DialogueTrigger>();
+            if(trigger != null && trigger.DialogHasBeenShown == true)
+            {
+                foreach(string scentence in trigger.dialogue.sentences)
+                {
+                    dialogueText.text += scentence + "\n\n";
+                }
             }
         }        
     }

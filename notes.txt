@@ -1,8 +1,6 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
-add dialog readback option
-you can pick up an invisible hacker
-explain usage/goal of code-lock better, as well as therms like PCB, and make the buttons more clear
+explain usage/goal of code-lock better
 make powerline on/off more clear
 
 adding:
@@ -22,7 +20,7 @@ Tile:
 forest backdrop     - day/night TODO
 substation-backdrop - day/night  TODO
 city-backdrop       - day/night  TODO
-day-night transition animation
+day-night transition animation TODO
  
 
 ---------------
