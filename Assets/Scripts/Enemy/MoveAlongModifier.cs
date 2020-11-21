@@ -12,13 +12,11 @@ public class MoveAlongModifier : MonoBehaviour
     public Transform SetPositionAtLocation;
     public void OnEnter()
     {
-        //Debug.Log("yup");
         OnEnterEvents.Invoke();
     }
 
     public void OnReached()
     {
-        //Debug.Log("yup2");
         OnReachedEvents.Invoke();
     }
 

@@ -12,10 +12,7 @@ public class ObjectiveTracker : MonoBehaviour
     void Start()
     {
         size = gameObject.transform.childCount;
-        /*for (int i = 0; i < size; i++)
-        {
-            Debug.Log(gameObject.transform.GetChild(i).name);
-        }*/
+        GetShownDialogue();
     }
 
     public void ShowNextDialogue()

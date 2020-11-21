@@ -5,9 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void StartNewGame()
     {
+        PlayerPrefs.SetString("LastCheckPoint","");
+        PlayerPrefs.SetString("LastLevel","");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ContinueGame()
+    {
+        string level = PlayerPrefs.GetString("LastLevel");
+        if(level != "")
+            SceneManager.LoadScene(level);
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Quit()

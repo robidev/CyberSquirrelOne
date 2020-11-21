@@ -41,6 +41,8 @@ public class GlobalControl : MonoBehaviour
         OutsideAudio = DayAudio;
         audioSource.Play();
 
+        PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
+
         string filename = PlayerPrefs.GetString("LastCheckPoint");
         serializer.LoadFromFile(filename);
 
