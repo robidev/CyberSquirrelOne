@@ -2,6 +2,7 @@ BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 explain usage/goal of code-lock better
 make powerline on/off more clear
+powerline off indicator/sound is not correctly serialized
 
 adding:
  better vantage point by trees?

@@ -42,9 +42,12 @@ public class GlobalControl : MonoBehaviour
         audioSource.Play();
 
         PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
+        if(SceneManager.GetActiveScene().name == "Level1_A")
+        {
+          string filename = PlayerPrefs.GetString("LastCheckPoint");
+          serializer.LoadFromFile(filename);
+        }
 
-        string filename = PlayerPrefs.GetString("LastCheckPoint");
-        serializer.LoadFromFile(filename);
 
         //select initial character
         SelectCharacter();

@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
-	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
+	[SerializeField] private float m_JumpForce = 250f;							// Amount of force added when the player jumps.
+	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .4f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] public LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
@@ -14,9 +14,9 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] public Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] public Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
 	public bool m_Grounded = true;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .1f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	public bool FacingRight	{ get { return m_FacingRight;}	}
@@ -202,11 +202,11 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 			// If the player should jump...
-			if (m_Grounded && jumpKey)
+			if (m_Grounded && jumpKey && m_Rigidbody2D.velocity.y < m_JumpForce * 0.95f)
 			{
 				// Add a vertical force to the player.
 				m_Grounded = false;
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce),ForceMode2D.Impulse);
 				OnJumpEvent.Invoke();
 			}			
 	
