@@ -17,6 +17,7 @@ public class SerializedCableObject : SerializedObject
     {
         if(powerline == null || data == null)
             Start();
+            
         data.isPowered = powerline.isPowered;
         return data;
     }

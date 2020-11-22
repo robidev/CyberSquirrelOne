@@ -23,11 +23,15 @@ public class Powerline : MonoBehaviour
             {
                 m_PowerLossEvent.Invoke();
                 powerline.Pause();
+                powerline.playOnAwake = false;
+                powerline.mute = true;
             }
             if(_isPowered == false && value == true)
             {
                 m_PowerEnableEvent.Invoke();
+                powerline.playOnAwake = true;
                 powerline.UnPause();
+                powerline.mute = false;
             }
             _isPowered = value;
 

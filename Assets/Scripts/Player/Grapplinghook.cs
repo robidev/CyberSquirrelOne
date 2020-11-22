@@ -110,8 +110,13 @@ public class Grapplinghook : MonoBehaviour {
 				isElectrocuted = false;
 				player.controllable = true;
 			}
+		}
+	}
 
-			
+	void FixedUpdate()
+	{
+		if(Time.timeScale > 0.1f)
+		{
 			if(isElectrocuted == false)
 			{	//pull towards target, until reached
 				if (joint.distance > .1f)

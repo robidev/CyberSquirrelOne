@@ -172,6 +172,7 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsCrouching", false);
 		animator.SetBool("IsClimbing", false);
 		animator.SetBool("IsJumping", true);
+		//Debug.Log("trig1");
 		if (audioSource && jumpAudio)
            	audioSource.PlayOneShot(jumpAudio);
 	}
@@ -182,6 +183,7 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsHanging", false);
 		animator.SetBool("IsCrouching", false);
 		animator.SetBool("IsClimbing", false);
+		//Debug.Log("trig2");
 		if (audioSource && dropAudio)
            	audioSource.PlayOneShot(dropAudio);
 	}

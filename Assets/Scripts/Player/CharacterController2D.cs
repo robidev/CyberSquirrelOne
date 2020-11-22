@@ -67,7 +67,7 @@ public class CharacterController2D : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
+			if (colliders[i].gameObject != gameObject && m_Rigidbody2D.velocity.y < m_JumpForce * 0.55f)
 			{
 				m_Grounded = true;
 				if (wasGrounded == false)
@@ -202,9 +202,10 @@ public class CharacterController2D : MonoBehaviour
 				}
 			}
 			// If the player should jump...
-			if (m_Grounded && jumpKey && m_Rigidbody2D.velocity.y < m_JumpForce * 0.95f)
+			if (m_Grounded && jumpKey && m_Rigidbody2D.velocity.y < m_JumpForce * 0.55f)
 			{
 				// Add a vertical force to the player.
+				//Debug.Log(m_Rigidbody2D.velocity.y);
 				m_Grounded = false;
 				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce),ForceMode2D.Impulse);
 				OnJumpEvent.Invoke();
