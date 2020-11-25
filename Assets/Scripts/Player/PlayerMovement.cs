@@ -107,17 +107,8 @@ public class PlayerMovement : MonoBehaviour {
 					hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 0, _Door);
 					if(hitInfo.collider != null && hitInfo.collider.gameObject.GetComponent<DoorLock>().isOpen == true) //we are in front of an open door
 					{ 
-						if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // player_outside
-							gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
-							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
-							characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
-							playerInside = true;
-						} else {  // player_inside
-							gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
-							characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
-							characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
-							playerInside = false;
-						}
+						TraverseDoor();
+
 						if (audioSource && openAudio)
 							audioSource.PlayOneShot(openAudio);
 					}
@@ -133,6 +124,21 @@ public class PlayerMovement : MonoBehaviour {
 				crouchKey = false;
 				jumpKey = false;
 			}
+		}
+	}
+
+	public void TraverseDoor()
+	{
+		if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // player_outside
+			gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
+			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
+			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
+			playerInside = true;
+		} else {  // player_inside
+			gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
+			characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
+			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
+			playerInside = false;
 		}
 	}
 

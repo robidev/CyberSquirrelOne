@@ -42,7 +42,9 @@ public class Bullet : MonoBehaviour
 		if(hitInfo.gameObject.tag == "Breakable")
 		{
 			Debug.Log(hitInfo.transform.name + " is broken");
-			hitInfo.gameObject.GetComponent<BreakableEffect>().Break();
+			var breakable = hitInfo.gameObject.GetComponent<BreakableEffect>();
+			if(breakable != null)
+				breakable.Break();
 		}
 		else
 		{

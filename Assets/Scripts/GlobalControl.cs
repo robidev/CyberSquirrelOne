@@ -31,6 +31,7 @@ public class GlobalControl : MonoBehaviour
     public Transform listener;
     public StateSerializer serializer;
     public TextMeshProUGUI selectedText;
+    public bool GlobalControlsEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,11 @@ public class GlobalControl : MonoBehaviour
         {
           string filename = PlayerPrefs.GetString("LastCheckPoint");
           serializer.LoadFromFile(filename);
+        }
+        else
+        {
+          //string filename = PlayerPrefs.GetString("LastCheckPoint");
+          //serializer.LoadFromFile(filename);
         }
 
 
@@ -71,7 +77,7 @@ public class GlobalControl : MonoBehaviour
 
       if( Time.timeScale > 0.1f)
       {
-        if(Input.GetButtonDown ("Tab") && tabPress == false ) {
+        if(Input.GetButtonDown ("Tab") && tabPress == false && GlobalControlsEnabled) {
           if(characters > selected + 1) { selected ++; }
           else { selected = 0; }
 
@@ -158,6 +164,19 @@ public class GlobalControl : MonoBehaviour
       }
     }
 
+    public void SelectCharacter(int index)
+    {
+      if(characterEnabledList[index] == true)
+      {
+        selected = index;
+        SelectCharacter();
+      }
+      else
+      {
+        Debug.Log("cannot select disabled character:" + index);
+      }
+    }
+
     public void EnableCharacter(int index)
     {
       if(index < characterEnabledList.Count)
@@ -168,6 +187,18 @@ public class GlobalControl : MonoBehaviour
     {
       if(index < characterEnabledList.Count)
         characterEnabledList[index] = false;
+    }
+
+    public void DisableAllCharacters()
+    {
+      GlobalControlsEnabled = false;
+      for(int index = 0; index < characterEnabledList.Count; index++)
+      {
+        //characterEnabledList[index] = false;
+        characterList[index].selected = false;
+        //characterList[index].
+        //characterList[index].GetComponent<Rigidbody2D>().simulated = false;
+      }
     }
 
     void DisplaySelected(string name)

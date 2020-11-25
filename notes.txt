@@ -1,10 +1,19 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 explain usage/goal of code-lock better
-make powerline on/off more clear
-powerline off indicator/sound is not correctly serialized
+bug with dialog immediately disapearing when ninja enters building
+maybe bug with ninja being spawned wrong after reload???
+
+add rotating vent animation, and lock/breakable
+load serialized data when starting level1_C
+improve loading/naming savegame-data
+bird-fly-in trigger
+bird fly-off path
+guidance dialogs
+
 
 adding:
+make powerline on/off more clear
  better vantage point by trees?
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
  nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI

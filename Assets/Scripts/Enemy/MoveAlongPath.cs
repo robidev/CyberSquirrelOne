@@ -12,14 +12,19 @@ public class MoveAlongPath : MonoBehaviour
     int CurrentNode;
     private Vector2 startPosition;
     public Transform nodes;
+    float distance;
+    public bool lineairSpeed = true;
 
     void Awake()
     {
         //Debug.Log(name + " Awake");
-        PathNode=new GameObject[nodes.childCount];
-        for(int i=0; i<nodes.childCount; i++)
+        if(nodes != null)
         {
-            PathNode[i] = nodes.GetChild(i).gameObject;
+            PathNode=new GameObject[nodes.childCount];
+            for(int i=0; i<nodes.childCount; i++)
+            {
+                PathNode[i] = nodes.GetChild(i).gameObject;
+            }
         }
     }
     // Use this for initialization
@@ -38,11 +43,14 @@ public class MoveAlongPath : MonoBehaviour
         {
             properties.OnEnter();
         }
+        distance = Vector3.Distance(startPosition, CurrentPositionHolder);
     }
     // Update is called once per frame
     void Update () {
-
-        Timer += Time.deltaTime * MoveSpeed;
+        if(lineairSpeed)
+            Timer += Time.deltaTime * (MoveSpeed / distance);
+        else
+            Timer += Time.deltaTime * MoveSpeed;
 
         if (MovedObject.transform.position != CurrentPositionHolder) {
             MovedObject.transform.position = Vector3.Lerp (startPosition, CurrentPositionHolder, Timer);

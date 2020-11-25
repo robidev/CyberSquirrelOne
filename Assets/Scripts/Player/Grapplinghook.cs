@@ -126,7 +126,7 @@ public class Grapplinghook : MonoBehaviour {
 					joint.enabled=false;				
 				}
 			}
-			else
+			else //electrocuted
 			{
 				player.controllable = false;
 			}
