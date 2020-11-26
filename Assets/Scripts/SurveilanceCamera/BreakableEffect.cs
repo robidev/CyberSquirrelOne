@@ -10,19 +10,32 @@ public class BreakableEffect : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip breakAudio;
     // Start is called before the first frame update
+    private bool isBroken = false;
+    public bool BreakOnlyOnce = false;
     void Start()
     {
-        child = transform.GetChild(0).gameObject;
+        if(transform.childCount > 0)
+            child = transform.GetChild(0).gameObject;
+
         audioSource = GetComponent<AudioSource>();
     }
 
     public void Break()
     {
-        child.SetActive(false);
+        if(BreakOnlyOnce == true && isBroken == true)
+        {
+            return;
+        }
+
+        if(child != null)
+            child.SetActive(false);
+
         if(BreakEvent != null)
 			BreakEvent.Invoke();
             
         if (audioSource && breakAudio)
         	audioSource.PlayOneShot(breakAudio);
+
+        isBroken = true;
     }
 }

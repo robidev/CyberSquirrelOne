@@ -4,15 +4,23 @@ explain usage/goal of code-lock better
 bug with dialog immediately disapearing when ninja enters building
 maybe bug with ninja being spawned wrong after reload???
 
-add rotating vent animation, and lock/breakable
+ - meanwhile bird sweeps in to save hedgehog, and both fly off - 
+  the 3 fly away, and the building explodes
+ #cyberwar4ever
+
+add breakable fan dialog
+add gameover if fall in rotating fan
+add smoke particle effect when breaking fan
+  hacker smash computer?
+
 load serialized data when starting level1_C
 improve loading/naming savegame-data
 bird-fly-in trigger
 bird fly-off path
-guidance dialogs
-
+more guidance dialogs
 
 adding:
+make flyoff-scene better
 make powerline on/off more clear
  better vantage point by trees?
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
@@ -26,7 +34,6 @@ Tile:
 32x32 px
 
 ----------------------------------
-
 forest backdrop     - day/night TODO
 substation-backdrop - day/night  TODO
 city-backdrop       - day/night  TODO
@@ -35,27 +42,6 @@ day-night transition animation TODO
 
 ---------------
 https://electrical-engineering-portal.com/download-center/books-and-guides/power-substations/operation-33-11-kv-substation
-
-hacker:
- - SWITCHGEAR CABINET DESTRUCTION 
-  modify protection settings
-  send timed-oper, with interlock override for disconnector/earh-switch, per outgoing bay
- - DUAL TRANSFORMER DESTRUCTION
-  override protection settings of both transformers
-  open earth-switch after trafo
-  close other earth switch before trafo
-  leave open disconn. before trafo
-  send timed oper for switch, then timed oper for disconnector
- - SMASH PC (Action 2)
-
-drone: getaway
-
-ninja: rope to get away
-
-drone-pilot: put acorn in earth-switch to prevent immediate failure
-
-
-
 
 
 puzzle2:
@@ -96,24 +82,6 @@ goal2
  see trafo's explode
  - if you do this before all distribution-stuff is broken, and you're still there(not timed), you get 'bad' ending
  - if a timed operate is set, and the result would be destruction, puzzle ends, and epilogue starts with timer that has been set..
-
-
-
-epilogue: - timer is set from puzzle - 
- building is burning, door does not open
-  hacker smash computer
-  ninja help hacker to climb up
-  ninja/hacker get out by airvent
-  rotating-airvent blocks exit
-  drone-pilot use drone to get up on roof, and throw acorn to rotating air-vent
-  ninja+hacker get out
-  all on roof, to get away
- - meanwhile bird sweeps in to save hedgehog, and both fly off - 
-  pilot slots in drone (scripted?)
-  ninja throws rope to drone (scripted?)
-  hacker jumps on rope(scripted)
-  the 3 fly away, and the building explodes
- #cyberwar4ever
 
 
 help:
