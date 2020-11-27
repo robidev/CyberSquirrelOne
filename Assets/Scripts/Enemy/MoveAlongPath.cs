@@ -14,6 +14,7 @@ public class MoveAlongPath : MonoBehaviour
     public Transform nodes;
     float distance;
     public bool lineairSpeed = true;
+    public bool EnableMovement = true;
 
     void Awake()
     {
@@ -47,26 +48,34 @@ public class MoveAlongPath : MonoBehaviour
     }
     // Update is called once per frame
     void Update () {
-        if(lineairSpeed)
-            Timer += Time.deltaTime * (MoveSpeed / distance);
-        else
-            Timer += Time.deltaTime * MoveSpeed;
+        if(EnableMovement)
+        {
+            if(lineairSpeed)
+                Timer += Time.deltaTime * (MoveSpeed / distance);
+            else
+                Timer += Time.deltaTime * MoveSpeed;
 
-        if (MovedObject.transform.position != CurrentPositionHolder) {
-            MovedObject.transform.position = Vector3.Lerp (startPosition, CurrentPositionHolder, Timer);
-        }
-        else{
-            //Debug.Log(name + " is going:" + PathNode[CurrentNode].name);
-            var properties = PathNode[CurrentNode].GetComponent<MoveAlongModifier>();
-            if(properties != null)
-            {
-                properties.OnReached();
+            if (MovedObject.transform.position != CurrentPositionHolder) {
+                MovedObject.transform.position = Vector3.Lerp (startPosition, CurrentPositionHolder, Timer);
             }
-            if(CurrentNode < PathNode.Length -1)
-            {
-                CurrentNode++;
-                CheckNode ();
+            else{
+                //Debug.Log(name + " is going:" + PathNode[CurrentNode].name);
+                var properties = PathNode[CurrentNode].GetComponent<MoveAlongModifier>();
+                if(properties != null)
+                {
+                    properties.OnReached();
+                }
+                if(CurrentNode < PathNode.Length -1)
+                {
+                    CurrentNode++;
+                    CheckNode ();
+                }
             }
         }
+    }
+
+    public void EnableMovementPath()
+    {
+        EnableMovement = true;
     }
 }

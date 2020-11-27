@@ -39,12 +39,12 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update()
 	{
-		if( dialog.activeSelf == true && (Input.GetKeyUp(KeyCode.Return) 
-										|| Input.GetKeyUp(KeyCode.Space) 
-										|| Input.GetKeyUp(KeyCode.H)
-										|| Input.GetButtonUp("Submit") 
-										|| Input.GetButtonUp("Action1") 
-										|| Input.GetButtonUp("Action2")) )
+		if( dialog.activeSelf == true && ( /*Input.GetKeyUp(KeyCode.Return) ||*/
+										Input.GetKeyUp(KeyCode.Space) ||
+										Input.GetKeyUp(KeyCode.H) ||
+										/*|| Input.GetButtonUp("Submit") || */
+										Input.GetButtonUp("Action1") ||
+										Input.GetButtonUp("Action2")) )
 		{
 			DisplayNextSentence ();
 		}

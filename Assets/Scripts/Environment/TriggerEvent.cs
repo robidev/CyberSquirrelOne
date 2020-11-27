@@ -21,4 +21,5 @@ public class TriggerEvent : MonoBehaviour
     {
         Event.Invoke();
     }
+
 }

@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorLock : MonoBehaviour
 {
+    public UnityEvent TryOpenEvent;
     public bool _isOpen = true;
     public bool isOpen {
         set 
@@ -19,6 +21,7 @@ public class DoorLock : MonoBehaviour
         }
         get 
         {
+            TryOpenEvent.Invoke();
             if(puzzle == null || puzzle.GetComponent<Puzzle1>().IsPuzzleSolved())
             {
                 return _isOpen;

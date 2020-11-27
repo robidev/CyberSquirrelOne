@@ -1,27 +1,21 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
-explain usage/goal of code-lock better
 bug with dialog immediately disapearing when ninja enters building
 maybe bug with ninja being spawned wrong after reload???
 
- - meanwhile bird sweeps in to save hedgehog, and both fly off - 
-  the 3 fly away, and the building explodes
- #cyberwar4ever
+explain usage/goal of code-lock better
 
-add breakable fan dialog
-add gameover if fall in rotating fan
-add smoke particle effect when breaking fan
-  hacker smash computer?
+TODO:
+the 3 fly away, and the building explodes
+draw wall socket sprite
 
 load serialized data when starting level1_C
 improve loading/naming savegame-data
-bird-fly-in trigger
-bird fly-off path
-more guidance dialogs
 
 adding:
-make flyoff-scene better
-make powerline on/off more clear
+ hacker smash computer?
+ make flyoff-scene better
+ make powerline on/off more clear
  better vantage point by trees?
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
  nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
