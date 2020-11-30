@@ -84,12 +84,15 @@ v  HV-zoom        - near powerline - https://opengameart.org/content/force-field
 v  coffee         - cofee-making sound - https://opengameart.org/content/coffee-cooking
 v  drone-buzz     - https://www.youtube.com/watch?v=lrYq5SoW6g8
 v  blowdart-sound - ninja- https://freesound.org/people/pfranzen/sounds/187707/
-v  text bleeps     - https://opengameart.org/content/menu-select-tick
+v  text bleeps    - https://opengameart.org/content/menu-select-tick
+v  fan crash      - https://opengameart.org/content/crash-collision
 
 https://symbols.radicasoftware.com/229/single-line-symbols
 
 unity easysave asset from TigerForge
 https://www.youtube.com/watch?v=jJBHP8qOfgc - explosion high voltage
 
+http://jeanmoreno.com/unity/warfx/ - nuke effect
 
+gimp for editing
 

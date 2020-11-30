@@ -246,4 +246,9 @@ public class GlobalControl : MonoBehaviour
       Time.timeScale = oldTimeScale;
       m_GamePauseUI.SetActive(false);
     }
+
+    public void NextLevel()
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

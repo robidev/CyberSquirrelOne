@@ -6,16 +6,13 @@ maybe bug with ninja being spawned wrong after reload???
 explain usage/goal of code-lock better
 
 TODO:
-the 3 fly away, and the building explodes
-draw wall socket sprite
-
 load serialized data when starting level1_C
 improve loading/naming savegame-data
 
 adding:
  hacker smash computer?
- make flyoff-scene better
- make powerline on/off more clear
+ make flyoff-scene better?
+ make powerline on/off more clear?
  better vantage point by trees?
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
  nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
