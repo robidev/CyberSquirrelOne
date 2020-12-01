@@ -12,6 +12,9 @@ sound of cofee-machine keeps playing after broken
 rolling credits?
 back to titlescreen after outro
 wider help-dialog depending on resolution
+disable warning-dialog if fan is already disabled
+sound in webgl broken?
+checkpoint-t wordwrap on low res(webgl)
 
 explain usage/goal of code-lock better
 
