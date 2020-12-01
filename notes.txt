@@ -1,7 +1,17 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
-bug with dialog immediately disapearing when ninja enters building
-maybe bug with ninja being spawned wrong after reload???
+
+zoom out camera of hacker and pilot
+hacker cannot jump up battery-cabinet
+drone does not switch camera layer from inside to outside
+reload/quit/restart do not work in level1_C
+squirrels cannot stand on each other
+check if control really disabled in final scene
+ducking on cofee-machine?
+sound of cofee-machine keeps playing after broken
+rolling credits?
+back to titlescreen after outro
+wider help-dialog depending on resolution
 
 explain usage/goal of code-lock better
 

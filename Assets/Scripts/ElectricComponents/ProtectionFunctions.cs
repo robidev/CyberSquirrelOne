@@ -2,7 +2,69 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
+
+#if UNITY_EDITOR
 using UnityEditor;
+[CustomEditor(typeof(ProtectionFunctions))]
+public class MyScriptEditor : Editor
+ {
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector ();
+
+        var protectionFunctions = target as ProtectionFunctions;
+
+        protectionFunctions.OverVoltage = GUILayout.Toggle(protectionFunctions.OverVoltage, "OverVoltage");
+        
+        if(protectionFunctions.OverVoltage)
+        {
+            protectionFunctions.OverVoltageTreshold = EditorGUILayout.FloatField("    OverVoltage Treshold", protectionFunctions.OverVoltageTreshold);
+            protectionFunctions.OverVoltageVT = (ConductingEquipment)EditorGUILayout.ObjectField("    OverVoltage VT", protectionFunctions.OverVoltageVT, typeof(ConductingEquipment),true);
+        }
+
+
+        protectionFunctions.OverCurrent = GUILayout.Toggle(protectionFunctions.OverCurrent, "OverCurrent");
+        if(protectionFunctions.OverCurrent)
+        {
+            protectionFunctions.OverCurrentImmediate = EditorGUILayout.FloatField("    OverCurrent Immediate Treshold", protectionFunctions.OverCurrentImmediate);
+            protectionFunctions.OverCurrentCT = (ConductingEquipment)EditorGUILayout.ObjectField("    OverCurrent CT", protectionFunctions.OverCurrentCT, typeof(ConductingEquipment),true);
+            protectionFunctions.TimeOverCurrent = GUILayout.Toggle(protectionFunctions.TimeOverCurrent, "    Time OverCurrent");
+            
+            if(protectionFunctions.TimeOverCurrent)
+            {
+                protectionFunctions.OverCurrentTreshold = EditorGUILayout.FloatField("        OverCurrent Treshold", protectionFunctions.OverCurrentTreshold);
+                protectionFunctions.OverCurrentTime = EditorGUILayout.FloatField("        OverCurrent Time", protectionFunctions.OverCurrentTime);
+            }
+
+        }       
+        
+        protectionFunctions.DistanceProtection = GUILayout.Toggle(protectionFunctions.DistanceProtection, "DistanceProtection");
+        if(protectionFunctions.DistanceProtection)
+        {
+            protectionFunctions.ImpedanceTreshold = EditorGUILayout.FloatField("    Impedance Treshold", protectionFunctions.ImpedanceTreshold);
+            protectionFunctions.DistanceVT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance VT", protectionFunctions.DistanceVT, typeof(ConductingEquipment),true);
+            protectionFunctions.DistanceCT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance CT", protectionFunctions.DistanceCT, typeof(ConductingEquipment),true);
+        }  
+
+        protectionFunctions.DifferentialProtection = GUILayout.Toggle(protectionFunctions.DifferentialProtection, "DifferentialProtection");
+        if(protectionFunctions.DifferentialProtection)
+        {
+            protectionFunctions.differentialTreshold = EditorGUILayout.FloatField("    Differential Treshold", protectionFunctions.differentialTreshold);
+            //protectionFunctions.OverCurrentCTsIn = (ConductingEquipment)EditorGUILayout.("    OverCurrent CT incoming", protectionFunctions.OverCurrentCTsIn, typeof(ConductingEquipment),true);
+            //protectionFunctions.OverCurrentCTsOut = (ConductingEquipment)EditorGUILayout.ObjectField("    OverCurrent CT outgoing", protectionFunctions.OverCurrentCTsOut, typeof(ConductingEquipment),true);
+            var listint = serializedObject.FindProperty("OverCurrentCTsIn");
+            EditorGUILayout.PropertyField(listint, new GUIContent("    OverCurrent CT incoming"), true);
+            var listout = serializedObject.FindProperty("OverCurrentCTsOut");
+            EditorGUILayout.PropertyField(listout, new GUIContent("    OverCurrent CT outgoing"), true);
+            serializedObject.ApplyModifiedProperties();
+        }          
+
+
+    }
+ }
+#endif
+
 
 public class ProtectionFunctions : MonoBehaviour
 {
@@ -112,61 +174,3 @@ public class ProtectionFunctions : MonoBehaviour
         }
     }
 }
-
- [CustomEditor(typeof(ProtectionFunctions))]
- public class MyScriptEditor : Editor
- {
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector ();
-
-        var protectionFunctions = target as ProtectionFunctions;
-
-        protectionFunctions.OverVoltage = GUILayout.Toggle(protectionFunctions.OverVoltage, "OverVoltage");
-        
-        if(protectionFunctions.OverVoltage)
-        {
-            protectionFunctions.OverVoltageTreshold = EditorGUILayout.FloatField("    OverVoltage Treshold", protectionFunctions.OverVoltageTreshold);
-            protectionFunctions.OverVoltageVT = (ConductingEquipment)EditorGUILayout.ObjectField("    OverVoltage VT", protectionFunctions.OverVoltageVT, typeof(ConductingEquipment),true);
-        }
-
-
-        protectionFunctions.OverCurrent = GUILayout.Toggle(protectionFunctions.OverCurrent, "OverCurrent");
-        if(protectionFunctions.OverCurrent)
-        {
-            protectionFunctions.OverCurrentImmediate = EditorGUILayout.FloatField("    OverCurrent Immediate Treshold", protectionFunctions.OverCurrentImmediate);
-            protectionFunctions.OverCurrentCT = (ConductingEquipment)EditorGUILayout.ObjectField("    OverCurrent CT", protectionFunctions.OverCurrentCT, typeof(ConductingEquipment),true);
-            protectionFunctions.TimeOverCurrent = GUILayout.Toggle(protectionFunctions.TimeOverCurrent, "    Time OverCurrent");
-            
-            if(protectionFunctions.TimeOverCurrent)
-            {
-                protectionFunctions.OverCurrentTreshold = EditorGUILayout.FloatField("        OverCurrent Treshold", protectionFunctions.OverCurrentTreshold);
-                protectionFunctions.OverCurrentTime = EditorGUILayout.FloatField("        OverCurrent Time", protectionFunctions.OverCurrentTime);
-            }
-
-        }       
-        
-        protectionFunctions.DistanceProtection = GUILayout.Toggle(protectionFunctions.DistanceProtection, "DistanceProtection");
-        if(protectionFunctions.DistanceProtection)
-        {
-            protectionFunctions.ImpedanceTreshold = EditorGUILayout.FloatField("    Impedance Treshold", protectionFunctions.ImpedanceTreshold);
-            protectionFunctions.DistanceVT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance VT", protectionFunctions.DistanceVT, typeof(ConductingEquipment),true);
-            protectionFunctions.DistanceCT = (ConductingEquipment)EditorGUILayout.ObjectField("    Distance CT", protectionFunctions.DistanceCT, typeof(ConductingEquipment),true);
-        }  
-
-        protectionFunctions.DifferentialProtection = GUILayout.Toggle(protectionFunctions.DifferentialProtection, "DifferentialProtection");
-        if(protectionFunctions.DifferentialProtection)
-        {
-            protectionFunctions.differentialTreshold = EditorGUILayout.FloatField("    Differential Treshold", protectionFunctions.differentialTreshold);
-            //protectionFunctions.OverCurrentCTsIn = (ConductingEquipment)EditorGUILayout.("    OverCurrent CT incoming", protectionFunctions.OverCurrentCTsIn, typeof(ConductingEquipment),true);
-            //protectionFunctions.OverCurrentCTsOut = (ConductingEquipment)EditorGUILayout.ObjectField("    OverCurrent CT outgoing", protectionFunctions.OverCurrentCTsOut, typeof(ConductingEquipment),true);
-            var listint = serializedObject.FindProperty("OverCurrentCTsIn");
-            EditorGUILayout.PropertyField(listint, new GUIContent("    OverCurrent CT incoming"), true);
-            var listout = serializedObject.FindProperty("OverCurrentCTsOut");
-            EditorGUILayout.PropertyField(listout, new GUIContent("    OverCurrent CT outgoing"), true);
-            serializedObject.ApplyModifiedProperties();
-        }          
-
-
-    }
- }
