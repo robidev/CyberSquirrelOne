@@ -8951,6 +8951,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1031397840}
     m_Modifications:
+    - target: {fileID: 6599617547883550509, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 6599617547883550509, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599617547902792388, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 6599617547902792388, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LastCheckPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 6599617549234286926, guid: c1514a2e0ce0122479375d4c6f119e52,
         type: 3}
       propertyPath: m_Name
@@ -9010,6 +9030,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599617549320537972, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 6599617549320537972, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599617549750547989, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 6599617549750547989, guid: c1514a2e0ce0122479375d4c6f119e52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1514a2e0ce0122479375d4c6f119e52, type: 3}
@@ -9079,6 +9119,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611520349374822753, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 1611520349374822753, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611520349442589252, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 1611520349442589252, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611520350382918041, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1000398613}
+    - target: {fileID: 1611520350382918041, guid: 61d65141c81af7d43bab1ba31046f6f8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LastCheckPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d65141c81af7d43bab1ba31046f6f8, type: 3}
@@ -14084,6 +14154,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1031397840}
     m_Modifications:
+    - target: {fileID: 5042311405754792642, guid: b531e0cd52c33ae298b269650fbef02f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 65380879}
+    - target: {fileID: 5042311405754792642, guid: b531e0cd52c33ae298b269650fbef02f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNextSentence
+      objectReference: {fileID: 0}
     - target: {fileID: 5042311405842758400, guid: b531e0cd52c33ae298b269650fbef02f,
         type: 3}
       propertyPath: m_LocalPosition.x

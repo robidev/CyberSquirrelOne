@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 
 public class Puzzle1 : MonoBehaviour
 {
@@ -549,9 +550,18 @@ public class Puzzle1 : MonoBehaviour
         PuzzleSolved = true;
         UnlockEvent.Invoke();
     }
+
+    #if UNITY_WEBGL
+    [DllImport("__Internal")] private static extern void OpenNewTab(string url);
+    #endif
+
     public void OpenFile(string name)
     {
         //Debug.Log("file://" + Application.dataPath + "/" + name);
-        Application.OpenURL("file://" + Application.dataPath + "/" + name);
+        #if UNITY_WEBGL
+            OpenNewTab(name);
+        #else
+            Application.OpenURL("file://" + Application.dataPath + "/" + name);
+        #endif
     }
 }

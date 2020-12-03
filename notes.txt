@@ -1,26 +1,31 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 
-zoom out camera of hacker and pilot
-hacker cannot jump up battery-cabinet
-drone does not switch camera layer from inside to outside
-reload/quit/restart do not work in level1_C
-squirrels cannot stand on each other
-check if control really disabled in final scene
-ducking on cofee-machine?
-sound of cofee-machine keeps playing after broken
-rolling credits?
-back to titlescreen after outro
-wider help-dialog depending on resolution
-disable warning-dialog if fan is already disabled
-sound in webgl broken?
-checkpoint-t wordwrap on low res(webgl)
-
-explain usage/goal of code-lock better
-
 TODO:
 load serialized data when starting level1_C
 improve loading/naming savegame-data
+outro: rolling credits?
+back to titlescreen after outro
+explain usage/goal of code-lock better
+
+BUGS:
+zoom out camera of hacker and pilot in level1_c
+hacker cannot jump up battery-cabinet in level1_c
+check if control really disabled in final scene level1_c
+squirrel attach issue bij erwin in final scene level1_c
+
+drone does not switch camera layer from inside to outside
+squirrels cannot stand on each other
+ducking on cofee-machine?
+sound of cofee-machine keeps playing after broken
+disable warning-dialog if fan is already disabled
+
+
+
+FIX?
+checkpoint-t wordwrap on low res(webgl) - fixed with larger screen
+wider help-dialog depending on resolution - fixed with larger screen?
+
 
 adding:
  hacker smash computer?
