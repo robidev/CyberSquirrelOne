@@ -129,15 +129,19 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void TraverseDoor()
 	{
-		if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // player_outside
+		if(gameObject.layer == LayerMask.NameToLayer("Player_outside")){ // switch to player_inside
 			gameObject.layer = LayerMask.NameToLayer("Player_inside");//11; //switch to inside
 			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("outside"));//~(1 << 15);
 			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("inside");//1 << 16;
+			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("Player_outside"));//~(1 << 10);
+			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("Player_inside");//1 << 11;
 			playerInside = true;
-		} else {  // player_inside
+		} else {  // switch to player_outside
 			gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
 			characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
 			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("inside"));//~(1 << 16);
+			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("Player_outside");//1 << 10;
+			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("Player_inside"));//~(1 << 11);
 			playerInside = false;
 		}
 	}

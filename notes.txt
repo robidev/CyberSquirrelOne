@@ -7,24 +7,15 @@ improve loading/naming savegame-data
 outro: rolling credits?
 back to titlescreen after outro
 explain usage/goal of code-lock better
+message of blocked door in level1_c
 
 BUGS:
-zoom out camera of hacker and pilot in level1_c
-hacker cannot jump up battery-cabinet in level1_c
 check if control really disabled in final scene level1_c
 squirrel attach issue bij erwin in final scene level1_c
+webgl flyoff-stuck
 
 drone does not switch camera layer from inside to outside
-squirrels cannot stand on each other
-ducking on cofee-machine?
 sound of cofee-machine keeps playing after broken
-disable warning-dialog if fan is already disabled
-
-
-
-FIX?
-checkpoint-t wordwrap on low res(webgl) - fixed with larger screen
-wider help-dialog depending on resolution - fixed with larger screen?
 
 
 adding:

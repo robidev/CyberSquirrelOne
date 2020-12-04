@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 2588596786788219902, guid: 04b6f4a1e577fb0a29191ee4f41624b7,
         type: 3}
       propertyPath: m_WhatIsGround.m_Bits
-      value: 81921
+      value: 83969
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b6f4a1e577fb0a29191ee4f41624b7, type: 3}
@@ -777,14 +777,14 @@ MonoBehaviour:
   m_Follow: {fileID: 1947185876}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 9
+    OrthographicSize: 12
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -801,7 +801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101934305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.55, y: 12.100001, z: -10}
+  m_LocalPosition: {x: 5.55, y: 13.420001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1609443489}
@@ -2245,6 +2245,11 @@ PrefabInstance:
       propertyPath: player_camera
       value: 
       objectReference: {fileID: 1406773847}
+    - target: {fileID: 7784652698711710826, guid: 1ade939d9c53ab372b791d48cc72c9e2,
+        type: 3}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 50177
+      objectReference: {fileID: 0}
     - target: {fileID: 7784652698711710828, guid: 1ade939d9c53ab372b791d48cc72c9e2,
         type: 3}
       propertyPath: m_Name
@@ -2399,7 +2404,7 @@ PrefabInstance:
     - target: {fileID: 5395691651153850218, guid: 22378568a04413973b6bf90b504c4154,
         type: 3}
       propertyPath: m_WhatIsGround.m_Bits
-      value: 65537
+      value: 83969
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22378568a04413973b6bf90b504c4154, type: 3}
@@ -3762,7 +3767,6 @@ GameObject:
   m_Component:
   - component: {fileID: 728070750}
   - component: {fileID: 728070751}
-  - component: {fileID: 728070752}
   m_Layer: 16
   m_Name: battery_cabinet1-broken
   m_TagString: Untagged
@@ -3778,7 +3782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728070749}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -1.784, y: -1.876, z: -3}
+  m_LocalPosition: {x: -1.73, y: -1.876, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1452028166}
@@ -3834,32 +3838,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &728070752
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728070749}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0.81, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 1.12}
-    newSize: {x: 0.4, y: 1.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.4, y: 1.12}
-  m_EdgeRadius: 0
 --- !u!1 &736902935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12700,7 +12678,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13407,14 +13385,14 @@ MonoBehaviour:
   m_Follow: {fileID: 371409123}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 9
+    OrthographicSize: 12
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13431,7 +13409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406773846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.7, y: 0.04000032, z: -20}
+  m_LocalPosition: {x: -48.7, y: 1.3600005, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1091137845}
@@ -24698,7 +24676,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24732,7 +24710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.670668, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: -23.600965, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -25179,7 +25157,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -25828,7 +25806,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7586207, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -26184,7 +26162,7 @@ PrefabInstance:
     - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
         type: 3}
       propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
         type: 3}
@@ -26215,6 +26193,46 @@ PrefabInstance:
         type: 3}
       propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1204469144}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: DisableDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065124571669001981, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: BreakEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080765886566666761, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.38080502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080765886566666761, guid: f1249ef773432c9c6a2003dd6ef5f79d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.023030847
       objectReference: {fileID: 0}
     - target: {fileID: 5080765887428526304, guid: f1249ef773432c9c6a2003dd6ef5f79d,
         type: 3}
