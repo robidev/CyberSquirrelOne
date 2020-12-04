@@ -38,6 +38,11 @@ public class DroneControl : MonoBehaviour
                     drone_camera.MoveToTopOfPrioritySubqueue();
                     listener.parent = drone_camera.Follow;
                     listener.localPosition = Vector3.zero;
+                    //Debug.Log("dr1");
+                    if(gameObject.layer == LayerMask.NameToLayer("Player_inside"))//player inside, then switch camera layer to outside
+                    {
+                        player.SetDisplayedLayer(LayerMask.NameToLayer("Player_outside"));
+                    }
                 }
                 else
                 {
@@ -45,6 +50,11 @@ public class DroneControl : MonoBehaviour
                     player_camera.MoveToTopOfPrioritySubqueue();
                     listener.parent = player_camera.Follow;
                     listener.localPosition = Vector3.zero;
+                    //Debug.Log("pl1");
+                    if(gameObject.layer == LayerMask.NameToLayer("Player_inside"))//player inside, then switch camera layer to inside
+                    {
+                        player.SetDisplayedLayer(LayerMask.NameToLayer("Player_inside"));
+                    }
                 }
             } 
         }

@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip outsideWalkingAudio;
 	public AudioClip insideWalkingAudio;
 	private bool _playerInside = false;
+	private int DisplayedLayer;
 	public bool playerInside {
 		set {
 			if(value == true)
@@ -60,7 +61,16 @@ public class PlayerMovement : MonoBehaviour {
 		m_WhatIsGround = characterControl.m_WhatIsGround;
 		audioSource = GetComponent<AudioSource>();
 		listener = transform.GetComponent<AudioListener>();
-		playerInside = false;
+		if(gameObject.layer == LayerMask.NameToLayer("Player_outside"))
+		{
+			playerInside = false;
+			DisplayedLayer = LayerMask.NameToLayer("Player_outside");
+		}
+		else
+		{
+			playerInside = true;
+			DisplayedLayer = LayerMask.NameToLayer("Player_inside");			
+		}
 	}
 	
 	public void Die(DieReason reason) {
@@ -136,6 +146,7 @@ public class PlayerMovement : MonoBehaviour {
 			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("Player_outside"));//~(1 << 10);
 			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("Player_inside");//1 << 11;
 			playerInside = true;
+			DisplayedLayer = gameObject.layer;
 		} else {  // switch to player_outside
 			gameObject.layer = LayerMask.NameToLayer("Player_outside");//10;
 			characterControl.m_WhatIsGround |= 1 << LayerMask.NameToLayer("outside");//1 << 15;
@@ -143,7 +154,18 @@ public class PlayerMovement : MonoBehaviour {
 			characterControl.m_WhatIsGround |= 1 <<LayerMask.NameToLayer("Player_outside");//1 << 10;
 			characterControl.m_WhatIsGround &=  ~(1 << LayerMask.NameToLayer("Player_inside"));//~(1 << 11);
 			playerInside = false;
+			DisplayedLayer = gameObject.layer;
 		}
+	}
+
+	public int GetDisplayedLayer()
+	{
+		return DisplayedLayer;
+	}
+
+	public void SetDisplayedLayer(int layer)
+	{
+		DisplayedLayer = layer;
 	}
 
 	public void OnHanging(bool isHanging)

@@ -10,12 +10,20 @@ explain usage/goal of code-lock better
 message of blocked door in level1_c
 
 BUGS:
+sound of cofee-machine keeps playing after broken
 check if control really disabled in final scene level1_c
 squirrel attach issue bij erwin in final scene level1_c
 webgl flyoff-stuck
+24c02 vs 24c04
+electoics typfout
+playermovement-inside=false , bug?
+drone-checkpoint
+1e keer start=progress weg niet nodig
+duielijker Q voor hacking
+duidelijker Q voor switch-drone
 
-drone does not switch camera layer from inside to outside
-sound of cofee-machine keeps playing after broken
+
+
 
 
 adding:

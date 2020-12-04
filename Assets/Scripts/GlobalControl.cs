@@ -92,11 +92,11 @@ public class GlobalControl : MonoBehaviour
         //handle inside/outside masks
         if(active_character != null){
           //if the camera culling mask does not match the player mask (e.g. we switch to a player that is inside, while the camera is outside)
-          if(active_character.gameObject.layer != current_layer){
-            current_layer = active_character.gameObject.layer;
+          if(active_character.GetDisplayedLayer() != current_layer){
+            current_layer = active_character.GetDisplayedLayer();
 
             //modify what is seen(inside/outside scene) by the camera, using culling-masks
-            if(active_character.gameObject.layer == LayerMask.NameToLayer("Player_outside"))  // 10 player_outside
+            if(current_layer == LayerMask.NameToLayer("Player_outside"))  // 10 player_outside
             {
               camera_object.cullingMask |= 1 << LayerMask.NameToLayer("Player_outside");//1 << 10;
               camera_object.cullingMask &=  ~(1 << LayerMask.NameToLayer("Player_inside"));//~(1 << 11);
