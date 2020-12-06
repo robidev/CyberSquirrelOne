@@ -1,5 +1,6 @@
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
+hedgehog attack tweaking
 
 TODO:
 load serialized data when starting level1_C
@@ -13,22 +14,20 @@ indication of abilities and current selection
 indication of mission checklist
 guidance where to go for next mission item
 drone-checkpoint+safe-zone
+re-trigger dialog??
+improve dialog-help?
 
 BUGS:
-webgl flyoff-stuck
 sound of cofee-machine keeps playing after broken
-check if control really disabled in final scene level1_c
-squirrel attach issue bij erwin in final scene level1_c
 24c02 vs 24c04
-electoics typfout
-playermovement-inside=false , bug?
 1e keer start=progress weg niet nodig
 duielijker Q voor hacking
 duidelijker Q voor switch-drone
 check powerline sound
-
-
-
+bird-sleep behind switchgear
+invisible building-wall for drone...
+text in hints, falls off
+coffe machine serialize does nothing
 
 adding:
  hacker smash computer?

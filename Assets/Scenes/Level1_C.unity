@@ -784,7 +784,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2111,7 +2111,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 345075383}
-  - component: {fileID: 345075384}
   m_Layer: 1
   m_Name: Takeoff
   m_TagString: Untagged
@@ -2133,26 +2132,6 @@ Transform:
   m_Father: {fileID: 1995064164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &345075384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345075382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082eae0ee1cda3a3fa102f7e60420789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  OnReachedEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  SetPositionTarget: {fileID: 0}
-  SetPositionAtLocation: {fileID: 0}
 --- !u!1001 &371409122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2305,23 +2284,34 @@ MonoBehaviour:
   OnReachedEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1947185876}
-        m_MethodName: set_parent
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 371409123}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 484076563}
         m_MethodName: set_isKinematic
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 484076566}
+        m_MethodName: SetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1947185876}
+        m_MethodName: SetParent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 371409123}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12678,7 +12668,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12755,17 +12745,6 @@ MonoBehaviour:
   OnReachedEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 72679693}
-        m_MethodName: set_parent
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1947185876}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1268116594}
         m_MethodName: set_isKinematic
         m_Mode: 6
@@ -12777,8 +12756,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  SetPositionTarget: {fileID: 0}
-  SetPositionAtLocation: {fileID: 0}
+      - m_Target: {fileID: 1268116597}
+        m_MethodName: SetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 72679693}
+        m_MethodName: SetParent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 371409123}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  SetPositionTarget: {fileID: 72679693}
+  SetPositionAtLocation: {fileID: 371409123}
 --- !u!1 &1279947894
 GameObject:
   m_ObjectHideFlags: 0
@@ -13314,6 +13315,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 371409122}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1359159148 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7784652698711710827, guid: 1ade939d9c53ab372b791d48cc72c9e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 371409122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1359159151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13332,12 +13339,34 @@ MonoBehaviour:
   OnReachedEvents:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1359159148}
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1359159151}
         m_MethodName: SetPosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 371409123}
+        m_MethodName: SetParent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 222604936}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13392,7 +13421,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23331,6 +23360,8 @@ MonoBehaviour:
   nodes: {fileID: 1930314399}
   lineairSpeed: 1
   EnableMovement: 0
+  MinimalDistance: 0.01
+  selectedText: {fileID: 0}
 --- !u!82 &1725868188
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24676,7 +24707,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24710,7 +24741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.600965, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: -29.670668, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -24870,6 +24901,8 @@ MonoBehaviour:
   nodes: {fileID: 0}
   lineairSpeed: 1
   EnableMovement: 1
+  MinimalDistance: 0.8
+  selectedText: {fileID: 0}
 --- !u!1 &1996951623
 GameObject:
   m_ObjectHideFlags: 0
@@ -25157,7 +25190,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -25806,7 +25839,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

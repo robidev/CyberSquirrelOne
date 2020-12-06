@@ -131,6 +131,10 @@ public class GlobalControl : MonoBehaviour
 
     void SelectCharacter()
     {
+      if(GlobalControlsEnabled == false)
+      {
+        return;
+      }
       if(selected == oldSelected) // if we are selecting the same character
       {
         //Debug.Log("1 " + selected);
@@ -196,8 +200,6 @@ public class GlobalControl : MonoBehaviour
       {
         //characterEnabledList[index] = false;
         characterList[index].selected = false;
-        //characterList[index].
-        //characterList[index].GetComponent<Rigidbody2D>().simulated = false;
       }
     }
 

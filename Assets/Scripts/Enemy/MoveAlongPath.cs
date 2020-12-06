@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoveAlongPath : MonoBehaviour
 {
     public GameObject[] PathNode;
     public GameObject MovedObject;
     public float MoveSpeed;
-    float Timer;
+    float _Timer;
     Vector3 CurrentPositionHolder;
     int CurrentNode;
-    private Vector2 startPosition;
+    private Vector3 startPosition;
     public Transform nodes;
     float distance;
     public bool lineairSpeed = true;
     public bool EnableMovement = true;
+    public float MinimalDistance = 0.5f;
+    public TextMeshProUGUI selectedText;
 
     void Awake()
     {
@@ -36,13 +39,14 @@ public class MoveAlongPath : MonoBehaviour
     }
     void CheckNode()
     {
-        Timer = 0;
+        _Timer = 0;
         startPosition = MovedObject.transform.position;
         CurrentPositionHolder = PathNode[CurrentNode].transform.position;
         var properties = PathNode[CurrentNode].GetComponent<MoveAlongModifier>();
         if(properties != null)
         {
             properties.OnEnter();
+            //Debug.Log("onenter returned");
         }
         distance = Vector3.Distance(startPosition, CurrentPositionHolder);
     }
@@ -51,12 +55,16 @@ public class MoveAlongPath : MonoBehaviour
         if(EnableMovement)
         {
             if(lineairSpeed)
-                Timer += Time.deltaTime * (MoveSpeed / distance);
+                _Timer += Time.deltaTime * (MoveSpeed / distance);
             else
-                Timer += Time.deltaTime * MoveSpeed;
-
-            if (MovedObject.transform.position != CurrentPositionHolder) {
-                MovedObject.transform.position = Vector3.Lerp (startPosition, CurrentPositionHolder, Timer);
+                _Timer += Time.deltaTime * MoveSpeed;
+            float _distance = Vector3.Distance(MovedObject.transform.position,CurrentPositionHolder);
+            if(selectedText != null)
+                selectedText.text = "dist:" + _distance.ToString();
+                
+            if (_distance > MinimalDistance) {
+                MovedObject.transform.position = Vector3.Lerp (startPosition, CurrentPositionHolder, _Timer);
+                //Debug.Log(_distance);
             }
             else{
                 //Debug.Log(name + " is going:" + PathNode[CurrentNode].name);
@@ -64,6 +72,7 @@ public class MoveAlongPath : MonoBehaviour
                 if(properties != null)
                 {
                     properties.OnReached();
+                    //Debug.Log("onreached returned");
                 }
                 if(CurrentNode < PathNode.Length -1)
                 {
