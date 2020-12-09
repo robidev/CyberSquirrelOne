@@ -1084,6 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06adc2b12343619dd8a9ff62a4949e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tryOpenDoor: {fileID: 0}
   TryOpenEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -26001,9 +26002,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06adc2b12343619dd8a9ff62a4949e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tryOpenDoor: {fileID: 0}
   TryOpenEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 736902937}
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _isOpen: 0
   puzzle: {fileID: 0}
 --- !u!1001 &3844490308817021191

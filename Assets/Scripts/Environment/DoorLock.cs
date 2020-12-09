@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class DoorLock : MonoBehaviour
 {
+    public DialogueTrigger tryOpenDoor;
     public UnityEvent TryOpenEvent;
     public bool _isOpen = true;
     public bool isOpen {
@@ -37,5 +38,10 @@ public class DoorLock : MonoBehaviour
     public void UnlockDoor()
     {
         _isOpen = true;
+    }
+
+    public void DisableDialog()
+    {
+        tryOpenDoor.DisableDialogue();
     }
 }

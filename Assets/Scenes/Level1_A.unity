@@ -340,7 +340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &25497762
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 65380883}
   letterAudio: {fileID: 8300000, guid: 2626b5a30a8d09ec1b2dc789ae54c9bd, type: 3}
   objectiveTracker: {fileID: 2039108767}
 --- !u!4 &65380880
@@ -1005,7 +1005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &98621538
 BoxCollider2D:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1774,8 +1774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: 175}
-  m_SizeDelta: {x: -103, y: -669.9727}
+  m_AnchoredPosition: {x: -1.1000061, y: 175}
+  m_SizeDelta: {x: -38.244873, y: -669.9727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134746204
 MonoBehaviour:
@@ -3924,7 +3924,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.3276105}
+  m_Offset: {x: 0, y: 1.7075202}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3935,7 +3935,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 0.81233597}
+  m_Size: {x: 8, y: 0.05251634}
   m_EdgeRadius: 0
 --- !u!1 &290216843
 GameObject:
@@ -5273,8 +5273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: 326}
-  m_SizeDelta: {x: -103, y: -704}
+  m_AnchoredPosition: {x: -1.1000061, y: 326}
+  m_SizeDelta: {x: -38.244873, y: -704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427183363
 MonoBehaviour:
@@ -5793,7 +5793,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &476411441
 MonoBehaviour:
@@ -7488,7 +7488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -364, y: -349}
+  m_AnchoredPosition: {x: -362.8, y: -297.2}
   m_SizeDelta: {x: 180, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630760966
@@ -9918,8 +9918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000061989}
-  m_SizeDelta: {x: 387.9541, y: 91.274506}
+  m_AnchoredPosition: {x: -1.6, y: -0.0000061989}
+  m_SizeDelta: {x: 454.19427, y: 91.274506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717600400
 MonoBehaviour:
@@ -10757,6 +10757,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750211194}
   m_CullTransparentMesh: 0
+--- !u!1 &771976870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771976871}
+  - component: {fileID: 771976873}
+  - component: {fileID: 771976872}
+  m_Layer: 1
+  m_Name: ExplainLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &771976871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771976870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &771976872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771976870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32956cd41d356f53a3c0fc013d6aca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UUID: ExplainLock
+--- !u!114 &771976873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771976870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: hacker'
+    sentences:
+    - The lock needs 4 digits, and a confirm(enter) to open. But there must be a
+      way around it without trying all 9999 combinations...
+  ShowDialogMoreThanOnce: 0
 --- !u!1 &774882534
 GameObject:
   m_ObjectHideFlags: 0
@@ -13410,7 +13473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -6.2824087, y: -0.7654944, z: 9.88}
+  m_LocalPosition: {x: -7.273577, y: -0.7654944, z: 9.88}
   m_LocalScale: {x: 19.81, y: 19.81, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -13756,7 +13819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.912693, y: 6.5691156, z: -10}
+  m_LocalPosition: {x: 62.41844, y: 6.5691156, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -15110,7 +15173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1095058216
 MonoBehaviour:
@@ -15164,8 +15227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000011444}
-  m_SizeDelta: {x: 387.9541, y: 64.61188}
+  m_AnchoredPosition: {x: -1.6, y: -0.000011444}
+  m_SizeDelta: {x: 454.19427, y: 64.61188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105593672
 MonoBehaviour:
@@ -15588,8 +15651,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.7}
-  m_SizeDelta: {x: 387.9541, y: 63.197144}
+  m_AnchoredPosition: {x: -1.6, y: 0.7}
+  m_SizeDelta: {x: 454.19427, y: 63.197144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132665291
 MonoBehaviour:
@@ -18655,7 +18718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -30.206968, y: -3.6806374, z: 14.14}
+  m_LocalPosition: {x: -34.97269, y: -3.6806374, z: 14.14}
   m_LocalScale: {x: 19.05, y: 19.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -18713,8 +18776,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.785, y: -137}
-  m_SizeDelta: {x: 430.4295, y: 45.181107}
+  m_AnchoredPosition: {x: -0.3, y: -137}
+  m_SizeDelta: {x: 495.0103, y: 45.181107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236566160
 MonoBehaviour:
@@ -18854,7 +18917,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -19548,8 +19611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 387.9541, y: 86.8307}
+  m_AnchoredPosition: {x: -1.6, y: 0}
+  m_SizeDelta: {x: 454.19427, y: 86.8307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1323357314
 MonoBehaviour:
@@ -20269,8 +20332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: -195}
-  m_SizeDelta: {x: -103, y: -702.711}
+  m_AnchoredPosition: {x: -1.1000061, y: -195}
+  m_SizeDelta: {x: -38.244873, y: -702.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331513887
 MonoBehaviour:
@@ -20345,8 +20408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.065, y: -356.5}
-  m_SizeDelta: {x: 430.72073, y: 43.6279}
+  m_AnchoredPosition: {x: -0.6, y: -356.5}
+  m_SizeDelta: {x: 495.34518, y: 43.6279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335822174
 MonoBehaviour:
@@ -20548,8 +20611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: -64}
-  m_SizeDelta: {x: -103, y: -674.4165}
+  m_AnchoredPosition: {x: -1.1000061, y: -64}
+  m_SizeDelta: {x: -38.244873, y: -674.4165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342417199
 MonoBehaviour:
@@ -21109,7 +21172,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22024,8 +22087,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000033379}
-  m_SizeDelta: {x: 387.9541, y: 61.649384}
+  m_AnchoredPosition: {x: -1.6, y: -0.0000033379}
+  m_SizeDelta: {x: 454.19427, y: 61.649384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1462427983
 MonoBehaviour:
@@ -23069,7 +23132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1546691709
 BoxCollider2D:
@@ -23197,8 +23260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -364.8, y: 0.000012239}
-  m_SizeDelta: {x: 194.96112, y: 768}
+  m_AnchoredPosition: {x: -97.502, y: 0.000012239}
+  m_SizeDelta: {x: 729.587, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552708085
 MonoBehaviour:
@@ -27630,7 +27693,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1600758702
 MonoBehaviour:
@@ -28458,8 +28521,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32.832, y: 20}
-  m_SizeDelta: {x: -104.33716, y: -696.6353}
+  m_AnchoredPosition: {x: -0.3999939, y: 20}
+  m_SizeDelta: {x: -39.782654, y: -696.6353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704586038
 MonoBehaviour:
@@ -28831,7 +28894,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Cancel
+  m_Text: 'Quit puzzle
 
 '
 --- !u!222 &1714490824
@@ -30061,8 +30124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000005722046}
-  m_SizeDelta: {x: 387.9541, y: 59.950928}
+  m_AnchoredPosition: {x: -1.6, y: 0.000005722046}
+  m_SizeDelta: {x: 454.19427, y: 59.950928}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790212549
 MonoBehaviour:
@@ -30244,6 +30307,68 @@ Transform:
   m_Father: {fileID: 911996121}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1818690970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818690971}
+  - component: {fileID: 1818690973}
+  - component: {fileID: 1818690972}
+  m_Layer: 1
+  m_Name: TryOpenLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1818690971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818690970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2039108766}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818690972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818690970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32956cd41d356f53a3c0fc013d6aca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UUID: TryOpenLock
+--- !u!114 &1818690973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818690970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba1b641cfecddd1b154e70cec68717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 'Commander: hacker'
+    sentences:
+    - The door has a electronic lock. You will need to hack it(Q)
+  ShowDialogMoreThanOnce: 0
 --- !u!1 &1820489591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3897651218046079089, guid: 6cf944a8654ecf6a09e661a10a7cdf0a,
@@ -30505,6 +30630,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   modifyChip: {fileID: 911996124}
+  explainPuzzle: {fileID: 771976873}
 --- !u!114 &1828257703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30625,7 +30751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2039108766}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1836218838
 MonoBehaviour:
@@ -31837,8 +31963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: 258.29416}
-  m_SizeDelta: {x: -103, y: -702.5883}
+  m_AnchoredPosition: {x: -1.1000061, y: 258.29416}
+  m_SizeDelta: {x: -38.244873, y: -702.5883}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908139214
 MonoBehaviour:
@@ -32091,7 +32217,7 @@ GameObject:
   - component: {fileID: 1928688857}
   - component: {fileID: 1928688856}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32114,7 +32240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362.8, y: 78}
+  m_AnchoredPosition: {x: -363.4, y: -354}
   m_SizeDelta: {x: 180, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928688856
@@ -32653,7 +32779,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32687,7 +32813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.519035, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: 99.44933, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -33146,8 +33272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000033379}
-  m_SizeDelta: {x: 387.9541, y: 61.649384}
+  m_AnchoredPosition: {x: -1.5, y: -0.0000033379}
+  m_SizeDelta: {x: 454.19427, y: 61.649384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1974980021
 MonoBehaviour:
@@ -33918,7 +34044,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.7586207, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34137,6 +34263,8 @@ Transform:
   - {fileID: 2074047588}
   - {fileID: 5024595}
   - {fileID: 607273153}
+  - {fileID: 1818690971}
+  - {fileID: 771976871}
   - {fileID: 1600758701}
   - {fileID: 25497761}
   - {fileID: 1836218837}
@@ -35002,8 +35130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.785, y: -252}
-  m_SizeDelta: {x: 430.4295, y: 45.181107}
+  m_AnchoredPosition: {x: -0.3, y: -252}
+  m_SizeDelta: {x: 495.0103, y: 45.181107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2088714515
 MonoBehaviour:
@@ -35577,8 +35705,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.5, y: 91}
-  m_SizeDelta: {x: -103, y: -702.2942}
+  m_AnchoredPosition: {x: -1.1000061, y: 91}
+  m_SizeDelta: {x: -38.244873, y: -702.2942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122292200
 MonoBehaviour:
@@ -36033,9 +36161,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06adc2b12343619dd8a9ff62a4949e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tryOpenDoor: {fileID: 1818690973}
   TryOpenEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1818690973}
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _isOpen: 1
   puzzle: {fileID: 1828257700}
 --- !u!1 &2143008141

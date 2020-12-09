@@ -2,37 +2,29 @@ BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 
-TODO:
-load serialized data when starting level1_C
-improve loading/naming savegame-data
+TODO/BUGS:
+puzzle2!!!!!!
 outro: rolling credits?
-back to titlescreen after outro
-explain usage/goal of code-lock better
-message of blocked door in level1_c
-indication of fence
-indication of abilities and current selection
-indication of mission checklist
-guidance where to go for next mission item
-drone-checkpoint+safe-zone
-re-trigger dialog??
-improve dialog-help?
+maybe remove quit/replace with back to main?
 
-BUGS:
-sound of cofee-machine keeps playing after broken
-24c02 vs 24c04
-1e keer start=progress weg niet nodig
-duielijker Q voor hacking
-duidelijker Q voor switch-drone
-check powerline sound
-bird-sleep behind switchgear
-invisible building-wall for drone...
-text in hints, falls off
-coffe machine serialize does nothing
+DRAWING
+ better indication of fence
 
-adding:
+HUD
+ HUD indication of abilities and current selection
+ HUD indication of mission checklist
+ HUD guidance where to go for next mission item (arrow?)
+
+SERIALIZATION
+ drone-checkpoint+safe-zone
+ coffe machine serialize does nothing
+ load serialized data when starting level1_C
+ improve loading/naming savegame-data
+
+
+
+adding/future:
  hacker smash computer?
- make flyoff-scene better?
- make powerline on/off more clear?
  better vantage point by trees?
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
  nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI

@@ -204,9 +204,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 910971700}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 479066408}
+        m_MethodName: TryStartNewGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -602,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155a968cf22a49d8fb6d93b3bd1be903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  areyousure: {fileID: 910971700}
 --- !u!82 &479066409
 AudioSource:
   m_ObjectHideFlags: 0

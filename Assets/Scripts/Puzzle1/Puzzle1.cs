@@ -30,6 +30,7 @@ public class Puzzle1 : MonoBehaviour
     bool over2 = false;
     bool over3 = false;
     float oldTimeScale;
+    public DialogueTrigger explainPuzzle;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class Puzzle1 : MonoBehaviour
         EEPROM_write(PASSWORD_LENGTH_ADDRESS, 4);
         EEPROM_write(TRIES_ADDRESS, 0);
         SetPassword();
+        explainPuzzle.TriggerDialogue();
     }
 
     private void Awake()
@@ -53,6 +55,7 @@ public class Puzzle1 : MonoBehaviour
         oldTimeScale = Time.timeScale;
         Time.timeScale = 0;
         SetPassword();
+        //explainPuzzle.TriggerDialogue();
     }
     
     private void Update()
@@ -67,10 +70,6 @@ public class Puzzle1 : MonoBehaviour
             else if ((c == '\n') || (c == '\r')) // enter/return
             {
                 ButtonInput("v");
-            }
-            else if(c == 'q')
-            {
-                ButtonInput("q");
             }
             else
             {
