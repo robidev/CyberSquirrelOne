@@ -1039,7 +1039,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: Quit game
+  m_Text: Main menu
 --- !u!1 &1611520350595829531
 GameObject:
   m_ObjectHideFlags: 0

@@ -226,7 +226,7 @@ public class GlobalControl : MonoBehaviour
 
     public void Quit()
     {
-      Application.Quit();
+      SceneManager.LoadScene( 0 );//back to main
     }
 
     public void Restart()
