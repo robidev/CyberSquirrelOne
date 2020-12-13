@@ -71,6 +71,8 @@ public class AnimateSwitch : MonoBehaviour
     {
         if(inTransition == false)
             StartCoroutine("Open");
+        else
+            Debug.Log("cannot open moving switch");
     }
 
     IEnumerator Open()
@@ -91,6 +93,8 @@ public class AnimateSwitch : MonoBehaviour
     {
         if(inTransition == false)
             StartCoroutine("Close");
+        else
+            Debug.Log("cannot close moving switch");
     }
 
     IEnumerator Close()
@@ -112,6 +116,8 @@ public class AnimateSwitch : MonoBehaviour
     {
         if(inTransition == false)
             SwitchConducting = !SwitchConducting;
+        else
+            Debug.Log("cannot toggle moving switch");
     }
 
     public void SetBadState(bool value)
