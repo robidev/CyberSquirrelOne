@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
+using Unity.VectorGraphics;
 
 public class ConductingEquipment : MonoBehaviour
 {
@@ -17,6 +18,17 @@ public class ConductingEquipment : MonoBehaviour
                 {
                     damage += _voltage - VoltRating;
                     Debug.Log(name + ": Overvoltage damage:" + _voltage);
+                }
+            }
+            if(mimic != null)
+            {
+                if(_voltage < PowerLossTreshold)
+                {
+                    mimic.color = PowerlossColor;
+                }
+                else
+                {
+                    mimic.color = NormalColor;
                 }
             }
         }
@@ -60,15 +72,22 @@ public class ConductingEquipment : MonoBehaviour
     public float DestroyRating = 1000;
     public bool Destroyed = false;
     public UnityEvent OnDestroyed;
-    public virtual void Initialize(ConductingEquipment reference)
-    {
-
-    }
-    public virtual void Step()
-    {
-    }
+    public virtual void Initialize(ConductingEquipment reference)  {   }
+    public virtual void Step() {  }
     public bool displayAmp = false;
     public bool displayVolt = false;
+    private SVGImage mimic;
+    public float PowerLossTreshold = 100;
+    public Color PowerlossColor = Color.white;
+    private Color NormalColor;
+    void Awake()
+    {
+        mimic = GetComponent<SVGImage>();
+        if(mimic != null)
+            NormalColor = mimic.color;
+        else
+            Debug.Log("cannot find SVG Image");
+    }
     void OnGUI()
     {
         if(displayAmp || displayVolt)
