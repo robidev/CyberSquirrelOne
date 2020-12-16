@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
 using Unity.VectorGraphics;
+using UnityEngine.UI;
 
 public class ConductingEquipment : MonoBehaviour
 {
@@ -80,6 +81,10 @@ public class ConductingEquipment : MonoBehaviour
     public float PowerLossTreshold = 100;
     public Color PowerlossColor = Color.white;
     private Color NormalColor;
+
+    private GameObject AmpText;
+    private GameObject VoltText;
+
     void Awake()
     {
         mimic = GetComponent<SVGImage>();
@@ -88,23 +93,38 @@ public class ConductingEquipment : MonoBehaviour
         else
             Debug.Log("cannot find SVG Image");
     }
-    void OnGUI()
+
+    void Start()
     {
-        if(displayAmp || displayVolt)
+        if(displayVolt)
         {
-            var pos = transform.position + new Vector3(20,0,-10);
-            if(displayAmp)
-                GUI.Label(new Rect(pos.x,768-pos.y,100,40),"Amp: " + current + " A");
-            if(displayVolt)
-                GUI.Label(new Rect(pos.x,768-pos.y-20,100,40),"Volt:" + voltage + " V");
+            VoltText = new GameObject("VoltText");
+            VoltText.transform.position = transform.position + new Vector3(70,-33,0);
+            VoltText.transform.SetParent(this.transform);
+            
+            VoltText.AddComponent<Text>().text = "Volt: - V";
+            VoltText.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;            
+        }
+        if(displayAmp)
+        {
+            AmpText = new GameObject("AmpText");
+            AmpText.transform.position = transform.position + new Vector3(70,-47,0);
+            AmpText.transform.SetParent(this.transform);
+
+            AmpText.AddComponent<Text>().text = "Amp: - A";
+            AmpText.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         }
     }
 
-    /*
-    void OnDrawGizmos() 
+    void Update()
     {
-        Handles.Label(transform.position + new Vector3(20,20,0), "Amp: " + current + " A");
-        Handles.Label(transform.position + new Vector3(20,-20,0), "Volt:" + voltage + " V");
+        if(displayVolt)
+        {
+            VoltText.GetComponent<Text>().text =  "Volt:" + voltage + " V";      
+        }
+        if(displayAmp)
+        {
+            AmpText.GetComponent<Text>().text = "Amp: " + current + " A";
+        } 
     }
-    */
 }

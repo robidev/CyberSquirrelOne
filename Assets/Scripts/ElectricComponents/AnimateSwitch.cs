@@ -6,20 +6,22 @@ using Unity.VectorGraphics;
 
 public class AnimateSwitch : MonoBehaviour
 {
+    OperateDialog operateDialog;
     public Switch Switch;
     public bool SwitchConducting
     {
         get { return _SwitchConducting; }
-        set {
-             if(oldSwitchConducting == false && value == true)
-             {
+        set 
+        {
+            if(oldSwitchConducting == false && value == true)
+            {
                 closeEvent.Invoke();
-             }
-             if(oldSwitchConducting == true && value == false)
-             {
+            }
+            if(oldSwitchConducting == true && value == false)
+            {
                 openEvent.Invoke();
-             }
-             oldSwitchConducting = SwitchConducting;
+            }
+            oldSwitchConducting = SwitchConducting;
         }
     }
     private bool oldSwitchConducting;
@@ -65,6 +67,10 @@ public class AnimateSwitch : MonoBehaviour
         }
         oldSwitchConducting = _SwitchConducting;
 
+        if(Resources.FindObjectsOfTypeAll<OperateDialog>().Length > 0)
+            operateDialog = Resources.FindObjectsOfTypeAll<OperateDialog>()[0];
+        else
+            Debug.Log("cannot find operateDialog");
     }
 
     public void OpenSwitch()
@@ -87,6 +93,7 @@ public class AnimateSwitch : MonoBehaviour
         spriteRenderer.sprite = open;
         position = DbPos.open;
         inTransition = false;
+        operateDialog.SetOperateResult(0);
     }
 
     public void CloseSwitch()
@@ -110,14 +117,16 @@ public class AnimateSwitch : MonoBehaviour
         _SwitchConducting = true;
         Switch.SwitchConducting = _SwitchConducting;
         inTransition = false;
+        operateDialog.SetOperateResult(0);
     }
 
     public void SwitchToggle()
     {
         if(inTransition == false)
-            SwitchConducting = !SwitchConducting;
+            operateDialog.ShowDialog(gameObject);
+            //SwitchConducting = !SwitchConducting;
         else
-            Debug.Log("cannot toggle moving switch");
+            Debug.Log("cannot operate moving switch");
     }
 
     public void SetBadState(bool value)
@@ -129,7 +138,7 @@ public class AnimateSwitch : MonoBehaviour
             position = DbPos.bad;
             inTransition = true; // switch is blocked in bad state
         }
-        if(value == false)
+        if(value == false)//re-enable switch
         {
             inTransition = false;
         }

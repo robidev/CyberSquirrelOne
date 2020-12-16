@@ -5,12 +5,20 @@ using UnityEngine.Events;
 
 public class InterlockOpen : MonoBehaviour
 {
+    OperateDialog operateDialog;
     public UnityEvent TriggerEvent;
     public UnityEvent BlockEvent;
     public List<Switch> InputsTrue;
     public List<Switch> InputsFalse;
     public bool TestConditionOverride = false;
 
+    void Start()
+    {
+        if(Resources.FindObjectsOfTypeAll<OperateDialog>().Length > 0)
+            operateDialog = Resources.FindObjectsOfTypeAll<OperateDialog>()[0];
+        else
+            Debug.Log("cannot find operateDialog");
+    }
     public void InterlockOpenTest()
     {
         bool TestCondition = true;
@@ -28,7 +36,8 @@ public class InterlockOpen : MonoBehaviour
         else
         {
             BlockEvent.Invoke();  
-            Debug.Log("InterlockTest blocked");          
+            Debug.Log("InterlockTest blocked"); 
+            operateDialog.SetOperateResult(-1);         
         }
     }
     public void InterlockOverride()
