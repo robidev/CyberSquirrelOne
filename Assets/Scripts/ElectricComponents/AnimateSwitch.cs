@@ -8,6 +8,7 @@ public class AnimateSwitch : MonoBehaviour
 {
     OperateDialog operateDialog;
     public Switch Switch;
+    public int CtlNum = 1;
     public bool SwitchConducting
     {
         get { return _SwitchConducting; }
@@ -16,13 +17,30 @@ public class AnimateSwitch : MonoBehaviour
             if(oldSwitchConducting == false && value == true)
             {
                 closeEvent.Invoke();
+                CtlNum++;
             }
             if(oldSwitchConducting == true && value == false)
             {
                 openEvent.Invoke();
+                CtlNum++;
             }
             oldSwitchConducting = SwitchConducting;
         }
+    }
+
+    public void OperateOverrideChecks(bool value)
+    {
+        if(oldSwitchConducting == false && value == true)
+        {
+            CloseSwitch();
+            CtlNum++;
+        }
+        if(oldSwitchConducting == true && value == false)
+        {
+            OpenSwitch();
+            CtlNum++;
+        }
+        oldSwitchConducting = SwitchConducting;
     }
     private bool oldSwitchConducting;
     private bool _SwitchConducting;
@@ -137,6 +155,7 @@ public class AnimateSwitch : MonoBehaviour
             spriteRenderer.sprite = bad;
             position = DbPos.bad;
             inTransition = true; // switch is blocked in bad state
+            operateDialog.SetOperateResult(-2);
         }
         if(value == false)//re-enable switch
         {

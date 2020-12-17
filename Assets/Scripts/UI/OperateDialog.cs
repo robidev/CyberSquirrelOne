@@ -48,6 +48,8 @@ public class OperateDialog : MonoBehaviour
             close.interactable = true;
             //highlight close button
         }
+        ErrorMessage.color = Color.black;
+        ErrorMessage.text = "status: Ready";
         gameObject.SetActive(true);
     }
     void OnEnable()
@@ -64,7 +66,7 @@ public class OperateDialog : MonoBehaviour
     public void MorePressed()
     {
         Destroy(overlay);
-        AdvancedDialog.GetComponent<AdvancedDialog>().ShowDialog(ControlObject.text, ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting.ToString(), dialogResult);
+        AdvancedDialog.GetComponent<AdvancedDialog>().ShowDialog(ControlObjectClass, dialogResult);
     }
      void dialogResult(int result)
     {
@@ -72,6 +74,7 @@ public class OperateDialog : MonoBehaviour
         //do action or not
         if(result == 1)
         {
+            ErrorMessage.color = Color.red;//assume error
             //perform action
             if(open.interactable == true)
             {
@@ -111,7 +114,8 @@ public class OperateDialog : MonoBehaviour
     {
         if(result == 0) //success
         {
-            ErrorMessage.text = "success";
+            ErrorMessage.text = "status: success";
+            ErrorMessage.color = Color.green;
             if(ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting == true)
             {
                 //highlight open button
@@ -125,8 +129,19 @@ public class OperateDialog : MonoBehaviour
                 //highlight close button
             }
         }
+        else if(result == -1)
+        {
+            ErrorMessage.color = Color.red;
+            ErrorMessage.text = "status: blocked by interlock";
+        }
+        else if(result == -2)
+        {
+            ErrorMessage.color = Color.red;
+            ErrorMessage.text = "status: equipment failure";
+        }
         else
         {
+            ErrorMessage.color = Color.red;
             ErrorMessage.text = "operate failed with code: " + result;
         }
     }
