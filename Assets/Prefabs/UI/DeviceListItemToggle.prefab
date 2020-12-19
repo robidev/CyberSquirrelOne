@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 3711232998380534164}
   - component: {fileID: 3711232998380534161}
   - component: {fileID: 3711232998380534166}
-  - component: {fileID: 3711232998380534167}
+  - component: {fileID: 7327418342693098464}
   m_Layer: 0
-  m_Name: DeviceListItem
+  m_Name: DeviceListItemToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
---- !u!114 &3711232998380534167
+--- !u!114 &7327418342693098464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3711232998380534165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -191,9 +191,13 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 3711232998380534166}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 8392063108643591677}
+  m_Group: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0
 --- !u!1 &3711232998421139118
 GameObject:
   m_ObjectHideFlags: 0
