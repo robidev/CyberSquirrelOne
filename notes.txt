@@ -3,9 +3,39 @@ FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 
 TODO/BUGS:
-puzzle2!!!!!!
+puzzle2
+ - engineering-window save option
+ - engineering menu-bar
+ - minimise/open double icon bug
+ - start with HMI
+ - add text-editor/reader
+ - add clock?
+ - add calendar?
+ - add xeyes? (always there..)
+ - add terminal?
+ - implement documents -> guides, and personal
+ - implement image-viewer
+ - implement switch to camera, when exploding, block controls
+ - revisit HMI trafo-1-alignment
+ - message for slow-switch in operate-window
+ - close-button in operate window
+ - implement helps:
+	 explain function of CB
+	 explain function of DIS
+	 explain function of trafo
+	 explain current-flow
+	 explain that cabinet-interlock is logical trough protection relay, (and can be overwritten)
+	 explain consequence of overwritten interlock
+	 explain earth-switch
+
+ - implement menu-bar behavior
+ - implement HMI alarms-window
+ - implement HMI RTU's window
+ - rename all RTU/component names
+ - improve value-display in HMI
+ - add dialogs
+
 outro: rolling credits?
-maybe remove quit/replace with back to main?
 
 DRAWING
  better indication of fence
@@ -51,15 +81,12 @@ puzzle2:
 trafo1 enabled, trafo2 disabled
 
 desktop with:
- - HMI
- - engineering-tool: shows tree-view with similar names, and associated settings(settings-write, timed oper and interlock change can be from here)
  - top-view of station image?
  - documentation (what are the componenst and their properties, 
  - how to open/close in HMI and read values
  - how to change protection settings,  what is interlocking?
  - footnotes about interlock-override and timed operate (explain there is a max future time)
  - desktop and immages folder with funny stuff
- - security cam feeds
 dialog:
  - explain to first destroy cabinets, then trafos for max damage
  - explain too much load will trip the line
@@ -86,28 +113,4 @@ goal2
  - if you do this before all distribution-stuff is broken, and you're still there(not timed), you get 'bad' ending
  - if a timed operate is set, and the result would be destruction, puzzle ends, and epilogue starts with timer that has been set..
 
-
-help:
- explain function of CB
- explain function of DIS
- explain function of trafo
- explain current-flow
- explain that cabinet-interlock is logical trough protection relay, (and can be overwritten)
- explain consequence of overwritten interlock
- explain earth-switch
-
-TODO:
-application menu
-application drag/minimise/maximise/resize/close
-
-HMI operate window (operate/timed operate/interlock-overwrite(advanced))
-Engineering edit RTU-settings
- - overwrite protection settings
- - overwrite interlock too
-set settings to play out scenario
-
-generate document-browser
-generate document viewer
-generate image viewer
-generate content
 
