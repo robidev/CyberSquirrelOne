@@ -28,7 +28,6 @@ puzzle2
 	 explain consequence of overwritten interlock
 	 explain earth-switch
 
- - implement menu-bar behavior
  - implement HMI alarms-window
  - implement HMI RTU's window
  - rename all RTU/component names
