@@ -5,20 +5,28 @@ hedgehog attack tweaking
 TODO/BUGS:
 puzzle2
  - engineering-window save option
- - engineering menu-bar
  - minimise/open double icon bug
- - start with HMI
+
+GUI
  - add text-editor/reader
+ - implement image-viewer
+ - implement documents -> guides, and personal
  - add clock?
  - add calendar?
- - add xeyes? (always there..)
  - add terminal?
- - implement documents -> guides, and personal
- - implement image-viewer
+
+
+HMI
+ - start with HMI
  - implement switch to camera, when exploding, block controls
  - revisit HMI trafo-1-alignment
  - message for slow-switch in operate-window
  - close-button in operate window
+ - implement HMI alarms-window
+ - implement HMI RTU's window
+ - rename all RTU/component names
+ - improve value-display in HMI
+
  - implement helps:
 	 explain function of CB
 	 explain function of DIS
@@ -28,10 +36,7 @@ puzzle2
 	 explain consequence of overwritten interlock
 	 explain earth-switch
 
- - implement HMI alarms-window
- - implement HMI RTU's window
- - rename all RTU/component names
- - improve value-display in HMI
+GAME
  - add dialogs
 
 outro: rolling credits?
