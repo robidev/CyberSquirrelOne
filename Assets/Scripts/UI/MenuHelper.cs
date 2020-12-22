@@ -18,4 +18,9 @@ public class MenuHelper : MonoBehaviour
 		else
 			targetMenu.AddMenu (this);
 	}
+
+	public void OnEnable()
+	{
+		targetMenu.RemoveButton(gameObject);
+	}
 }

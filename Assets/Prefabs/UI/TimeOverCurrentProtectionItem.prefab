@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 4277188736035033000}
   - component: {fileID: 8921508070382814734}
   m_Layer: 0
-  m_Name: CurrentSettings
+  m_Name: TmCurrentSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

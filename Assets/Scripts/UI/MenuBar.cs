@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+//using UnityEngine.EventSystems;
 
 public class MenuBar : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MenuBar : MonoBehaviour
     {
         public string name;
         [HideInInspector] public GameObject element;
-        public UnityEvent onClick;
+        public Button.ButtonClickedEvent onClick;
     }
 
     [System.Serializable]
@@ -29,8 +30,7 @@ public class MenuBar : MonoBehaviour
     public GameObject MenuBarItemButton;
     public GameObject MenuBarItemDivider;
     public List<MenuBarItemClass> menuBarItems;
-    //public string[] menubarItems;
-    //List<GameObject> menuBarItems = new List<GameObject>();
+
     void Start()
     {
         foreach(MenuBarItemClass MenuItem in menuBarItems)
@@ -64,11 +64,21 @@ public class MenuBar : MonoBehaviour
                 else
                 {
                     SubMenuItem.element = Instantiate(MenuBarItemButton, MenuItem.subElement.transform) as GameObject;
-                    SubMenuItem.element.GetComponent<Button>().onClick.AddListener(() => {Debug.Log("clicked:" + SubMenuItem.name);});
+                    SubMenuItem.element.GetComponent<Button>().onClick = SubMenuItem.onClick;
+                    //SubMenuItem.element.GetComponent<Button>().onClick.AddListener();
                     SubMenuItem.element.GetComponentInChildren<TextMeshProUGUI>().text = SubMenuItem.name;
                 }
 
             }
         }      
+    }
+
+    void OnEnable()
+    {
+        foreach(MenuBarItemClass MenuItem in menuBarItems)
+        {
+            if(MenuItem.subElement)
+                MenuItem.subElement.SetActive(false);
+        }
     }
 }

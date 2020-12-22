@@ -19,11 +19,27 @@ public class MenuBarUI : MonoBehaviour
 			wrapper.image.color = helper.imageColor;
 			wrapper.text.text = helper.title;
 			wrapper.text.color = helper.labelColor;
+			wrapper.window = helper.gameObject;
 			wrapper.button.onClick.AddListener(()=>{
 				helper.window.SetActive (true);
 				Destroy( wrapper.gameObject );
+				//Debug.Log("button destroyed on click");
 			});
 			helper.window.SetActive (false);
 		}
+	}
+
+	public void RemoveButton(GameObject window)
+	{
+		foreach(MenuButtonWrapper button in transform.GetComponentsInChildren<MenuButtonWrapper>())
+		{
+			if(button.window == window)
+			{
+				//Debug.Log("button destroyed on enable");
+				Destroy( button.gameObject );
+				return;
+			}
+		}
+		//Debug.Log("NO button destroyed on enable");
 	}
 }

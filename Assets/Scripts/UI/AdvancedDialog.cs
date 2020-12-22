@@ -69,7 +69,7 @@ public class AdvancedDialog : MonoBehaviour
     public void OkPressed()
     {
         Destroy(overlay);
-        SureDialog.GetComponent<SureDialog>().ShowDialog(ControlObject.text, ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting.ToString(), dialogResult);
+        SureDialog.GetComponent<SureDialog>().ShowDialog(ControlObject.text, "Action: " + ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting.ToString(), dialogResult);
     }
 
     void dialogResult(int result)

@@ -8,5 +8,6 @@ public class MenuButtonWrapper : MonoBehaviour
 	public Image icon;
 	public Text text;
 	public Button button;
+	public GameObject window;
 }
 

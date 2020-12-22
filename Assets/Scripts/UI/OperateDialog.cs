@@ -61,7 +61,7 @@ public class OperateDialog : MonoBehaviour
     public void OperatePressed(bool state)
     {
         Destroy(overlay);
-        SureDialog.GetComponent<SureDialog>().ShowDialog(ControlObject.text, ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting.ToString(), dialogResult);
+        SureDialog.GetComponent<SureDialog>().ShowDialog(ControlObject.text, "Action: " + ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting.ToString(), dialogResult);
     }
     public void MorePressed()
     {

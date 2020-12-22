@@ -13,6 +13,7 @@ public class SureDialog : MonoBehaviour
     GameObject HelpInstance;
     public GameObject ModalOverLayPrefab;
     GameObject overlay;
+    string HelpText = "";
 
     public void NewHelpDialog()
     {
@@ -24,15 +25,27 @@ public class SureDialog : MonoBehaviour
 
         HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
         HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
-        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+        if(HelpText == "")
+        {
+            HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
             "Confirming an action will execute it.\n" +
             "Please take care that it is safe to do so before confirming";
+        }
+        else
+        {
+            HelpInstance.GetComponent<HMIHelpDialog>().textField.text = HelpText;
+        }
+    }
+
+    public void SetHelpText(string text)
+    {
+        HelpText = text;
     }
     public void ShowDialog(string controlObject, string action, SureDialogResult dialogResult)
     {
         DialogResult = dialogResult;
         ControlObject.text = controlObject;
-        Action.text = "Action: " + action;
+        Action.text = action;
         
         gameObject.SetActive(true);
     }

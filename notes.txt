@@ -3,17 +3,14 @@ FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 
 TODO/BUGS:
-puzzle2
- - engineering-window save option
- - minimise/open double icon bug
-
 GUI
  - add text-editor/reader
  - implement image-viewer
  - implement documents -> guides, and personal
- - add clock?
- - add calendar?
- - add terminal?
+
+ - add calendar or xeyes?
+ - add terminal-function
+ - add tooltips
 
 
 HMI
