@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 9918125}
   - component: {fileID: 9918124}
   m_Layer: 0
-  m_Name: Cam2
+  m_Name: Cam2_window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,12 +151,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 359641935}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187.89853, y: -187.55615}
-  m_SizeDelta: {x: 375, y: 375}
+  m_AnchoredPosition: {x: 187.55, y: -184.27}
+  m_SizeDelta: {x: 375.69995, y: 344.87354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9918124
 MonoBehaviour:
@@ -181,9 +181,9 @@ MonoBehaviour:
   m_UVRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.035
     width: 1
-    height: 1
+    height: 0.93
 --- !u!222 &9918125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6369,7 +6369,7 @@ GameObject:
   - component: {fileID: 314646967}
   - component: {fileID: 314646966}
   m_Layer: 0
-  m_Name: Cam1
+  m_Name: Cam1_window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6387,12 +6387,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 359641935}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187.19858, y: 163.71384}
-  m_SizeDelta: {x: 375, y: 375}
+  m_AnchoredPosition: {x: 187.19858, y: 163.08}
+  m_SizeDelta: {x: 375, y: 349.83112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314646966
 MonoBehaviour:
@@ -6417,9 +6417,9 @@ MonoBehaviour:
   m_UVRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.035
     width: 1
-    height: 1
+    height: 0.935
 --- !u!222 &314646967
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7001,7 +7001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &359641935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7014,6 +7014,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 918517904}
+  - {fileID: 1262084602}
+  - {fileID: 1226644704}
   - {fileID: 314646965}
   - {fileID: 9918123}
   - {fileID: 1213101752}
@@ -15524,7 +15526,7 @@ RectTransform:
   m_Children:
   - {fileID: 1927495854}
   m_Father: {fileID: 359641935}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19086,7 +19088,7 @@ RectTransform:
   m_Children:
   - {fileID: 655013432}
   m_Father: {fileID: 359641935}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19137,42 +19139,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1226644705}
-        m_MethodName: SetStartedCheck
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1226644705}
-        m_MethodName: SetEndReachedCheck
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1226644703}
-        m_MethodName: set_clip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 9229f4bab76697ffa90e178f578ef295,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1226644703}
-        m_MethodName: set_isLooping
-        m_Mode: 6
+        m_MethodName: TriggerEventVideo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23382,7 +23350,7 @@ GameObject:
   - component: {fileID: 1213101754}
   - component: {fileID: 1213101753}
   m_Layer: 0
-  m_Name: Cam3
+  m_Name: Cam3_window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23400,12 +23368,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 359641935}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187.10144, y: -184.2}
-  m_SizeDelta: {x: 375, y: 368.21985}
+  m_AnchoredPosition: {x: -187.10144, y: -184.27}
+  m_SizeDelta: {x: 375, y: 344.8744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213101753
 MonoBehaviour:
@@ -23430,9 +23398,9 @@ MonoBehaviour:
   m_UVRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.035
     width: 1
-    height: 1
+    height: 0.93
 --- !u!222 &1213101754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23453,7 +23421,7 @@ GameObject:
   - component: {fileID: 1226644703}
   - component: {fileID: 1226644705}
   m_Layer: 0
-  m_Name: Cam2
+  m_Name: Cam2_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23467,7 +23435,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226644702}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e67a1a09e29ae3502bb0f2d7f573f76f, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -23480,12 +23448,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -23502,12 +23472,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 359641935}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: 334}
+  m_AnchoredPosition: {x: -396, y: -71.44397}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226644705
@@ -23600,19 +23570,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1226644703}
-        m_MethodName: set_clip
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: e937d571246083550bb443ad0e8ec9c6,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   videoPlayer: {fileID: 1226644703}
+  playOnStart: {fileID: 32900000, guid: f5b4e2ff4c8d1dacb91e1efb0ed81e5c, type: 3}
+  playOnStartUrl: Cam2_normal.webm
+  playOnEvent: {fileID: 32900000, guid: 88fe4b3b8368bf9e0a56a66260132fbe, type: 3}
+  playOnEventUrl: Cam2_Event.webm
+  playOnEnd: {fileID: 32900000, guid: 332d44bbcaa004a57889c9b2e257cfe2, type: 3}
+  playOnEndUrl: Cam2_broken.webm
 --- !u!1 &1235244828
 GameObject:
   m_ObjectHideFlags: 0
@@ -24113,8 +24077,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1262084602}
   - component: {fileID: 1262084601}
+  - component: {fileID: 1262084603}
   m_Layer: 0
-  m_Name: Cam1
+  m_Name: Cam1_player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24128,7 +24093,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262084600}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e937d571246083550bb443ad0e8ec9c6, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -24141,12 +24106,14 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -24163,14 +24130,45 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 359641935}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: 334}
+  m_AnchoredPosition: {x: -396, y: -71.44397}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1262084603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262084600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409ac8aeb91949f9faa44da4849ad970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartedCheck: 0
+  DelayTime: 1
+  EndReachedCheck: 0
+  StartTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  DelayedTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  EndTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  videoPlayer: {fileID: 1262084601}
+  playOnStart: {fileID: 32900000, guid: 332d44bbcaa004a57889c9b2e257cfe2, type: 3}
+  playOnStartUrl: Cam2_broken.webm
+  playOnEvent: {fileID: 0}
+  playOnEventUrl: 
+  playOnEnd: {fileID: 0}
+  playOnEndUrl: 
 --- !u!1 &1267567345
 GameObject:
   m_ObjectHideFlags: 0
@@ -25378,7 +25376,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 359641935}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31272,7 +31270,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 359641935}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -34012,8 +34010,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -21.108398, y: -14}
-  m_SizeDelta: {x: 215.97711, y: 30.877747}
+  m_AnchoredPosition: {x: 0.2999878, y: -14}
+  m_SizeDelta: {x: -50.57538, y: 30.877747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927495855
 MonoBehaviour:

@@ -3,6 +3,11 @@ FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 
 TODO/BUGS:
+video in webgl -> sprite or .webm video?
+several close buttons->have gone missing
+window-resize->ensure rect settings ok
+menubar options->attach events
+
 GUI
  - add text-editor/reader
  - implement image-viewer
