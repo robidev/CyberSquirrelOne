@@ -4,13 +4,13 @@ hedgehog attack tweaking
 
 TODO/BUGS:
 video in webgl -> sprite or .webm video?
-menubar options->attach events!!!
+menubar options->attach events
 
 GUI
  - implement documents -> guides, and personal
  - add calendar or xeyes?
- - add terminal-function?
- - add tooltips?
+ - add terminal-function
+ - add tooltips
 
 
 HMI
@@ -38,9 +38,8 @@ GAME
 
 outro: rolling credits?
 
-
 DRAWING
- better indication of fence->sing/perspective
+ better indication of fence
 
 HUD
  HUD indication of abilities and current selection
