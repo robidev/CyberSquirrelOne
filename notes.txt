@@ -14,11 +14,7 @@ GUI
 
 
 HMI
- - start with HMI
  - implement switch to camera, when exploding, block controls
- - revisit HMI trafo-1-alignment
- - message for slow-switch in operate-window
- - close-button in operate window
  - implement HMI alarms-window
  - implement HMI RTU's window
  - rename all RTU/component names

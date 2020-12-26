@@ -70,23 +70,34 @@ public class OperateDialog : MonoBehaviour
     }
      void dialogResult(int result)
     {
-        Debug.Log("pressed:"+ result);
+        //Debug.Log("pressed:"+ result);
         //do action or not
         if(result == 1)
         {
-            ErrorMessage.color = Color.red;//assume error
             //perform action
             if(open.interactable == true)
             {
+                Debug.Log("1:"+ result);
+                ErrorMessage.color = Color.black;
                 ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting = false;
+            }
+            else if (close.interactable == true)
+            {
+                Debug.Log("2:"+ result);
+                ErrorMessage.color = Color.black;
+                ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting = true;
             }
             else
             {
-                ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting = true;
+                Debug.Log("3:"+ result);
+                ErrorMessage.color = Color.red;
+                ErrorMessage.text = "status: could not send operate, try again";
             }
         }
         else if(result == 2)
         {
+            ErrorMessage.color = Color.black;
+            ErrorMessage.text = "status: ";
             gameObject.SetActive(false);
         }
         else
@@ -112,7 +123,31 @@ public class OperateDialog : MonoBehaviour
 
     public void SetOperateResult(int result)
     {
-        if(result == 0) //success
+        if(result == 2) //moving
+        {
+            ErrorMessage.text = "status: ready";
+            ErrorMessage.color = Color.black;
+            if(ControlObjectClass.GetComponent<AnimateSwitch>().SwitchConducting == true)
+            {
+                //highlight open button
+                open.interactable = true;
+                close.interactable = false;
+            }
+            else
+            {
+                open.interactable = false;
+                close.interactable = true;
+                //highlight close button
+            }
+        }
+        if(result == 1) //moving
+        {
+            ErrorMessage.text = "status: moving";
+            ErrorMessage.color = Color.yellow;
+            open.interactable = false;
+            close.interactable = false;
+        }
+        else if(result == 0) //success
         {
             ErrorMessage.text = "status: success";
             ErrorMessage.color = Color.green;
@@ -138,6 +173,11 @@ public class OperateDialog : MonoBehaviour
         {
             ErrorMessage.color = Color.red;
             ErrorMessage.text = "status: equipment failure";
+        }
+        else if(result == -3)
+        {
+            ErrorMessage.color = Color.red;
+            ErrorMessage.text = "status: switch is allready moving"; 
         }
         else
         {
