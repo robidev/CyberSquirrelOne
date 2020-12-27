@@ -102,7 +102,7 @@ public class ConductingEquipment : MonoBehaviour
             VoltText.transform.position = transform.position + new Vector3(70,-33,0);
             VoltText.transform.SetParent(this.transform);
             
-            VoltText.AddComponent<Text>().text = "Volt: - V";
+            VoltText.AddComponent<Text>().text = "Volt: - KV";
             VoltText.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;            
         }
         if(displayAmp)
@@ -120,11 +120,11 @@ public class ConductingEquipment : MonoBehaviour
     {
         if(displayVolt)
         {
-            VoltText.GetComponent<Text>().text =  "Volt:" + voltage + " V";      
+            VoltText.GetComponent<Text>().text =  "Volt:" + voltage.ToString("0") + " kV";      
         }
         if(displayAmp)
         {
-            AmpText.GetComponent<Text>().text = "Amp: " + current + " A";
+            AmpText.GetComponent<Text>().text = "Amp: " + current.ToString("0") + " A";
         } 
     }
 }

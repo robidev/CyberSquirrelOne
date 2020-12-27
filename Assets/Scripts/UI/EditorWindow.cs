@@ -23,6 +23,7 @@ public class EditorWindow : MonoBehaviour
         public void DisplayTextResourceObject(TextAsset TextResource)
     {
         TextField.text = TextResource.text;
+        //TextField.verticalScrollbar.Rebuild()
         gameObject.SetActive(true);
     }
 }

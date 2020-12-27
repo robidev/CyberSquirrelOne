@@ -96,13 +96,15 @@ public class AnimateSwitch : MonoBehaviour
     {
         if(inTransition == false)
         {
-            operateDialog.SetOperateResult(1);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(1);
             StartCoroutine("Open");
         }
         else
         {
             Debug.Log("cannot open moving switch");
-            operateDialog.SetOperateResult(-3);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(-3);
         }
     }
 
@@ -119,20 +121,23 @@ public class AnimateSwitch : MonoBehaviour
         position = DbPos.open;
         inTransition = false;
         oldSwitchConducting = _SwitchConducting;
-        operateDialog.SetOperateResult(0);
+        if(operateDialog != null)
+            operateDialog.SetOperateResult(0);
     }
 
     public void CloseSwitch()
     {
         if(inTransition == false)
         {
-            operateDialog.SetOperateResult(1);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(1);
             StartCoroutine("Close");
         }
         else
         {
             Debug.Log("cannot close moving switch");
-            operateDialog.SetOperateResult(-3);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(-3);
         }
     }
 
@@ -151,21 +156,25 @@ public class AnimateSwitch : MonoBehaviour
         Switch.SwitchConducting = _SwitchConducting;
         inTransition = false;
         oldSwitchConducting = _SwitchConducting;
-        operateDialog.SetOperateResult(0);
+        if(operateDialog != null)
+            operateDialog.SetOperateResult(0);
     }
 
     public void SwitchToggle()
     {
-        if(inTransition == false)
+        if(operateDialog != null)
         {
-            operateDialog.SetOperateResult(1);
-            operateDialog.ShowDialog(gameObject);
-            //SwitchConducting = !SwitchConducting;
-        }
-        else
-        {
-            Debug.Log("cannot operate moving switch");
-            operateDialog.SetOperateResult(-3);
+            if(inTransition == false)
+            {
+                operateDialog.SetOperateResult(1);
+                operateDialog.ShowDialog(gameObject);
+                //SwitchConducting = !SwitchConducting;
+            }
+            else
+            {
+                Debug.Log("cannot operate moving switch");
+                operateDialog.SetOperateResult(-3);
+            }            
         }
     }
 
@@ -177,12 +186,14 @@ public class AnimateSwitch : MonoBehaviour
             spriteRenderer.sprite = bad;
             position = DbPos.bad;
             inTransition = true; // switch is blocked in bad state
-            operateDialog.SetOperateResult(-2);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(-2);
         }
         if(value == false)//re-enable switch
         {
             inTransition = false;
-            operateDialog.SetOperateResult(2);
+            if(operateDialog != null)
+                operateDialog.SetOperateResult(2);
         }
     }
 }

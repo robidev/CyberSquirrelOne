@@ -21,19 +21,19 @@ public class VideoStream : MonoBehaviour
     public string playOnEventUrl;
     public VideoClip playOnEnd;
     public string playOnEndUrl;
-    void Start()
+    void Awake()
     {
         videoPlayer.loopPointReached += EndReached;
         videoPlayer.started += StartReached;        
         #if UNITY_WEBGL && !UNITY_EDITOR
             Debug.Log("WEBGL movie handling (URL: '" + Application.streamingAssetsPath + "/" + playOnStartUrl + "')");
             videoPlayer.source = VideoSource.Url;
-            videoPlayer.url = Application.streamingAssetsPath + "/" + playOnStartUrl;
         #else
             Debug.Log("normal movie handling (Clip)");
             videoPlayer.source = VideoSource.VideoClip;
-            videoPlayer.clip = playOnStart;
         #endif
+        videoPlayer.url = Application.streamingAssetsPath + "/" + playOnStartUrl;
+        videoPlayer.clip = playOnStart;
     }
     void StartReached(UnityEngine.Video.VideoPlayer vp)
     {
@@ -55,15 +55,11 @@ public class VideoStream : MonoBehaviour
     {
         if(EndReachedCheck == true)
         {
-             Debug.Log("endreached");
+            Debug.Log("endreached");
             EndTrigger.Invoke();
             videoPlayer.clip = playOnEnd;
-            #if UNITY_WEBGL && !UNITY_EDITOR
-                videoPlayer.url = Application.streamingAssetsPath + "/" + playOnEndUrl;
-            #else
-                videoPlayer.clip = playOnEnd;
-            #endif
-            
+            videoPlayer.url = Application.streamingAssetsPath + "/" + playOnEndUrl;
+            DestroyOverlay();
         }
     }
 
@@ -79,13 +75,30 @@ public class VideoStream : MonoBehaviour
 
     public void TriggerEventVideo()
     {
-        StartedCheck = true;
+        videoPlayer.Stop();
+        //StartedCheck = true;
         EndReachedCheck = true;
-        #if UNITY_WEBGL && !UNITY_EDITOR
-            videoPlayer.url = Application.streamingAssetsPath + "/" + playOnEventUrl;
-        #else
-            videoPlayer.clip = playOnEvent;
-        #endif
+        videoPlayer.clip = playOnEvent;
+        videoPlayer.url = Application.streamingAssetsPath + "/" + playOnEventUrl;
         videoPlayer.isLooping = false;
+        videoPlayer.Play();
+        DoOverlay();
+        Debug.Log("Video Triggered");
+    }
+
+    public GameObject ModalOverLayPrefab;
+    GameObject overlay;
+    void DoOverlay()
+    {
+        overlay = Instantiate(ModalOverLayPrefab,transform.parent.parent);
+        overlay.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+        overlay.GetComponent<RectTransform>().anchorMax = Vector2.one;
+        overlay.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
+        overlay.GetComponent<RectTransform>().SetAsLastSibling();//set top background
+    }//Destroy(overlay);
+
+    void DestroyOverlay()
+    {
+        Destroy(overlay);
     }
 }

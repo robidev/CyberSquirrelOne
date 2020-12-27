@@ -89,6 +89,8 @@ public class ProtectionFunctions : MonoBehaviour
     
     public UnityEvent OnTrip;
     private float OC = 0;
+    [SerializeField] public new string name = "P1";
+
     // Start is called before the first frame update
     void Start()
     {

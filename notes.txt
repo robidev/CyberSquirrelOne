@@ -1,24 +1,23 @@
+Known bug:
+text editor scroll is broken
+
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
+Explosion sound on final explosion
 
 TODO/BUGS:
-video in webgl -> sprite or .webm video?
+video in webgl -> sprites!
 menubar options->attach events!!!
 
 GUI
  - implement documents -> guides, and personal
- - add calendar or xeyes?
- - add terminal-function?
- - add tooltips?
-
+ - add calendar with access-denied flag
 
 HMI
- - implement switch to camera, when exploding, block controls
  - implement HMI alarms-window
  - implement HMI RTU's window
- - rename all RTU/component names
- - improve value-display in HMI
+ - improve switch-icons in regard to power-flow colloring?
 
  - implement helps:
 	 explain function of CB
@@ -32,7 +31,7 @@ HMI
 GAME
  - add dialogs
 
-outro: rolling credits?
+outro: rolling credits
 
 
 DRAWING
@@ -48,6 +47,7 @@ SERIALIZATION
  coffe machine serialize does nothing
  load serialized data when starting level1_C
  improve loading/naming savegame-data
+
 
 
 

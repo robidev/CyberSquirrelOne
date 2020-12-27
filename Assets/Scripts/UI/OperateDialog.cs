@@ -123,6 +123,10 @@ public class OperateDialog : MonoBehaviour
 
     public void SetOperateResult(int result)
     {
+        if(gameObject.activeInHierarchy == false)
+        {
+            return;
+        }
         if(result == 2) //moving
         {
             ErrorMessage.text = "status: ready";
