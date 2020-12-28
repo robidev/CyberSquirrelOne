@@ -9,16 +9,14 @@ Explosion sound on final explosion
 TODO/BUGS:
 video in webgl -> sprites!
 menubar options->attach events!!!
+outro: rolling credits
 
-GUI
- - implement documents -> guides, and personal
- - add calendar with access-denied flag
+GAME
+ - add dialogs
 
 HMI
  - implement HMI alarms-window
  - implement HMI RTU's window
- - improve switch-icons in regard to power-flow colloring?
-
  - implement helps:
 	 explain function of CB
 	 explain function of DIS
@@ -28,10 +26,11 @@ HMI
 	 explain consequence of overwritten interlock
 	 explain earth-switch
 
-GAME
- - add dialogs
+GUI
+ - implement documents -> guides, and personal
+ - add calendar with access-denied flag
 
-outro: rolling credits
+
 
 
 DRAWING
@@ -52,8 +51,9 @@ SERIALIZATION
 
 
 adding/future:
- hacker smash computer?
+ improve switch-icons in regard to power-flow colloring?
  better vantage point by trees?
+ digging equipment outside fence
  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
  nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
  add more scenery schrubs, cars, signs etc.
