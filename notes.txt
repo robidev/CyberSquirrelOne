@@ -26,8 +26,7 @@ SERIALIZATION
 
 
 HMI
- - implement HMI alarms-window -> add any alarm also to messages, a disabled/cleared alarm disapears (click acknowledge, click clear)
- - implement HMI message window -> fill with a bunch of historical messages
+ - implement HMI message window -> fill with a bunch of historical messages, add messages for actions
  - implement helps:
 	 explain function of CB
 	 explain function of DIS
@@ -40,7 +39,7 @@ HMI
 GUI
  - implement documents -> guides, and personal
  - add calendar with access-denied flag
- - help button
+ - help button for onjectivetracker(help key H)
 
 TODO/BUGS:
 menubar options->attach events!!!
