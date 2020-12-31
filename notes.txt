@@ -38,11 +38,11 @@ HMI
 
 GUI
  - implement documents -> guides, and personal
- - add calendar with access-denied flag
  - help button for onjectivetracker(help key H)
 
 TODO/BUGS:
 menubar options->attach events!!!
+split global-control and menu-triggers
 
 
 
