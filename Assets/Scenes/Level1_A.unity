@@ -1115,7 +1115,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -13473,7 +13473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -5.1542974, y: -0.7654944, z: 9.88}
+  m_LocalPosition: {x: -7.273577, y: -0.7654944, z: 9.88}
   m_LocalScale: {x: 19.81, y: 19.81, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -13748,6 +13748,8 @@ GameObject:
   - component: {fileID: 1000398614}
   - component: {fileID: 1000398615}
   - component: {fileID: 1000398610}
+  - component: {fileID: 1000398617}
+  - component: {fileID: 1000398616}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13795,7 +13797,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13819,7 +13821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.901115, y: -1.4194422, z: -10}
+  m_LocalPosition: {x: -222.39832, y: -0.0794301, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -13850,14 +13852,11 @@ MonoBehaviour:
   - {fileID: 101934306}
   - {fileID: 1245168692}
   selected: 0
-  m_GameOverUI: {fileID: 1720045906}
-  m_GamePauseUI: {fileID: 2094070396}
   audioSource: {fileID: 0}
   DayAudio: {fileID: 8300000, guid: e302efd200882ecc2965bb84baf97637, type: 3}
   NightAudio: {fileID: 8300000, guid: a09a33e875dec5e6e922bf7d9e4eccb8, type: 3}
   InsideAudio: {fileID: 8300000, guid: 0f7bda30c076a1ec2a4557d0e8dd3357, type: 3}
   listener: {fileID: 1675792102}
-  serializer: {fileID: 65380884}
   selectedText: {fileID: 1402426621}
   GlobalControlsEnabled: 1
 --- !u!114 &1000398614
@@ -13990,6 +13989,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1000398616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000398609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050ca80abd94f5dcc9df694292874051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GameOverUI: {fileID: 1720045906}
+  audioSource: {fileID: 0}
+  serializer: {fileID: 65380884}
+--- !u!114 &1000398617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000398609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb913b03166c933168226c11753a7549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GamePauseUI: {fileID: 2094070396}
+  audioSource: {fileID: 0}
 --- !u!1 &1004061334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5042311405842758401, guid: b531e0cd52c33ae298b269650fbef02f,
@@ -18718,7 +18746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -24.78281, y: -3.6806374, z: 14.14}
+  m_LocalPosition: {x: -34.97269, y: -3.6806374, z: 14.14}
   m_LocalScale: {x: 19.05, y: 19.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
@@ -18917,7 +18945,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -21172,7 +21200,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32779,7 +32807,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32813,7 +32841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.42734, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: 99.44933, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -34044,7 +34072,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36525,17 +36553,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     - target: {fileID: 1611520349442589252, guid: 61d65141c81af7d43bab1ba31046f6f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     - target: {fileID: 1611520350382918041, guid: 61d65141c81af7d43bab1ba31046f6f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d65141c81af7d43bab1ba31046f6f8, type: 3}
 --- !u!1001 &2588596788100897781
@@ -36924,12 +36952,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     - target: {fileID: 6599617547902792388, guid: c1514a2e0ce0122479375d4c6f119e52,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     - target: {fileID: 6599617549234286926, guid: c1514a2e0ce0122479375d4c6f119e52,
         type: 3}
       propertyPath: m_Name
@@ -36994,12 +37022,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398617}
     - target: {fileID: 6599617549750547989, guid: c1514a2e0ce0122479375d4c6f119e52,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1000398613}
+      objectReference: {fileID: 1000398616}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1514a2e0ce0122479375d4c6f119e52, type: 3}
 --- !u!1001 &6927080765824252864

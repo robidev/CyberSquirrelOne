@@ -21,6 +21,6 @@ public class PowerChord : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		line.SetPosition(1,transform.position);
+		  line.SetPosition(1,transform.position);
     }
 }

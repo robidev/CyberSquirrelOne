@@ -5,11 +5,11 @@ using UnityEngine;
 public class SerializedGlobalControl : SerializedObject
 {
     GlobalControlData data;
-    GlobalControl control;
+    GlobalPlayerControl control;
     // Start is called before the first frame update
     void Start()
     {
-        control = GetComponent<GlobalControl>();
+        control = GetComponent<GlobalPlayerControl>();
         data = new GlobalControlData(); //get/set
     }
 
@@ -26,7 +26,7 @@ public class SerializedGlobalControl : SerializedObject
     public override void setLoadData(object obj)
     {
         if(control == null)
-            control = GetComponent<GlobalControl>();
+            control = GetComponent<GlobalPlayerControl>();
 
         data = (GlobalControlData) obj;
         control.characterEnabledList = data.enabledPlayers;

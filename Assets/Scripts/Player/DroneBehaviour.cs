@@ -131,6 +131,6 @@ public class DroneBehaviour : MonoBehaviour
         object1 = null;
         Died = true;
 
-        FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);
+        FindObjectOfType<GameControl>().Invoke("GameOver", 2);
     }
 }

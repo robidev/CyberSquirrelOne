@@ -86,17 +86,17 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetBool("IsElectrocuted", true);
 			if (audioSource && electrocutedAudio)
             	audioSource.PlayOneShot(electrocutedAudio);
-			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
+			FindObjectOfType<GameControl>().Invoke("GameOver", 2);//allow for the death-animation
 			return;
 		}
 		if(reason == DieReason.Detected)
 		{
 			if(detected != null)
 				detected.SetActive(true);
-			FindObjectOfType<GlobalControl>().Invoke("GameOver", 2);//allow for the death-animation
+			FindObjectOfType<GameControl>().Invoke("GameOver", 2);//allow for the death-animation
 			return;
 		}
-		FindObjectOfType<GlobalControl>().Invoke("GameOver", 0);
+		FindObjectOfType<GameControl>().Invoke("GameOver", 0);
 	}
 
 

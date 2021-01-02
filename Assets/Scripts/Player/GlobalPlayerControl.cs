@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class GlobalControl : MonoBehaviour
+public class GlobalPlayerControl : MonoBehaviour
 {
     public List<PlayerMovement> characterList;
     public List<bool> characterEnabledList;
@@ -19,9 +19,7 @@ public class GlobalControl : MonoBehaviour
     private int current_layer = 0;
     private PlayerMovement active_character = null;
 
-    public GameObject m_GameOverUI;
-    public GameObject m_GamePauseUI;
-    private float oldTimeScale;
+
     public AudioSource audioSource;
     public AudioClip DayAudio;
     public AudioClip NightAudio;
@@ -29,7 +27,6 @@ public class GlobalControl : MonoBehaviour
     private AudioClip OutsideAudio;
 
     public Transform listener;
-    public StateSerializer serializer;
     public TextMeshProUGUI selectedText;
     public bool GlobalControlsEnabled = true;
 
@@ -41,20 +38,6 @@ public class GlobalControl : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         OutsideAudio = DayAudio;
         audioSource.Play();
-
-        PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
-        if(SceneManager.GetActiveScene().name == "Level1_A")
-        {
-          string filename = PlayerPrefs.GetString("LastCheckPoint");
-          serializer.LoadFromFile(filename);
-        }
-        else
-        {
-          //string filename = PlayerPrefs.GetString("LastCheckPoint");
-          //serializer.LoadFromFile(filename);
-        }
-
-
         //select initial character
         SelectCharacter();
     }
@@ -62,19 +45,6 @@ public class GlobalControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-      if(Input.GetButtonDown ("Cancel") ) {
-        if(m_GamePauseUI.activeSelf == false)
-        {
-          GamePause();
-          audioSource.Pause();
-        }
-        else
-        {
-          Continue();
-          audioSource.UnPause();
-        }
-      }
-
       if( Time.timeScale > 0.1f)
       {
         if(Input.GetButtonDown ("Tab") && tabPress == false && GlobalControlsEnabled) {
@@ -206,51 +176,5 @@ public class GlobalControl : MonoBehaviour
     void DisplaySelected(string name)
     {
       selectedText.text = "" + name.Replace("_"," ");
-    }
-
-    public void GameOver()
-    {
-      //showdeathscreen
-      Time.timeScale = 0;
-      m_GameOverUI.SetActive(true);
-      audioSource.Stop();
-    }
-
-    public void GamePause()
-    {
-      //showpausescreen
-      oldTimeScale = Time.timeScale;
-      Time.timeScale = 0;
-      m_GamePauseUI.SetActive(true);
-    }
-
-    public void Quit()
-    {
-      SceneManager.LoadScene( 0 );//back to main
-    }
-
-    public void Restart()
-    {
-      Time.timeScale = 1;
-      PlayerPrefs.SetString("LastCheckPoint","");
-      SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-    }
-
-    public void LastCheckPoint()
-    {
-      Time.timeScale = 1;
-      SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
-    }
-
-    public void Continue()
-    {
-      //Debug.Log(oldTimeScale);
-      Time.timeScale = oldTimeScale;
-      m_GamePauseUI.SetActive(false);
-    }
-
-    public void NextLevel()
-    {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

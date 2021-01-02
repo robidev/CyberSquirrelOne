@@ -42,7 +42,7 @@ GUI
 
 TODO/BUGS:
 menubar options->attach events!!!
-split global-control and menu-triggers
+pause over game-over menu...
 
 
 

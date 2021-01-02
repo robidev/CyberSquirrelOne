@@ -91,12 +91,6 @@ public class ProtectionFunctions : MonoBehaviour
     private float OC = 0;
     [SerializeField] public new string name = "P1";
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
