@@ -30,19 +30,23 @@ public class InterlockOpen : MonoBehaviour
 
         if(TestCondition || TestConditionOverride)
         {
-            TriggerEvent.Invoke();
+            
             Debug.Log("InterlockTest passed");
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,this.GetType().Name,"InterlockTest passed","INFO");  
+            TriggerEvent.Invoke(); 
         }
         else
         {
             BlockEvent.Invoke();  
             Debug.Log("InterlockTest blocked"); 
             operateDialog.SetOperateResult(-1);         
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,this.GetType().Name,"InterlockTest blocked","ERROR");   
         }
     }
     public void InterlockOverride()
     {
-        TriggerEvent.Invoke();
         Debug.Log("Interlock override");
+        AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,this.GetType().Name,"Interlock override","INFO"); 
+        TriggerEvent.Invoke();
     }
 }

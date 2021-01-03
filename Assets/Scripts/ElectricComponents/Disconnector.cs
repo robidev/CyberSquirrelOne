@@ -21,7 +21,7 @@ public class Disconnector : Switch
         float tmpCurrent = 0;
         if(Destroyed)
         {
-            voltage = 0;//not conducting anymore
+            voltage = 0;//not conducting anymore  
         }
         else
         {

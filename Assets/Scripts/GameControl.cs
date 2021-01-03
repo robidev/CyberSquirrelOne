@@ -9,11 +9,12 @@ public class GameControl : MonoBehaviour
     public AudioSource audioSource;
     private float oldTimeScale;
     public StateSerializer serializer;
+    private GameObject gamePauseMenu;
 
     void Start()
     {       
         audioSource = GetComponent<AudioSource>();
-
+        gamePauseMenu = GetComponent<PauseDialog>().m_GamePauseUI;
         PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
         if(SceneManager.GetActiveScene().name == "Level1_A")
         {
@@ -30,6 +31,10 @@ public class GameControl : MonoBehaviour
     {
       Time.timeScale = 0;
       m_GameOverUI.SetActive(true);
+      if(gamePauseMenu != null)
+      {
+        gamePauseMenu.SetActive(false);
+      }
       audioSource.Stop();
     }
 

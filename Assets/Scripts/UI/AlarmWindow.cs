@@ -7,26 +7,15 @@ using TMPro;
 
 public class AlarmWindow : MonoBehaviour
 {
+    public static AlarmWindow instance = null;
     public TableScript MessageLog;
     public TableScript AlarmLog;
-    // Start is called before the first frame update
-    void Start()
+    AlarmWindow()
     {
-        SetAlarm("B1","B2","B3","Message","Open");
-        SetAlarm("Amr","RTU-1","C101","Lost connection","Open");
-        SetAlarm("C1","C2","C3","1234567","Open");
-        Invoke("addItemsTest1",3.0f);
-        Invoke("addItemsTest2",5.0f);
-    }
-
-    void addItemsTest1()
-    {
-        SetAlarm("D1","D2","D3","test12","Open");
-    }
-
-    void addItemsTest2()
-    {
-        SetAlarm("C1","C2","C3","1234567","Close");
+        if(instance == null)//get a static pointer to the first instance; not a singleton, but easy to reference
+        {
+            instance = this;
+        }
     }
 
     //set alarm on or off
@@ -34,7 +23,8 @@ public class AlarmWindow : MonoBehaviour
     {
         string time = System.DateTime.Now.ToString("dd.MM HH:mm:ss");
         //add message to historical message log
-        MessageLog.Insert(0, new string[] {time, B1, B2, B3, Message, status});
+        //MessageLog.Insert(0, new string[] {time, B1, B2, B3, Message, "ALARM:" + status});
+        MessageLog.Add(new string[] {time, B1, B2, B3, Message, "ALARM:" + status});
 
         //set/modify message from alarm-log
         foreach(GameObject[] lineObject in AlarmLog.getTable())
@@ -45,7 +35,14 @@ public class AlarmWindow : MonoBehaviour
                 lineObject[5].GetComponentInChildren<TMP_Text>().text == Message )
             {   //if found, update status
                 lineObject[6].GetComponentInChildren<TMP_Text>().text = status;
-                AlarmLog.Recolor(lineObject,Color.blue,Color.blue);
+                if(status.Contains("Off"))
+                {
+                    AlarmLog.Recolor(lineObject,Color.blue,Color.blue);
+                }
+                else
+                {
+                    AlarmLog.Recolor(lineObject);
+                }
                 LayoutRebuilder.ForceRebuildLayoutImmediate(AlarmLog.GetComponent<RectTransform>());
                 return;
             } 
@@ -54,6 +51,18 @@ public class AlarmWindow : MonoBehaviour
         int index = AlarmLog.Insert(0,new string[] {"A",time, B1, B2, B3, Message, status});
         AlarmLog.setOnHoverEvent(index);
         AlarmLog.setOnClickEvent(index,onClickEvent);
+        if(status.Contains("Off"))
+        {
+            GameObject[] lineObject = AlarmLog.getLine(index);
+            AlarmLog.Recolor(lineObject,Color.blue,Color.blue);
+        }
+    }
+
+    public void SetMessage(string B1, string B2, string B3, string Message, string status)
+    {
+        string time = System.DateTime.Now.ToString("dd.MM HH:mm:ss");
+        //add message to historical message log
+        MessageLog.Add(new string[] {time, B1, B2, B3, Message, status});
     }
 
     void onClickEvent()
@@ -88,7 +97,7 @@ public class AlarmWindow : MonoBehaviour
                 line[0].GetComponentInChildren<TMP_Text>().text = "C";
                 AlarmLog.Recolor(line,Color.yellow,Color.yellow);
             }
-            MessageLog.Insert(0, new string[] {time, B1, B2, B3, Message, status});
+            MessageLog.Add( new string[] {time, B1, B2, B3, Message, "ALARM:" + status});
         }
         else if(state == "C")
         {
@@ -100,7 +109,7 @@ public class AlarmWindow : MonoBehaviour
             string status = line[6].GetComponentInChildren<TMP_Text>().text + ",Clr";
 
             AlarmLog.Remove(line);
-            MessageLog.Insert(0, new string[] {time, B1, B2, B3, Message, status}); 
+            MessageLog.Add( new string[] {time, B1, B2, B3, Message, "ALARM:" + status}); 
         }
         LayoutRebuilder.ForceRebuildLayoutImmediate(AlarmLog.GetComponent<RectTransform>());
     }

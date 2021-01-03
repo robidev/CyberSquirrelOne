@@ -26,7 +26,7 @@ SERIALIZATION
 
 
 HMI
- - implement HMI message window -> fill with a bunch of historical messages, add messages for actions
+ - implement HMI message window -> fill with a bunch of historical messages
  - implement helps:
 	 explain function of CB
 	 explain function of DIS
@@ -38,11 +38,9 @@ HMI
 
 GUI
  - implement documents -> guides, and personal
- - help button for onjectivetracker(help key H)
 
 TODO/BUGS:
 menubar options->attach events!!!
-pause over game-over menu...
 
 
 

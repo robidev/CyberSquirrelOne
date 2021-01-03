@@ -7,6 +7,7 @@ using Unity.VectorGraphics;
 public class AnimateSwitch : MonoBehaviour
 {
     OperateDialog operateDialog;
+    private string Name = "SwitchControl";
     public Switch Switch;
     public int CtlNum = 1;
     public bool SwitchConducting
@@ -98,10 +99,12 @@ public class AnimateSwitch : MonoBehaviour
         {
             if(operateDialog != null)
                 operateDialog.SetOperateResult(1);
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,Name,"Operate open","INFO");
             StartCoroutine("Open");
         }
         else
         {
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,Name,"Cannot operate moving switch","ERROR"); 
             Debug.Log("cannot open moving switch");
             if(operateDialog != null)
                 operateDialog.SetOperateResult(-3);
@@ -131,10 +134,12 @@ public class AnimateSwitch : MonoBehaviour
         {
             if(operateDialog != null)
                 operateDialog.SetOperateResult(1);
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,Name,"Operate close","INFO"); 
             StartCoroutine("Close");
         }
         else
         {
+            AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,Name,"Cannot operate moving switch","ERROR"); 
             Debug.Log("cannot close moving switch");
             if(operateDialog != null)
                 operateDialog.SetOperateResult(-3);
@@ -172,6 +177,7 @@ public class AnimateSwitch : MonoBehaviour
             }
             else
             {
+                AlarmWindow.instance.SetMessage("Sub_S42",gameObject.name,Name,"Cannot operate moving switch","ERROR"); 
                 Debug.Log("cannot operate moving switch");
                 operateDialog.SetOperateResult(-3);
             }            
@@ -186,11 +192,13 @@ public class AnimateSwitch : MonoBehaviour
             spriteRenderer.sprite = bad;
             position = DbPos.bad;
             inTransition = true; // switch is blocked in bad state
+            AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,Name,"Controlable Switch failed","On"); 
             if(operateDialog != null)
                 operateDialog.SetOperateResult(-2);
         }
         if(value == false)//re-enable switch
         {
+            AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,Name,"Controllable Switch failed","Off"); 
             inTransition = false;
             if(operateDialog != null)
                 operateDialog.SetOperateResult(2);

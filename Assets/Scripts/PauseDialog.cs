@@ -7,14 +7,16 @@ public class PauseDialog : MonoBehaviour
     public GameObject m_GamePauseUI;
     private float oldTimeScale;
     public AudioSource audioSource;
+    private GameObject gameOverMenu;
     void Start()
     {       
         audioSource = GetComponent<AudioSource>();
+        gameOverMenu = GetComponent<GameControl>().m_GameOverUI;
     }
     // Update is called once per frame
     void Update()
     {
-      if(Input.GetButtonDown ("Cancel") ) {
+      if(Input.GetButtonDown ("Cancel") && (gameOverMenu == null || gameOverMenu.activeSelf == false)) {
         if(m_GamePauseUI.activeSelf == false)
         {
           GamePause();

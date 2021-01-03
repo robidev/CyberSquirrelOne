@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class ConductingEquipment : MonoBehaviour
 {
+    private bool AlarmState = false;
     public float voltage {
         get { return _voltage; }
         set 
@@ -30,6 +31,19 @@ public class ConductingEquipment : MonoBehaviour
                 else
                 {
                     mimic.color = NormalColor;
+                }
+            }
+            if((displayVolt || displayAmp) && AlarmWindow.instance != null)//only for sensors (VT's+CT's)
+            {
+                if(AlarmState == false && _voltage < PowerLossTreshold)//power lost
+                {
+                    AlarmState = true;
+                    AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,"VT","Undervoltage Alarm","On"); 
+                }
+                if(AlarmState == true && _voltage >= PowerLossTreshold)//power restored
+                {
+                    AlarmState = false;
+                    AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,"VT","Undervoltage Alarm","Off"); 
                 }
             }
         }
@@ -60,6 +74,7 @@ public class ConductingEquipment : MonoBehaviour
                 _damage = value;
                 if(_damage > DestroyRating)
                 {
+                    AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,this.GetType().Name,"Component failed","On"); 
                     Debug.Log(name + ": Exploded");
                     Destroyed = true;
                     OnDestroyed.Invoke();

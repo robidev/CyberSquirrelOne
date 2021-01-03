@@ -51,7 +51,11 @@ public class TableScript : MonoBehaviour
             Debug.Log("could not remove row from table");
         }
         Recolor();//recolor the table for alternating colors
-        LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+        if(gameObject.activeInHierarchy == true)
+        {
+            //rebuild the layout for the added item
+            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+        }
     }
 
     public void Recolor() // recolor the table
@@ -64,7 +68,11 @@ public class TableScript : MonoBehaviour
                 if(item.transform.GetComponent<Image>().color == ColorEven || item.transform.GetComponent<Image>().color == ColorOdd)
                     item.transform.GetComponent<Image>().color = (index % 2) == 0? ColorEven : ColorOdd;
             }
-            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+            if(gameObject.activeInHierarchy == true)
+            {
+                //rebuild the layout for the added item
+                LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+            }
             index++;
         }
     }
@@ -80,7 +88,32 @@ public class TableScript : MonoBehaviour
                 {
                     item.transform.GetComponent<Image>().color = (index % 2) == 0? colorEven : colorOdd;
                 }
-                LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+                if(gameObject.activeInHierarchy == true)
+                {
+                    //rebuild the layout for the added item
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+                }
+            }
+            index++;
+        }
+    }
+
+    public void Recolor(GameObject[] line) // recolor the line
+    {
+        int index = 0;
+        foreach(GameObject[] lineIdx in TableItem)
+        {
+            if(lineIdx == line)
+            {
+                foreach(GameObject item in line)
+                {
+                    item.transform.GetComponent<Image>().color = (index % 2) == 0? ColorEven : ColorOdd;
+                }
+                if(gameObject.activeInHierarchy == true)
+                {
+                    //rebuild the layout for the added item
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+                }
             }
             index++;
         }
@@ -94,11 +127,11 @@ public class TableScript : MonoBehaviour
             index = TableItem.Count;
         }
         //add row to table-GameObject
-        for(int i = 0; i< transform.childCount; i++)
+        for(int i = 0; i< transform.childCount; i++)//for each column
         {
             Transform column = transform.GetChild(i);
             item[i] = Instantiate(TableItemPrefab,column);
-            item[i].transform.SetSiblingIndex(index+1);//+1for header
+            item[i].transform.SetSiblingIndex(index+1);//+1 for ensuring header on top
             item[i].transform.GetComponent<Image>().color = (index % 2) == 0? ColorEven : ColorOdd;
 
             if(i < entry.Length)
@@ -113,12 +146,17 @@ public class TableScript : MonoBehaviour
         //add row to private table object
         TableItem.Insert(index, item);
         //if we inserted in the middle, recolor the list of items
-        if(index < TableItem.Count)
+        if(index < TableItem.Count-1)
         {
+            //Debug.Log(name + " - recoloring, index:" + index + " count: " + TableItem.Count);
             Recolor();
         }
-        //rebuild the layout for the added item
-        LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+        if(gameObject.activeInHierarchy == true)
+        {
+            //rebuild the layout for the added item
+            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
+        }
+
         //tell the index where we added the item
         return index;
     }

@@ -102,6 +102,7 @@ public class ProtectionFunctions : MonoBehaviour
         //overvoltage
         if(OverVoltage && OverVoltageVT.voltage > OverVoltageTreshold)
         {
+            AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,name,"Overvoltage Trip","On"); 
             OnTrip.Invoke();
             Debug.Log(name + ": overvoltage trip:" + OverVoltageVT.voltage);
             return;
@@ -109,6 +110,7 @@ public class ProtectionFunctions : MonoBehaviour
         //overcurrent
         if(OverCurrent && OverCurrentCT.current > OverCurrentImmediate)
         {
+            AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,name,"Overcurrent Immediate Trip","On"); 
             OnTrip.Invoke();
             Debug.Log(name + ": overcurrent immediate trip:" + OverCurrentCT.current);  
             return;          
@@ -123,6 +125,7 @@ public class ProtectionFunctions : MonoBehaviour
                 OC += (OverCurrentCT.current - OverCurrentTreshold) * Time.deltaTime;
                 if(OC > delta)
                 {
+                    AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,name,"Time OverCurrent Trip","On"); 
                     OnTrip.Invoke();
                     Debug.Log(name + ": time overcurrent trip:" + OverCurrentCT.current); 
                 }
@@ -145,6 +148,7 @@ public class ProtectionFunctions : MonoBehaviour
             float impedance = DistanceVT.voltage / DistanceCT.current;
             if(impedance < ImpedanceTreshold)
             {
+                AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,name,"Distance Protection Trip","On"); 
                 OnTrip.Invoke();
                 Debug.Log(name + ": distance protection trip:" + impedance);                 
             }
@@ -164,6 +168,7 @@ public class ProtectionFunctions : MonoBehaviour
             }
             if(Mathf.Abs(totalcurrent) > differentialTreshold)
             {
+                AlarmWindow.instance.SetAlarm("Sub_S42",gameObject.name,name,"Differential Protection Trip","On"); 
                 OnTrip.Invoke();
                 Debug.Log(name + ": differential protection trip:" + totalcurrent); 
             }
