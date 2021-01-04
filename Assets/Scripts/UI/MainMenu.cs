@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject areyousure;
+    public TMP_InputField code;
     public void StartNewGame()
     {
         PlayerPrefs.SetString("LastCheckPoint","");
@@ -37,5 +39,17 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void CheckPassCode()
+    {
+        if(code.text.Equals("AARDVARK"))
+        {
+            SceneManager.LoadScene(5);
+        }
+        else if(code.text.Equals("SPSY?!?"))
+        {
+            SceneManager.LoadScene(7);
+        }
     }
 }

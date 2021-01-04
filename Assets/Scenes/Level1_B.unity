@@ -16892,7 +16892,18 @@ MonoBehaviour:
   requiredConditionsState: 
   TriggerEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952459443}
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &633485484
 Transform:
   m_ObjectHideFlags: 0
@@ -24919,7 +24930,6 @@ GameObject:
   - component: {fileID: 952459440}
   - component: {fileID: 952459444}
   - component: {fileID: 952459443}
-  - component: {fileID: 952459442}
   m_Layer: 0
   m_Name: GlobalController
   m_TagString: Untagged
@@ -25090,19 +25100,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &952459442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952459437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9619a3f6f4ab46c638067d27dc8f41f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog: {fileID: 1302854727406227507}
 --- !u!114 &952459443
 MonoBehaviour:
   m_ObjectHideFlags: 0

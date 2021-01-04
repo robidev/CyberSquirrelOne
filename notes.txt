@@ -6,26 +6,30 @@ FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 Explosion sound on final explosion
 
-MAIN MENU
- enter codes for jumping to a level
- outro: rolling credits
 
 DRAWING
  better indication of fence->sign/perspective
+ add more stuff to the left of substation
+ add more stuff to the right of substation
+
+SERIALIZATION
+ improve loading/naming savegame-data
+ drone-checkpoint+safe-zone
+--
+ coffee machine serialize does nothing
+ load serialized data when starting level1_C
 
 HUD
  HUD indication of abilities and current selection
  HUD indication of mission checklist
  HUD guidance where to go for next mission item (arrow?)
 
-SERIALIZATION
- drone-checkpoint+safe-zone
- coffee machine serialize does nothing
- load serialized data when starting level1_C
- improve loading/naming savegame-data
-
+TODO/BUGS:
+menubar options->attach events!!!
+video resets in security-cam
 
 HMI
+ - local/remote implementation
  - implement HMI message window -> fill with a bunch of historical messages
  - implement helps:
 	 explain function of CB
@@ -38,9 +42,15 @@ HMI
 
 GUI
  - implement documents -> guides, and personal
-
-TODO/BUGS:
-menubar options->attach events!!!
+ - top-view of station image?
+ - documentation (what are the componenst and their properties, 
+ - how to open/close in HMI and read values
+ - how to change protection settings,  what is interlocking?
+ - footnotes about interlock-override and timed operate (explain there is a max future time)
+ - desktop and immages folder with funny stuff
+ - cheat via console/documents
+dialog:
+ - explain too much load will trip the line
 
 
 
@@ -54,55 +64,12 @@ adding/future:
 x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
 x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
 
-
-Tile:
-32x32 px
-
 ----------------------------------
 forest backdrop     - day/night TODO
 substation-backdrop - day/night  TODO
 city-backdrop       - day/night  TODO
 day-night transition animation TODO
- 
-
----------------
-https://electrical-engineering-portal.com/download-center/books-and-guides/power-substations/operation-33-11-kv-substation
 
 
-puzzle2:
-trafo1 enabled, trafo2 disabled
-
-desktop with:
- - top-view of station image?
- - documentation (what are the componenst and their properties, 
- - how to open/close in HMI and read values
- - how to change protection settings,  what is interlocking?
- - footnotes about interlock-override and timed operate (explain there is a max future time)
- - desktop and immages folder with funny stuff
-dialog:
- - explain to first destroy cabinets, then trafos for max damage
- - explain too much load will trip the line
- - 
-
-
-Scenario:
- distribution cabinets all on
- disable interlocking logic
- turn each disconnector off, one by one,  disconnector-open command. see result by security-cam
- - timed operate is possible/encouraged
-
-goal1:
- see cabinets explode by security-cam
-
-
-incoming earth-sw is on
- turn outgoing earth-sw off
- engage trafo2 outgoing disconector, to connect to other busbar.
- enable trafo2 CB, while incoming disconn. still off, running current from trafo1, trough the bus to trafo2, trough incoming earth-switch(pilot sets resistance?)
- do-remote interlock override, do remote prot-settings, do it via timed operate
-goal2
- see trafo's explode
- - if you do this before all distribution-stuff is broken, and you're still there(not timed), you get 'bad' ending
- - if a timed operate is set, and the result would be destruction, puzzle ends, and epilogue starts with timer that has been set..
 
 

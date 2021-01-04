@@ -55,4 +55,9 @@ public class GameControl : MonoBehaviour
       Time.timeScale = 1;
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
+
+    public void NextLevel()
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
