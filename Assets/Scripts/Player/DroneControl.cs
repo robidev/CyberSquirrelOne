@@ -43,6 +43,7 @@ public class DroneControl : MonoBehaviour
                     {
                         player.SetDisplayedLayer(LayerMask.NameToLayer("Player_outside"));
                     }
+                    Camera.main.GetComponent<GlobalPlayerControl>().DisplaySelected("drone (q for pilot)");
                 }
                 else
                 {
@@ -55,6 +56,7 @@ public class DroneControl : MonoBehaviour
                     {
                         player.SetDisplayedLayer(LayerMask.NameToLayer("Player_inside"));
                     }
+                    Camera.main.GetComponent<GlobalPlayerControl>().DisplaySelected(name);
                 }
             } 
         }

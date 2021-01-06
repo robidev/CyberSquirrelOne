@@ -6,30 +6,16 @@ FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 Explosion sound on final explosion
 
-
-DRAWING
- better indication of fence->sign/perspective
- add more stuff to the left of substation
- add more stuff to the right of substation
-
-SERIALIZATION
- improve loading/naming savegame-data
- drone-checkpoint+safe-zone
---
- coffee machine serialize does nothing
- load serialized data when starting level1_C
-
 HUD
- HUD indication of abilities and current selection
  HUD indication of mission checklist
- HUD guidance where to go for next mission item (arrow?)
 
-TODO/BUGS:
+PC:
 menubar options->attach events!!!
 video resets in security-cam
 
 HMI
  - local/remote implementation
+ - tooltips for mimics
  - implement HMI message window -> fill with a bunch of historical messages
  - implement helps:
 	 explain function of CB
@@ -51,6 +37,20 @@ GUI
  - cheat via console/documents
 dialog:
  - explain too much load will trip the line
+
+SERIALIZATION
+ improve loading/naming savegame-data
+ drone-checkpoint+safe-zone
+--
+ coffee machine serialize does nothing
+ load serialized data when starting level1_C
+
+DRAWING
+ better indication of fence->sign/perspective
+ add more stuff to the left of substation
+ add more stuff to the right of substation
+
+
 
 
 

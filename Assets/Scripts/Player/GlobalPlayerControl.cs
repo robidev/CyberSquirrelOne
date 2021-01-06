@@ -128,6 +128,8 @@ public class GlobalPlayerControl : MonoBehaviour
             listener.parent = d_camera[index].Follow;
             listener.localPosition = Vector3.zero;
             oldSelected = selected;
+
+            DroneControl ctl = active_character.GetComponent<DroneControl>();
             DisplaySelected(active_character.name);
           } 
           else { 
@@ -173,7 +175,7 @@ public class GlobalPlayerControl : MonoBehaviour
       }
     }
 
-    void DisplaySelected(string name)
+    public void DisplaySelected(string name)
     {
       selectedText.text = "" + name.Replace("_"," ");
     }
