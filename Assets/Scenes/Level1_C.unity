@@ -24103,6 +24103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HelpDialog
       objectReference: {fileID: 0}
+    - target: {fileID: 3897651218046079089, guid: 6cf944a8654ecf6a09e661a10a7cdf0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3897651218046079102, guid: 6cf944a8654ecf6a09e661a10a7cdf0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24937,7 +24942,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.2426667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24971,7 +24976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.670668, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: -16.692661, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -25420,7 +25425,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.2426667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -26069,7 +26074,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 2.2426667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
