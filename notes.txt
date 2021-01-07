@@ -5,13 +5,13 @@ BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
 Explosion sound on final explosion
+mission checklist does not work regarding hedgehog?
 
-HUD
- HUD indication of mission checklist
 
 PC:
 menubar options->attach events!!!
 video resets in security-cam
+level ending screen!!!
 
 HMI
  - local/remote implementation

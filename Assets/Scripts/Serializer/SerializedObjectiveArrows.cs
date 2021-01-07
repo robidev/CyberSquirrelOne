@@ -12,7 +12,8 @@ public class SerializedObjectiveArrows : SerializedObject
         objectiveArrow = GetComponent<ObjectiveArrow>();
         data = new ObjectiveArrowsData{ 
             objectiveEnabled = objectiveArrow.objectiveEnabled,
-            objectiveKeepDisabled = objectiveArrow.objectiveKeepDisabled 
+            objectiveKeepDisabled = objectiveArrow.objectiveKeepDisabled,
+            enableArrows = objectiveArrow.enableArrows 
         }; //get/set
     }
 
@@ -22,6 +23,7 @@ public class SerializedObjectiveArrows : SerializedObject
             Start();
         data.objectiveEnabled = objectiveArrow.objectiveEnabled;
         data.objectiveKeepDisabled = objectiveArrow.objectiveKeepDisabled;
+        data.enableArrows = objectiveArrow.enableArrows;
         return data;
     }
 
@@ -33,6 +35,7 @@ public class SerializedObjectiveArrows : SerializedObject
         data = (ObjectiveArrowsData) obj;
         objectiveArrow.objectiveEnabled = data.objectiveEnabled;
         objectiveArrow.objectiveKeepDisabled = data.objectiveKeepDisabled;
+        objectiveArrow.enableArrows = data.enableArrows;
     }
 
     [System.Serializable]
@@ -40,5 +43,6 @@ public class SerializedObjectiveArrows : SerializedObject
     {
         public bool[] objectiveEnabled;
         public bool[] objectiveKeepDisabled;
+        public bool enableArrows;
     }
 }

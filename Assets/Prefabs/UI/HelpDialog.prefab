@@ -487,7 +487,11 @@ MonoBehaviour:
 
     Pause
 
-    Help'
+    Help
+
+    Info
+
+    Objective arrows'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69d4d0dc7e0d7e07a8afee4f2e6475a5, type: 2}
   m_sharedMaterial: {fileID: 411272591591190100, guid: 69d4d0dc7e0d7e07a8afee4f2e6475a5,
@@ -527,7 +531,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 70
+  m_lineSpacing: 35
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -773,7 +777,11 @@ MonoBehaviour:
 
     esc
 
-    h'
+    h
+
+    i
+
+    o'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69d4d0dc7e0d7e07a8afee4f2e6475a5, type: 2}
   m_sharedMaterial: {fileID: 411272591591190100, guid: 69d4d0dc7e0d7e07a8afee4f2e6475a5,
@@ -813,7 +821,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 70
+  m_lineSpacing: 35
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1513,6 +1521,7 @@ GameObject:
   - component: {fileID: 3897651218165749608}
   - component: {fileID: 3897651218165749611}
   - component: {fileID: 3897651218165749609}
+  - component: {fileID: 5588766610134339977}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1541,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.700012, y: -32.8}
+  m_AnchoredPosition: {x: -7.7000732, y: -32.80005}
   m_SizeDelta: {x: -483.80463, y: -192.7055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3897651218165749608
@@ -1594,6 +1603,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 0
+--- !u!114 &5588766610134339977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897651218165749613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23646c50ab96fceeea2f164fd155d6e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3897651218336112264
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class NextLevelTrigger : MonoBehaviour
     public List<string> requiredConditions;
     public bool[] requiredConditionsState;
     private bool AllConditionsMet = false;
+    public GameObject nexLevelScreen;
 
     void Start()
     {
@@ -41,7 +42,16 @@ public class NextLevelTrigger : MonoBehaviour
         if((filter == "" || other.name == filter) && (layer.value == 0 || layer.value == (1 << other.gameObject.layer)) && AllConditionsMet == true)
         {
             Debug.Log("next level");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(nexLevelScreen == null)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                Camera.main.GetComponent<AudioSource>().Stop();
+                nexLevelScreen.SetActive(true);
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ public class ObjectiveArrow : MonoBehaviour
     public Sprite arrowSprite;
 
     RectTransform PointerRectTransform;
+    public bool enableArrows = true;
 
     void Awake()
     {
@@ -31,21 +32,35 @@ public class ObjectiveArrow : MonoBehaviour
             Arrows[index] = Instantiate(arrowPrefab,Cam.transform);
             Arrows[index].GetComponentInChildren<TMP_Text>().text = objectivesText[index];
         }
+        setObjectiveList();
     }
     void Update()
     {
+        if(Input.GetKeyUp(KeyCode.O))
+        {
+            enableArrows = !enableArrows;
+            setObjectiveList();
+        }
         for(int index = 0; index < objectiveEnabled.Length; index++)
         {
-            if(objectiveEnabled[index] == true && objectiveKeepDisabled[index] == false)
+            if(objectiveEnabled[index] == true && objectiveKeepDisabled[index] == false && enableArrows == true)
             {
                 Vector3 target = Cam.WorldToViewportPoint(objectives[index].position);
 
                 if(target.x > 0 && target.x < 1 && target.y > 0 && target.y < 1 )//if target is in screen show cross
                 {
-                    Vector3 posInScreen = target;
-                    Arrows[index].transform.GetChild(0).up = Vector3.zero;
-                    Arrows[index].transform.position = Cam.ViewportToWorldPoint(posInScreen); 
-                    Arrows[index].GetComponentInChildren<SpriteRenderer>().sprite = crossSprite;
+                    if(crossSprite != null)
+                    {
+                        Vector3 posInScreen = target;
+                        Arrows[index].transform.GetChild(0).up = Vector3.zero;
+                        Arrows[index].transform.position = Cam.ViewportToWorldPoint(posInScreen); 
+                        Arrows[index].GetComponentInChildren<SpriteRenderer>().sprite = crossSprite;
+                        Arrows[index].SetActive(true);
+                    }
+                    else
+                    {
+                        Arrows[index].SetActive(false);
+                    }
                 }
                 else // else show arrow
                 {
@@ -55,8 +70,8 @@ public class ObjectiveArrow : MonoBehaviour
                     Arrows[index].transform.GetChild(0).up = dir; //sprite is a child, and will rotate, as opposed to the text with it
                     Arrows[index].transform.position = Cam.ViewportToWorldPoint(posInScreen); 
                     Arrows[index].GetComponentInChildren<SpriteRenderer>().sprite = arrowSprite;
+                    Arrows[index].SetActive(true);
                 }
-                Arrows[index].SetActive(true);
             }
             else
             {
@@ -69,12 +84,14 @@ public class ObjectiveArrow : MonoBehaviour
     public void EnableObjective(int index)
     {
         objectiveEnabled[index] = true;
+        setObjectiveList();
     }
 
     public void DisableObjective(int index)
     {
         objectiveEnabled[index] = false;
         objectiveKeepDisabled[index] = true;
+        setObjectiveList();
     }
 
     public bool _bIsSelected = true;
@@ -90,5 +107,27 @@ public class ObjectiveArrow : MonoBehaviour
         Gizmos.DrawSphere(transform.position, 0.1f);  //center sphere
         if (GetComponent<Renderer>() != null)
         Gizmos.DrawWireCube(screenBounds.center, screenBounds.size);
+    }
+
+    public List<string> objectiveListText;
+    public TMP_Text objectiveListTextObject;
+    void setObjectiveList()
+    {
+        objectiveListTextObject.text = "Objectives:\n\n";
+        for(int i = 0; i < objectiveListText.Count; i++)
+        {
+            if(objectiveListText[i] != "") // we want an abjective
+            {
+                if(objectiveKeepDisabled[i] == true) // if it was met
+                {
+                    objectiveListTextObject.text += "[*] " + objectiveListText[i] + "\n";
+                }
+                else if(objectiveEnabled[i] == true) // if it was told, but not met
+                {
+                    objectiveListTextObject.text += "[  ] " + objectiveListText[i] + "\n";
+                }
+            }
+        }
+        objectiveListTextObject.text += "\n\n\nObjective Arrows: " + (enableArrows==true? "on" : "off");
     }
 }
