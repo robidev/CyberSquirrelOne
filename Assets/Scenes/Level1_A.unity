@@ -2024,7 +2024,7 @@ Transform:
   m_GameObject: {fileID: 142962749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9.999644}
-  m_LocalScale: {x: 9, y: 9, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 0
@@ -9682,6 +9682,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1000398613}
+        m_MethodName: EnableCharacter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_PowerEnableEvent:
     m_PersistentCalls:
       m_Calls:
@@ -13615,8 +13626,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -4.0446963, y: 0.07447887, z: 9.88}
-  m_LocalScale: {x: 8.92, y: 8.92, z: 1}
+  m_LocalPosition: {x: -7.273577, y: -0.7654944, z: 9.88}
+  m_LocalScale: {x: 19.81, y: 19.81, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 1
@@ -13941,7 +13952,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13965,7 +13976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.08511, y: -1.4194422, z: -20}
+  m_LocalPosition: {x: 62.41844, y: 6.5691156, z: -10}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -18960,8 +18971,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -19.498003, y: 0.35903546, z: 14.14}
-  m_LocalScale: {x: 8.6, y: 8.6, z: 1}
+  m_LocalPosition: {x: -34.97269, y: -3.6806374, z: 14.14}
+  m_LocalScale: {x: 19.05, y: 19.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 2
@@ -31287,7 +31298,6 @@ GameObject:
   - component: {fileID: 1836218837}
   - component: {fileID: 1836218839}
   - component: {fileID: 1836218838}
-  - component: {fileID: 1836218841}
   - component: {fileID: 1836218840}
   m_Layer: 1
   m_Name: TakeOutBird
@@ -31372,36 +31382,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UUID: TakeOutBird
---- !u!114 &1836218841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836218836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e76219d5b38c5efe99fbf9a707ed503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 65380884}
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  filter: ninja
-  layer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1837454219
 GameObject:
   m_ObjectHideFlags: 0
