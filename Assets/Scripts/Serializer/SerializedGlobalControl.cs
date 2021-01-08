@@ -7,7 +7,7 @@ public class SerializedGlobalControl : SerializedObject
     GlobalControlData data;
     GlobalPlayerControl control;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         control = GetComponent<GlobalPlayerControl>();
         data = new GlobalControlData(); //get/set
@@ -16,7 +16,7 @@ public class SerializedGlobalControl : SerializedObject
     public override object getSaveData()
     {
         if(control == null || data == null)
-            Start();
+            Awake();
 
         data.enabledPlayers = control.characterEnabledList;
         data.currentPlayer = control.selected;
@@ -33,6 +33,7 @@ public class SerializedGlobalControl : SerializedObject
         control.selected = data.currentPlayer;
         Debug.Log("data.enabledPlayers:" + data.enabledPlayers);
         Debug.Log("data.currentPlayer:" + data.currentPlayer);
+        control.SelectCharacter(control.selected);
     }
 
     [System.Serializable]

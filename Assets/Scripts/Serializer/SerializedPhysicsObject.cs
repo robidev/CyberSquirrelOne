@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SerializedPhysicsObject : SerializedObject
 {
-    private PlayerObjectData safeLocation;
+    private PhysicsObjectData safeLocation;
     public override object getSaveData()
     {
-        safeLocation = new PlayerObjectData { 
+        safeLocation = new PhysicsObjectData { 
             x  = gameObject.transform.localPosition.x,
             y  = gameObject.transform.localPosition.y,
             z  = gameObject.transform.localPosition.z,
@@ -23,14 +23,14 @@ public class SerializedPhysicsObject : SerializedObject
 
     public override void setLoadData(object obj)
     {
-        PlayerObjectData data = (PlayerObjectData) obj;
+        PhysicsObjectData data = (PhysicsObjectData) obj;
         gameObject.transform.localPosition = new Vector3(data.x,data.y,data.z);
         gameObject.transform.localRotation = new Quaternion(data.rx,data.ry,data.rz,data.rw);
         gameObject.SetActive(data.enabled);
     }
 
     [System.Serializable]
-    private class PlayerObjectData
+    private class PhysicsObjectData
     {
         public float x;
         public float y;

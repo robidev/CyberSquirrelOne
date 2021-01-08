@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 65380882}
   - component: {fileID: 65380883}
   - component: {fileID: 65380884}
+  - component: {fileID: 65380885}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -403,6 +404,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ad6a2bafa6c77ac99c4d54fbcfb242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &65380885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65380878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e119d2c3071badc83bcc54f49b9880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: {fileID: 1015855134}
 --- !u!1 &69042768
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +582,8 @@ PrefabInstance:
       propertyPath: m_WhatIsGround.m_Bits
       value: 83969
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2588596786788219879, guid: 04b6f4a1e577fb0a29191ee4f41624b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 04b6f4a1e577fb0a29191ee4f41624b7, type: 3}
 --- !u!4 &72679693 stripped
 Transform:
@@ -1953,7 +1968,7 @@ PrefabInstance:
     - target: {fileID: 6927080764791843188, guid: 8556690fa54705bd89ae11f57de7f147,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6927080764791843188, guid: 8556690fa54705bd89ae11f57de7f147,
         type: 3}
@@ -2283,7 +2298,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone_pilot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7784652698711710816, guid: 1ade939d9c53ab372b791d48cc72c9e2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ade939d9c53ab372b791d48cc72c9e2, type: 3}
 --- !u!4 &371409123 stripped
 Transform:
@@ -2445,7 +2461,8 @@ PrefabInstance:
       propertyPath: m_WhatIsGround.m_Bits
       value: 83969
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5395691651153850193, guid: 22378568a04413973b6bf90b504c4154, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22378568a04413973b6bf90b504c4154, type: 3}
 --- !u!1 &495401180
 GameObject:
@@ -2493,7 +2510,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1000398613}
+      - m_Target: {fileID: 1000398616}
         m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
@@ -3967,6 +3984,10 @@ GameObject:
   - component: {fileID: 751247704}
   - component: {fileID: 751247705}
   - component: {fileID: 751247703}
+  - component: {fileID: 751247709}
+  - component: {fileID: 751247708}
+  - component: {fileID: 751247707}
+  - component: {fileID: 751247706}
   m_Layer: 19
   m_Name: FlyOffTrigger
   m_TagString: Untagged
@@ -4105,6 +4126,126 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8119888, y: 5.695503}
   m_EdgeRadius: 0
+--- !u!114 &751247706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751247701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e76219d5b38c5efe99fbf9a707ed503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000398617}
+        m_MethodName: DisableObjective
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  filter: hacker
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &751247707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751247701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e76219d5b38c5efe99fbf9a707ed503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000398617}
+        m_MethodName: DisableObjective
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  filter: drone_pilot
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &751247708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751247701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e76219d5b38c5efe99fbf9a707ed503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000398617}
+        m_MethodName: DisableObjective
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  filter: drone
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &751247709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751247701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e76219d5b38c5efe99fbf9a707ed503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1000398617}
+        m_MethodName: DisableObjective
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  filter: ninja
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &781265175
 GameObject:
   m_ObjectHideFlags: 0
@@ -9920,6 +10061,7 @@ MonoBehaviour:
   - drone
   - drone-pilot
   - hacker
+  objectiveList: 
   objectiveEnabled: 
   objectiveKeepDisabled: 
   screenBounds:
@@ -9929,7 +10071,14 @@ MonoBehaviour:
     type: 3}
   crossSprite: {fileID: 21300000, guid: 458aa25e830412a0d844f34ff3ec2a2e, type: 3}
   arrowSprite: {fileID: 21300000, guid: c27cbd8b682df6f4299893fc2dc964d3, type: 3}
-  _bIsSelected: 1
+  enableArrows: 1
+  _bIsSelected: 0
+  objectiveListText:
+  - Ninja on roof
+  - Drone on roof
+  - Drone pilot on roof
+  - Hacker on roof
+  objectiveListTextObject: {fileID: 1169275145}
 --- !u!1 &1010311875
 GameObject:
   m_ObjectHideFlags: 0
@@ -9996,6 +10145,87 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1015855132
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1031397840}
+    m_Modifications:
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020448538634387163, guid: 8822310af72981be690406ca58d8fe87,
+        type: 3}
+      propertyPath: m_Name
+      value: InfoDialog
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8822310af72981be690406ca58d8fe87, type: 3}
+--- !u!4 &1015855133 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1020448538634387156, guid: 8822310af72981be690406ca58d8fe87,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015855132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1015855134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1020448538634387163, guid: 8822310af72981be690406ca58d8fe87,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015855132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1031397839
 GameObject:
   m_ObjectHideFlags: 0
@@ -10027,6 +10257,7 @@ Transform:
   - {fileID: 567376335}
   - {fileID: 1162413579}
   - {fileID: 1157286531}
+  - {fileID: 1015855133}
   - {fileID: 1532436986}
   - {fileID: 1266666012}
   m_Father: {fileID: 0}
@@ -10468,7 +10699,7 @@ PrefabInstance:
     - target: {fileID: 5863956827838466011, guid: 8fd9107f8cc9547c489092a678646c44,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5863956827838466011, guid: 8fd9107f8cc9547c489092a678646c44,
         type: 3}
@@ -12257,6 +12488,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 923068715}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1169275145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1020448538914844732, guid: 8822310af72981be690406ca58d8fe87,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015855132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181284091
 GameObject:
   m_ObjectHideFlags: 0
@@ -13744,6 +13987,7 @@ GameObject:
   - component: {fileID: 1424536343}
   - component: {fileID: 1424536345}
   - component: {fileID: 1424536344}
+  - component: {fileID: 1424536346}
   m_Layer: 1
   m_Name: NextLevelTriggers1
   m_TagString: Untagged
@@ -13783,6 +14027,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1417585631}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1424536346}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13859,6 +14114,102 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 0
+--- !u!82 &1424536346
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424536342}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 02e721f893863de1cb1617451739d36e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1434943140
 GameObject:
   m_ObjectHideFlags: 0
@@ -24942,7 +25293,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24976,7 +25327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958785656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.692661, y: 3.1200008, z: -20}
+  m_LocalPosition: {x: -29.670668, y: 3.1200008, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1949969945}
@@ -25425,7 +25776,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -26074,7 +26425,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.2426667, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

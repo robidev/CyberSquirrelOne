@@ -7,6 +7,7 @@ public class ObjectiveArrow : MonoBehaviour
 {
     public List<Transform> objectives;
     public List<string> objectivesText;
+    public List<int> objectiveList;
     public bool[] objectiveEnabled;
     public bool[] objectiveKeepDisabled;
     public Bounds screenBounds;
@@ -25,6 +26,9 @@ public class ObjectiveArrow : MonoBehaviour
         objectiveEnabled = new bool[objectives.Count];
         objectiveKeepDisabled = new bool[objectives.Count];
         Arrows = new GameObject[objectives.Count];
+
+        objectiveList = new List<int>();
+
         for(int index = 0; index < objectives.Count; index++)
         {
             objectiveEnabled[index] = false;
@@ -78,12 +82,14 @@ public class ObjectiveArrow : MonoBehaviour
                 Arrows[index].SetActive(false);
             }
         }
-
-
     }
     public void EnableObjective(int index)
     {
         objectiveEnabled[index] = true;
+        if(objectiveList.Contains(index) == false)
+        {
+            objectiveList.Add(index);
+        }
         setObjectiveList();
     }
 
@@ -114,9 +120,9 @@ public class ObjectiveArrow : MonoBehaviour
     void setObjectiveList()
     {
         objectiveListTextObject.text = "Objectives:\n\n";
-        for(int i = 0; i < objectiveListText.Count; i++)
+        foreach (int i in objectiveList)
         {
-            if(objectiveListText[i] != "") // we want an abjective
+            if(objectiveListText[i] != "") // we want an objective
             {
                 if(objectiveKeepDisabled[i] == true) // if it was met
                 {
@@ -128,6 +134,6 @@ public class ObjectiveArrow : MonoBehaviour
                 }
             }
         }
-        objectiveListTextObject.text += "\n\n\nObjective Arrows: " + (enableArrows==true? "on" : "off");
+        objectiveListTextObject.text += "\n\n\n(O)bjective Arrows: " + (enableArrows==true? "on" : "off");
     }
 }

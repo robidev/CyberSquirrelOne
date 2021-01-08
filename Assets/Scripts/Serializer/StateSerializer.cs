@@ -5,15 +5,10 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using TigerForge;
 using System;
+using UnityEngine.SceneManagement;
 
 public class StateSerializer : MonoBehaviour
 {
-    void Start()
-    {
-        //Save();
-        //Load();
-    }
-
     public void LoadFromFile(string fileName)
     {
         if(fileName == "" || fileName == null)
@@ -53,6 +48,11 @@ public class StateSerializer : MonoBehaviour
         } finally {
             saveFile.Dispose(); 
         }
+    }
+
+    public void SaveToSceneFile(string checkpointfileName)
+    {
+        SaveToFile(SceneManager.GetActiveScene().name + "_" + checkpointfileName);
     }
 
     public void SaveToFile(string fileName)

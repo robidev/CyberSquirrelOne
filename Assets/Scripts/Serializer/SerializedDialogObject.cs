@@ -7,7 +7,7 @@ public class SerializedDialogObject : SerializedObject
     DialogObjectData data;
     DialogueTrigger dialog;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dialog = GetComponent<DialogueTrigger>();
         data = new DialogObjectData{ 
@@ -19,7 +19,7 @@ public class SerializedDialogObject : SerializedObject
     public override object getSaveData()
     {
         if(dialog == null || data == null)
-            Start();
+            Awake();
         data.hasBeenShown = dialog.DialogHasBeenShown;
         data.isActive = gameObject.activeSelf;
         return data;

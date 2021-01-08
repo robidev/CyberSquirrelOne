@@ -7,7 +7,7 @@ public class SerializedNextLevelObject : SerializedObject
     NextLevelTriggerObjectData data;
     NextLevelTrigger nextLevel;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         nextLevel = GetComponent<NextLevelTrigger>();
         data = new NextLevelTriggerObjectData{ triggers = nextLevel.requiredConditionsState }; //get/set
@@ -16,7 +16,7 @@ public class SerializedNextLevelObject : SerializedObject
     public override object getSaveData()
     {
         if(nextLevel == null || data == null)
-            Start();
+            Awake();
 
         data.triggers = nextLevel.requiredConditionsState;
         return data;

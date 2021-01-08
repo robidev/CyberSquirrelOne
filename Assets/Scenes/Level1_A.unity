@@ -2024,7 +2024,7 @@ Transform:
   m_GameObject: {fileID: 142962749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 9.999644}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 0
@@ -6181,7 +6181,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 65380884}
-        m_MethodName: SaveToFile
+        m_MethodName: SaveToSceneFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11800,7 +11800,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 65380884}
-        m_MethodName: SaveToFile
+        m_MethodName: SaveToSceneFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13024,6 +13024,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle1: {fileID: 1828257702}
+--- !u!1 &915987179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1533054794794532176, guid: 29b59d1250d6e6cc3b46cd7d225467e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1533054795994186265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &915987185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915987179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f480b86b6497ffe558084ad1ed8a643e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UUID: drone
 --- !u!1 &933932006
 GameObject:
   m_ObjectHideFlags: 0
@@ -13596,8 +13615,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981602203}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -7.273577, y: -0.7654944, z: 9.88}
-  m_LocalScale: {x: 19.81, y: 19.81, z: 1}
+  m_LocalPosition: {x: -4.0446963, y: 0.07447887, z: 9.88}
+  m_LocalScale: {x: 8.92, y: 8.92, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 1
@@ -13922,7 +13941,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13946,7 +13965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000398609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.41844, y: 6.5691156, z: -10}
+  m_LocalPosition: {x: 77.08511, y: -1.4194422, z: -20}
   m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children:
   - {fileID: 142962750}
@@ -14175,6 +14194,7 @@ MonoBehaviour:
   - ninja
   - hacker
   - drone
+  objectiveList: 
   objectiveEnabled: 
   objectiveKeepDisabled: 
   screenBounds:
@@ -18103,7 +18123,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 65380884}
-        m_MethodName: SaveToFile
+        m_MethodName: SaveToSceneFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18696,7 +18716,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1533054795994186265}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 915987179}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f92cd6d055ef1e1b283a56e95d5c85b1, type: 3}
@@ -18940,8 +18960,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313657}
   m_LocalRotation: {x: -0, y: 0.0042312643, z: -0, w: 0.99999106}
-  m_LocalPosition: {x: -34.97269, y: -3.6806374, z: 14.14}
-  m_LocalScale: {x: 19.05, y: 19.05, z: 1}
+  m_LocalPosition: {x: -19.498003, y: 0.35903546, z: 14.14}
+  m_LocalScale: {x: 8.6, y: 8.6, z: 1}
   m_Children: []
   m_Father: {fileID: 1000398612}
   m_RootOrder: 2
@@ -23666,6 +23686,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1846019220}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5482054536340707629, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7240015159265622268, guid: 14b46202d8903be66b1e2103b21147ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23730,6 +23780,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 65380884}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveToFile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7240015159265622271, guid: 14b46202d8903be66b1e2103b21147ed,
+        type: 3}
+      propertyPath: OnStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level1_C_start
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b46202d8903be66b1e2103b21147ed, type: 3}
@@ -31091,15 +31176,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1818690973}
-        m_MethodName: DisableDialogue
-        m_Mode: 1
+        m_MethodName: set_DialogHasBeenShown
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   modifyChip: {fileID: 911996124}
   explainPuzzle: {fileID: 771976873}
@@ -32982,7 +33067,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 65380884}
-        m_MethodName: SaveToFile
+        m_MethodName: SaveToSceneFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -7,7 +7,7 @@ public class SerializedCableObject : SerializedObject
     PowerlineObjectData data;
     Powerline powerline;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         powerline = GetComponent<Powerline>();
         data = new PowerlineObjectData{ isPowered = powerline.isPowered }; //get/set
@@ -16,7 +16,7 @@ public class SerializedCableObject : SerializedObject
     public override object getSaveData()
     {
         if(powerline == null || data == null)
-            Start();
+            Awake();
             
         data.isPowered = powerline.isPowered;
         return data;

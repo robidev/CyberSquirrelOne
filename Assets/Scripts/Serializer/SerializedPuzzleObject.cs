@@ -7,7 +7,7 @@ public class SerializedPuzzleObject : SerializedObject
     PuzzleObjectData data;
     Puzzle1 puzzle;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         puzzle = GetComponent<Puzzle1>();
         data = new PuzzleObjectData{ isSolved = puzzle.IsPuzzleSolved() }; //get/set
@@ -16,7 +16,7 @@ public class SerializedPuzzleObject : SerializedObject
     public override object getSaveData()
     {   
         if(puzzle == null || data == null)
-            Start();
+            Awake();
             
         data.isSolved = puzzle.IsPuzzleSolved();
         return data;

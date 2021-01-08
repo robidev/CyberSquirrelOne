@@ -43,8 +43,7 @@ public class DialogueManager : MonoBehaviour {
 										Input.GetKeyUp(KeyCode.Space) ||
 										Input.GetKeyUp(KeyCode.H) ||
 										/*|| Input.GetButtonUp("Submit") || */
-										Input.GetButtonUp("Action1") ||
-										Input.GetButtonUp("Action2")) )
+										Input.GetButtonUp("Action1")) ) //||	Input.GetButtonUp("Action2")) )
 		{
 			DisplayNextSentence ();
 		}

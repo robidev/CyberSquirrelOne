@@ -4,14 +4,11 @@ text editor scroll is broken
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
-Explosion sound on final explosion
-mission checklist does not work regarding hedgehog?
-
+arrows only after little progress?(timer per objective?)
 
 PC:
 menubar options->attach events!!!
 video resets in security-cam
-level ending screen!!!
 
 HMI
  - local/remote implementation
@@ -38,12 +35,6 @@ GUI
 dialog:
  - explain too much load will trip the line
 
-SERIALIZATION
- improve loading/naming savegame-data
- drone-checkpoint+safe-zone
---
- coffee machine serialize does nothing
- load serialized data when starting level1_C
 
 DRAWING
  better indication of fence->sign/perspective

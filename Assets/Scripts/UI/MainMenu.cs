@@ -45,11 +45,13 @@ public class MainMenu : MonoBehaviour
     {
         if(code.text.Equals("AARDVARK"))
         {
-            SceneManager.LoadScene(5);
+            PlayerPrefs.SetString("LastCheckPoint","");
+            SceneManager.LoadScene(4);
         }
         else if(code.text.Equals("SPSY?!?"))
         {
-            SceneManager.LoadScene(7);
+            PlayerPrefs.SetString("LastCheckPoint","");
+            SceneManager.LoadScene(5);
         }
     }
 }

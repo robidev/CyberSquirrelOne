@@ -5,7 +5,7 @@ using UnityEngine;
 public class SerializedPlayerObject : SerializedObject
 {
     private PlayerObjectData safeLocation;
-    void Start()
+    void Awake()
     {
         safeLocation = new PlayerObjectData { 
             x = gameObject.transform.position.x,
@@ -13,13 +13,15 @@ public class SerializedPlayerObject : SerializedObject
             z = gameObject.transform.position.z };
         safeLocation.enabled = gameObject.activeSelf;
         //GetComponent<SpriteRenderer>().enabled;
+        Debug.Log("start_" + safeLocation.x);
     }
     public override object getSaveData()
     {
         if(safeLocation == null)
-            Start();
+            Awake();
             
         safeLocation.enabled = gameObject.activeSelf; //GetComponent<SpriteRenderer>().enabled;
+        Debug.Log("safe_" + safeLocation.x);
         return safeLocation;
     }
 
@@ -30,7 +32,7 @@ public class SerializedPlayerObject : SerializedObject
         gameObject.SetActive(data.enabled);
         //GetComponent<SpriteRenderer>().enabled = data.spriteRenderer;
         //Debug.Log("data.spriteRenderer:" + data.spriteRenderer);
-        //Debug.Log(data.x);
+        Debug.Log("load_" + data.x);
     }
 
     public void setSafeLocation()

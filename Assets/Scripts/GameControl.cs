@@ -12,20 +12,20 @@ public class GameControl : MonoBehaviour
     private GameObject gamePauseMenu;
 
     void Start()
-    {       
-        audioSource = GetComponent<AudioSource>();
-        gamePauseMenu = GetComponent<PauseDialog>().m_GamePauseUI;
-        PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
-        if(SceneManager.GetActiveScene().name == "Level1_A")
-        {
-          string filename = PlayerPrefs.GetString("LastCheckPoint");
-          serializer.LoadFromFile(filename);
-        }
-        else
-        {
-          //string filename = PlayerPrefs.GetString("LastCheckPoint");
-          //serializer.LoadFromFile(filename);
-        }
+    {
+      Time.timeScale = 1;       
+      audioSource = GetComponent<AudioSource>();
+      gamePauseMenu = GetComponent<PauseDialog>().m_GamePauseUI;
+
+      //save current level as the last level loaded
+      PlayerPrefs.SetString("LastLevel",SceneManager.GetActiveScene().name);
+      //load game settings if available
+      string filename = PlayerPrefs.GetString("LastCheckPoint");
+      if(filename.StartsWith(SceneManager.GetActiveScene().name))
+      {
+        Debug.Log("Loading:" + filename);
+        serializer.LoadFromFile(filename);
+      }
     }
     public void GameOver()
     {
