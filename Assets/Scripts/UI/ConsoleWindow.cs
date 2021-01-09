@@ -5,6 +5,21 @@ using TMPro;
 
 public class ConsoleWindow : MonoBehaviour
 {
+    public GameObject HelpDialogPrefab;
+    GameObject HelpInstance;
+    public void NewHelpDialog()
+    {
+        if(HelpInstance != null)
+        {
+            Destroy(HelpInstance);
+            HelpInstance = null;
+        }  
+
+        HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
+        HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+            "The Console is currently limited in function, but can be used to issue commands such as ls and exit.";
+    }
     private TMP_InputField TextField = null;
     private string TextVariable = "";
 

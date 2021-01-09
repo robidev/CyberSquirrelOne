@@ -7,6 +7,28 @@ using TMPro;
 
 public class AlarmWindow : MonoBehaviour
 {
+    public GameObject HelpDialogPrefab;
+    GameObject HelpInstance;
+    public void NewHelpDialog()
+    {
+        if(HelpInstance != null)
+        {
+            Destroy(HelpInstance);
+            HelpInstance = null;
+        }  
+
+        HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
+        HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+            "The Alarm window displays the alarm events coming from the field equipment.\n" +
+            "Clicking an alarm will acknowledge it, and clicking again will close the alarm.\n" +
+            "A closed alarm is removed from the list of alarms.\n\n" +
+            "Active Un-acknowledged alarms (On) will show in Red,\n"+
+            "an inactive Un-acknowledged alarm (Off) is Blue.\n" +
+            "An Active, Acknowledged alarm is Yellow,\n" +
+            "and an Inactive alarm, is closed as soon as it is acknowledged.\n\n" +
+            "All actions and status changes can be found back in the message window with corresponing timestamps.";
+    }
     public static AlarmWindow instance = null;
     public TableScript MessageLog;
     public TableScript AlarmLog;

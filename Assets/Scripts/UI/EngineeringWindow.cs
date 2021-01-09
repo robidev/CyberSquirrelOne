@@ -6,6 +6,23 @@ using UnityEngine.UI;
 
 public class EngineeringWindow : MonoBehaviour
 {
+    public GameObject HelpDialogPrefab;
+    GameObject HelpInstance;
+    public void NewHelpDialog()
+    {
+        if(HelpInstance != null)
+        {
+            Destroy(HelpInstance);
+            HelpInstance = null;
+        }  
+
+        HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
+        HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+            "The Engineering program is to alter device settings of the substation components.\n"+
+            "You need to save the settings before they take effect.\n" +
+            "Restore settings will reload the device settings in the current dialog";
+    }
     public ScrollRect DeviceList;
     public Sprite SelectedButtonImg;
     public Sprite UnSelectedButtonImg;

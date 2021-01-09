@@ -4,7 +4,22 @@ using UnityEngine;
 using TMPro;
 
 public class EditorWindow : MonoBehaviour
-{
+{    
+    public GameObject HelpDialogPrefab;
+    GameObject HelpInstance;
+    public void NewHelpDialog()
+    {
+        if(HelpInstance != null)
+        {
+            Destroy(HelpInstance);
+            HelpInstance = null;
+        }  
+
+        HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
+        HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+            "The Editor can be used to view documents and take notes. You do not have permission to save documents.";
+    }    
     public TMP_InputField TextField;
 
     public void DisplayText(string text)

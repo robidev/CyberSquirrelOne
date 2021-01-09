@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 13041494}
   - component: {fileID: 13041497}
   - component: {fileID: 13041496}
+  - component: {fileID: 13041498}
   m_Layer: 5
   m_Name: HMIWindow
   m_TagString: Untagged
@@ -297,6 +298,22 @@ MonoBehaviour:
   InActiveWindowRect: {fileID: 21300000, guid: e18d48332e1a06042a01d0ce9f84a81a, type: 3}
   ThisWindowRect: {fileID: 2074122652}
   FrontOnStartup: 1
+--- !u!114 &13041498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13041492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa883ff1525bcbc199ac6f4b86cdd110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
+  text: This is the Human Machine Interface. You can use it to control and view the
+    status of the substation.
 --- !u!1 &17917568
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +893,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 29931819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 13041498}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &29931819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4596,6 +4624,7 @@ GameObject:
   - component: {fileID: 191132614}
   - component: {fileID: 191132617}
   - component: {fileID: 191132618}
+  - component: {fileID: 191132616}
   m_Layer: 0
   m_Name: FileWindow
   m_TagString: Untagged
@@ -4665,6 +4694,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191132612}
   m_CullTransparentMesh: 0
+--- !u!114 &191132616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191132612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa883ff1525bcbc199ac6f4b86cdd110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
+  text: File browser window. This window allows you to browse files within folders
+    and sub-folders.
 --- !u!114 &191132617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4790,6 +4835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86cb2c05ded2db818054695dad79a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
 --- !u!114 &197249911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,7 +5075,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 210492950}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1675127621}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &210492950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6403,7 +6461,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 254732930}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 483873164}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &254732930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9197,6 +9266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e723fb665c6a78b86ec4cbfad6f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   MessageLog: {fileID: 1269640013}
   AlarmLog: {fileID: 2536190408259121670}
 --- !u!1 &363080326
@@ -9537,6 +9608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8302afe884a81d2f8dee956a00e3917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   image: {fileID: 1653242406}
 --- !u!1 &372808337
 GameObject:
@@ -10637,6 +10710,7 @@ GameObject:
   - component: {fileID: 404150988}
   - component: {fileID: 404150990}
   - component: {fileID: 404150989}
+  - component: {fileID: 404150991}
   m_Layer: 5
   m_Name: MessageWindow
   m_TagString: Untagged
@@ -10706,6 +10780,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404150987}
   m_CullTransparentMesh: 0
+--- !u!114 &404150991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404150987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa883ff1525bcbc199ac6f4b86cdd110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
+  text: This window displays an historic overview of all events that have happened
+    in the substation. This includes alarms, and actions taken upon it by operators,
+    as well as automatic messages from field equipment.
 --- !u!1 &412407140
 GameObject:
   m_ObjectHideFlags: 0
@@ -12606,7 +12697,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 483423252}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 370676164}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &483423252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12773,6 +12875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fcbd4660f2c9968ea42e8b0da81db8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   TimeObj: {fileID: 1270591029}
   DateObj: {fileID: 705326360}
 --- !u!1 &497194011
@@ -13429,6 +13533,7 @@ GameObject:
   - component: {fileID: 508601368}
   - component: {fileID: 508601367}
   - component: {fileID: 508601366}
+  - component: {fileID: 508601370}
   m_Layer: 0
   m_Name: PrivateFileWindow
   m_TagString: Untagged
@@ -13532,6 +13637,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508601364}
   m_CullTransparentMesh: 0
+--- !u!114 &508601370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508601364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa883ff1525bcbc199ac6f4b86cdd110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
+  text: File browser window. This window allows you to browse files within folders
+    and sub-folders.
 --- !u!1 &509018994
 GameObject:
   m_ObjectHideFlags: 0
@@ -15238,7 +15359,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 554376361}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508601370}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &554376361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22357,6 +22489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a0f2a53f97c2799ffec9a87d04e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   TextField: {fileID: 625480258}
 --- !u!1 &863007260
 GameObject:
@@ -25675,6 +25809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4845aa425fa4921b25ef9066976ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   Calendar: {fileID: 1992026156}
   MonthYear: {fileID: 1382088637}
   DayPrefab: {fileID: 716503179346324358, guid: 1347870ec5df3d6fa8c000e04fa3da90,
@@ -32535,6 +32671,7 @@ GameObject:
   - component: {fileID: 1284294019}
   - component: {fileID: 1284294017}
   - component: {fileID: 1284294018}
+  - component: {fileID: 1284294022}
   m_Layer: 0
   m_Name: HelpWindow
   m_TagString: Untagged
@@ -32598,6 +32735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a0f2a53f97c2799ffec9a87d04e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 0}
   TextField: {fileID: 1963993620}
 --- !u!114 &1284294019
 MonoBehaviour:
@@ -32652,6 +32790,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284294015}
   m_CullTransparentMesh: 0
+--- !u!114 &1284294022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284294015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa883ff1525bcbc199ac6f4b86cdd110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
+  text: This is the Help display for the Operating System. It describes explanations
+    of the different available programs and features.
 --- !u!1 &1288919279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3572224637563055208, guid: ca6c5588c18ed6731a5ac9d16dff71cf,
@@ -33754,7 +33908,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1347633822}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 404150991}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1347633822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35543,7 +35708,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1479015135}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 191132616}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1479015135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40164,6 +40340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0aebdbaaedcde00955ab84090c62aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
+    type: 3}
   DeviceList: {fileID: 937977584}
   SelectedButtonImg: {fileID: 21300000, guid: d379a94c6391d4c9b8c3f328b6026285, type: 3}
   UnSelectedButtonImg: {fileID: 21300000, guid: 85b300901d9d3e10b89f1607d549432c,
@@ -40263,7 +40441,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1675415086}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361402387}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1675415086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44531,7 +44720,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1885774274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284294022}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1885774274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45616,7 +45816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a189ba711343da380090519fa4f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HelpDialogPrefab: {fileID: 3897651218046079089, guid: 6cf944a8654ecf6a09e661a10a7cdf0a,
+  HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
     type: 3}
   ControlObject: {fileID: 1033061652}
   SureDialog: {fileID: 1288919279}
@@ -46167,7 +46367,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1968459913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 850232913}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1968459913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48910,7 +49121,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2070647166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 959562795}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2070647166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49943,7 +50165,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2102512496}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 197249910}
+        m_MethodName: NewHelpDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2102512496
 MonoBehaviour:
   m_ObjectHideFlags: 0

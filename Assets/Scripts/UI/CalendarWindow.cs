@@ -6,6 +6,21 @@ using TMPro;
 
 public class CalendarWindow : MonoBehaviour
 {
+    public GameObject HelpDialogPrefab;
+    GameObject HelpInstance;
+    public void NewHelpDialog()
+    {
+        if(HelpInstance != null)
+        {
+            Destroy(HelpInstance);
+            HelpInstance = null;
+        }  
+
+        HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
+        HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
+            "The Calender is only to display the current month, week and (week)day. Currently it servers no other purpose.";
+    }
     public Transform Calendar;
     public TMP_Text MonthYear;
     public GameObject DayPrefab;

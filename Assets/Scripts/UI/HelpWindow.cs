@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ImageWindow : MonoBehaviour
+public class HelpWindow : MonoBehaviour
 {
     public GameObject HelpDialogPrefab;
     GameObject HelpInstance;
+    [TextArea(3, 10)]    public string text = "";
     public void NewHelpDialog()
     {
         if(HelpInstance != null)
@@ -17,20 +17,6 @@ public class ImageWindow : MonoBehaviour
 
         HelpInstance = Instantiate(HelpDialogPrefab,transform.parent);
         HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
-        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
-            "The Image window is to display images.";
-    }
-    public Image image;
-
-    public void DisplayImage(Image _image)
-    {
-        image = _image;
-        gameObject.SetActive(true);
-    }
-
-    public void DisplaySprite(Sprite _sprite)
-    {
-        image.sprite = _sprite;
-        gameObject.SetActive(true);
+        HelpInstance.GetComponent<HMIHelpDialog>().textField.text = text;
     }
 }

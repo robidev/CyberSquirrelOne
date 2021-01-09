@@ -8,15 +8,6 @@ public class OperateDialog : MonoBehaviour
 {
     public GameObject HelpDialogPrefab;
     GameObject HelpInstance;
-    public TextMeshProUGUI ControlObject;
-    public TextMeshProUGUI ErrorMessage;
-    GameObject ControlObjectClass;
-    public GameObject SureDialog;
-    public GameObject AdvancedDialog;
-    public GameObject ModalOverLayPrefab;
-    public Button open;
-    public Button close;
-    GameObject overlay;
     public void NewHelpDialog()
     {
         if(HelpInstance != null)
@@ -31,6 +22,16 @@ public class OperateDialog : MonoBehaviour
             "The Breaker Control dialog is for opening and closing the respective switch.\n" +
             "Please take care that it is safe to do so before confirming";
     }
+    public TextMeshProUGUI ControlObject;
+    public TextMeshProUGUI ErrorMessage;
+    GameObject ControlObjectClass;
+    public GameObject SureDialog;
+    public GameObject AdvancedDialog;
+    public GameObject ModalOverLayPrefab;
+    public Button open;
+    public Button close;
+    GameObject overlay;
+
     public void ShowDialog(GameObject controlObjectClass)
     {
         ControlObjectClass = controlObjectClass;
