@@ -14206,6 +14206,16 @@ MonoBehaviour:
   - hacker
   - drone
   objectiveList: 
+  objectivesTimeout:
+  - 20
+  - 20
+  - 40
+  - 3
+  - 10
+  - 120
+  - 3
+  - 2
+  - 40
   objectiveEnabled: 
   objectiveKeepDisabled: 
   screenBounds:

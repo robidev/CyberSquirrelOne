@@ -4,9 +4,6 @@ text editor scroll is broken
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
-arrows only after little progress?(timer per objective?)
-crosses in final level look shit
-smoking trafo effect in final level
 music?
 
 

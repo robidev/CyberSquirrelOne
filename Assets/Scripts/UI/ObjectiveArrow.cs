@@ -8,6 +8,8 @@ public class ObjectiveArrow : MonoBehaviour
     public List<Transform> objectives;
     public List<string> objectivesText;
     public List<int> objectiveList;
+    public List<float> objectivesTimeout;
+    private float[] objectivesTimer;
     public bool[] objectiveEnabled;
     public bool[] objectiveKeepDisabled;
     public Bounds screenBounds;
@@ -26,6 +28,7 @@ public class ObjectiveArrow : MonoBehaviour
         objectiveEnabled = new bool[objectives.Count];
         objectiveKeepDisabled = new bool[objectives.Count];
         Arrows = new GameObject[objectives.Count];
+        objectivesTimer = new float[objectives.Count];
 
         objectiveList = new List<int>();
 
@@ -35,6 +38,7 @@ public class ObjectiveArrow : MonoBehaviour
             objectiveKeepDisabled[index] = false;
             Arrows[index] = Instantiate(arrowPrefab,Cam.transform);
             Arrows[index].GetComponentInChildren<TMP_Text>().text = objectivesText[index];
+            objectivesTimer[index] = 0;
         }
         setObjectiveList();
     }
@@ -50,7 +54,13 @@ public class ObjectiveArrow : MonoBehaviour
             if(objectiveEnabled[index] == true && objectiveKeepDisabled[index] == false && enableArrows == true)
             {
                 Vector3 target = Cam.WorldToViewportPoint(objectives[index].position);
-
+                //keep arrows hidden until timeout
+                if(objectivesTimer[index] < objectivesTimeout[index])
+                {
+                    objectivesTimer[index] += Time.deltaTime;
+                    Arrows[index].SetActive(false);
+                    continue;
+                }
                 if(target.x > 0 && target.x < 1 && target.y > 0 && target.y < 1 )//if target is in screen show cross
                 {
                     if(crossSprite != null)
@@ -95,6 +105,7 @@ public class ObjectiveArrow : MonoBehaviour
 
     public void DisableObjective(int index)
     {
+        objectivesTimer[index] = 0;
         objectiveEnabled[index] = false;
         objectiveKeepDisabled[index] = true;
         setObjectiveList();
