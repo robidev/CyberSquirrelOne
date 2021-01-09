@@ -172,7 +172,7 @@ public class AnimateSwitch : MonoBehaviour
             if(inTransition == false)
             {
                 operateDialog.SetOperateResult(1);
-                operateDialog.ShowDialog(gameObject);
+                operateDialog.ShowDialog(gameObject);//open the dialog for operating
                 //SwitchConducting = !SwitchConducting;
             }
             else

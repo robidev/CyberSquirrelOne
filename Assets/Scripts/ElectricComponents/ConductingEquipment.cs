@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
 using Unity.VectorGraphics;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
-public class ConductingEquipment : MonoBehaviour
+public class ConductingEquipment : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private bool AlarmState = false;
     public float voltage {
@@ -129,6 +131,8 @@ public class ConductingEquipment : MonoBehaviour
             AmpText.AddComponent<Text>().text = "Amp: - A";
             AmpText.GetComponent<Text>().font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
         }
+        toolTipPrefab = Resources.Load("MimicName") as GameObject;
+        ToolTipParent = GameObject.Find("Sub_S42").transform.parent;//.parent;
     }
 
     void Update()
@@ -141,5 +145,38 @@ public class ConductingEquipment : MonoBehaviour
         {
             AmpText.GetComponent<Text>().text = "Amp: " + current.ToString("0") + " A";
         } 
+        if (mouse_over)
+        {
+            if(Time.time - hoverTime > 0.1f && toolTipNotShown)//hover still for longer then a second
+            {
+                toolTipNotShown = false;
+                toolTipInstance = Instantiate(toolTipPrefab,Input.mousePosition + offset,Quaternion.identity,ToolTipParent);
+                toolTipInstance.GetComponentInChildren<TMP_Text>().text = gameObject.name;
+                Destroy(toolTipInstance,30f);//to ensure a tooltip does not stay forever
+            }
+        }
+    }
+
+    private bool mouse_over = false;
+    private float hoverTime = 0f;
+    private bool toolTipNotShown = true;
+    private GameObject toolTipInstance;
+    private Vector3 offset = new Vector3(0f,20f,0f);
+
+    private GameObject toolTipPrefab;
+    private Transform ToolTipParent;
+    //public GameObject toolTipPrefab;
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Destroy(toolTipInstance);//destroy any old tooltip
+        mouse_over = true;
+        hoverTime = Time.time;
+        toolTipNotShown = true;
+    }
+ 
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        mouse_over = false;
+        Destroy(toolTipInstance);
     }
 }

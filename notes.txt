@@ -9,11 +9,9 @@ music?
 
 PC:
 menubar options->attach events!!!
-video resets in security-cam
 
 HMI
  - local/remote implementation
- - tooltips for mimics
  - implement HMI message window -> fill with a bunch of historical messages
  - implement helps:
 	 explain function of CB
