@@ -27,6 +27,7 @@ public class Intro : MonoBehaviour
 
     public void NextLevel()
     {
+        System.GC.Collect();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -40,11 +40,13 @@ public class GameControl : MonoBehaviour
 
     public void Quit()
     {
+      System.GC.Collect();
       SceneManager.LoadScene( 0 );//back to main
     }
 
     public void Restart()
     {
+      System.GC.Collect();
       Time.timeScale = 1;
       PlayerPrefs.SetString("LastCheckPoint","");
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
@@ -52,12 +54,14 @@ public class GameControl : MonoBehaviour
 
     public void LastCheckPoint()
     {
+      System.GC.Collect();
       Time.timeScale = 1;
       SceneManager.LoadScene( SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 
     public void NextLevel()
     {
+      System.GC.Collect();
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

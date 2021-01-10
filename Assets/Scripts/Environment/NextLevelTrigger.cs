@@ -44,6 +44,7 @@ public class NextLevelTrigger : MonoBehaviour
             Debug.Log("next level");
             if(nexLevelScreen == null)
             {
+                System.GC.Collect();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else

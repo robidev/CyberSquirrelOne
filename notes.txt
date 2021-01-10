@@ -4,6 +4,7 @@ text editor scroll is broken
 BUGS:
 FINAL: tweak surveillance-camera behaviour/timing
 hedgehog attack tweaking
+set protection variables more strict, so you need to modify them for puzzle 2
 music?
 
 DRAWING
