@@ -10,10 +10,7 @@ DRAWING
  better indication of fence->sign/perspective
  add more stuff to the left of substation
  add more stuff to the right of substation
-
-
-PC:
-menubar options->attach events, exit, minimise, copy
+ rick astley on poster
 
 HMI
  - local/remote implementation...
@@ -34,9 +31,8 @@ HMI
 
 GUI
  - implement documents -> guides, and personal
- - top-view of station image?
  - desktop and immages folder with funny stuff
- - cheat via console/documents
+ - cheat via console/documents???
 
 
 

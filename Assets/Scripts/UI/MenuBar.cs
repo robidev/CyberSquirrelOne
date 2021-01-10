@@ -60,6 +60,37 @@ public class MenuBar : MonoBehaviour
                 if(SubMenuItem.name == "---")
                 {
                     SubMenuItem.element = Instantiate(MenuBarItemDivider, MenuItem.subElement.transform) as GameObject;
+
+                }
+                else if(SubMenuItem.name == "Minimise")
+                {
+                    SubMenuItem.element = Instantiate(MenuBarItemButton, MenuItem.subElement.transform) as GameObject;
+                    SubMenuItem.element.GetComponent<Button>().onClick.AddListener(()=>{transform.parent.parent.GetComponent<MenuHelper>().ToMenu();});
+                    SubMenuItem.element.GetComponentInChildren<TextMeshProUGUI>().text = SubMenuItem.name;
+                }
+                else if(SubMenuItem.name == "Copy")
+                {
+                    string[] editmenu = {
+                        "Cut     <align=\"right\">Ctrl+X</align>",
+                        "Copy    <align=\"right\">Ctrl+C</align>",
+                        "Paste   <align=\"right\">Ctrl+V</align>"};
+                    foreach(string item in editmenu)
+                    {
+                        SubMenuItem.element = Instantiate(MenuBarItemButton, MenuItem.subElement.transform) as GameObject;
+                        SubMenuItem.element.GetComponentInChildren<TextMeshProUGUI>().text = item;
+                        SubMenuItem.element.GetComponentInChildren<TextMeshProUGUI>().color = new Color(0.7f,0.7f,0.7f);
+                        SubMenuItem.element.GetComponent<Button>().interactable = false;
+                        
+                        SpriteState st = SubMenuItem.element.GetComponent<Button>().spriteState;
+                        st.disabledSprite = st.selectedSprite;
+                        SubMenuItem.element.GetComponent<Button>().spriteState = st;
+                    }
+                }
+                else if(SubMenuItem.name == "Exit" || SubMenuItem.name == "Close")
+                {
+                    SubMenuItem.element = Instantiate(MenuBarItemButton, MenuItem.subElement.transform) as GameObject;
+                    SubMenuItem.element.GetComponentInChildren<TextMeshProUGUI>().text = "<u>C</u>lose   <align=\"right\">Alt+F4</align>";
+                    SubMenuItem.element.GetComponent<Button>().onClick.AddListener(()=>{transform.parent.parent.gameObject.SetActive(false);});
                 }
                 else
                 {
