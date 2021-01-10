@@ -2,6 +2,12 @@
 
 This game is about 3 squirrels attacking the energy grid. It includes platforming elements in the style of lost-vikings. Additionally, it includes puzzles that revolve around different aspects of hacking. There can be more solutions to a puzzle.
 
+The game can be played at:
+
+https://robidev.github.io/CyberSquirrelOne/
+
+Feel free to report any bugs. The game is currently in alpha-stage, and is missing some content in the second puzzle.
+
 ## Disclaimer
 
 This game is free, open source and was made out of pure hobby, and should not have been paid for! If you paid for it, please contact me at Robin.dev@gmail.com. The source is at https://github.com/robidev/CyberSquirrelOne
