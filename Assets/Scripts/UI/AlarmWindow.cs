@@ -27,7 +27,7 @@ public class AlarmWindow : MonoBehaviour
             "an inactive Un-acknowledged alarm (Off) is Blue.\n" +
             "An Active, Acknowledged alarm is Yellow,\n" +
             "and an Inactive alarm, is closed as soon as it is acknowledged.\n\n" +
-            "All actions and status changes can be found back in the message window with corresponing timestamps.";
+            "All actions and status changes can be found back in the message window with corresponding timestamps.";
     }
     public static AlarmWindow instance = null;
     public TableScript MessageLog;

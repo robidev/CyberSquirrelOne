@@ -34,7 +34,7 @@ public class AdvancedDialog : MonoBehaviour
         HelpInstance.GetComponent<RectTransform>().SetAsLastSibling();
         HelpInstance.GetComponent<HMIHelpDialog>().textField.text = 
             "The Advanced dialog is for controlling the parameters of a switch command.\n" +
-            "Please note that a wrong value can have unforseen consequences";
+            "Please note that a wrong value can have unforeseen consequences";
     }
 
     void OnEnable()

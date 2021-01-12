@@ -1,0 +1,152 @@
+<indent=0%><size=28> <u>HMI</u>:</color></size>
+This is the Human Machine Interface. You can use it to control and view
+the status of the substation.
+
+<indent=0%><size=26> <u>Menu Bar</u>:</color></size>
+The menu bar contains the following options:
+
+<indent=4%> - <indent=6%>minimise and close HMI window
+
+<indent=4%> - <indent=6%>Open the HMI, Alarm or Message window on top for viewing of the
+diagram, alarms or log-messages.
+
+<indent=4%> - <indent=6%>Select local/remote operation
+
+<indent=4%> - <indent=6%>Open the Device configuration (engineering window) to modify device
+settings.
+
+<indent=0%><size=26> <u>Main window</u>:</color></size>
+The main window displays the substation singe line diagram, with the
+status of the components.
+
+<indent=3%> <size=25> <u>Mimics</u>:</color></size>
+The mimics in the single-line diagram show the different types of
+components. The following components are available:
+
+<indent=4%> - <indent=6%>Source
+
+<indent=4%> - <indent=6%>Disconnector
+
+<indent=4%> - <indent=6%>Circuit breaker
+
+<indent=4%> - <indent=6%>Earch-switch
+
+<indent=4%> - <indent=6%>current-transformer
+
+<indent=4%> - <indent=6%>voltage transformer
+
+<indent=4%> - <indent=6%>power transformer
+
+<indent=4%> - <indent=6%>busbar
+
+<indent=4%> - <indent=6%>load
+
+For the function of each component, you should consult the \<i\>Power
+Distribution Handbook.doc\</i\>.
+
+<indent=3%> <size=25> <u>Colors</u>:</color></size>
+The Colors indicate voltage levels. Higher voltages are shown in Red,
+lower voltages in Green. If no voltage is detected, a line is made
+white.
+
+<indent=3%> <size=25> <u>Values</u>:</color></size>
+The values indicate the currents and voltages measured at the respective
+junctions.
+
+<indent=3%> <size=25> <u>Tooltips</u>:</color></size>
+When the mouse is hovered over an object in the single-line diagram, the
+respective object-name is shown. This can be used for reference during
+operation or modification of settings in the engineering window.
+
+<indent=0%><size=26> <u>Operate window</u>:</color></size>
+The Breaker Control dialog is for opening and closing the respective
+switch. Please take care that it is safe to do so before confirming the
+action in the are you sure dialog
+
+<indent=3%> <size=25> <u>Object</u>:</color></size>
+The object indicates the object that the action will be applied to.
+
+<indent=3%> <size=25> <u>Open/Close</u>:</color></size>
+The current position is displayed by the depressed button, the other
+button can be clicked to change the state of the switch.
+
+<indent=3%> <size=25> <u>More</u>:</color></size>
+The More button can be pressed to open the advanced dialog.
+
+<indent=3%> <size=25> <u>Cancel</u>:</color></size>
+The Cancel button can be pressed to close the dialog without action.
+
+<indent=3%> <size=25> <u>status-bar</u>:</color></size>
+The status-bar will display the current state of the object, and will
+display the result of executed actions.
+
+<indent=0%><size=26> <u>Advanced window</u>:</color></size>
+The Advanced dialog is for controlling the parameters of a switch
+command. Please note that a wrong value can have unforeseen consequences
+for the substation equipment, as it overrides pre-defined safe operating
+values.
+
+<indent=3%> <size=25> <u>Object</u>:</color></size>
+The object indicates the object that the action will be applied to.
+
+<indent=3%> <size=25> <u>CtlVal</u>:</color></size>
+The value that will be written to the object
+
+<indent=3%> <size=25> <u>CtlNum</u>:</color></size>
+The current operation index. This will increment with every operate
+command.
+
+<indent=3%> <size=25> <u>Origin</u>:</color></size>
+The origin of the action. This will indicate who issued the command.
+
+<indent=3%> <size=25> <u>Test</u>:</color></size>
+The Test-field can be set to true, to send an operate without actually
+opening the switch. This can be used to test if all conditions for
+operation are met, without actually operating.
+
+<indent=3%> <size=25> <u>T</u>:</color></size>
+The time stamp. This is a pass-trough value, and has no real
+significance.
+
+<indent=3%> <size=25> <u>Check</u>:</color></size>
+The check drop-down will provide the option to disable one or both check
+bits, effectively overriding the interlock- and synchro-checking of the
+object. <b>Warning:</b> This might cause damage to equipment if the
+operator does not ensure it is safe to operate a switch without these
+bits set.
+
+<indent=3%> <size=25> <u>Cancel</u>:</color></size>
+The Cancel button can be pressed to close the dialog without action.
+
+<indent=3%> <size=25> <u>status-bar</u>:</color></size>
+The status-bar will display the current state of the object, and will
+display the result of executed actions.
+
+<indent=0%><size=26> <u>Alarm window</u>:</color></size>
+The Alarm window displays the alarm events coming from the field
+equipment.
+
+<indent=3%> <size=25> <u>Alarm acknowledgment</u>:</color></size>
+Clicking an alarm will acknowledge it, and clicking again will close the
+alarm.
+
+A closed alarm is removed from the list of alarms.
+
+<indent=3%> <size=25> <u>Alarm color coding</u>:</color></size>
+Active Un-acknowledged alarms (On) will show in Red,
+
+an inactive Unacknowledged alarm (Off) is Blue.
+
+An Active, Acknowledged alarm is Yellow,
+
+<indent=3%> <size=25> <u>Inactive Alarms</u>:</color></size>
+and an Inactive alarm, is closed as soon as it is acknowledged.
+
+<indent=3%> <size=25> <u>Logging of Alarm actions</u>:</color></size>
+All actions and status changes can be found back in the message window
+with corresponding timestamps.
+
+<indent=0%><size=26> <u>Message window</u>:</color></size>
+This window displays an historic overview of all events that have
+happened in the substation. This includes alarms, and actions taken upon
+it by operators, as well as automatic messages from field equipment.
