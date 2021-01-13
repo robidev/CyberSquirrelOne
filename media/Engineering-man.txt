@@ -1,0 +1,21 @@
+<size=24>
+<size=28><u>Engineering</u>:</size>
+
+The Engineering program is to alter device settings of the substation components. You need to save the settings before they take effect. Restore settings will reload the device settings in the current dialog.
+
+
+<size=26><u>Display of devices</u>:</size>
+
+The list on the left displays all protection equipment in the substation. The name is directly related to their logical positioning. Click a device-name to open it settings-panel on the right.
+
+
+<indent=0%><size=26><u>Display of settings</u>:</size>
+
+The right panel displays the settings for the selected device. A modification of a setting can be done by clicking the edit-field and modifying the value. The value is stored in the device as soon as ‘save device settings’ is pressed. If a different device is selected before settings are saved, a warning dialog is displayed. If OK is pressed, the settings are saved. If cancel is pressed, the dialog simply closes. In both cases the selection stays on the previous device, not on the newly selected one.
+
+
+<size=26><u>Save and restore settings</u>:</size>
+
+The settings of a device can be saved by pressing ‘save device settings’ in the menu-bar. If the settings should be reverted to the settings as they are currently stored in the device, ‘restore device settings’ can be chosen from the menu-bar. 
+
+</size>

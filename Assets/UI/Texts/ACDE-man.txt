@@ -1,0 +1,300 @@
+
+<size=28> <b>Almost Common Desktop Environment</b>:</size>
+
+Welcome to the ACDE ( Almost Common Desktop Environment ). It is an environment that is very reminiscent of the well known CDE ( Common Desktop Environment ) as is delivered with UNIX and specifically Solaris.
+
+The ACDE desktop comprises a <b>Front Panel</b> sitting over a selected screen background. The Front Panel displays information about your workstation, and enables you to run applications. Applications that are running are represented by windows and icons on the workspace.
+
+<size=26><u>Front Panel</u>:</size>
+The Front Panel is a collection of frequently used controls and desktop services available.
+
+<size=26><u>Working With Files</u>:</size>
+The Files icon gives you access to the file browser.
+
+ACDE provides a limited-functioned File Manager application. In File Manager, files and folders are represented by icons that indicate their types.
+
+<indent=0%><size=25><u>Deleting Files</u>:</size>
+<indent=0%>ACDE provides a <b>trash can</b> or wastebasket facility. The Trash Can is a temporary store for objects (files and folders) to be deleted. Once in the Trash Can, the objects no longer appear in their original folder.
+
+<indent=0%><size=25><u>Running Applications</u>:</size>
+<indent=0%>ACDE provides the following method of running applications:
+
+<indent=4%> - <indent=6%>The Front Panel and the Workspace menu provide access to collections of available applications.
+
+<indent=0%><size=26><u>Working with Windows</u>:</size>
+<indent=0%>This section describes how to open, close, and manipulate windows in a workspace.
+
+<indent=0%><size=25><u>Window Frame Controls</u>:</size>
+<indent=0%>A window's frame provides controls with which you can:
+
+<indent=4%> - <indent=6%>Focus attention on a window, making it active (indicated by its frame changing color) for input from your mouse
+
+<indent=4%> - <indent=6%>Move a window
+
+<indent=4%> - <indent=6%>Minimize a window into an icon
+
+<indent=4%> - <indent=6%>Close a window, removing it from the desktop
+
+<indent=0%>Click the Window menu button to display the Window menu.
+
+To close a window and remove it from the desktop, click the Window menu button or display the Window menu and choose Close.
+
+Click the minimize button to turn the window into a window icon. To restore a window from its icon, click the icon on the desktop.
+
+The title bar shows the name of the application that owns the window. Select a window by clicking its title bar. You can move a window by dragging its title bar.
+
+<indent=0%><size=25><u>To Close an Application Window</u>:</size>
+<indent=0%>Closing an application window removes it from the desktop. Closing an application is the same as quitting an application on other systems.
+
+Caution:
+
+Before closing an application window, save your work. In most applications you can do this by choosing Save from the File menu.
+
+<indent=4%> - <indent=6%>Choose Close from the application's File menu.
+
+<indent=4%> - <indent=6%><i>*Or*</i>, click the Window close button (in the upper left corner of the application's window).
+
+<indent=0%><size=26><u>Using Controls in Application Windows</u>:</size>
+Windows and dialog boxes contain controls that help you work with applications. You use controls to manipulate objects, select choices, or type information.
+
+This section describes various types of controls you'll come across while using the desktop. Here's a list of the most common controls:
+
+<b>Buttons</b> initiate commands, start actions, or specify options and settings.
+
+<b>Text fields</b> provide areas where you can type information.
+
+<b>Lists</b> display a scrollable list of choices from which you can select.
+
+<b>Scroll bars</b> enable you to scroll through a window's contents.
+
+<indent=0%><size=25><u>Push Buttons</u>:</size>
+<indent=0%>Choosing a push button immediately performs the associated command or action. For example, choosing an OK button applies any changes made to a dialog box then closes it.
+
+As a shortcut, many dialog boxes automatically give focus to the OK button so that you can quickly specify settings and then press Return to choose OK.
+
+<indent=0%><size=25><u>To Scroll the Contents of a Window</u>:</size>
+Windows often contain more information than you can see at one time. Use a window's scroll bar to bring the window's contents into view.
+
+<indent=0%><size=25><u>Text Fields</u>:</size>
+A text field accepts information you type.
+
+<indent=0%><size=24><u>To Enter Text in a Field (Mouse)</u>:</size>
+
+1. Click the field to display the text insertion cursor.
+
+Type the text.
+
+2. In many dialog boxes, pressing Return completes the text entry and activates the default button, such as OK or Apply.
+
+<indent=0%><size=25><u>To Edit Text in a Field (Mouse)</u>:</size>
+1. Select the text in the field to edit:
+
+Characters - Drag from the first character to the last character
+
+Word - Double-click the word
+
+Line - Triple-click the line
+
+Multiline - Quadruple-click the field
+
+To deselect text, click an empty area in the window.
+
+2. Type the replacement text.
+
+<size=26><u>Using Menus</u>:</size>
+Menus provide access to commands you use to manage windows and operate software applications.
+
+Choosing a menu item performs an associated action on the currently selected object. For example, when you select a window and choose Minimize from its Window menu, the window becomes an icon.
+
+Menu items that appear dimmed are available only under certain conditions. For example, the Window menu's Restore item is available only when the window is an icon.
+
+Menus you'll use on the desktop include:
+
+<indent=4%> - <indent=6%>Menus that you "pull down" from an application's menu bar by clicking the menu's name or typing Alt and its <b>mnemonic</b>. A mnemonic is an underlined character in a menu or item name.
+
+<indent=0%><size=26><u>Getting Help</u>:</size>
+You can request help by:
+
+<indent=4%> - <indent=6%>Pressing the Help key
+
+<indent=4%> - <indent=6%>Choosing an item from an application's Help menu
+
+<indent=4%> - <indent=6%>Clicking the Help button in a dialog box
+
+<indent=4%> - <indent=6%>Opening the Help Manager to browse all the available help
+
+<indent=0%><size=25><u>Help Menu</u>:</size>
+Most applications have a Help menu for requesting specific kinds of help.
+
+<indent=0%><size=25><u>To Display the Clock</u>:</size>
+The Links subpanel of the Front Panel contains a Clock control. When you click the control, the digital clock is displayed on the desktop. The Digital Clock application displays the time and date. This application can be left on your Workspace permanently.
+
+<size=26><u>Introducing the File Manager Window and Desktop</u>:</size>
+The File Manager main window is a view of a folder on your system. The folder you are currently viewing is called the <b>current folder</b>.
+
+<indent=4%> - <indent=6%>Menu bar and menus - Contains the commands available in File Manager
+
+<indent=4%> - <indent=6%>Object viewing area - Shows the objects (files and folders) in the current working folder
+
+<indent=4%> - <indent=6%>Object icons - Uses icons to represent the files and folders in the current folder
+
+<indent=0%><size=26><u>Basic File System Concepts</u>:</size>
+This section describes basic file system concepts.
+
+<indent=0%><size=25><u>Files</u>:</size>
+A <b>file</b> is a container that holds information. Most of the files you use contain information (data) in some particular format---a document, a spreadsheet, a chart. The format is the particular way the data is arranged inside the file. The format of a file is known as its <b>data type</b>.
+
+When File Manager is in one of its icon-view modes, you can identify the data type of a file by the icon used to represent the file. Each data type has a different icon.
+
+Most application programs understand a limited number of data types. For example, a document editor probably cannot read a spreadsheet file. The desktop helps you recognize different types of files using a data-type database. In most cases, when you double-click a file, the desktop will automatically launch the application that understands that file's data type.
+
+The maximum allowable length of a file name varies from system to system. Some operating systems do not allow file names longer than 14 characters. If necessary, consult with your system administrator.
+
+<indent=0%><size=25><u>Folders</u>:</size>
+A <b>folder</b> is a container for files, similar to a folder in a file cabinet. In fact, File Manager uses a folder icon to represent a folder. A folder can contain other folders---sometimes called subfolders. With folders and subfolders, you can create multiple layers of organization that form a hierarchy. In other contexts, folders are often referred to as <b>directories</b>.
+
+Within any single folder, each file name must be unique. However, files in different folders may have the same name.
+
+As you navigate from folder to folder, your current location is referred to as the <b>current folder</b>.
+
+<indent=0%><size=25><u>Objects</u>:</size>
+Since files and folders are both represented in File Manager as icons, the term <b>object</b> is used to describe them both. Objects are discrete things on the desktop that you can create and manipulate.
+
+On the desktop, applications can also be represented as objects. For example, Application Manager contains objects representing the applications available on your system.
+
+<indent=0%><size=25><u>Paths</u>:</size>
+The location of a file is often specified by listing the folders and subfolders that lead to the file---this list is called a <b>path</b>. A file's path is visible in two places in File Manager. First it is shown in the iconic path as a string of folders. Second, it is shown in a text form in the text path line above the view area. These two areas can be turned off. (See [To Configure the Headers](https://docs.oracle.com/cd/E19683-01/806-4743/6jdq6q260/index.html) for more information.)
+
+<indent=0%><size=25><u>Paths and Path Names</u>:</size>
+The path to an object is a way to specify where the object is located in the file system. There are two ways to specify the path: absolute path and relative path.
+
+<indent=0%><size=25><u>Absolute Paths</u>:</size>
+A path is an <b>absolute path</b> if it begins at the root folder. The <b>root folder</b> is the single common folder on your system where the hierarchy begins. If a path begins with a slash (/), it is an absolute path specified from the root folder. For example, the following is an absolute path to the file letter:
+
+ /usr/dt/config/letter
+
+<indent=0%><size=25><u>Relative Paths</u>:</size>
+A path is <b>relative</b> if it describes the location of a file or folder as it relates to the current folder. If you are in a folder and you want to move down the folder tree, you don't need to type the absolute path name. You can just type the path starting with the name of the next folder in the path. If a path does not begin with a slash, it is a relative path. For example, if the current folder is `/usr/dt` and you want to move to the folder `/usr/dt/config/letters`, you would use the following relative path:
+
+config/letters
+
+Two special folder names are useful when specifying relative paths. The "." folder (sometimes called "dot") represents the current folder. The ".." folder (sometimes called "dot-dot") represents the <b>parent</b> folder---the folder one level up in the folder hierarchy. For example, if your current folder is `/usr/dt/config`, then the relative path to the `Dtwm` file becomes:
+
+../app-defaults/<i>language</i>/Dtwm
+
+because the file is in the `/usr/dt/app-defaults/`<i>language</i> folder, one level above the current folder and in the `app-defaults`/<i>language</i> subfolder.
+
+<size=26><u>Basic File Management Skills</u>:</size>
+To get started using File Manager, you need to learn a few basic skills. Each icon in File Manager represents an object that you can manipulate in a variety of ways, including:
+
+<indent=4%> - <indent=6%>Object selection
+
+<indent=4%> - <indent=6%>Opening objects
+
+<indent=0%><size=25><u>Object Selection</u>:</size>
+When you select the icon of a file or folder, its name is highlighted. Many choices in File Manager's menus apply to the currently <b>selected</b> file or folder. The Selected menu contains choices that affect only the currently selected objects. The contents of this menu will change as you select different kinds of objects in the view area.
+
+<indent=0%><size=24><u>To Select a Single File or Folder (Mouse)</u>:</size>
+
+Click once on the icon.
+
+<size=26><u>Opening a File or Folder</u>:</size>
+The most basic action you can perform on an object is to open it. "Open" is a very general term, and the action taken depends on the type of object you are opening. For example, opening a folder changes the File Manager view to show the contents of that folder. Opening a data file usually starts the application that created the file and loads the data file.
+
+<indent=0%><size=25><u>To Open a File or Folder</u>:</size>
+<indent=4%> - <indent=6%>click the icon.
+
+<indent=0%>clicking an icon executes the object's <b>default action</b>, which is always the first action in the Actions portion of the Selected menu. For most data files, the default action opens the file by starting the appropriate application and loading the file.
+
+<size=26><u>Navigating to Folders and Subfolders</u>:</size>
+Each File Manager window (also called a <b>view</b>) shows the contents of a single folder.
+
+<size=26><u>To Change to Another Folder</u>:</size>
+You can change to another folder in any of the following ways:
+
+<indent=4%> - <indent=6%>click a folder icon.
+
+<indent=0%><size=26><u>To Change to the Parent Folder</u>:</size>
+<indent=4%> - <indent=6%>click the .. (go up) icon.
+
+<indent=0%><size=26><u>Executing an Action for a File or Folder</u>:</size>
+Actions act on objects, and are a basic part of working with them. For example, printing the contents of an object uses the Print action. Starting an application for a data file object uses an Open action, or some other application action.
+
+The Selected menu contains a list of commands followed by a list of actions you can use with the selected icon. The contents of the actions portion of the Selected menu change depending on the type of icon that is currently selected.
+
+The action listed at the top of the action portion of the menu (the default action) is the action that will be taken when you double-click a file or folder. In the menu shown in the figure, the default action is Open In Place.
+
+<indent=0%><size=25><u>To Execute the Default Action</u>:</size>
+The default action is the first action listed in the actions portion of the Selected menu.
+
+Click the object's icon.
+
+<size=26><u>Opening and Closing Text Editor</u>:</size>
+There are several ways to start Text Editor from your desktop.
+
+<indent=0%><size=25><u>To Open Text Editor</u>:</size>
+click the Text Editor control.
+
+<indent=0%><size=25><u>To Close Text Editor</u>:</size>
+Choose Close from the File menu or press Alt+F4.
+
+<size=26><u>Text Editor Window</u>:</size>
+You create and edit a document in the Text Editor window. The title bar displays the name of the current document. A new document is named (UNTITLED).
+
+<indent=0%><size=25><u>Opening and Saving Documents</u>:</size>
+You can create a new document or open an existing document. Opening a document displays the contents of a selected file in the Text Editor window.
+
+Saving a document stores the edited contents into a file. You can save a document to its original file or to a new file.
+
+You can choose that Text Editor maintains a file containing the previously saved version of a file each time it performs a save during the current session.
+
+<indent=0%><size=25><u>Opening an Existing Document</u>:</size>
+You can open an existing document in these ways:
+
+<indent=4%> - <indent=6%>Open the document in Text Editor.
+
+<indent=4%> - <indent=6%>Select the file icon in File Manager and choose Open from the File Manager Selected menu.
+
+<indent=4%> - <indent=6%>Double-click the file icon in File Manager.
+
+<indent=0%><size=25><u>To Open an Existing Document from Text Editor</u>:</size>
+1. Choose Open from the File menu.
+
+The Open a File dialog box lists files and folders in your current folder. You can browse the documents listed, or change to a new folder to locate other files on your system.
+
+2. Select the name of the document you want to open, or type the document name in the Enter file name field.
+
+3. Press Return or click OK.
+
+<size=26><u>Entering Text</u>:</size>
+As you create a document, you type and edit text. A cursor (`I`) shows your current position.
+
+<indent=0%><size=25><u>To Enter New Text</u>:</size>
+Click in the document and start typing.
+
+To start a new line, press Return.
+
+To start a paragraph, press Return twice.
+
+<size=26><u>Calendar Startup</u>:</size>
+You can start Calendar in one way:
+
+Click the Calendar control in the Front Panel.
+
+<size=26><u>Calendar Main Window</u>:</size>
+The menus and tool bar controls are at the top of the main window. The selected Calendar view is displayed in the lower part of the main window.
+
+<indent=0%><size=25><u>Month View</u>:</size>
+Month view displays the calendar you are viewing with one month's appointments in the window. The selected day is highlighted.
+
+<size=26><u>Default Desktop Terminal Emulator</u>:</size>
+The default terminal emulator on the desktop is `dtterm`. The `dtterm` terminal emulator emulates that portion of the VT220 terminal that is consistent with ANSI and ISO standards.
+
+<size=26><u>Starting and Quitting Image Viewer</u>:</size>
+There is one way to start Image Viewer:
+
+<indent=4%> - <indent=6%>From Application Manager
+
+<indent=0%><size=26><u>Viewing Images</u>:</size>
+With Image Viewer, you can view, the file formats of monochrome and color images and PostScript files.
+
