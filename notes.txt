@@ -3,7 +3,6 @@ text editor scroll is broken
 alarm-list markup sometimes deforms
 
 BUGS:
- intro2 is skipped
 
 GUI
  - images folder with funny stuff

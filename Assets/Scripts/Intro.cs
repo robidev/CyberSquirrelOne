@@ -19,7 +19,7 @@ public class Intro : MonoBehaviour
     void Update()
     {
         ButtonText.color = Color.Lerp(Color.white, Color.grey, Mathf.PingPong(Time.unscaledTime, 1));
-        if(Input.GetKey("space"))
+        if(Input.GetKeyUp("space"))
         {
             NextLevel();
         }
