@@ -1,4 +1,4 @@
-
+<size=24>
 <size=28> <b>Almost Common Desktop Environment</b>:</size>
 
 Welcome to the ACDE ( Almost Common Desktop Environment ). It is an environment that is very reminiscent of the well known CDE ( Common Desktop Environment ) as is delivered with UNIX and specifically Solaris.
@@ -298,3 +298,4 @@ There is one way to start Image Viewer:
 <indent=0%><size=26><u>Viewing Images</u>:</size>
 With Image Viewer, you can view, the file formats of monochrome and color images and PostScript files.
 
+</size>

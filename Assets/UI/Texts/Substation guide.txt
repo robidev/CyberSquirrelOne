@@ -1,0 +1,131 @@
+<size=24>
+<size=28><u>Substation components</u>:</size>
+
+A substation is composed of several components. While the whole substation is quite a large set of components, it is not necessary to know all components to understand how a substation functions. In general it is fairly straightforward;
+
+<indent=4%>1. <indent=6%> Power comes in trough power-lines
+<indent=4%>2. <indent=6%> Power gets re-routed and sometimes voltage-levels get transformed to a different voltage.
+<indent=4%>3. <indent=6%> Power leaves the substation trough power-lines
+
+<indent=0%>Often a substation will transform power from a higher voltage level, that is efficient to transport over long distances, to a lower voltage that can be distributed more easily to the destinations (e.g. industry or households). Transforming down is often done in several steps at several different sites before power arrives at a household as mains AC.
+
+Additionally, a substation often contains protection equipment, that will detect certain conditions that can cause damage to equipment, such as too high current due to a short circuit. If such a condition occurs, the equipment disconnects a power line to prevent any further damage due to high power flow and subsequent heating of the equipment or cables. This is not unlike a breaker box in a house. However, the types of protection are often more complex, and include protections for effects uniquely related to high voltages.
+
+The substation also often contains switches that allow to re-route power, between different incoming power-lines in cases such as maintenance or loss of power on one of the incoming lines
+
+
+<size=26><u>Current-flow</u>:</size>
+
+Current flows from the source to the load. In a substation often a low-current, high voltage source provides the power, and is transformed to a lover voltage, and subsequent a higher current. A too high current, due to a heavy load, or a short circuit(i.e. connection to ground) will cause the protection equipment to disconnect the wire where the high current is detected. Such event is called a ‘trip’. Currents that are flowing in parallel to different loads can be added to find the source current.
+
+
+<size=26><u>Function of transformer</u>:</size>
+
+A transformer in a substation transforms power from a high-voltage, with a low current(lighter cables, but difficult to handle/isolate which is good for transport but impractical for distribution), to a lower voltage with a high current (good for distribution, but needs heavier cables so is more expensive). They do this with a set ratio, meaning the voltage coming out of the transformer, is always a per-determined fraction of what went in. Substation transformers do more than that, but this is the primary function. To perform this function, they need to be able to handle the current/voltages that run trough them without overheating, or shorting out. To do this, they use <b>oil</b> for <b>cooling</b> and <b>isolation</b>.
+
+A transformer maintains the same power. As power is voltage times current (P=U*I), the incoming voltage times current, will always equal the outgoing voltage times current. For example, 100v * 2A incoming, with a transformer of 4:1 ratio will output 25v * 8A. As you can see, in both cases the multiplication results in 200 (expressed in Watt, or VA).
+
+
+<size=26><u>Function of Circuit Breaker</u>:</size>
+
+The circuit breaker is an important component of a substation. It is a high speed switch that can disconnect a wire, while current is flowing trough it. It therefore needs to do this quickly with a lot of force (and a loud bang) as a slow-moving switch will cause arcing-effects that damage the switch and cause heating up. They are controlled by the protection equipment to be able to react and disconnect in milliseconds when a problem(e.g. high current) is detected by the protection equipment that might damage wires or equipment. The equipment will then autonomously engage the circuit breaker(trip), and signal that it has done so to any monitoring equipment connected (such as can be seen on the HMI – Human Machine Interface ). Besides autonomous function, often circuit breakers can also be controlled locally by push-button, or  digital, remotely by a operator from an HMI.
+
+
+<size=26><u>Function of Disconnector</u>:</size>
+ 
+A disconnector is a slow moving switch. As opposed to a circuit breaker it can only safely open when no current is flowing trough it while opening, and no load is connected while closing. <b>Inadvertently opening or closing under load will cause severe damage</b>, and is normally prevented by the protection equipment. By a function called Interlock (explained below). Disconnectors can be controlled locally by hand, by push-button or sometimes remotely by a operator from an HMI.
+
+
+<size=26><u>Function of Earth-switch</u>:</size>
+
+An earth-switch is a switch to connect a part of a substation-circuit to ground. This can be done to ensure the circuit does not have any current flowing, or dangerous voltage anymore. This way maintenance can be safely performed. Earth switches can be controlled locally by hand, by push-button or sometimes remotely by a operator from an HMI.
+
+
+<size=26><u>Function of CT and VT</u>:</size>
+
+CT and VT stand for Current Transformer and Voltage Transformer. They are sensing transformers, that are connected on one side to the High-voltage lines inside a substation, and on the other side provide low-voltage analog signals that can be used as input for the protection equipment to detect short circuits and other faults.
+
+
+<size=28><u>Physical forms</u>:</size>
+
+The equipment described above comes in all kinds of shapes and sizes. This is largely determined by the properties needed to achieve the desired characteristics, such as maximum voltage, maximum current, temperature tolerance etc. For the most we can make 2 general distinctions:
+
+
+<size=26><u>Outside equipment</u>:</size>
+
+This is equipment that can be seen outside, in what is called the switch-yard. Often it looks like a jumble of metal pipes, glass discs and wires running criss-cross trough it. Often this equipment is used for transporting, switching and routing power from the incoming power lines, to the transformers. It is usually used for handling the higher voltages in the substation.
+The controlling equipment is stored in separate cabinets inside of the building, with signal-wires connecting the signals from the switch yard to the controlling equipment.
+
+
+<size=26><u>Switchgear</u>:</size>
+
+This equipment is often inside, in hallways of a stone building or structures looking like small sheds or shipping containers. They are a miniaturized version of the outside equipment, and are optimized for size and modularity. They are often for the connection from the transformer to the outgoing power cables, and handle lower voltages then the equipment in the switch yard.
+
+A single bay can often fit into a single (filing)cabinet looking casing. And a hallway is comprised of rows of these cabinets. Often the controlling equipment is integrated into the same cabinet.
+
+
+<size=28><u>Logical form</u>:</size>
+
+Equipment in a substation is logically named. It starts with the substation identifier, then the voltage level, then the bay(A bay is a power line within an electrical substation which connects a circuit) and finally the component. Example:
+<indent=4%>Substation: S42
+<indent=4%>VoltageLevel: E1
+<indent=4%>Bay: Q1
+<indent=4%>Component: FE1
+<indent=0%>This will result in the name: S42/E1/Q1/FE1
+
+
+<size=28><u>Functions</u>:</size>
+
+The protection equipment performs several functions. Below are 2 important functions described in general.
+
+
+<size=26><u>Protection mechanisms</u>:</size>
+
+The protection systems use input from sensors, and based on several formulas an output can be set.
+
+<indent=4%>1. <indent=6%> overvoltage
+The overvoltage protection is to detect a too high voltage. It uses a VT sensor(described above), and compares the value to a pre-defined threshold. If it goes over the threshold, the related circuit breaker is tripped(opened).
+<indent=4%>2. <indent=6%> overcurrent - explain too much load will trip the line
+The overcurrent protection is to detect a too high current. It uses a CT sensor(described above), and compares the value to a pre-defined threshold. If it goes over the threshold, the related circuit breaker is immediately tripped(opened).
+<indent=4%>3. <indent=6%> time-overcurrent
+The time-overcurrent protection is to detect a too high current. It uses a CT sensor(described above), and compares the value to a pre-defined threshold. If it goes over the threshold, the algorithm uses a linear curve to determine the time-duration it will tolerate the amount of current above the threshold. A higher current will mean a shorter tolerated time-duration. If the tolerance time-duration is surpassed, the related circuit breaker is tripped(opened).
+<indent=0%>
+
+<size=25><u>how to change protection settings</u>:</size>
+
+<b>WARNING: Setting a wrong protection threshold value may result in damage to equipment or loss of power. Please ensure proper precautions before changing protection settings.</b>
+Using the engineering tool, and following the logical naming, the correct protection device can be found, and the threshold settings modified to the desired state. Also the protection algorithms used and connected sensors can be viewed. For details on using the engineering-tool please consult the Engineering-manual.
+
+
+<size=26><u>Interlocking</u>:</size>
+
+Interlocking is a mechanism to ensure a switch can be operated safely. The interlocking mechanism will check for example if a circuit breaker is open(i.e. powerless), and only if this is the case the disconnector below it may be opened. This way it can be prevented that a disconnector is opened while current still flowing trough it, as this will severely damage the equipment due to arcing and heat buildup.
+
+Another example is the earth switch, which should only be closed if the power line is already powerless. This is done by checking the disconnector above it, to ensure the source is not connected anymore to the power line, before it is connected to earth. 
+
+<i>In this substation we use interlocking to ensure disconnectors cannot be opened before the circuit breaker is open. And to ensure the eart-switch can only be closed if the disconnector <u>above</u> it is open.</i>
+
+<b>WARNING: it is possible to overwrite interlocks by issuing a command where the interlock-check is not performed (see HMI-manual). Doing so may cause irreversible damage to equipment! Please ensure you know what you are doing before overwriting interlocks</b>
+
+
+<size=28><u>Action guide</u>:</size>
+
+<size=26><u>Operate a switch</u>:</size>
+
+<indent=4%>1. <indent=6%> Hover over a component in the HMI with the mouse to identify the object
+<indent=4%>2. <indent=6%> Click in the HMI on the desired switch, and press the open/close button in the resulting dialog.
+<indent=4%>3. <indent=6%> Observe the result of the operated switch in the HMI, regarding current and voltage values in the schema.
+
+<indent=0%><size=26><u>Troubleshoot a blocked by interlock</u>:</size>
+
+<indent=4%>1. <indent=6%> Check in the messages window the object name of the interlock that blocked the operate of a switch.
+<indent=4%>2. <indent=6%> Ensure that interlock does not trigger by changing the related switch position.
+<indent=4%>3. <indent=6%> Retry the original switch
+
+<indent=0%><size=26><u>Check for correct protection settings</u>:</size>
+
+<indent=4%>1. <indent=6%> Check in the alarm window the object name of the protection that tripped.
+<indent=4%>2. <indent=6%> Search for the related protection object in the engineering-tool.
+<indent=4%>3. <indent=6%> Check and/or modify the settings to reflect your need. 
+<indent=0%>
+</size>

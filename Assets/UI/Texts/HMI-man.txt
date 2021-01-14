@@ -8,13 +8,13 @@ This is the Human Machine Interface. You can use it to control and view the stat
 
 The menu bar contains the following options:
 
-<indent=4%> - <indent=6%>minimise and close HMI window
+<indent=4%>- <indent=6%>Minimise and close HMI window
 
-<indent=4%> - <indent=6%>Open the HMI, Alarm or Message window on top for viewing of the diagram, alarms or log-messages.
+<indent=4%>- <indent=6%>Open the HMI, Alarm or Message window on top for viewing of the diagram, alarms or log-messages.
 
-<indent=4%> - <indent=6%>Select local/remote operation
+<indent=4%>- <indent=6%>Select local/remote operation
 
-<indent=4%> - <indent=6%>Open the Device configuration (engineering window) to modify device settings.
+<indent=4%>- <indent=6%>Open the Device configuration (engineering window) to modify device settings.
 
 
 <indent=0%><size=26><u>Main window</u>:</size>
@@ -26,43 +26,43 @@ The main window displays the substation singe line diagram, with the status of t
 
 The mimics in the single-line diagram show the different types of components. The following components are available:
 
-<indent=4%> - <indent=6%>Wire 
+<indent=4%>- <indent=6%>Wire 
   <size=55><sprite=11></size>
 
 
-<indent=4%> - <indent=6%>Source 
+<indent=4%>- <indent=6%>Source 
   <size=55><sprite=9></size>
 
 
-<indent=4%> - <indent=6%>Disconnector
+<indent=4%>- <indent=6%>Disconnector
   <size=55><sprite=4> <sprite=2> <sprite=3> <sprite=8></size>
 
 
-<indent=4%> - <indent=6%>Circuit breaker 
+<indent=4%>- <indent=6%>Circuit breaker 
   <size=55><sprite=6> <sprite=5> <sprite=1> <sprite=7></size>
 
 
-<indent=4%> - <indent=6%>Earch-switch 
+<indent=4%>- <indent=6%>Earch-switch 
   <size=55><sprite=12><sprite=3></size>
 
 
-<indent=4%> - <indent=6%>current-transformer 
+<indent=4%>- <indent=6%>current-transformer 
   <size=55><sprite=14></size>
 
 
-<indent=4%> - <indent=6%>voltage transformer 
+<indent=4%>- <indent=6%>voltage transformer 
   <size=55><sprite=13></size>
 
 
-<indent=4%> - <indent=6%>power transformer 
+<indent=4%>- <indent=6%>power transformer 
   <size=55><sprite=0></size>
 
 
-<indent=4%> - <indent=6%>busbar 
+<indent=4%>- <indent=6%>busbar 
   <size=55><sprite=15></size>
 
 
-<indent=4%> - <indent=6%>load 
+<indent=4%>- <indent=6%>load 
   <size=55><sprite=10></size>
 
 
