@@ -2,39 +2,34 @@ Known bug:
 text editor scroll is broken
 alarm-list markup sometimes deforms
 
-BUGS:
-
+TODO's:
 GUI
-   (pest control)
- - cheat via console/documents???
- - cheatcodes for sonic the hedgehog
+ - cheat via console/documents??? - cheatcodes for sonic the hedgehog?
 
-
-GENERAL
- music
- tweak surveillance-camera behaviour/timing
- hedgehog attack tweaking
-HMI
- local/remote implementation...(?)
- set protection variables more strict, so you need to modify them for puzzle 2
 DRAWING
  rick astley on poster?
  better indication of fence->sign/perspective
- add more stuff to the left of substation
- add more stuff to the right of substation
- better vantage point by trees?
- digging equipment outside fence
- water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
- nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
- add more scenery schrubs, cars, signs etc.
- forest backdrop     - day/night 
- substation-backdrop - day/night  
- city-backdrop       - day/night  
+ add more stuff to the left of substation -  digging equipment outside fence
+ add more stuff to the right of substation - add more scenery schrubs, cars, signs etc.
 
+----------------------------------------------
+
+GENERAL(?)
+ nightfall-atmospheric? fog, light reflection,  extra: env will change based on switching in HMI
+ forest backdrop, substation-backdrop, city-backdrop
+ music
+ tweak surveillance-camera behaviour/timing
+ hedgehog attack tweaking
+
+HMI(?)
+ local/remote implementation...
+ set protection variables more strict, so you need to modify them for puzzle 2
 ----------------------------------
 spares:
 x  static         - https://opengameart.org/content/static-noise-similar-untuned-tv-also-known-white-noise
 x  walki-talkie/radio beep/bzzt - dialog - https://opengameart.org/content/camerashudder
+x  water, x  water-splash   - https://opengameart.org/content/water-splash-yo-frankie
+
 
 
 
