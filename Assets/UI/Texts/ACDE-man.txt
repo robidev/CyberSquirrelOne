@@ -37,9 +37,9 @@ ACDE provides a limited-functioned File Manager application. In File Manager, fi
 
 <indent=0%>Click the Window menu button to display the Window menu.
 
-To close a window and remove it from the desktop, click the Window menu button or display the Window menu and choose Close.
+To close a window and remove it from the desktop, click the right Window button or display the Window menu and choose Close.
 
-Click the minimize button to turn the window into a window icon. To restore a window from its icon, click the icon on the desktop.
+Click the left minimize button to turn the window into a window icon. To restore a window from its icon, click the icon on the desktop.
 
 The title bar shows the name of the application that owns the window. Select a window by clicking its title bar. You can move a window by dragging its title bar.
 
@@ -52,7 +52,7 @@ Before closing an application window, save your work. In most applications you c
 
 <indent=4%> - <indent=6%>Choose Close from the application's File menu.
 
-<indent=4%> - <indent=6%><i>*Or*</i>, click the Window close button (in the upper left corner of the application's window).
+<indent=4%> - <indent=6%><i>*Or*</i>, click the Window close button (in the upper right corner of the application's window).
 
 <indent=0%><size=26><u>Using Controls in Application Windows</u>:</size>
 Windows and dialog boxes contain controls that help you work with applications. You use controls to manipulate objects, select choices, or type information.

@@ -5,12 +5,10 @@ alarm-list markup sometimes deforms
 BUGS:
 
 GUI
- - images folder with funny stuff
-  -> pic of sexy hedgehog
-  -> pic of squirrel
-  -> cartoon hedgehog/squirrel/bird?
-  -> personal log (which hints at issues when forcing values)
+   (pest control)
  - cheat via console/documents???
+ - cheatcodes for sonic the hedgehog
+
 
 GENERAL
  music

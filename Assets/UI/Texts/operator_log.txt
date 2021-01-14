@@ -1,0 +1,25 @@
+Operators notes
+
+01 jan 2021
+-----------
+07:34: Rotated password to reflect the current year. 
+
+04 jan 2021
+-----------
+07:23: Thunderstorm expexted. Checked all earth-lines as precaution
+
+07 jan 2021
+-----------
+13.23: Maintenance window for outgoing Bay Q3. Will be out of commission until 15.00
+Note: Advanced dialog in HMI accidental operate through interlock! 
+Caused damage to S42/D1/Q3/QB1, and disconnector had to be replaced.
+Imagine what would happen if this would happen with an eart-switch...
+
+08 jan 2021
+-----------
+10:04: Received warning about possible squirrel attack. Stay vigilant!
+
+11 jan 2021
+-----------
+21:04: Light in switchgear-room is broken. Call maintenance for replacement
+

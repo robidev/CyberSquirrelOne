@@ -30,7 +30,17 @@ public class ImageWindow : MonoBehaviour
 
     public void DisplaySprite(Sprite _sprite)
     {
+        image.color = Color.white;
         image.sprite = _sprite;
+        image.type = Image.Type.Simple;
+        image.preserveAspect = true;
         gameObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        image.color = Color.black;
+        image.sprite = null;
+        gameObject.SetActive(false);
     }
 }
