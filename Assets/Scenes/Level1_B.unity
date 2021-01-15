@@ -17730,27 +17730,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0, g: 0, b: 0.6792453, a: 0.7529412}
-  m_Text: 'document about:
-
-
-    switchgear; what does what
-
-    problem register:
-    stuff that has happened
-
-    hedgehog photos
-
-    operating manual: open and
-    close switches + footnotes
-
-    maintenance manual: change settings + footnotes
-
-    security
-    cam explanation
-
-    top-view of station: pic+schema
-
-'
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -24459,10 +24439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "document about:\n\nswitchgear; what does what\nproblem register: stuff
-    that has happened\nhedgehog photos\noperating manual: open and close switches
-    + footnotes\nmaintenance manual: change settings + footnotes\nsecurity cam explanation\ntop-view
-    of station: pic+schema\n\u200B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: -6661198495494357507, guid: b8f84769c560ecf6bbb032a24379de39,

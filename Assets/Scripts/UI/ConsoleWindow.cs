@@ -7,6 +7,9 @@ public class ConsoleWindow : MonoBehaviour
 {
     public GameObject HelpDialogPrefab;
     GameObject HelpInstance;
+    private int response = 0;
+    private int sudoresponse = 0;
+
     public void NewHelpDialog()
     {
         if(HelpInstance != null)
@@ -78,21 +81,103 @@ public class ConsoleWindow : MonoBehaviour
 
     public void OnEnter(string text)
     {
-        Debug.Log(text);
+        //Debug.Log(text);
+        //print comand
         string input = text.Substring(TextVariable.Length);
-        
+        PrintText(input + "\n");
+
+        //handle command
         if(input == "ls")
         {
-            PrintText(input + "\n.\n..\nhome\nbin-bash: # ");
+            PrintText(".\n..\nprivate");
         }
         else if(input == "exit")
         {
             CloseSession();
         }
+        else if(input == "help")
+        {
+            PrintText("ACDE shell, version 1.3.12(1)-release\n" +
+             "These shell commands are defined internally.  Type `help' to see this list.\n" +
+             "\nA star (*) next to a name means that the command is disabled.\n\n" +
+             "  *cd [dir]\t\t\tchange current directory\n" +
+             "  exit\t\t\t\tclose this prompt\n" +
+             "  help\t\t\t\tprint this help\n" +
+             "  ls\t\t\t\tlist the current directory\n" +
+             "  sudo [command]\t\texecute command as super user\n");
+        }
+        else if(input.StartsWith("hack"))
+        {
+            PrintText("no!");
+        }
+        else if(input.StartsWith("sudo"))
+        {
+            if(input == "sudo")
+            {
+                PrintText("what are you trying to sudo?");
+            }
+            else if(input.StartsWith("sudo "))
+            {
+                string subcommand = input.Substring(5);
+                if(subcommand == "hack")
+                {
+                    PrintText("Cool, if you want to cheat by hacking. Please type yes if you would like to cheat, and just finish this level");
+                    
+                }
+                else if(response > 6)
+                {
+                    if(sudoresponse == 0)
+                    {
+                        PrintText("Why do you want to sudo '" + subcommand + "'?");
+                    }
+                    else if(sudoresponse == 1)
+                    {
+                        PrintText("Have you tried 'sudo hack' instead of '" + subcommand + "'?");
+                    }                    
+                    sudoresponse++;
+                }
+                else
+                {
+                    PrintText("You cannot sudo '" + subcommand + "'");
+                    response++;
+                }
+            }
+        }
         else
         {
-            PrintText(input + "\n" + input + ": command not found\nbin-bash: # ");
+            if(response < 3)
+            {
+                PrintText(input + ": command not found");
+            }
+            else if(response == 3 || response == 4)
+            {
+                PrintText(input + ": command still not found");
+            }
+            else if(response == 5)
+            {
+                PrintText(".");
+            }
+            else if(response == 6)
+            {
+                PrintText("..");
+            }
+            else if(response == 7)
+            {
+                PrintText("what are you trying to do?");
+            }
+            else if(response == 8)
+            {
+                PrintText("you are persistent!");
+            }
+            else if(response >= 9)
+            {
+                PrintText("have you tried sudo?");
+            }
+            
+            response++;
         }
+        //print commandline
+        PrintText("\nbin-bash: # ");
         TextField.ActivateInputField();
     }
 
