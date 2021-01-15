@@ -4,12 +4,17 @@ recepie for desert idea: apple, mealworms, banana, berries
 What is wrong with cats?
 
 
-It seems the command-line in this system is kind of silly; entering the same command can have different outcomes, and the command line and available commands seem to change over time. I will need to investigate further...
+It seems the command-line in this system is kind of silly; entering the same command can have different outcomes, 
+and the command line and available commands seem to change over time. I will need to investigate further...
+
+
 
 Career options?
 
 
 Squirrels love em or hate em?
+
+can a computer make me a sandwich?...
 
 Bird seems to really dislike drones... why?
 

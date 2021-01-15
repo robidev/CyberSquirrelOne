@@ -9,6 +9,12 @@ public class ConsoleWindow : MonoBehaviour
     GameObject HelpInstance;
     private int response = 0;
     private int sudoresponse = 0;
+    public GameObject LevelEnd;
+
+    void LevelEndFn()
+    {
+        LevelEnd.SetActive(true);
+    }
 
     public void NewHelpDialog()
     {
@@ -110,6 +116,14 @@ public class ConsoleWindow : MonoBehaviour
         {
             PrintText("no!");
         }
+        else if(input == "make")
+        {
+            PrintText("what would you want to make?");
+        }
+        else if(input == "make me a sandwich")
+        {
+            PrintText("What? Make it yourself");
+        }
         else if(input.StartsWith("sudo"))
         {
             if(input == "sudo")
@@ -121,8 +135,13 @@ public class ConsoleWindow : MonoBehaviour
                 string subcommand = input.Substring(5);
                 if(subcommand == "hack")
                 {
-                    PrintText("Cool, if you want to cheat by hacking. Please type yes if you would like to cheat, and just finish this level");
+                    PrintText("Cool, if you want to cheat by hacking. Please type 'sudo make me a sandwich!' to finish the level");
                     
+                }
+                if(subcommand == "make me a sandwich!")
+                {
+                    PrintText("Okay");
+                    Invoke("LevelEndFn",3f);
                 }
                 else if(response > 6)
                 {
