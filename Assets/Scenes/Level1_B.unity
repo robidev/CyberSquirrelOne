@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HelpDialogPrefab: {fileID: 5606417330429514, guid: 05e7561638ac5faed97bc7b4ba8650dc,
     type: 3}
-  LevelEnd: {fileID: 0}
+  LevelEnd: {fileID: 4255004143466855780}
 --- !u!114 &197249911
 MonoBehaviour:
   m_ObjectHideFlags: 0

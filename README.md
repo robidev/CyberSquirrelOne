@@ -58,6 +58,14 @@ http://pixelgameart.org/web/
 Modifications made by Erwin
 
 
+- Images - 
+https://twitter.com/_LittleBobby_/status/876440208924966914/photo/1 - bobby cartoon
+hedegehog-squirrel cartoon - ???(let me know if you know whom it is!)
+https://www.rkikuojohnson.com/squirrel-power-1 - newspaper
+https://www.reddit.com/r/Hedgehog/comments/9d1uo1/vol11_im_sexy_and_i_know_it/ - sexy hedgehog
+https://www.reddit.com/r/aww/comments/2w448a/just_a_little_hedgehog_eating_avocado/ - avocado 
+
+
 - Puzzle 1 -
 
 ADE-Karizma-Plus-Intruder-Alarm-keypad

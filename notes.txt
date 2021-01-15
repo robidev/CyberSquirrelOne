@@ -3,9 +3,6 @@ text editor scroll is broken
 alarm-list markup sometimes deforms
 
 TODO's:
-GUI
- - cheat via console/documents??? - cheatcodes for sonic the hedgehog?
-
 DRAWING
  rick astley on poster?
  better indication of fence->sign/perspective
