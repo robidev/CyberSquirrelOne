@@ -6,7 +6,7 @@ The game can be played at:
 
 https://robidev.github.io/CyberSquirrelOne/
 
-Feel free to report any bugs. The game is currently in alpha-stage, and is missing some content in the second puzzle.
+Feel free to report any bugs.
 
 ## Disclaimer
 
